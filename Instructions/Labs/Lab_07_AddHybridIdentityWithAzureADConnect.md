@@ -1,81 +1,74 @@
 ---
 lab:
-  title: 07 – Optionaler --- Hinzufügen von Hybrididentität mit Microsoft Entra Verbinden
+  title: "07: Hinzufügen einer Hybrididentität mit Azure\_AD Connect"
   learning path: '01'
   module: Module 01 - Implement an identity management solution
 ---
 
-# Übung 07: OPTIONALer --- Hinzufügen von Hybrididentität mit Microsoft Entra Verbinden
+# Lab 07: OPTIONAL --- Hinzufügen einer Hybrididentität mit Azure AD Connect
 
+**Hinweis**: Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen dazu finden Sie in Lab 00.
 
-
-# Diese Funktion ist derzeit nicht verfügbar.  Aufgrund einer Lizenzierungsänderung in der Microsoft Entra-ID ist das Lab fehlgeschlagen.  Wir behandeln derzeit problembehebung und aktualisieren das Labor und sollten es innerhalb einer Woche wieder online haben.  Wechseln Sie zur nächsten Übung.
-
-
-
-
-**Hinweis** : Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen finden Sie in Lab 00.
-
-**Hinweis 2** : Diese Übung ist optional.  Es dauert mindestens 1 Stunde, bis sie abgeschlossen ist und erfordert, dass Sie in Den Laborschritten detailliert beschrieben sind.  Bitte zögern Sie nicht, es zu computern, wenn die Zeit dies zulässt.  Wenn Ihr Unternehmen seine Hybridkonfiguration bereits eingerichtet hat oder Sie nicht beabsichtigen, Microsoft Entra Verbinden zu verwenden, springen Sie bitte über dieses Labor.
+**Hinweis 2**: Diese Übung ist optional.  Die Bearbeitung dauert mindestens 1 Stunde, und Sie sollten die Arbeitsschritte so detailliert wie möglich befolgen.  Bitte nutzen Sie den Computer, wenn es Ihre Zeit erlaubt.  Wenn Ihr Unternehmen seine Hybridkonfiguration bereits eingerichtet hat oder Sie nicht beabsichtigen, Azure AD Connect zu verwenden, überspringen Sie dieses Lab.
 
 ## Labszenario
 
-Ihr Unternehmen verfügt über eine lokale AD DS-Domäne (Active Directory Domain Services).  Sie möchten weiterhin lokales Active Directory als Identitäts- und Zugriffsverwaltungslösung verwenden, aber auch die Möglichkeit erfordern, dass Benutzer auf Cloudanwendungen mit demselben Benutzernamen und Kennwort zugreifen können.
+Ihr Unternehmen verfügt über lokale Azure Active Directory Domain Services (AD DS).  Sie möchten weiterhin ein lokales Active Directory als Lösung für das Identity & Access Management verwenden, aber auch die Möglichkeit bieten, dass Benutzer auf Cloudanwendungen mit demselben Benutzernamen und Kennwort zugreifen können.
 
-#### Geschätzte Zeit: 60 Minuten.
+#### Geschätzte Dauer: 60 Minuten
 
-### Übung 1 – Einrichten der lokalen Infrastruktur
+### Übung 1: Einrichten der lokalen Infrastruktur
 
-#### Aufgabe 1 – Erstellen der lokales Active Directory-Infrastruktur
+#### Aufgabe 1: Erstellen der lokalen Active Directory-Infrastruktur
 
-1. Auf die Bereitstellungsvorlage kann unter diesem Link zugegriffen werden: [Leitfaden zur](https://github.com/maxskunkworks/TLG/tree/master/tlg-base-config_3-vm) lokalen Testumgebung.
+1. Auf die Bereitstellungsvorlage kann unter diesem Link zugegriffen werden: [Leitfaden zur lokalen Test-Labumgebung](https://github.com/maxskunkworks/TLG/tree/master/tlg-base-config_3-vm).
 
-    **Hinweis zu Lernenden und MCTs** – Die Bereitstellung dieser Vorlage kann 30-60 Minuten dauern. Seien Sie also bereit, bei diesem Schritt eine Pause zu unternehmen oder die Bereitstellung vor einem Vorlesungsabschnitt des Kurses auszuführen.
+    **Hinweis für Lernende und MCTs**: Die Bereitstellung dieser Vorlage kann 30 bis 60 Minuten dauern. Sie sollten also bereit sein, bei diesem Schritt eine Pause einzulegen oder die Bereitstellung vor einem Vortragsteil des Kurses durchzuführen.
 
-    **Hinweis zu Lab-Anbietern** – Wenn möglich, ist es hilfreich, dass Schüler/Studenten das Setup der Lab-Umgebung abschließen und bereitstellen können.
+    **Hinweis für Labanbieter**: Wenn möglich, wäre es für Lernende hilfreich, wenn sie die Labumgebung im Rahmen ihrer Einrichtung durchführen und bereitstellen könnten.
 
-2. Wählen Sie auf der **Seite "TLG (Test Lab Guide) – 3 VM Base Configuration (v1.0)"** die Option **"In Azure** bereitstellen" aus.
+2. Wählen Sie auf der Seite **TLG (Test Lab Guide) - 3 VM Base Configuration (v1.0)** die Option **Deploy to Azure** aus.
 
-   **Hinweis**: Die 3 VM-Basiskonfiguration stellt einen Windows Server 2016 Active Directory-Do Standard Controller mit dem Namen DC1 bereit Standard den Sie angeben, und einen do Standard Memberserver mit dem Namen APP1 unter Windows Server 2016. Es bietet auch eine Option zum Bereitstellen einer Client-VM unter Windows 10, wir verwenden sie jedoch nicht in unserem Labor (in erster Linie aufgrund von Lizenzierungsanforderungen, die bei der Ausführung von Windows 10-VMs in Azure gelten). Der Do Standard Memberserver (APP1) hat .NET 4.5 und IIS automatisch installiert.  
+   **Hinweis**: Die 3 VM Base Configuration stellt einen Domänencontroller für Windows Server 2016 Active Directory mit dem Namen DC1 bereit, der den Domänennamen, den Sie angeben, und einen Domänenmitgliedsserver mit dem Namen APP1 verwendet, auf dem Windows Server 2016 ausgeführt wird. Sie bietet auch eine Option zum Bereitstellen einer Client-VM unter Windows 10. Diese verwenden wird jedoch nicht in unserem Lab (in erster Linie aufgrund von Lizenzierungsanforderungen, die bei der Ausführung von Windows 10-VMs in Azure gelten). Auf dem Domänenmitgliedsserver (APP1) ist .NET 4.5 und IIS automatisch installiert.  
    
-   **Hinweis** : Der virtuelle Computer, der für dieses Lab erforderlich ist, ist **DC1**.  Wenn Sie einen Azure Pass verwenden, gibt es eine Einschränkung von 2 VMs, sodass der virtuelle Clientcomputer fehlschlägt.  Dies ist für diesen Artikel nicht erforderlich.
+   **Hinweis**: Die VM, die für dieses Lab erforderlich ist, ist **DC1**.  Wenn Sie einen Azure Pass verwenden, besteht eine Einschränkung von 2 VMs, sodass der virtuelle Clientcomputer fehlschlagen könnte.  Dies ist für dieses Lab nicht erforderlich.
 
-3. Geben Sie auf der Seite "**Benutzerdefinierte Bereitstellung**" die folgenden Einstellungen an, und wählen Sie **dann "Überprüfen" und dann "**Erstellen**"** aus.
+3. Legen Sie auf der Seite **Benutzerdefinierte Bereitstellung** die folgenden Einstellungen fest, und wählen Sie dann **Überprüfen + erstellen** und danach **Erstellen** aus.
 
-   -   Abonnement: Der Name des Azure-Zielabonnements, in dem Sie die Azure-VMs der Lab-Umgebung bereitstellen möchten.
-   -   Ressourcengruppe: (Neue) **Hybrididentity-RG erstellen**
-   -   Speicherort: Der Name der Azure-Region, die die Azure-VMs der Lab-Umgebung hosten soll.
+   -   Abonnement: Der Name des Azure-Zielabonnements, in dem Sie die Azure-VMs der Labumgebung bereitstellen möchten.
+   -   Ressourcengruppe: (Neu erstellen) **hybrididentity-RG**
+   -   Speicherort: Der Name der Azure-Region, die die Azure-VMs der Labumgebung hosten soll.
    -   Konfigurationsname: **TlgBaseConfig-01**
-   -   Rootdomänenname = corp.contoso.com
+   -   Domänenname: **corp.contoso.com**
    -   Serverbetriebssystem: **2016-Datacenter**
-   -   Administratorbenutzername: **Demouser**
-   -   Administratorkennwort: **Geben Sie ein sicheres Kennwort ein, das Sie sich merken werden.**
-   -   Bereitstellen eines virtuellen Clientcomputers: **Nein**
+   -   Administratorbenutzername: **demouser**
+   -   Administratorkennwort: **Geben Sie ein sicheres Kennwort ein, das Sie sich merken können**
+   -   Client-VM bereitstellen: **Nein**
    -   Client-VHD-URI: **Leer lassen**
    -   VM-Größe: **Standard_D2s_v3**
    
-   **Hinweis** : Verwenden Sie eine ähnliche VM-Größe, wenn Ihr Abonnement die aufgeführte Größe nicht unterstützt. Die Dokumentation ist hier verknüpft: <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes>.
+   **Hinweis**: Verwenden Sie eine ähnliche VM-Größe, wenn Ihr Abonnement die aufgeführte Größe nicht unterstützt. Die Dokumentation ist hier verknüpft: <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes>.
 
-   -   DNS-Bezeichnungspräfix: **Jeder gültige, global eindeutige DNS-Name (eine eindeutige Zeichenfolge bestehend aus Buchstaben, Ziffern und Bindestrichen, beginnend mit einem Buchstaben und bis zu 47 Zeichen lang).**
+   -   DNS-Bezeichnungspräfix: **Jeder gültige, global eindeutige DNS-Name (eine eindeutige Zeichenfolge bestehend aus Buchstaben, Ziffern und Bindestrichen, beginnend mit einem Buchstaben und bis zu 47 Zeichen).**
 
-   -   _artifacts Speicherort: **Übernehmen Sie die Standardeinstellung**
-   -   _artifacts Location Sas Token: Lassen Sie diese Angabe leer.
+   -   _artifacts-Speicherort: **Übernehmen Sie die Standardeinstellung**
+   -   _artifacts-Speicherort-Sas-Token: **Leer lassen**
 
-4. Klicken Sie auf **Überprüfen + erstellen**.
+4. Wählen Sie **Überprüfen + erstellen** aus.
 
 5. Wählen Sie nach erfolgreicher Überprüfung **Erstellen** aus.
     
-6. Warten Sie, bis die Bereitstellung abgeschlossen ist. Dies kann etwa zehn Minuten dauern.
+6. Warten Sie, bis die Bereitstellung abgeschlossen ist. Dies kann etwa 60 Minuten dauern.
 
 
-### Aufgabe 2 : Konfigurieren der Lab-Umgebung für Azure-VMs
+### Aufgabe 2: Konfigurieren der Labumgebung für Azure-VMs
 
-1. Navigieren Sie im Browserfenster, in dem die Azure-Portal angezeigt wird, zur **Azure-VM DC1**, und stellen Sie eine Verbindung über Remotedesktop her. Wenn Sie dazu aufgefordert werden, melden Sie sich mit den folgenden Anmeldeinformationen an:
+1. Navigieren Sie im Browserfenster, in dem das Azure-Portal angezeigt wird, zur Azure-VM **DC1**, und stellen Sie eine Verbindung über Remotedesktop her. Wenn Sie dazu aufgefordert werden, melden Sie sich mit den folgenden Anmeldeinformationen an:
 
-   -   Benutzername: **Demouser**
-   -   Kennwort: **Verwenden Des sicheren Kennworts, das Sie in Aufgabe 1 erstellt haben**
+   -   Benutzername: **demouser**
+   -   Kennwort: **Verwenden das sichere Kennwort, das Sie in Aufgabe 1 erstellt haben**
 
-2.  Starten Sie **in der Remotedesktopsitzung auf **DC1** Windows PowerShell ISE**, und öffnen Sie dann den Skriptbereich.  Fügen Sie als Nächstes das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um die erweiterte Sicherheitskonfiguration von Internet Explorer und die Benutzerzugriffskontrolle sowohl auf DC1- als **auch **AUF APP1-Azure-VMs**** zu deaktivieren:
+2.  Starten Sie die Remotedesktopsitzung auf **DC1** die **Windows PowerShell ISE**, fügen Sie dem Skriptbereich das folgende Skript hinzu, und führen Sie es aus, um die erweiterte Sicherheitskonfiguration von Internet Explorer und die Benutzerzugriffssteuerung auf den beiden Azure-VMs **DC1** und **APP1** zu deaktivieren:
 
     ```pwsh
 
@@ -85,9 +78,9 @@ Ihr Unternehmen verfügt über eine lokale AD DS-Domäne (Active Directory Doma
     Invoke-Command -ComputerName $vmNames {Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "ConsentPromptBehaviorAdmin" -Value 00000000}
     ```
 
-    **Hinweis:** Wenn Sie mehrere PowerShell-Skripts in derselben Datei ausführen möchten, können Sie ein bestimmtes Skript hervorheben und neben der grünen Wiedergabeschaltfläche "Auswahl** ausführen" auswählen**. 
+    **Hinweis:** Wenn Sie mehrere PowerShell-Skripts in derselben Datei ausführen möchten, können Sie ein bestimmtes Skript markieren und neben der grünen Wiedergabeschaltfläche **Auswahl ausführen** auswählen. 
 
-3.  Fügen Sie im **Windows PowerShell ISE-Fenster** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um Remoteserver-Verwaltungstools sowohl auf **DC1 als **auch AUF APP1*** Azure-VMs zu installieren:
+3.  Fügen Sie im Fenster **Windows PowerShell ISE** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um Remoteserver-Verwaltungstools auf den beiden Azure-VMs *DC1* und **APP1** zu installieren:
 
     ```pwsh
 
@@ -95,7 +88,7 @@ Ihr Unternehmen verfügt über eine lokale AD DS-Domäne (Active Directory Doma
     Invoke-Command -ComputerName $vmNames {Install-WindowsFeature RSAT -IncludeAllSubFeature} 
     ```
 
-4.  Fügen Sie im **Windows PowerShell ISE-Fenster** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um TLS 1.2 sowohl auf **DC1- als **auch AUF APP1-Azure-VMs*** zu aktivieren:
+4.  Fügen Sie im Fenster **Windows PowerShell ISE** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um TLS 1.2 auf den beiden Azure-VMs *DC1* und **APP1** zu aktivieren:
 
     ```pwsh
 
@@ -109,7 +102,7 @@ Ihr Unternehmen verfügt über eine lokale AD DS-Domäne (Active Directory Doma
     Invoke-Command -ComputerName $vmNames {New-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319' -name 'SchUseStrongCrypto' -value 1 –PropertyType DWORD}
     ```
 
-5.  Fügen Sie im **Windows PowerShell ISE-Fenster** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um die integrierte Windows-Authentifizierung auf der Standardwebsite zu konfigurieren, die auf der **Azure-VM APP1** gehostet wird:
+5.  Fügen Sie im Fenster **Windows PowerShell ISE** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um die integrierte Windows-Authentifizierung auf der Standardwebsite zu konfigurieren, die auf der Azure-VM **APP1** gehostet wird:
 
     ```pwsh
 
@@ -119,58 +112,58 @@ Ihr Unternehmen verfügt über eine lokale AD DS-Domäne (Active Directory Doma
     Invoke-Command -ComputerName $vmNames {Set-WebConfigurationProperty -Filter "/system.webServer/security/authentication/windowsAuthentication" -Name Enabled -Value True -PSPath IIS:\ -Location "Default Web Site"}
     ```
 
-### Aufgabe 3 – Starten Sie die Azure-VMs neu
+### Aufgabe 3: Neustarten der Azure-VMs
 
-1. **Führen Sie im Windows PowerShell ISE-Fenster** im Konsolenbereich Folgendes aus, um APP1** neu zu starten**:
+1. Führen Sie im Fenster **Windows PowerShell ISE** im Konsolenbereich Folgendes aus, um **APP1** neu zu starten:
 
     ```pwsh
 
     Restart-Computer -ComputerName 'APP1'
     ```
 
-2. **Führen Sie im Windows PowerShell ISE-Fenster** im Konsolenbereich folgendes aus, um DC1** neu zu starten**:
+2. Führen Sie im Fenster **Windows PowerShell ISE** im Konsolenbereich Folgendes aus, um **DC1** neu zu starten:
 
     ```pwsh
     Restart-Computer -ComputerName 'DC1'
     ```
 
-### Aufgabe 5 – Konfigurieren von contoso.local Active Directory
+### Aufgabe 5: Konfigurieren von Active Directory für contoso.local
 
-1. Verbinden erneut zum **DC1** Azure VM über Remotedesktop. Wenn Sie dazu aufgefordert werden, melden Sie sich mit den folgenden Anmeldeinformationen an:
+1. Stellen Sie erneut eine Verbindung zur Azure VM **DC1** über Remotedesktop her. Wenn Sie dazu aufgefordert werden, melden Sie sich mit den folgenden Anmeldeinformationen an:
 
-    -   Benutzername: **Demouser**
+    -   Benutzername: **demouser**
 
-    -   Kennwort: **Demo\@pass123**
+    -   Kennwort: **demo\@pass123**
        - **Es wird dringend empfohlen, ein sicheres Kennwort einzugeben, das Sie sich merken können.**
 
 2.  Starten Sie Internet Explorer in der Remotedesktopsitzung auf **DC1**, und navigieren Sie zu dem nachstehenden Link.
 
     ```
-    https://github.com/microsoft/MCW-Hybrid-identity/tree/main/Archive/Hands-on%20lab/studentfiles
+    https://github.com/microsoft/MCW-Hybrid-identity/tree/main/Hands-on%20lab/studentfiles
     ```
 
-3. Wählen Sie auf der **Seite "Benutzer/Gruppe für Active Directory Demo/TestUmgebung** erstellen" den **Link "CreateDemoUsers.ps1** " aus, akzeptieren Sie die Lizenzbedingungen, und speichern Sie das entsprechende Skript im lokalen Dateisystem.
+3. Wählen Sie auf der Seite **Create Users/Group for Active Directory Demo/Test Environment** den Link **CreateDemoUsers.ps1** aus, akzeptieren Sie die Lizenzbedingungen, und speichern Sie das entsprechende Skript im lokalen Dateisystem.
 
-4. Wählen Sie auf der **Seite "Benutzer/Gruppe für Active Directory Demo/TestUmgebung** erstellen" den **Link "CreateDemoUsers.csv** " (direkt über dem PowerShell-Codeabschnitt) aus, und speichern Sie die entsprechende CSV-Datei an demselben Speicherort wie die **Datei "CreateDemoUsers.ps1** ".
+4. Wählen Sie auf der Seite **Create Users/Group for Active Directory Demo/Test Environment** den Link **CreateDemoUsers.csv** (direkt über dem PowerShell-Codeabschnitt) aus, und speichern Sie die entsprechende CSV-Datei an demselben Speicherort wie die Datei **CreateDemoUsers.ps1**.
 
-5. Starten Sie in der Remotedesktopsitzung auf **DC1** Explorer, navigieren Sie zu dem Ordner, in dem Sie beide Dateien heruntergeladen haben. Wählen Sie in der Datei **"CreateDemoUsers.ps1**" die Option "Eigenschaften" aus, aktivieren **Sie im **Dialogfeld "** Eigenschaften erstellenDemoUsers.ps1**" das **Kontrollkästchen "Blockierung** aufheben", und aktivieren Sie **"OK**".
+5. Starten Sie in der Remotedesktopsitzung auf **DC1** Datei-Explorer, navigieren Sie zu dem Ordner, in dem Sie beide Dateien heruntergeladen haben. Wählen Sie mit der rechten Maustaste die Datei **CreateDemoUsers.ps1** aus, wählen Sie **Eigenschaften** aus, aktivieren Sie im Dialogfeld **Eigenschaften von CreateDemoUsers.ps1** das Kontrollkästchen **Entsperren**, und wählen Sie **OK** aus.
 
-6. Wählen Sie im fenster Explorer die Datei **"CreateDemoUsers.ps1**" erneut aus, und wählen Sie "Bearbeiten" aus****. 
+6. Wählen Sie im Fenster „Datei-Explorer“ erneut mit der rechten Maustaste die Datei **CreateDemoUsers.ps1** aus, und wählen Sie **Bearbeiten** aus. 
 
-7. Ändern Sie im Fenster "Administrator: Windows PowerShell ISE **" die **Zeile **148** von:
+7. Ändern Sie im Fenster **Administrator: Windows PowerShell ISE** die Zeile **148** von:
 
     ```pwsh
     $UserCount = 1000 #Up to 2500 can be created
     ```
 
-   Bis
+   in
     ```pwsh
     $UserCount = 2500 #Up to 2500 can be created
     ```
 
-8. Speichern Sie im **Windows PowerShell ISE-Fenster** die Änderung, und führen Sie das **Skript CreateDemoUsers.ps1** aus, um eine Organisationseinheitshierarchie der Laborumgebung zu erstellen und mit Testbenutzerkonten aufzufüllen. 
+8. Speichern Sie im Fenster **Windows PowerShell ISE** die Änderung, und führen Sie das Skript **CreateDemoUsers.ps1** aus, um eine Organisationseinheitshierarchie der Labumgebung zu erstellen und mit Testbenutzerkonten zu füllen. 
 
-9.  Fügen Sie im **Windows PowerShell ISE-Fenster** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um die Einstellungen der AD-Benutzerkonten zu ändern, die Sie in dieser Übung verwenden werden:
+9.  Fügen Sie im Fenster **Windows PowerShell ISE** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um die Einstellungen der AD-Benutzerkonten zu ändern, die Sie in dieser Übung verwenden werden:
 
     ```pwsh
 
@@ -193,7 +186,7 @@ Ihr Unternehmen verfügt über eine lokale AD DS-Domäne (Active Directory Doma
     Get-ADGroup -Identity 'Enterprise Admins' | Add-ADGroupMember -Members 'CN=Ayers\, Ann,OU=NJ,OU=US,OU=Users,OU=Demo Accounts,DC=corp,DC=contoso,DC=com'
     ```
 
-10. Fügen Sie im **Windows PowerShell ISE-Fenster** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um zusätzliche Organisationseinheiten mit dem Namen **"Server** und **Clients** " zu erstellen und das **APP1-Computerkonto** auf den ersten davon zu verschieben:
+10. Fügen Sie im Fenster **Windows PowerShell ISE** das folgende Skript zum Skriptbereich hinzu, und führen Sie es aus, um zusätzliche Organisationseinheiten mit dem Namen **Server** und **Clients** zu erstellen und das Computerkonto **APP1** auf den ersten davon zu verschieben:
 
     ```pwsh
 
@@ -203,120 +196,120 @@ Ihr Unternehmen verfügt über eine lokale AD DS-Domäne (Active Directory Doma
     Move-ADObject -Identity 'CN=APP1,CN=Computers,DC=corp,DC=contoso,DC=com' -TargetPath 'OU=Servers,OU=Demo Accounts,DC=corp,DC=contoso,DC=com'
     ```
 
-11. Sign-out From AAD (Von AAD abmelden)
+11. Melden Sie sich von **DC1** ab.
 
-## Übung 3: Synchronisieren einer Active Directory-Gesamtstruktur mit einem Azure Active Directory-Mandanten
+## Übung 2: Integrieren einer Active Directory-Gesamtstruktur in einem Azure Active Directory-Mandanten
 
-### Aufgabe 1: Erstellen eines Azure Active Directory-Mandanten und Aktivieren einer EMS E5-Testversion
+### Aufgabe 1: Erstellen eines Azure Active Directory-Mandanten und Aktivieren einer EMS E5-Testversion
 
 In dieser Aufgabe erstellen Sie einen Azure Active Directory-Mandanten mit den folgenden Einstellungen: 
 
--   Organisation: Contoso
+-   Organisationsname: **Contoso**
 
--   Initial do Standard name: Any valid, unique do Standard name.
+-   Anfänglicher Domänenname: Jeder gültige, eindeutige Domänenname.
 
--   Land oder Region: USA
+-   Land oder Region: **USA**
 
-1. Starten Sie auf dem Lab-Computer ein neues Webbrowserfenster, und navigieren Sie zu der Azure-Portal, <https://portal.azure.com> sofern sie noch nicht geschehen ist.
+1. Starten Sie auf dem Lab-Computer ein neues Webbrowserfenster, und navigieren Sie zum Azure-Portal unter <https://portal.azure.com>, sofern noch nicht geschehen.
 
-2. Melden Sie sich bei dem Azure-Abonnement an, in dem Sie Ressourcen in den Übungen "Before Hands-On Lab" bereitgestellt haben.
+2. Wenn Sie dazu aufgefordert werden, melden Sie sich bei dem Azure-Abonnement an, in dem Sie in den Übungen „Vor dem Praxislab“ Ressourcen bereitgestellt haben.
 
-3. Wählen Sie im Menü des Azure-Portals auf der Startseite die Option + Ressource erstellen aus.
+3. Wählen Sie auf dem Lab-Computer im Azure-Portal **+ Ressource erstellen** aus.
 
-4. Geben Sie auf der **Seite "Neu**" im **Textfeld "Marketplace** durchsuchen" Azure Active Directory** ein, und wählen Sie in der Ergebnisliste Azure Active Directory** aus**.**
+4. Geben Sie auf der Seite **Neu** im Textfeld **Marketplace durchsuchen** **Azure Active Directory** ein, und wählen Sie in der Ergebnisliste **Azure Active Directory** aus.
 
-5. Wählen Sie auf der Seite **Anmelden** die Option **Azure Active Directory B2C** aus.
+5. Wählen Sie auf der Seite **Azure Active Directory** die Option **Erstellen** aus.
 
-6. Geben Sie auf der Seite **Autorisierung erstellen** die folgenden Einstellungen ein, und wählen Sie **Erstellen** aus:
+6. Legen Sie auf der Seite **Verzeichnis erstellen** die folgenden Einstellungen fest, und wählen Sie **Erstellen** aus:
 
-Registerkarte "Einfach":
-    -   Wählen Sie unter „Mandantentyp“ die Option **Azure Active Directory** aus.
+Registerkarte „Grundeinstellungen“:
+    -   Mandantentyp auswählen: Wählen Sie **Azure Active Directory** aus.
 
 Registerkarte „Konfiguration“
-    -   Organisation: Contoso
+    -   Organisationsname: **Contoso**
 
-    -   Initial do Standard name: Any valid, unique do Standard name.
+    -   Anfänglicher Domänenname: Jeder gültige, eindeutige Domänenname.
 
-    -   Land oder Region: USA
+    -   Land oder Region: **USA**
 
-7. Öffnen Sie **Nach der Erstellung Azure Active Directory**.
+7. Öffnen Sie nach der Erstellung **Azure Active Directory**.
 
-8. Wählen Sie auf der Seite Übersicht die Option Mandanten verwalten aus.
+8. Wählen Sie auf der Seite „Übersicht“ die Option **Mandanten verwalten** aus.
 
-9. Setzen Sie ein Einchecken Ihres neu erstellten Verzeichnisses ein.
+9. Setzen Sie ein Häkchen vor Ihr neu erstelltes Verzeichnis.
 
-10. Wählen Sie im oberen Seitenbereich die Option **Hinzufügen** aus.
+10. Wählen Sie obenauf der Seite **Wechseln** aus.
 
-    >Beachten Sie, dass es einige Minuten dauern kann, bis alles angezeigt wird.
+    >**Hinweis**: Es einige Minuten dauern kann, bis alles korrekt angezeigt wird.
 
-11. Wählen Sie auf der Seite **Übersicht** die Option **Benutzer** aus.
+11. Wählen Sie auf der Seite **Contoso – Übersicht** die Option **Benutzer** aus.
 
 12. Beachten Sie, dass Sie nur über einen einzelnen ExternalAzureAD-Benutzer in diesem neuen Mandanten verfügen.
 
-### Aufgabe 2: Erstellen und Konfigurieren des Azure AD-Benutzers zum Verwalten dieses Verzeichnisses
+### Aufgabe 2: Erstellen und Konfigurieren des Azure AD-Benutzers zum Verwalten dieses Verzeichnisses
 
-1. Navigieren Sie vom Laborcomputer in der Azure-Portal zurück zur **Seite "Contoso – Übersicht"**.
+1. Navigieren Sie auf dem Lab-Computer im Azure-Portal zurück zur Seite **Contoso – Übersicht**.
 
-2. Wählen Sie auf der **Seite "Contoso – Übersicht**" unter "**Benutzer** verwalten**" in der linken Navigationsleiste **aus.
+2. Wählen Sie auf der Seite **Contoso – Übersicht** die Option **Benutzer** unter **Verwalten** im linken Navigationsbereich aus.
 
-3. Klicken Sie auf dem Blatt Benutzer  Alle Benutzer auf den Eintrag, der Ihr Benutzerkonto darstellt.
+3. Wählen Sie auf der Seite **Benutzer – Alle Benutzer** den Eintrag aus, der Ihr Benutzerkonto darstellt.
 
-4. Wählen Sie auf der Seite **Profil bearbeiten** die Option **Konto löschen** aus.
+4. Wählen Sie auf der Seite **Profil** die Option **Bearbeiten** aus.
 
-5. Wählen Sie im **Abschnitt Einstellungen** in der **Dropdownliste "Verwendungsort**" den **Eintrag USA** aus, und wählen Sie "Speichern"** aus**.
+5. Wählen Sie im Abschnitt **Einstellungen** in der Dropdownliste **Nutzungsspeicherort** den Eintrag **USA** aus, und wählen Sie **Speichern** aus.
 
 #### Erstellen des neuen Administrators
 
-6. Stellen Sie auf dem Blatt Neuer Benutzer sicher, dass die Option Benutzer erstellen ausgewählt ist, und geben Sie die folgenden Einstellungen an:
+6. Vergewissern Sie sich, dass auf der Seite **Neuer Benutzer** die Option **Benutzer erstellen** aktiviert ist, geben Sie die folgenden Einstellungen an, und wählen Sie **Erstellen** aus:
 
-    - Benutzername: **john.doe *@your Azure AD-Mandant Standard Name* ** wobei ***Ihr Azure AD-Mandant die Standard Do Standard Name*** ist, den Sie beim Erstellen des Azure AD-Mandanten von Contoso angegeben haben.
+    - Benutzername: **john.doe *@your Domänenname des Azure AD-Mandanten* ** wobei ***der Domänenname Ihres Azure AD-Mandanten*** der Domänenname ist, den Sie beim Erstellen des Azure AD-Mandanten „Contoso“ angegeben haben.
 
     - Name: **john.doe**
 
-    - Vorname: Jane
+    - Vorname: **John**
 
-    - De Nachname.
+    - Nachname: **Doe**
     
     - Kennwort: **Kennwort automatisch generieren**
     
-    - Kennwort anzeigen: **Aktiviert** , stellen Sie sicher, dass Sie das Kennwort kopieren.
+    - Kennwort anzeigen: **Aktiviert**, kopieren Sie dann das Kennwort.
 
-    - Gruppen: **0 Gruppe ausgewählt**
+    - Gruppen: **0 Gruppen ausgewählt**
     
-    - Rolle: Globaler Administrator
+    - Rollen: **Globaler Administrator**
     
     - Anmeldung blockieren: **Nein**
     
-    - Verwendungsort: **USA**
+    - Nutzungsspeicherort: **USA**
     
     - Position: **Leer lassen**
     
     - Abteilung: **Leer lassen**
 
-    > **Hinweis**: Kopieren Sie die Werte für **Benutzername** und **Kennwort** in Editor. Sie werden sie später in diesem Lab benötigen.
+    > **Hinweis**: Kopieren Sie die Werte für **Benutzername** und **Kennwort** in den Editor. Sie werden sie später in diesem Lab benötigen.
 
 
-### Aufgabe 5: Konfigurieren des DNS-Suffix in der Contoso Active Directory-Gesamtstruktur
+### Aufgabe 5: Konfigurieren des DNS-Suffix in der Active Directory-Gesamtstruktur für Contoso
 
-In dieser Aufgabe konfigurieren Sie das DNS-Suffix der Contoso Active Directory-Gesamtstruktur so, dass sie mit dem neu überprüften benutzerdefinierten Azure AD-Vorgang übereinstimmt Standard Name.
+In dieser Aufgabe konfigurieren Sie das DNS-Suffix der Active Directory-Gesamtstruktur für Contoso so, dass sie mit dem neu überprüften benutzerdefinierten Azure AD-Domänennamen übereinstimmt.
 
-1. Überprüfen Sie auf dem Laborcomputer im Azure-Portal, dass Sie beim Azure AD-Mandanten angemeldet sind, der dem Azure-Abonnement zugeordnet ist, in dem Sie Ressourcen in den Übungen "Before Hands-On Lab" (Standardverzeichnis****) bereitgestellt haben. Wählen Sie andernfalls das **Symbol "Verzeichnis + Abonnement**" in der Symbolleiste des Azure-Portal (rechts neben dem **Cloud Shell-Symbol**) aus, um zu diesem Azure AD-Mandanten zu wechseln. 
+1. Bestätigen Sie auf dem Lab-Computer im Azure-Portal, dass Sie beim Azure AD-Mandanten angemeldet sind, der dem Azure-Abonnement zugeordnet ist, in dem Sie in den Übungen „Vor dem Praxislab“ Ressourcen (im **Standardverzeichnis**) bereitgestellt haben. Wählen Sie andernfalls das Symbol **Verzeichnis + Abonnement** in der Symbolleiste des Azure-Portal (rechts neben dem Symbol **Cloud Shell**) aus, um zu diesem Azure AD-Mandanten zu wechseln. 
 
-2. Navigieren Sie im Azure-Portal zur Übersichtsseite Ihrer VM.
+2. Navigieren Sie im Azure-Portal zur Seite der VM **DC1**.
 
-3. Stellen Sie auf der Seite " **VIRTUELLER COMPUTER DC1** " über Remotedesktop eine Verbindung mit **DC1** her. Wenn Sie zur Anmeldung aufgefordert werden, verwenden Sie den **Demousernamen** und das **Demo\@pass123-Kennwort** . 
+3. Stellen Sie auf der Seite der VM **DC1** über Remotedesktop eine Verbindung mit **DC1** her. Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie den Namen **demouser** und das Kennwort **demo\@pass123**. 
 
-4. Starten Sie in der Remotedesktopsitzung auf DC1 im fenster Server-Manager** die **Konsole "Active Directory-Domäne s and Trusts**" unter **"Tools**".****** 
+4. Starten Sie in der Remotedesktopsitzung auf **DC1** im Fenster **Server-Manager** die Konsole **Active Directory-Domänen und -Vertrauensstellungen** unter **Tools**. 
 
-5. Wählen Sie **in der Konsole Active Directory-Domäne s und Vertrauensstellungen** auf der **linken Seite Active Directory-Domäne s und Vertrauensstellungen [DC1.corp.contoso.com]** aus, und wählen Sie "Eigenschaften"** aus**.
+5. Wählen Sie in der Konsole **Active Directory-Domänen und -Vertrauensstellungen** mit der rechten Maustaste **Active Directory-Domänen und -Vertrauensstellungen [DC1.corp.contoso.com]** aus, und wählen Sie **Eigenschaften** aus.
 
-6. Geben Sie auf der **Registerkarte "UPN-Suffixe**" des **Fensters "Active Directory-Domäne" und "Trusts[DC1.corp.contoso.com]"** im Textfeld "**Alternative UPN-Suffixe**" den Namen des benutzerdefinierten Vorgangs ein Standard sie in der vorherigen Aufgabe überprüft haben, wählen Sie **"Hinzufügen"** und dann "OK **" aus**.
+6. Geben Sie auf der Registerkarte **UPN-Suffixe** des Fensters **Active Directory-Domänen und -Vertrauensstellungen [DC1.corp.contoso.com]** in das Textfeld **Alternative UPN-Suffixe** den Namen der benutzerdefinierten Domäne ein, den Sie in der vorherigen Aufgabe überprüft haben, wählen Sie **Hinzufügen** und dann **OK** aus.
 
-7. Starten Sie in der Remotedesktopsitzung auf **DC1** im **fenster Server-Manager** die **Active Directory-Benutzer und -Computer** Konsole unter **"Extras**". 
+7. Starten Sie in der Remotedesktopsitzung auf **DC1** im Fenster **Server-Manager** die Konsole **Active Directory-Benutzer und -Computer** unter **Tools**. 
 
-8. Erweitern Sie **in der **Active Directory-Benutzer und -Computer** Konsole corp.contoso.com** auf der linken Seite, und überprüfen Sie die Organisationseinheitshierarchie der Do Standard und die Gruppenmitgliedschaft der Do Standard gruppen. 
+8. Erweitern Sie in der Konsole **Active Directory-Benutzer und -Computer** links den Eintrag **corp.contoso.com**, und überprüfen Sie die Organisationseinheitshierarchie der Domäne und die Gruppenmitgliedschaft der Domänengruppen. 
 
-9.  Starten Sie in der Remotedesktopsitzung auf **DC1** Windows PowerShell ISE, und führen Sie im Skriptbereich Folgendes aus, um das UPN-Suffix aller Benutzer zu ersetzen, die Mitglieder der **Engineering-Gruppe** sind, durch den Namen der benutzerdefinierten überprüften Aufgabe Standard Name des Contoso Azure AD-Mandanten (ersetzen Sie den Platzhalter `<custom_domain_name>` durch den tatsächlichen Namen des benutzerdefinierten überprüften Do Standard Namens, den Sie dem Contoso Azure AD-Mandanten zugewiesen haben. 
+9.  Starten Sie in der Remotedesktopsitzung auf **DC1** Windows PowerShell ISE, und führen Sie im Skriptbereich Folgendes aus, um das UPN-Suffix aller Benutzer, die Mitglieder der Gruppe **Engineering** sind, durch diejenigen zu ersetzen, die mit dem benutzerdefinierten überprüften Domänennamen des Azure AD-Mandanten „Contoso“ übereinstimmen (ersetzen Sie den Platzhalter `<custom_domain_name>` durch den tatsächlichen Namen des benutzerdefinierten überprüften Domänennamens, den Sie dem Azure AD-Mandanten „Contoso“ zugewiesen haben). 
 
     ```pwsh
     $domainName = '<custom_domain_name>'
@@ -330,60 +323,60 @@ In dieser Aufgabe konfigurieren Sie das DNS-Suffix der Contoso Active Directory-
     }
     ```
 
-### Installieren Sie Microsoft Entra Connect.
+### Aufgabe 6: Installieren von Azure AD Connect
 
-In dieser Aufgabe installieren Sie Microsoft Entra Verbinden.
+In dieser Aufgabe installieren Sie Azure AD Connect
 
-1. Wählen Sie **in der Remotedesktopsitzung auf **DC1** in Server-Manager den lokalen Server** aus, und stellen Sie sicher, dass **die erweiterte IE-Sicherheitskonfiguration** deaktiviert ist. Andernfalls wählen Sie den **Link "Ein**" neben **der erweiterten Sicherheitskonfiguration** von IE aus, legen Sie die **Administratoreinstellungen** auf **"Aus"** fest, und wählen Sie "OK **" aus**.
+1. Wählen Sie in der Remotedesktopsitzung auf **DC1** im Server-Manager **Lokaler Server** aus, und vergewissern Sie sich, dass das **Verstärkte Sicherheitskonfiguration für IE** aktiviert ist. Andernfalls wählen Sie den Link **Ein** neben **Verstärkte Sicherheitskonfiguration für IE** aus, legen die **Administratoreinstellungen** auf **Aus** fest, und wählen **OK** aus.
 
-2. Öffnen Sie innerhalb der Remotedesktopsitzung auf **DC1** das **Windows PowerShell ISE-Fenster** , und führen Sie diesen Befehl aus, um den Chrome-Browser zu installieren.
+2. Öffnen Sie in der Remotedesktopsitzung auf **DC1** das Fenster **Windows PowerShell ISE**, und führen Sie diesen Befehl aus, um den Chrome-Browser zu installieren.
 
     ```pwsh
     $LocalTempDir = $env:TEMP; $ChromeInstaller = "ChromeInstaller.exe"; (new-object System.Net.WebClient).DownloadFile('http://dl.google.com/chrome/install/375.126/chrome_installer.exe', "$LocalTempDir\$ChromeInstaller"); & "$LocalTempDir\$ChromeInstaller" /silent /install; $Process2Monitor = "ChromeInstaller"; Do { $ProcessesFound = Get-Process | ?{$Process2Monitor -contains $_.Name} | Select-Object -ExpandProperty Name; If ($ProcessesFound) { "Still running: $($ProcessesFound -join ', ')" | Write-Host; Start-Sleep -Seconds 2 } else { rm "$LocalTempDir\$ChromeInstaller" -ErrorAction SilentlyContinue -Verbose } } Until (!$ProcessesFound)
     ```
 
-2. Starten Sie in der Remotedesktopsitzung auf **DC1** den Chrome-Browser, und navigieren Sie zu der Azure-Portal unter <https://portal.azure.com>.
+2. Starten Sie in der Remotedesktopsitzung auf **DC1** den Chrome-Browser, und navigieren Sie zum Azure-Portal unter <https://portal.azure.com>.
 
-3. Wenn Sie aufgefordert werden, sich anzumelden, geben Sie die Anmeldeinformationen des **Benutzerkontos "john.doe** Microsoft Entra" ein, das Sie weiter oben in dieser Übung in Editor kopiert haben.
+3. Wenn Sie aufgefordert werden, sich anzumelden, geben Sie die Anmeldeinformationen des Azure AD-Benutzerkontos **john.doe** ein, das Sie weiter oben in dieser Übung in den Editor kopiert haben.
 
-4. Geben Sie bei entsprechender Aufforderung das Kennwort für das Benutzerkonto ein. 
+4. Geben Sie bei entsprechender Aufforderung das Kennwort für das Benutzerkonto **john.doe** ein. 
   
-    > **Hinweis**: Wenn Sie die Nachricht **erhalten, wurde dieses Kennwort zu oft angezeigt. Wählen Sie etwas schwieriger zu erraten**, müssen Sie das Kennwort ändern, bis es eindeutig genug ist, um akzeptiert zu werden.
+    > **Hinweis**: Wenn Sie die Nachricht erhalten: **„Dieses Kennwort wird zu häufig verwendet. Wählen Sie ein Kennwort, das weniger leicht zu erraten ist.**“ müssen Sie das Kennwort so lange ändern, bis es eindeutig genug ist, um akzeptiert zu werden.
 
-5. Wenn Sie gefragt werden, ob Sie angemeldet bleiben möchten, wählen Sie **Nein** aus. Sie werden zum Azure-Portal umgeleitet. 
+5. Wählen Sie bei der Frage **Angemeldet bleiben?** **Nein** aus. Sie werden zur Azure-Portal-Schnittstelle weitergeleitet. 
 
-6. Wenn das **Dialogfeld "Willkommen bei Microsoft Azure** " angezeigt wird, wählen Sie **"Vielleicht später" aus**. 
+6. Wenn das Dialogfeld **Willkommen bei Microsoft Azure** angezeigt wird, wählen Sie **Vielleicht später** aus. 
 
-7. Suchen Sie im Azure-Portal nach **Microsoft Entra-ID**.
+7. Wählen Sie Azure-Portal im linken Navigationsbereich des Portals **Azure Active Directory** aus, um zur Seite **Contoso – Übersicht** zu navigieren.
 
-8. Wählen Sie in den Suchergebnissen **Microsoft Entra ID** aus.
+8. Wählen Sie auf der Seite **Contoso – Übersicht** die Option **Azure AD Connect** unter **Verwalten** auf der linken Seite aus.
 
-9.  Wählen Sie auf der **Seite "Microsoft Entra Verbinden**" den **Link "Microsoft Entra Verbinden** herunterladen" aus.  Wählen Sie **dann im Menü Verbinden Synchronisieren** aus.
+9.  Wählen Sie auf der Seite **Azure AD Connect** den Link **Azure AD Connect herunterladen** aus.  Wählen Sie dann im Menü **Connect-Synchronisierung** aus.
 
-10. Wählen Sie auf der Downloadseite **Microsoft Azure Active Directory Connect** die Option **Herunterladen** aus.
+10. Wählen Sie auf der Webseite der Microsoft Downloads-Site **Microsoft Azure Active Directory Connect** die Option **Herunterladen** aus.
 
-11. Wenn Sie gefragt werden, ob das Installationsprogramm **AzureADConnect.msi** ausgeführt oder gespeichert werden soll, wählen Sie **Ausführen** aus. Dadurch wird die Datei heruntergeladen und der **Microsoft Azure Active Directory-Verbinden-Assistent** automatisch gestartet. 
+11. Wenn Sie gefragt werden, ob **AzureADConnect.msi** ausgeführt oder gespeichert werden soll, wählen Sie **Ausführen** aus. Dadurch wird die Datei heruntergeladen und der Assistent **Microsoft Azure Active Directory Connect** automatisch gestartet. 
 
-12. Aktivieren Sie auf der Seite Willkommen bei Azure AD Connect des Assistenten für Microsoft Azure Active Directory Connect das Kontrollkästchen Ich akzeptiere die Lizenzbedingungen und den Datenschutzhinweis., und wählen Sie anschließend Weiter aus.
+12. Aktivieren Sie auf der Seite **Willkommen bei Azure AD Connect** das Kontrollkästchen **Ich akzeptiere die Lizenzbedingungen und den Datenschutzhinweis**, und wählen Sie anschließend **Weiter** aus.
 
-13. Wählen Sie auf der **Seite "Express Einstellungen**" die **Schaltfläche "Anpassen**" aus.
+13. Wählen Sie auf der Seite **Express-Einstellungen** die Schaltfläche **Anpassen** aus.
 
-14. Lassen Sie auf der Seite **Erforderliche Komponenten installieren** alle optionalen Konfigurationsoptionen deaktiviert, und wählen Sie **Installieren** aus.
+14. Belassen Sie auf der Seite **Erforderliche Komponenten installieren** alle optionalen Konfigurationsoptionen deaktiviert, und wählen Sie **Installieren** aus.
 
-15. Wählen Sie auf der Seite **Benutzeranmeldung** die Schaltfläche **Passthrough-Authentifizierung** und dann **Einmaliges Anmelden aktivieren** und **Weiter**.
+15. Wählen Sie auf der Seite **Benutzeranmeldung** die Option **Passthrough-Authentifizierung** aus, aktivieren Sie die Kontrollkästchen **Einmaliges Anmelden aktivieren**, und wählen Sie **Weiter** aus.
 
-16. Melden Sie sich auf der Verbinden auf der **Azure AD-Seite** mit den Anmeldeinformationen des **John.doe-Kontos** an, und wählen Sie "Weiter"** aus**.
+16. Melden Sie sich auf der Seite **Mit Azure AD verbinden** mit den Anmeldeinformationen des Kontos **john.doe** an, und wählen Sie **Weiter** aus.
 
-17. Stellen Sie auf der **Seite Verbinden Ihrer Verzeichnisse** sicher, dass der **eintrag corp.contoso.com** in der **Dropdownliste "GESAMTSTRUKTUR**" angezeigt wird, und wählen Sie "Verzeichnis** hinzufügen" aus**. **Stellen Sie im AD-Gesamtstrukturkonto** sicher, dass die **Option "Neues AD-Konto** erstellen" ausgewählt ist, geben **Sie im **Textfeld "ENTERPRISE ADMIN USERNAME"** CORP.CONTOSO.COM\\Demouser** ein, geben Sie im **Textfeld "KENNWORT**" den Befehl **"Demo\@pass123**" ein, und wählen Sie "OK **" aus**.
+17. Stellen Sie auf der Seite **Verzeichnisse verbinden** sicher, dass der Eintrag **corp.contoso.com** in der Dropdownliste **GESAMTSTRUKTUR** angezeigt wird, und wählen Sie **Verzeichnis hinzufügen** aus. Vergewissern Sie sich, dass im **AD-Gesamtstrukturkonto** die Option **AD-Gesamtstrukturkonto** ausgewählt ist, geben Sie in das Textfeld **BENUTZERNAME DES UNTERNEHMENSADMINISTRATORS** den Namen **CORP.CONTOSO.COM\\demouser**, in das Textfeld **KENNWORT** den Wert **demo\@pass123**, und wählen Sie **OK** aus.
 
 
-18. Wählen Sie auf der Seite **Verzeichnisse verbinden** die Option **Weiter**.
+18. Zurück auf der Seite **Verzeichnisse verbinden** wählen Sie die Option **Weiter** aus.
 
-19. Stellen Sie auf der **Azure AD-Anmeldekonfigurationsseite** sicher, dass Ihr benutzerdefinierter Vorgang Standard Name als überprüftes **Active Directory-UPN-Suffix** aufgeführt ist und dass der **Eintrag "userPrincipalName**" in der **Dropdownliste "USER PRINCIPAL NAME**" angezeigt wird. Beachten Sie die Warnung, dass **Benutzer sich nicht mit lokalen Anmeldeinformationen bei Azure AD anmelden können, wenn das UPN-Suffix nicht mit einem überprüften Do Standard Namen** übereinstimmt. Aktivieren Sie das **Kontrollkästchen "Weiter", ohne alle UPN-Suffixe zu überprüfen Standard** und wählen Sie "Weiter"** aus**. 
+19. Stellen Sie auf der Seite **Azure AD-Anmeldungskonfiguration** sicher, dass Ihr benutzerdefinierter Domänenname als überprüftes **Active Directory-UPN-Suffix** aufgeführt ist und dass der Eintrag **userPrincipalName** in der Dropdownliste **BENUTZERPRINZIPALNAME** angezeigt wird. Beachten Sie die Warnung: **Users will not be able to sign into Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**. Aktivieren Sie das Kontrollkästchen **Ohne Abgleich aller UPN-Suffixe mit überprüften Domänen fortfahren**, und wählen Sie **Weiter** aus. 
 
-    >**Hinweis**: Dies wird erwartet, da einige Benutzer weiterhin mit dem **UPN-Suffix "contoso.local**" konfiguriert sind, das nicht routingfähig ist und nicht als bestätigter benutzerdefinierter Vorgang konfiguriert werden kann Standard Name eines Azure AD-Mandanten.
+    >**Hinweis**: Dies wird erwartet, da einige Benutzer weiterhin mit dem UPN-Suffix **contoso.local** konfiguriert sind. Das nicht routingfähig und kann nicht als verifizierter benutzerdefinierter Domänenname eines Azure AD-Mandanten konfiguriert werden.
 
-20. Wählen Sie auf der **Seite "Do Standard" und "OU-Filterung**" die Option **"Synchronisierung" aus Standard und "OUs**" aus, und stellen Sie dann sicher, dass nur die **OeOs "DemoAccounts**" und alle untergeordneten OUs ausgewählt sind, und wählen Sie "Weiter"** aus**. 
+20. Wählen Sie auf der Seite **Filtern von Domänen und Organisationseinheiten** die Option **Ausgewählte Domänen und Organisationseinheiten synchronisieren** aus, und stellen Sie dann sicher, dass nur die Organisationseinheiten **DemoAccounts** und alle untergeordneten Organisationseinheiten ausgewählt sind, und wählen Sie **Weiter** aus. 
 
 
 21. Übernehmen Sie auf der Seite **Eindeutige Identifizierung Ihrer Benutzer** die Standardeinstellungen, und wählen Sie **Weiter** aus. 
@@ -393,140 +386,140 @@ In dieser Aufgabe installieren Sie Microsoft Entra Verbinden.
 
 23. Übernehmen Sie auf der Seite **Optionale Features** die Standardeinstellungen, und wählen Sie **Weiter** aus.
 
-24. Wählen Sie auf der **Seite "Einmaliges Anmelden** aktivieren" im Dialogfeld "Anmeldeinformationen der **Gesamtstruktur" die Option **"Anmeldeinformationen**** für Gesamtstruktur" aus, melden Sie sich mit dem **benutzernamen** "CORP\\" und **dem Demo\@pass123-Kennwort** an, und wählen Sie "Weiter"** aus**.
+24. Wählen Sie auf der Seite **Einmaliges Anmelden aktivieren** die Option **** im Dialogfeld **Anmeldeinformationen für die Gesamtstruktur** ein, melden Sie sich mit dem Benutzernamen **CORP\\demouser** und dem Kennwort **demo\@pass123** an, und wählen Sie **Weiter** aus.
 
 
-25. Vergewissern Sie sich auf der Seite Bereit zur Konfiguration, dass das Kontrollkästchen Starten Sie den Synchronisierungsvorgang, nachdem die Konfiguration abgeschlossen wurde. aktiviert ist, und wählen Sie anschließend Installieren aus.
+25. Vergewissern Sie sich auf der Seite **Bereit zur Konfiguration**, dass das Kontrollkästchen **Starten Sie den Synchronisierungsvorgang, nachdem die Konfiguration abgeschlossen wurde** **NICHT** aktiviert ist, und wählen Sie **Installieren** aus.
 
 
    > **Hinweis**: Sie konfigurieren die Filterung auf Attributebene, bevor Sie den Synchronisierungsprozess aktivieren.
 
    > **Hinweis**: Die Installation sollte ungefähr 2 Minuten dauern.
 
-26. Wählen Sie auf der Seite **Konfiguration abgeschlossen** die Option **Beenden**.
+26. Wählen Sie auf der Seite **Konfiguration abgeschlossen** die Option **Beenden** aus.
 
 
-### Aktivieren des Active Directory-Papierkorbs
+### Aufgabe 7: Aktivieren des Active Directory-Papierkorbs
 
-In dieser Aufgabe aktivieren Sie den Papierkorb in Contoso Active Directory Standard. 
+In dieser Aufgabe aktivieren Sie den Papierkorb in der Active Directory-Domäne „Contoso“. 
 
-1. Starten **Sie in der Remotedesktopsitzung auf **DC1** im Menü "Extras" in der Server-Manager Konsole das Active Directory-Verwaltungscenter**.
-
-
-2. Wählen Sie **in der Konsole des **Active Directory-Verwaltungscenters** rechts -Corp (lokal)** auf der linken Seite aus, und wählen Sie "**Papierkorb** aktivieren" aus. Wenn eine Bestätigung angefordert wird, klicken Sie auf **OK**.
+1. Starten Sie in der Remotedesktopsitzung auf **DC1** im Menü „Tools“ in der Server-Manager-Konsole **Active Directory-Verwaltungscenter**.
 
 
-3. Wenn Sie aufgefordert werden, das AD Administrative Center zu aktualisieren, wählen Sie "OK **" aus**.
+2. Wählen Sie in der Konsole **Active Directory-Verwaltungscenter** mit der rechten Maustaste **corp (local)** auf der linken Seite aus, und wählen Sie **Enable Recycle Bin** aus. Wenn eine Bestätigung angefordert wird, wählen Sie **OK** aus.
+
+
+3. Wenn Sie aufgefordert werden, „Active Directory-Verwaltungscenter“ zu aktualisieren, wählen Sie **OK** aus.
 
    > **Hinweis**: Informationen zu den Vorteilen des Papierkorbs in Hybridszenarien finden Sie unter <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-recycle-bin>
 
-### Aufgabe 8: Konfigurieren der Azure AD-Verbinden Filterung auf Attributebene
+### Aufgabe 8: Konfigurieren der Filterung auf Attributebene in Azure AD Connect
 
-In dieser Aufgabe konfigurieren Sie die Filterung auf Azure AD-Verbinden Attributebene, die die Synchronisierung von Benutzerkonten mit denen mit dem UPN-Suffix mit dem benutzerdefinierten Do Standard Namen des Azure AD-Zielmandanten begrenzt.
+In dieser Aufgabe konfigurieren Sie die Filterung auf Attributsebene von Azure AD Connect, die die Synchronisierung von Benutzerkonten auf diejenigen beschränkt, deren UPN-Suffix mit dem benutzerdefinierten Domänennamen des Azure AD-Zielmandanten übereinstimmt.
 
-   > Die positive Filterung erfordert zwei Synchronisierungsregeln. Einer davon bestimmt den richtigen Bereich der zu synchronisierenden Objekte. Darüber hinaus benötigen Sie eine zweite Catchall-Synchronisierungsregel, die alle Objekte herausfiltert, die noch nicht als ein zu synchronisierendes Objekt identifiziert wurden.
+   > **Hinweis**: Für die positive Filterung sind mindestens zwei Synchronisierungsregeln erforderlich. Eine davon bestimmt den richtigen Bereich der zu synchronisierenden Objekte. Die zweite Catchall-Synchronisierungsregel filtert alle Objekte heraus, die noch nicht als ein zu synchronisierendes Objekt identifiziert wurden.
 
-1. Starten Sie innerhalb der Remotedesktopsitzung auf **DC1** den Synchronisierungsregeln-Editor** unter **Azure AD Verbinden** im Menü .**
-
-
-2. Stellen Sie im Fenster "Synchronisierungsregeln-Editor" auf der **Seite "Synchronisierungsregeln** anzeigen und verwalten" sicher, dass **"Eingehend**" in der **Dropdownliste "Richtung**" angezeigt wird, und wählen Sie "Neue Regel** hinzufügen" aus**. Dadurch wird der **Assistent zum Erstellen eingehender Synchronisierungsregel** gestartet.
+1. Starten Sie in der Remotedesktopsitzung auf **DC1** den **Editor für Synchronisierungsregeln** unter **Azure AD Connect** im Menü „Start“.
 
 
-3. Geben Sie auf der **Seite "Synchronisierungsregel für eingehende Synchronisierung erstellen – Beschreibung**" die folgenden Einstellungen an, und wählen Sie "Weiter"** aus**:
+2. Stellen Sie im Fenster „Editor für Synchronisierungsregeln“ auf der Seite **View and manage your synchronization rules** sicher, dass **Eingehend** in der Dropdownliste **Richtung** angezeigt wird, und wählen Sie **Neue Regel hinzufügen** aus. Dadurch wird der Assistent **Create inbound synchronization rule** gestartet.
 
-    - Name: **Benutzerdefiniert aus AD – UPN-Filter**
 
-    - Beschreibung: Benutzerdefinierte eingehende Regel – **enthält Benutzer mit UPN, die auf die benutzerdefinierte Azure AD-Aufgabe festgelegt sind Standard**
+3. Geben Sie auf der Seite **Create inbound synchronization rule – Beschreibung** die folgenden Einstellungen an, und wählen Sie **Weiter** aus:
 
-    - Verbinden ed System: **corp.contoso.com**
+    - Name: **Benutzerdefiniert eingehend aus AD – UPN-Filter**
 
-    - Objekttyp des verbundenen Systems: Benutzer
+    - Beschreibung: **Benutzerdefinierte eingehende Regel – enthält Benutzer mit UPN, die mit der benutzerdefinierten Azure AD-Domäne übereinstimmen**
 
-    - Metaverse-Objekttyp: Person
+    - Verbundenes System: **corp.contoso.com**
 
-    - Verknüpfungstyp: Join
+    - Objekttyp des verbundenen Systems: **Benutzer**
+
+    - Metaverse-Objekttyp: **Person**
+
+    - Verknüpfungstyp: **Join**
 
     - Rangfolge: **50**
 
-    - Tag: Lassen Sie dieses Feld leer.
+    - Tag: **Leer lassen**
 
     - Kennwortsynchronisierung aktivieren: **Leer lassen**
 
     - Deaktiviert: **Leer lassen**
 
 
-4. Wählen Sie auf der **Seite "Eingehende Bereichsdefinitionsfilter** erstellen" die Option **"Gruppe** hinzufügen" aus, wählen Sie "Klausel** hinzufügen" aus, geben **Sie Folgendes an, und wählen Sie "Weiter"** aus**:
+4. Wählen Sie auf der Seite **Create inbound scoping filter** die Option **Gruppe hinzufügen** aus, wählen Sie **Klausel hinzufügen** aus, geben Sie Folgendes an, und wählen Sie **Weiter** aus:
 
-    - Zielattribut: userPrincipalName
+    - Attribut: **userPrincipalName**
 
-    - Operator: EndsWith
+    - Operator: **ENDSWITH**
 
     - Wert: **\@\<your custom domain name>**
 
 5. Wählen Sie auf der Seite **Verknüpfungsregeln** die Option **Weiter** aus.
 
-6. Wählen Sie auf der **Seite "Transformationen**" die Option **"Transformation** hinzufügen" folgendes aus, und wählen Sie "Hinzufügen"** aus**:
+6. Wählen Sie auf der Seite **Transformationen** die Option **Transformation hinzufügen** aus, geben Sie Folgendes an, und wählen Sie **Hinzufügen** aus:
 
-    - FlowType: Konstant
+    - FlowType: **Constant**
 
-    - Target-Attribut: **cloudFiltered**
+    - Zielattribut: **cloudFiltered**
 
     - Quelle: **False**
 
-7. **Wenn ein Dialogfeld "Warnung**" angezeigt wird, in dem die Meldung angezeigt wird, dass **während des nächsten Synchronisierungszyklus** ein vollständiger Import und eine vollständige Synchronisierung auf "corp.contoso.com" ausgeführt werden, wählen Sie **"OK**" aus.
+7. Wenn ein **Warnungsdialogfeld** mit der Meldung **A full import and full synchronization will be run on 'corp.contoso.com' during your next synchronization cycle** angezeigt wird, wählen Sie **OK** aus.
 
-   > **Hinweis**: Dies sollte Sie zurück zur Ansicht bringen und Ihre Synchronisierungsregelnschnittstelle verwalten, wobei die neue Regel oben in der Regelliste aufgeführt ist. 
+   > **Hinweis**: Dadurch sollten Sie zurück zur Schnittstelle zum Anzeigen und Verwalten Ihrer Synchronisierungsregeln gelangen, wobei die neue Regel oben in der Regelliste aufgeführt ist. 
 
-8. Stellen Sie wieder im **Fenster "Synchronisierungsregeln-Editor**" auf der **Seite "Synchronisierungsregeln** anzeigen und verwalten" sicher, dass **"Eingehend**" in der **Dropdownliste "Richtung**" angezeigt wird, und wählen Sie erneut "Neue Regel** hinzufügen" aus**. Dadurch wird der **Assistent zum Erstellen eingehender Synchronisierungsregel** gestartet.
+8. Zurück im Fenster **Editor für Synchronisierungsregeln** stellen Sie auf der Seite **View and manage your synchronization rules** sicher, dass **Eingehend** in der Dropdownliste **Richtung** angezeigt wird, und wählen Sie erneut **Neue Regel hinzufügen** aus. Dadurch wird der Assistent **Create inbound synchronization rule** gestartet.
 
-9. Geben Sie auf der Seite **Beschreibung** Folgendes ein, und wählen Sie anschließend **Weiter** aus:
+9. Geben Sie auf der Seite **Beschreibung** die folgenden Einstellungen an, und wählen Sie **Weiter** aus:
 
-    - Name: **Benutzerdefiniert aus AD – Catch-all-Filter**
+    - Name: **Benutzerdefiniert eingehend aus AD – Catchall-Filter**
 
-    - Beschreibung: Benutzerdefinierte eingehende Regel – **schließt alle Benutzer mit UPN aus, die nicht auf die benutzerdefinierte Azure AD-Aufgabe festgelegt sind Standard**
+    - Beschreibung: **Benutzerdefinierte eingehende Regel – schließt alle Benutzer mit UPN aus, die nicht mit der benutzerdefinierten Azure AD-Domäne übereinstimmen**
 
-    - Verbinden ed System: **corp.contoso.com**
+    - Verbundenes System: **corp.contoso.com**
 
-    - Objekttyp des verbundenen Systems: Benutzer
+    - Objekttyp des verbundenen Systems: **Benutzer**
 
-    - Metaverse-Objekttyp: Person
+    - Metaverse-Objekttyp: **Person**
 
-    - Verknüpfungstyp: Join
+    - Verknüpfungstyp: **Join**
 
     - Rangfolge: **51**
 
-    - Tag: Lassen Sie dieses Feld leer.
+    - Tag: **Leer lassen**
 
     - Kennwortsynchronisierung aktivieren: **Leer lassen**
 
     - Deaktiviert: **Leer lassen**
 
 
-10. Wählen Sie auf dem Bildschirm für den **Bereichsfilter** die Option **Weiter** aus.
+10. Wählen Sie auf der Seite **Bereichsfilter** die Option **Weiter** aus.
 
 11. Wählen Sie auf der Seite **Verknüpfungsregeln** die Option **Weiter** aus.
 
-12. Wählen Sie auf der **Seite "Transformationen**" die Option **"Transformation** hinzufügen" folgendes aus, und wählen Sie "Hinzufügen"** aus**:
+12. Wählen Sie auf der Seite **Transformationen** die Option **Transformation hinzufügen** aus, geben Sie Folgendes an, und wählen Sie **Hinzufügen** aus:
 
-    - FlowType: Konstant
+    - FlowType: **Constant**
 
-    - Target-Attribut: **cloudFiltered**
+    - Zielattribut: **cloudFiltered**
 
     - Quelle: **True**
 
-13. Wenn ein **Dialogfeld "Warnung** " angezeigt wird, in dem eine Meldung angezeigt wird, dass **während des nächsten Synchronisierungszyklus** eine vollständige Import- und vollständige Synchronisierung auf "corp.contoso.com" ausgeführt wird, wählen Sie **"OK**" aus.
+13. Wenn ein **Warnungsdialogfeld** mit der Meldung **A full import and full synchronization will be run on 'corp.contoso.com' during your next synchronization cycle** angezeigt wird, wählen Sie **OK** aus.
 
-    >**Hinweis**: Dies sollte Sie zurück zur **Ansicht bringen und Ihre Synchronisierungsregelnschnittstelle** verwalten, wobei die neuen Regeln oben in der Regelliste aufgeführt sind. 
+    >**Hinweis**: Dadurch sollten Sie zurück zur Schnittstellen **View and manage your synchronization rules** gelangen, wobei die neue Regel oben in der Regelliste aufgeführt ist. 
 
-### Aufgabe 3: Überprüfen der Verzeichnissynchronisierung
+### Aufgabe 9: Initiieren und Überprüfen der Verzeichnissynchronisierung
 
-1. Doppeltippen Sie in der Remotedesktopsitzung auf **DC1** die **Azure AD Verbinden** Desktopverknüpfung aus.
+1. Doppelklicken Sie in der Remotedesktopsitzung auf **DC1** auf die Desktopverknüpfung **Azure AD Connect**.
 
-2. 2 – Klicken Sie auf der Seite **Willkommen bei Azure AD Connect** auf **Weiter**. 
+2. Wählen Sie auf der Seite **Willkommen bei Azure AD Connect** die Option **Weiter** aus. 
 
-3. Wählen Sie auf der Seite **Weitere Aufgaben** die Option **Synchronisierungsoptionen anpassen** aus, und wählen Sie dann **Weiter** aus.
+3. Wählen Sie auf der Seite **Weitere Aufgaben** die Option **Synchronisierungsoptionen anpassen** aus, und wählen Sie **Weiter** aus.
 
-4. Melden Sie sich auf der Verbinden auf der **Azure AD-Seite** mit den Anmeldeinformationen des **John.doe-Kontos** an, und wählen Sie "Weiter"** aus**.
+4. Melden Sie sich auf der Seite **Mit Azure AD verbinden** mit den Anmeldeinformationen des Kontos **john.doe** an, und wählen Sie **Weiter** aus.
 
 5. Wählen Sie auf der Seite **Verzeichnisse verbinden** die Option **Weiter**.
 
@@ -534,80 +527,80 @@ In dieser Aufgabe konfigurieren Sie die Filterung auf Azure AD-Verbinden Attribu
 
 7. Übernehmen Sie auf der Seite **Optionale Features** die Standardeinstellungen, und wählen Sie **Weiter** aus.
 
-8. Wählen Sie auf der **Seite "Einmaliges** Anmelden aktivieren" die Option "Weiter"** aus**.
+8. Wählen Sie auf der Seite **Einmaliges Anmelden aktivieren** die Option **Weiter** aus.
 
-9. Vergewissern Sie sich auf der Seite **Bereit zur Konfiguration**, dass das Kontrollkästchen **Starten Sie den Synchronisierungsvorgang, nachdem die Konfiguration abgeschlossen wurde.** aktiviert ist, und wählen Sie anschließend **Installieren** aus.
+9. Aktivieren Sie auf der Seite **Bereit zur Konfiguration** das Kontrollkästchen **Starten Sie den Synchronisierungsvorgang, nachdem die Konfiguration abgeschlossen wurde**, und wählen Sie **Konfigurieren** aus.
 
-10. Wählen Sie auf der Seite **Konfiguration abgeschlossen** die Option **Beenden**.
+10. Wählen Sie auf der Seite **Konfiguration abgeschlossen** die Option **Beenden** aus.
 
-11. Navigieren Sie in der Remotedesktop-Sitzung für **adVM** im Fenster „Microsoft Edge“, in dem das Azure-Portal angezeigt wird, zum Blatt **Benutzer – Alle Benutzer** des Azure AD-Mandanten „Adatum-Lab“.
+11. Navigieren Sie in der Remotedesktop-Sitzung auf **DC1** im Edge-Browserfenster mit dem Azure-Portal, zur Seite **Benutzer – Alle Benutzer** des Azure AD-Mandanten „Contoso“.
 
-12. Beachten Sie auf der **Seite "Benutzer – Alle Benutzer**", dass die Liste der Benutzerobjekte alle Benutzerkonten mit dem UPN-Suffix enthält, das dem benutzerdefinierten Do entspricht Standard Name des Azure AD-Mandanten. Möglicherweise müssen Sie die Seite aktualisieren oder einige Minuten warten, um die Änderung anzuzeigen.
+12. Beachten Sie auf der Seite **Benutzer – Alle Benutzer**, dass die Liste der Benutzerobjekte alle Benutzerkonten mit dem UPN-Suffix enthält, das dem benutzerdefinierten Domänennamen des Azure AD-Mandanten entspricht. Möglicherweise müssen Sie die Seite aktualisieren oder einige Minuten warten, bis die Änderung angezeigt wird.
 
-13. Navigieren Sie im Azure-Portal zur **Seite "Gruppen – Alle Gruppen**" des Azure AD-Mandanten von Contoso, und beachten Sie, dass alle corp.contoso.com Standard Gruppen ebenfalls synchronisiert wurden. 
+13. Navigieren Sie im Azure-Portal zur Seite **Gruppen – Alle Gruppen** des Azure AD-Mandanten „Contoso“, und beachten Sie, dass alle corp.contoso.com-Domänengruppen ebenfalls synchronisiert wurden. 
 
-14. Navigieren Sie im Azure-Portal zur **Seite "Contoso - Azure AD Verbinden**", und wählen Sie **auf der linken Seite azure AD Verbinden** aus. Vergewissern Sie sich, dass die folgenden Einstellungen aktiv sind: 
+14. Navigieren Sie im Azure-Portal zur Seite **Contoso – Azure AD Connect**, und wählen Sie auf der linken Seite **Azure AD Connect** aus. Vergewissern Sie sich, dass die folgenden Einstellungen festgelegt sind: 
 
-    - Azure AD Verbinden Synchronisierungsstatus: **Aktiviert** 
+    - Azure AD Connect Sync Status: **Aktiviert** 
   
-    - Letzte Synchronisierung: **Dies sollte ein Zeitstempel einer Art sein**. 
+    - Letzte Synchronisierung: **Dies sollte ein Zeitstempel**. 
   
     - Kennworthashsynchronisierung: **Deaktiviert** 
   
     - Partnerverbund: **Deaktiviert**
    
-    - Nahtloses Einmaliges Anmelden: **Für 1 aktiviert Standard** 
+    - Nahtloses einmaliges Anmelden: **Für 1 Domäne aktiviert** 
   
-    - Agent für Pass-Through-Authentifizierung
+    - Passthrough-Authentifizierung: **Mit 1 Agent aktiviert**
 
-   > **Hinweis**: In einer Produktionsumgebung würden Sie zusätzliche Agents für Redundanz installieren. Weitere Informationen finden Sie unter <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta-quick-start>.
+   > **Hinweis**: In einer Produktionsumgebung würden Sie aus Redundanzgründen zusätzliche Agents installieren. Weitere Informationen finden Sie unter <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta-quick-start>.
 
-### Konfigurieren der Hybrid-Azure AD-Einbindung
+### Aufgabe 10: Konfigurieren Hybrid-Azure AD-Einbindung
 
-In dieser Aufgabe konfigurieren Sie Azure AD Verbinden Gerätesynchronisierungsoptionen.
+In dieser Aufgabe konfigurieren Sie Synchronisierungsoptionen für Azure AD Connect-Geräte.
 
-1. Doppeltippen Sie in der Remotedesktopsitzung auf **DC1** die **Azure AD Verbinden** Desktopverknüpfung aus.
+1. Doppelklicken Sie in der Remotedesktopsitzung auf **DC1** auf die Desktopverknüpfung **Azure AD Connect**.
 
-2. 2 – Klicken Sie auf der Seite **Willkommen bei Azure AD Connect** auf **Weiter**. 
+2. Wählen Sie auf der Seite **Willkommen bei Azure AD Connect** die Option **Weiter** aus. 
 
 3. Wählen Sie auf der Seite **Zusätzliche Aufgaben** die Option **Geräteoptionen konfigurieren** und dann **Weiter** aus.
 
-4. Überprüfen Sie auf der Seite Übersicht im Fenster Microsoft Azure Active Directory Connect die Information zu Hybrid-Azure AD-Einbindung und Geräterückschreiben, und wählen Sie Weiter aus.
+4. Überprüfen Sie auf der Seite **Übersicht** die Information zu **Hybrid-Azure AD-Einbindung** und **Geräterückschreiben**, und wählen Sie **Weiter** aus.
 
-5. Melden Sie sich auf der Verbinden auf der **Azure AD-Seite** mit den Anmeldeinformationen des **John.doe-Kontos** an, und wählen Sie "Weiter"** aus**.
+5. Melden Sie sich auf der Seite **Mit Azure AD verbinden** mit den Anmeldeinformationen des Kontos **john.doe** an, und wählen Sie **Weiter** aus.
 
-6. Wählen Sie auf der Seite **Geräteoptionen** die Option **Hybrid-Azure AD-Einbindung konfigurieren** und dann **Weiter** aus. 
+6. Vergewissern Sie sich, dass auf der Seite **Geräteoptionen** die Option **Hybrid-Azure AD-Einbindung konfigurieren** aktiviert ist, und wählen Sie **Weiter** aus. 
 
-7. Wählen Sie auf der **Seite "Gerätebetriebssystem**" die **Kontrollkästchen "Windows 10" oder "Höher" aus Standard-verbundenen Geräten** und **aktivierte Windows-Abwärtsstufen Standard Kontrollkästchen für verbundene Geräte**, und wählen Sie "Weiter"** aus**. 
+7. Aktivieren Sie auf der Seite **Gerätebetriebssysteme** die Kontrollkästchen **In die Domäne eingebundene Geräte mit Windows 10 oder höher** und **Supported Windows down-level domain-joined devices**, und wählen Sie **Weiter** aus. 
 
-   > **Hinweis**: Windows-Geräte werden nur unterstützt, wenn Sie nahtlosen SSO für verwaltete Aufgaben verwenden Standard oder einen Verbunddienst wie AD FS für Verbund do Standard s.
+   > **Hinweis**: Kompatible Windows-Geräte werden nur unterstützt, wenn Sie nahtloses SSO für verwaltete Domänen oder einen Partnerverbunddienst wie AD FS für Verbunddomänen Verbund verwenden.
 
-8. Aktivieren Sie auf der SCP-Konfigurationsseite** das **Feld corp.contoso.com** Active Directory-Gesamtstruktur, aktivieren Sie den **Azure Active Directory-Eintrag** in der Dropdownliste des **Authentifizierungsdiensts**, und wählen Sie "Hinzufügen"** aus**.**
+8. Aktivieren Sie auf der Seite **SCP-Konfiguration** das Active Directory-Gesamtstruktur-Kontrollkästchen **corp.contoso.com**, wählen Sie den Eintrag **Azure Active Directory** in der Dropdownliste **Authentifizierungsdienst** aus, und wählen Sie **Hinzufügen** aus.
 
-9. Wenn Sie zur Eingabe von Unternehmensadministratoranmeldeinformationen für corp.contoso.com aufgefordert werden, melden Sie sich im Dialogfeld Windows-Sicherheit** mit dem\\** Unternamen corp demouser** und **dem Demo\@pass123-Kennwort** **an.
+9. Wenn Sie im Dialogfeld **Windows-Sicherheit** zur Eingabe von Anmeldeinformationen für den Unternehmensadministrator für corp.contoso.com aufgefordert werden, melden Sie mit dem Benutzernamen **CORP\\demouser** und dem Kennwort **demo\@pass123** an.
 
-10. Klicken Sie auf der Seite **Konfigurationstyp auswählen** auf **Weiter**.
+10. Zurück auf der Seite **SCP-Konfiguration** wählen Sie die Option **Weiter** aus.
 
 11. Wählen Sie auf der Seite **Bereit für Konfiguration** die Option **Konfigurieren**.
 
-12. Überprüfen Sie auf der **Seite "Konfiguration abgeschlossen**", ob die Aufgabe erfolgreich abgeschlossen wurde, und wählen Sie "Beenden" aus****.
+12. Überprüfen Sie auf der Seite **Konfiguration abgeschlossen**, ob die Aufgabe erfolgreich abgeschlossen wurde, und wählen Sie **Beenden** aus.
 
 
-### Aufgabe 11: Durchführen der Hybrid-Azure AD-Verknüpfung
+### Aufgabe 11: Durchführen der Hybrid-Azure AD-Einbindung
 
-1. Überprüfen Sie auf dem Laborcomputer im Azure-Portal, dass Sie beim Azure AD-Mandanten angemeldet sind, der dem Azure-Abonnement zugeordnet ist, in dem Sie Ressourcen in den Übungen "Before Hands-On Lab" (Standardverzeichnis****) bereitgestellt haben. Wählen Sie andernfalls das **Symbol "Verzeichnis + Abonnement**" in der Symbolleiste des Azure-Portal (rechts neben dem **Cloud Shell-Symbol**) aus, um zu diesem Azure AD-Mandanten zu wechseln. 
+1. Bestätigen Sie auf dem Lab-Computer im Azure-Portal, dass Sie beim Azure AD-Mandanten angemeldet sind, der dem Azure-Abonnement zugeordnet ist, in dem Sie in den Übungen „Vor dem Praxislab“ Ressourcen (im **Standardverzeichnis**) bereitgestellt haben. Wählen Sie andernfalls das Symbol **Verzeichnis + Abonnement** in der Symbolleiste des Azure-Portal (rechts neben dem Symbol **Cloud Shell**) aus, um zu diesem Azure AD-Mandanten zu wechseln. 
 
-2. Navigieren Sie im Azure-Portal zur Übersichtsseite Ihrer VM.
+2. Navigieren Sie im Azure-Portal zur Seite der VM **APP1**.
 
-3. Stellen Sie auf der **Seite "APP1** virtual machine" eine Verbindung mit APP1** über Remotedesktop her**. Wenn Sie zur Anmeldung aufgefordert werden, verwenden Sie den **Benutzernamen AGAyers\@<custom_doStandard_name>** mit dem ****demo@pass123Kennwort (wobei **<custom_doStandard_name>** Platzhalter den benutzerdefinierten DNS-Vorgang darstellt Standard Name, den Sie dem Azure AD-Mandanten von Contoso zuvor in dieser Übung zugewiesen haben.
+3. Stellen Sie auf der Seite der VM **APP1** über Remotedesktop eine Verbindung mit **APP1** her. Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie den Benutzernamen **AGAyers\@<benutzerdefinierter_Domänenname>** mit dem Kennwort **demo@pass123** (wobei der Platzhalter **<benutzerdefinierter_Domänenname>** den benutzerdefinierten DNS-Domänennamen darstellt, den Sie früher in dieser Übung dem Azure AD-Mandanten „Contoso“ zugewiesen haben.
 
-4. Starten Sie in der Remotedesktopsitzung auf **APP1** im **Server-Manager-Fenster** den Taskplaner** unter **"Extras"**.** 
-
-
-5. Erweitern Sie in der Konsolenstruktur der Aufgabenplanung AufgabenplanungsbibliothekMicrosoftWindows. Aktivieren Sie dann die **Aufgabe "Automatic-Device-Join** ". 
+4. Starten Sie in der Remotedesktopsitzung auf **APP1** im **Server-Manager-Fenster** die **Aufgabenplanung** unter **Tools**. 
 
 
-6. Wechseln Sie zur Remotedesktopsitzung zu **DC1**, und starten Sie im Konsolenbereich des Windows PowerShell ISE-Fensters Azure AD Verbinden Deltasynchronisierung, indem Sie Folgendes ausführen:
+5. Navigieren Sie in der Konsole **Aufgabenplanung** zu **Aufgabenplanungsbibliothek** > **Microsoft** > **Windows** > **Workplace Join**. Aktivieren Sie dann die Ausführung der Aufgabe **Automatic-Device-Join**. 
+
+
+6. Wechseln Sie zur Remotedesktopsitzung auf **DC1**, und starten Sie im Konsolenbereich des Fensters „Windows PowerShell ISE“ die Deltasynchronisierung für Azure AD Connect, indem Sie Folgendes ausführen:
 
    ```pwsh
    Import-Module -Name 'C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1'
@@ -615,9 +608,9 @@ In dieser Aufgabe konfigurieren Sie Azure AD Verbinden Gerätesynchronisierungso
    Start-ADSyncSyncCycle -PolicyType Delta
    ```
 
-7. Wechseln Sie zurück zur Remotedesktopsitzung zu **APP1** , und starten Sie eine **Eingabeaufforderung**.
+7. Wechseln Sie zurück zur Remotedesktopsitzung auf **APP1**, und starten Sie eine **Eingabeaufforderung**.
 
-8. Überprüfen Sie im Eingabeaufforderungsfenster den Azure AD-Registrierungsstatus von APP1, indem Sie Folgendes ausführen: 
+8. Überprüfen Sie im Eingabeaufforderungsfenster den Azure AD-Registrierungsstatus von APP1, indem Sie Folgendes ausführen: 
 
    ```
    dsregcmd /status
@@ -677,8 +670,8 @@ In dieser Aufgabe konfigurieren Sie Azure AD Verbinden Gerätesynchronisierungso
          PreReqResult : WillNotProvision
 
    ```
-11. Wechseln Sie zurück zur Remotedesktopsitzung zu **DC1**, im Edge-Browserfenster, in dem die Azure-Portal angezeigt wird, navigieren Sie zur **Seite "Geräte – Alle Geräte**" des Azure AD-Mandanten von Contoso, und stellen Sie sicher, dass ein Eintrag vorhanden ist, der den APP1-Server darstellt, wobei der **Verknüpfungstyp** auf "**Hybrid azure AD"** festgelegt ist.
+11. Wechseln Sie zurück zur Remotedesktopsitzung auf **DC1**, navigieren Sie im Edge-Browserfenster mit dem Azure-Portal zur Seite **Geräte – Alle Geräte** des Azure AD-Mandanten „Contoso“, und bestätigen Sie, dass ein Eintrag vorhanden ist, der den APP1-Server darstellt, wobei der **Verknüpfungstyp** auf **In Hybrid-Azure AD eingebunden** festgelegt ist.
 
-   > **Hinweis**: Möglicherweise müssen Sie warten, bis der Azure AD-Registrierungsstatus richtig gemeldet wird und das Azure AD-Objekt im Azure-Portal angezeigt wird.
+   > **Hinweis**: Möglicherweise müssen Sie warten, bis der Azure AD-Registrierungsstatus richtig gemeldet wird und das Azure AD-Objekt im Azure-Portal angezeigt wird.
 
 

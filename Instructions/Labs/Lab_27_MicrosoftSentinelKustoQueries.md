@@ -1,87 +1,80 @@
 ---
 lab:
-  title: 27 – Microsoft Sentinel Kusto Abfragen für Microsoft Entra-Datenquellen
+  title: '27: Erkunden von Microsoft Sentinel-Kusto-Abfragen für Azure AD-Datenquellen'
   learning path: '04'
   module: Module 04 - Plan and Implement and Identity Governance Strategy
 ---
 
-# Übung 27 – Microsoft Sentinel Kusto Abfragen für Microsoft Entra-Datenquellen
+# Lab 27: Erkunden von Microsoft Sentinel-Kusto-Abfragen für Azure AD-Datenquellen
 
-**Hinweis** : Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen finden Sie in Lab 00.
+**Hinweis**: Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen dazu finden Sie in Lab 00.
 
 ## Labszenario
 
-Microsoft Sentinel ist eine skalierbare, cloudnative SIEM- und SOAR-Lösung.  Durch das Verbinden von Datenquellen aus Microsoft- und Sicherheitslösungen von Drittanbietern haben Sie die Möglichkeit, Sicherheitsvorgänge auszuführen.  In dieser Übung erstellen Sie einen Microsoft Sentinel-Arbeitsbereich mit Datenconnectors zu Azure AD zum Ausführen von Suchabfragen mithilfe von Kusto-Abfragesprache (KQL). 
+Microsoft Sentinel ist eine skalierbare, cloudnative SIEM- und SOAR-Lösung von Microsoft.  Durch das Verbinden von Datenquellen aus Microsoft- und Drittanbieter-Sicherheitslösungen haben Sie die Möglichkeit, Aufgaben für Security Operations auszuführen.  In dieser Übung erstellen Sie einen Microsoft Sentinel-Arbeitsbereich mit Datenconnectors zu Azure AD für die Ausführung von Hunting-Abfragen mithilfe der Kusto-Abfragesprache (KQL). 
 
 #### Geschätzte Dauer: 30 Minuten
 
-### Übung 1 – Konfigurieren von Microsoft Sentinel für Kusto-Abfragen
+### Übung 1: Konfigurieren von Microsoft Sentinel für Kusto-Abfragen
 
-#### Verwalten eines Microsoft Sentinel-Arbeitsbereichs
+#### Aufgabe 1: Erstellen eines Microsoft Sentinel-Arbeitsbereichs
 
-1. Melden Sie sich als globaler Administrator an.
+1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als globaler Administrator an.
 
-1. Suchen Sie nach **Microsoft Sentinel**, und wählen Sie diese Lösung aus. 
+1. Suchen Sie nach **Microsoft Sentinel**, und wählen Sie diese Option aus. 
 
-1. Wählen Sie links oben **Ressource erstellen** aus.
+1. Wählen Sie **Microsoft Sentinel erstellen** aus.
 
-1. Wählen Sie auf dem Bildschirm „Add Microsoft Sentinel to a workspace“ (Microsoft Sentinel einem Arbeitsbereich hinzufügen) die Option Neuen Arbeitsbereich erstellen.
+1. Wählen Sie auf der Kachel **Add Microsoft Sentinel to a workspace** die Option **Neuen Arbeitsbereich erstellen** aus.
 
-1. Wählen Sie unter **Ressourcengruppe** die Option **Neu erstellen** aus, und geben Sie  ein.
+1. Wählen Sie unter **Ressourcengruppe** die Option **Neu erstellen** aus, und geben Sie **Sentinel-RG** ein.
 
-1. Geben Sie dem Arbeitsbereich den Namen .  Beispiel : SentinelLogAnalytics.
+1. Geben Sie dem Arbeitsbereich den Namen.  Beispiel: SentinelLogAnalytics.
 
 1. Wählen Sie eine Region in Ihrer Nähe aus.
 
-1. Wählen Sie **Überprüfen + erstellen** und danach **Erstellen** aus.
+1. Wählen Sie **Überprüfen + erstellen** und danach **Erstellen** aus.
 
-1. Nachdem die Bereitstellung des Log Analytics-Arbeitsbereichs abgeschlossen ist, wählen Sie die **Schaltfläche "Aktualisieren"** aus. Wählen Sie Ihren Arbeitsbereich und dann **Hinzufügen** aus.  Dadurch wird der Arbeitsbereich zu Microsoft Sentinel hinzugefügt und Microsoft Sentinel geöffnet.
+1. Nachdem die Bereitstellung des Log Analytics-Arbeitsbereichs abgeschlossen ist, wählen Sie die Schaltfläche **Aktualisieren** aus. Wählen Sie Ihren Arbeitsbereich und dann **Hinzufügen** aus.  Dadurch wird der Arbeitsbereich zu Microsoft Sentinel hinzugefügt und Microsoft Sentinel geöffnet.
 
-1. Wenn Sie dazu aufgefordert werden, wählen Sie **"OK** " aus, um die kostenlose Testversion von Microsoft Sentinel zu aktivieren.
+1. Wenn Sie dazu aufgefordert werden, wählen Sie **OK** aus, um die kostenlose Testversion von Microsoft Sentinel zu aktivieren.
 
-#### Aufgabe 2 : Hinzufügen von Azure AD als Datenquelle
-    **Note** - As of 11/1/2023, the data source is still Azure AD (not Microsoft Entra ID)
+#### Aufgabe 2: Hinzufügen von Azure AD als Datenquelle
 
-1. Scrollen Sie im Bereich **Microsoft Sentinel** im linken Menü nach unten zu **Inhaltsverwaltung**, und wählen Sie **Content Hub** aus.
+1. Navigieren Sie in **Microsoft Sentinel** im Menü zu **Konfiguration**, und wählen Sie **Datenconnectors** aus.
 
-1. Verwenden Sie das Suchfeld, um in der Liste der Connectors nach Azure** zu suchen, Azure Active Directory** zu suchen **** und das Kontrollkästchen zu markieren.
+1. Suchen Sie in der Liste der „Datenconnectors“ nach **Azure Active Directory**, und wählen Sie sie aus.
 
-1. Rechts wird eine Vorschaukachel geöffnet.  Wählen Sie **Installieren** aus.
+1. Rechts wird eine Vorschaukachel geöffnet.  Wählen Sie **Connectorseite öffnen** aus.
 
-1. Wählen Sie nach Abschluss der Installation das **Menüelement "Datenkonnektoren** " im Menü "Konfiguration" aus.
+1. Auf der Connectorseite werden die Anweisungen und nächsten Schritte für den Datenconnector angezeigt. Vergewissern Sie sich, dass alle **Voraussetzungen** aktiviert sind (ein Häkchen ist vorhanden), um mit der **Konfiguration** fortzufahren.
 
-    **Hinweis**: Sie sollten 1 Verbinden or installiert anzeigen und microsoft Entra ID** aufgeführt sehen**.
-
-1. Wählen Sie in der Liste Datenconnectors die Option Microsoft Entra ID und dann Connector-Seite öffnen aus.
-
-1. Auf der Connectorseite werden die Anweisungen und nächsten Schritte für den Datenconnector bereitgestellt. Stellen Sie sicher, dass sich neben jedem der **Voraussetzungen** ein Häkchen befindet, um mit der **Konfiguration** fortzufahren.
-
-1. Aktivieren Sie unter **"Konfiguration**" die Kontrollkästchen für **Anmeldeprotokolle** und **Überwachungsprotokolle**. Weitere Protokollquellen sind verfügbar, befinden sich jedoch derzeit in **der Vorschau** und außerhalb des Gültigkeitsbereichs für diesen Kurs.
+1. Aktivieren Sie unter **Konfiguration** die Kontrollkästchen für **Anmeldeprotokolle** und **Überwachungsprotokolle**. Weitere Protokollquellen sind verfügbar, befinden sich jedoch derzeit in der **Vorschau** und außerhalb des Gültigkeitsbereichs für diesen Kurs.
 
 1. Wählen Sie **Änderungen übernehmen** aus. 
 
-1. Die Benachrichtigung wird bereitgestellt, dass die Änderungen erfolgreich angewendet wurden. Navigieren Sie zum **Microsoft Sentinel-Arbeitsbereich** , indem Sie oben rechts auf der Connectorseite das **X** auswählen.
+1. Es wird eine Benachrichtigung angezeigt, dass die Änderungen erfolgreich angewendet wurden. Navigieren Sie zum Arbeitsbereich **Microsoft Sentinel**, indem Sie rechts oben auf der Connectorseite das **X** auswählen.
 
-1. Wählen Sie **"Aktualisieren"** in **Microsoft Sentinel | Kachel "Datenkonnektoren**" und die Zahl 1 werden in der **anzahl Verbinden angezeigt**.
+1. Wählen Sie **Aktualisieren** in der Kachel **Microsoft Sentinel | Datenconnectors** aus, und die Zahl 1 wird in der Anzahl für **Verbunden** angezeigt.
 
-   **Hinweis** : Der Azure AD-Datenconnector kann einige Minuten dauern, um die aktive Anzahl anzuzeigen. 
+   **Hinweis**: Es kann einige Minuten dauern, bis der Azure AD-Datenconnector die aktive Anzahl anzeigt. 
 
-#### Aufgabe 3 – Ausführen der Kusto-Abfrage für Benutzeraktivitäten
+#### Aufgabe 3: Ausführen der Kusto-Abfrage für Benutzeraktivitäten
 
-1. Navigieren Sie in **Microsoft Sentinel** unter der **Menüüberschrift "Allgemein**" zu **"Protokolle**".
+1. Navigieren Sie in **Microsoft Sentinel** unter der Menüüberschrift **Allgemein** zu **Protokolle**.
 
-1. Schließen Sie bei Bedarf das Fenster **Willkommen bei Log Analytics!** .
+1. Schließen Sie bei Bedarf das Fenster **Willkommen bei Log Analytics!**.
 
-1. Ein Fenster wird mit Beispielabfragen geöffnet, "Überwachen"** und **"Suchen nach **Benutzer-IDs**" ausgewählt.
+1. Es wird ein Fenster mit Beispielabfragen geöffnet. Wählen Sie **Audit** aus, und scrollen Sie zu **Benutzer-IDs**.
 
-1. Klicken Sie auf **Run** (Ausführen). 
+1. Wählen Sie **Ausführen** aus. 
 
-1. Dadurch wird eine Liste der Benutzer-IDs auf der Microsoft Entra-ID bereitgestellt.  Da wir gerade den Arbeitsbereich erstellt haben, werden möglicherweise keine Ergebnisse angezeigt.  Beachten Sie das Format der Abfrage.
+1. Dadurch wird eine Liste der Benutzer-IDs in Azure AD bereitgestellt.  Da wir den Arbeitsbereich gerade erst erstellt haben, werden möglicherweise keine Ergebnisse angezeigt.  Beachten Sie das Format der Abfrage.
 
-1. Wählen Sie unter **"Bedrohungsverwaltung**" im Menü "Suche"** aus**. 
+1. Wählen Sie unter **Bedrohungsmanagement** im Menü **Hunting** aus. 
 
-1. Scrollen Sie nach unten, um den Anomalen Anmeldespeicherort der Abfrage **nach Benutzerkonto und Authentifizierungsanwendung** zu finden.  Diese Abfrage über die Microsoft Entra-Anmeldung berücksichtigt alle Benutzeranmeldungen für jede Microsoft Entra-Anwendung und wählt die aomale Änderung des Standortprofils für einen Benutzer innerhalb einer einzelnen Anwendung aus. Die Absicht besteht darin, nach einer Kompromittierung des Benutzerkontos zu suchen, möglicherweise über einen bestimmten Anwendungsvektor. 
+1. Scrollen Sie nach unten, und suchen Sie die Abfrage **Anomalous sign-in location by user account and authenticating application**.  Diese Abfrage für die Azure Active Directory-Anmeldung berücksichtigt alle Benutzeranmeldungen für jede Azure Active Directory-Anwendung und wählt die anomalste Änderung des Standortprofils für einen Benutzer innerhalb einer einzelnen Anwendung aus. Die Absicht besteht darin, nach einer Kompromittierung des Benutzerkontos zu suchen, möglicherweise über einen bestimmten Anwendungsvektor. 
 
-1. Wählen Sie **Ausführen** aus, um die Abfrageergebnisse anzuzeigen.
+1. Wählen Sie **Ausführen** aus, um die Abfrage auszuführen.
 
 1. Dies liefert möglicherweise keine Ergebnisse mit dem neuen Arbeitsbereich, aber Sie haben jetzt gesehen, wie Abfragen ausgeführt werden können, um Informationen zu sammeln oder potenzielle Bedrohungen zu suchen.

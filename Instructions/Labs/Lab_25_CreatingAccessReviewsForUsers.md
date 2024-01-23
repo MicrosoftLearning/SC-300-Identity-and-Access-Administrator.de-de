@@ -1,49 +1,47 @@
 ---
 lab:
-  title: 'Übung: Erstellen von Zugriffsüberprüfungen für interne und externe Benutzer*innen'
+  title: '25: Erstellen von Zugriffsüberprüfungen für interne und externe Benutzer'
   learning path: '04'
   module: Module 04 - Plan and Implement and Identity Governance Strategy
 ---
 
-# Übung: Erstellen von Zugriffsüberprüfungen für interne und externe Benutzer*innen  
+# Lab 25: Erstellen von Zugriffsüberprüfungen für interne und externe Benutzer  
 
 ## Labszenario
 
-Der privilegierte Benutzerzugriff sollte regelmäßig auf ähnliche Weise überprüft werden.Da es sich um erhöhte Zugriffszuweisungen handelt, sollte die Überprüfung dieser Aufgaben konsistent erfolgen, wie sie vom Unternehmen identifiziert werden.Nicht verwendete und unnötige privilegierte Zuordnungen sollten entfernt werden.Die automatisierte Entfernung sollte auch für Benutzer konfiguriert werden, die nicht mehr mit dem Unternehmen zusammenarbeiten oder Abteilungen innerhalb des Unternehmens geändert haben.
+Der privilegierte Benutzerzugriff sollte regelmäßig auf ähnliche Weise überprüft werden.  Da es sich um Zugriffszuweisungen mit erhöhten Rechten handelt, sollte die Überprüfung dieser Aufgaben auf einer einheitlichen, vom Unternehmen festgelegten Grundlage erfolgen.  Nicht verwendete und unnötige privilegierte Zuweisungen sollten entfernt werden.  Die automatisierte Entfernung sollte auch für Benutzer konfiguriert werden, die nicht mehr für das Unternehmen arbeiten oder Abteilungen im Unternehmen gewechselt haben.
 
 #### Geschätzte Dauer: 5 Minuten
 
-### Übung 1 – Erstellen einer internen Zugriffsüberprüfung
+### Übung 1: Erstellen einer internen Zugriffsüberprüfung
 
-#### Erstellen Sie eine neue Zugriffsüberprüfung.
+#### Aufgabe: Erstellen einer neue Zugriffsüberprüfung
 
-1. Melden Sie sich als globaler Administrator an.
+1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als globaler Administrator an.
 
-2. Zugriffsüberprüfungen können den Zugriffslebenszyklus verwalten.Suchen Sie innerhalb **der Microsoft Entra-ID** die Identitätsgovernance****, und wählen Sie **dann Access-Rezensionen** aus.
+2. Zugriffsüberprüfungen können den Zugriffslebenszyklus verwalten.  Suchen Sie in **Azure Active Directory** den Eintrag **Identity Governance** unter dem Menü **Verwalten**.  Wählen Sie in **Identity Goverance** die Option **Zugriffsüberprüfungen** aus.
 
-3. Wählen Sie **+ Neue Zugriffsüberprüfung** aus.
+3. Wählen Sie **+ Neue Zugriffsüberprüfung** aus.
 
-4. Wählen Sie im Feld **Zu überprüfende Elemente auswählen** die Option **Teams + Gruppen** aus.
+4. Wählen Sie im Feld **Wählen Sie aus, was zu überprüfen ist** die Option **Teams + Gruppen** in der Verwalten aus.
 
-5. Wählen Sie "Teams + Gruppen" aus, und wählen Sie **in der Liste die **Gruppe "Vertrieb und Marketing**" aus, und drücken Sie "**Auswählen"**.**
+5. Wählen Sie **Teams + Gruppen auswählen** und dann in der Liste die Gruppe **Vertrieb und Marketing** aus, und wählen Sie **Auswählen** aus.
 
-6. Legen Sie den **Bereich** auf **alle Benutzer** fest.
+6. Legen Sie den **Bereich** auf **Alle Benutzer** fest.
 
-7. Wählen Sie " **Weiter" aus: Rezensionen** , die im Assistenten vorwärts verschoben werden sollen.
+7. Wählen Sie die Option **Überprüfungen** aus, um im Assistenten vorwärts zu wechseln.
 
-8. Der nächste Schritt besteht darin, die Prüfer zu bestimmen.Diese Prüfer können das Mitglied selbst sein, um eine Selbstüberprüfung zu erledigen, oder den Vorgesetzten zugewiesen werden, wenn der Zugriff für eine gesamte Abteilung überprüft wird. Sie können die Aktion auch festlegen, wenn ein Bearbeiter nicht automatisch reagiert, um diesen privilegierten Zugriff vom Mitglied zu entfernen.
+8. Der nächste Schritt besteht darin, die Prüfer zu bestimmen.  Diese Prüfer können das Mitglied selbst sein, um eine Selbstüberprüfung auszuführen, oder können Vorgesetzten zugewiesen werden, wenn der Zugriff für eine gesamte Abteilung überprüft wird. Sie können auch die Aktion für den Fall festlegen, dass ein Prüfer nicht antwortet, um dem Mitglied automatisch den privilegierten Zugriff zu entziehen.
 
 9. Wählen Sie eine Prüfer- und Überprüfungsserienoption aus.  Wählen Sie dann **Einstellungen** aus.
 
-10. Mit den erweiterten Einstellungen können Sie eine Nachricht als Teil der Überprüfung ablegen.
+10. Mit den erweiterten Einstellungen können Sie eine Nachricht als Teil der Überprüfung angeben.
 
-11. Wechseln Sie zur **Registerkarte "Überprüfen + Erstellen** ", um die Zugriffsüberprüfung abzuschließen.
+11. Wählen Sie **Überprüfen und Erstellen** aus, um die Zugriffsüberprüfung abzuschließen.
 
-12. Benennen Sie den Zugriffsüberprüfungstest **** SC300.
+12. Nennen Sie die Zugriffsüberprüfung **SC300 Access Review Test**.
 
-13. Wählen Sie am unteren Rand der Seite die Option **Erstellen**.
-
-    **Hinweis** : Wenn die Zugriffsüberprüfung erstellt wird, wird die Zugriffsüberprüfungsliste mit den Rollen und Besitzern der Rezensionen aufgefüllt.
+13. Wählen Sie **Erstellen** aus. Wenn die Zugriffsüberprüfung erstellt ist, wird die Zugriffsüberprüfungsliste mit den Rollen und Besitzern der Überprüfungen ausgefüllt.
 
 14. Mitglieder, die überprüft werden, erhalten eine E-Mail, wenn die Überprüfung initiiert wird.
 

@@ -1,50 +1,50 @@
 ---
 lab:
-  title: 'Lab: Überwachen und Verwalten Ihres Sicherheitsstatus mit Identitätssicherheitsbewertung'
+  title: '28: Überwachen und Verwalten Ihres Sicherheitsstatus mit Identitätssicherheitsbewertung'
   learning path: '04'
   module: Module 04 - Plan and Implement and Identity Governance Strategy
 ---
 
-# Lab: Überwachen und Verwalten Ihres Sicherheitsstatus mit Identitätssicherheitsbewertung
+# Lab 28: Überwachen und Verwalten Ihres Sicherheitsstatus mit Identitätssicherheitsbewertung
 
 ## Labszenario
 
-Microsoft Entra Identity Protection bietet automatisierte Erkennung und Behebung identitätsbasierter Risiken und stellt Daten im Portal bereit, um potenzielle Risiken zu untersuchen. Microsoft Entra Identity Protection bietet auch eine Identitätssicherheitsbewertung, um Ihren Identitätssicherheitsstatus zu überwachen und zu verbessern.  Auf die gleiche Weise wie Microsoft 365 Defender und Microsoft Defender für Cloud bietet Identity Secure Score Verbesserungsmaßnahmen und Empfehlungen, die Ihren allgemeinen Sicherheitsstatus für Identität in Microsoft Entra ID verbessern können.  In dieser Übung wird diese Funktion untersucht. 
+Azure AD Identity Protection bietet die automatisierte Erkennung und Behebung identitätsbasierter Risiken und stellt Daten im Portal bereit, um potenzielle Risiken zu untersuchen. Azure AD Identity Protection bietet auch eine Identitätssicherheitsbewertung, um Ihren Identitätssicherheitsstatus zu überwachen und zu verbessern.  Auf die gleiche Weise wie Microsoft 365 Defender und Microsoft Defender for Cloud bietet die Identitätssicherheitsbewertung Verbesserungsmaßnahmen und Empfehlungen, die Ihren allgemeinen Identitätssicherheitsstatus in Azure Active Directory verbessern können.  In dieser Übung wird diese Funktion untersucht. 
 
 #### Geschätzte Dauer: 15 Minuten
 
-### Übung 1 – Verwenden der Identitätssicherheitsbewertung zum Überwachen und Verwalten des Identitätssicherheitsstatus
+### Übung 1: Verwenden der Identitätssicherheitsbewertung zum Überwachen und Verwalten des Identitätssicherheitsstatus
 
-#### Aufgabe 1 – Überprüfen von Sicherheitsbewertungs- und Verbesserungsmaßnahmen für Identitäten
+#### Aufgabe 1: Überprüfen von Identitätssicherheitsbewertung und Verbesserungsaktionen
 
-1. Melden Sie sich als globaler Administrator an.
+1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als globaler Administrator an.
 
-2. Öffnen sie das **Menü "Schutz** ", und wählen Sie "Identitätssicherheitsbewertung" aus **.**
+2. Suchen Sie nach **Azure AD Identity Protection**, und wählen Sie es aus.
 
-3. Auf der **Kachel "Übersicht"** finden **Sie die Identitätssicherheitsbewertung**.
+3. Auf der Kachel **Übersicht** befindet sich **Identitätssicherheitsbewertung**.
 
-4. Identitätssicherheitsbewertung.  Dadurch gelangen Sie zum Dashboard für die Identitätssicherheitsbewertung.
+4. Wählen Sie **Identitätssicherheitsbewertung** aus.  Dadurch gelangen Sie zum Dashboard „Identitätssicherheitsbewertung“.
 
 5. Scrollen Sie nach unten, um die **Verbesserungsaktionen** anzuzeigen.
 
-6. Im Gegensatz zu den Verbesserungsmaßnahmen in Microsoft Defender für Cloud und Microsoft 365 Defender sind diese Verbesserungsmaßnahmen für identitätsspezifisch.  Dies bietet eine fokussiertere Liste potenzieller Aktionen für Ihre Sicherheitsstatusverwaltung.  Alle Verbesserungsmaßnahmen, die aus dieser Liste initiiert werden, wirken sich auch auf Ihren gesamten Mandantensicherheitsstatus aus. 
+6. Im Gegensatz zu den Verbesserungsaktionen in Microsoft Defender for Cloud und Microsoft 365 Defender sind diese Verbesserungsaktionen spezifisch für Identität.  Damit erhalten Sie eine fokussiertere Liste potenzieller Aktionen für Ihre Sicherheitsstatusverwaltung.  Alle Verbesserungsaktionen, die aus dieser Liste initiiert werden, wirken sich auch auf Ihren gesamten Mandantensicherheitsstatus aus. 
 
-#### Aufgabe 2 – Ausführen einer Verbesserungsaktion
+#### Aufgabe 2: Ausführen einer Verbesserungsaktion
 
-1. Um einen Bereich des Identitätssicherheitsstatus zu verbessern, wählen Sie " **Alle Benutzer mit einer Anmelderisikorichtlinie schützen"** aus.
+1. Um einen Bereich des Identitätssicherheitsstatus zu verbessern, wählen Sie **Alle Benutzer mit einer Richtlinie zum Anmelderisiko schützen** aus.
 
-2. Scrollen Sie in der daraufhin geöffneten Kachel nach unten, und wählen Sie "Erste Schritte **" aus**.
+2. Scrollen Sie in der daraufhin geöffneten Kachel nach unten, und wählen Sie **Erste Schritte** aus.
 
-3. Eine neue Registerkarte wird für **Identitätsschutz geöffnet | Anmelderisikorichtlinie**.
+3. Eine neue Registerkarte wird für **Identity Protection | Anmelderisiko-Richtlinie** geöffnet.
 
-4. Wählen Sie **"Alle Benutzer** " unter **"** Aufgaben" aus.
+4. Wählen Sie **Alle Benutzer** unter **Zuweisungen** aus.
 
-5. Wählen Sie unter **Anmelderisiko** die Option **Mittel und darüber** aus.
+5. Wählen Sie unter **Anmelderisiko** die Option **Mittel und höher** aus.
 
-6. Klicken Sie unter **Zugriffssteuerung** - **Gewähren** auf **Mehrstufige Authentifizierung anfordern**.
+6. Wählen Sie **Zugriff zulassen** - **Multi-Faktor-Authentifizierung erfordern** unter **Steuerungen** aus.
 
-7. Aktivieren Sie die Richtlinienerzwingung** auf **"Aktiviert"** (sofern noch nicht geschehen), und wählen Sie "Speichern" aus****.**
+7. Legen Sie **Richtlinienerzwingung** auf **Aktiviert** fest (falls nicht bereits geschehen), und wählen Sie **Speichern** aus.
 
-8. Sie haben eine Anmelderisikorichtlinie erstellt, die jetzt Ihre Identitätssicherheitsbewertung erhöhen sollte.  Dies dauert bis zu 24 Stunden, bis sie sich auf Ihre Identitätssicherheitsbewertung auswirken.
+8. Sie haben eine Anmelderisiko-Richtlinie erstellt, die jetzt Ihre Identitätssicherheitsbewertung erhöhen sollte.  Es kann bis zu 24 Stunden dauern, bis sie sich auf Ihre Identitätssicherheitsbewertung auswirkt.
 
-9. Überprüfen Sie weitere Verbesserungsmaßnahmen und die Schritte zum Erstellen und Aktivieren.
+9. Sehen Sie sich weitere Verbesserungsaktionen und die Schritte, um sie zu erstellen und zu aktivieren, an.
