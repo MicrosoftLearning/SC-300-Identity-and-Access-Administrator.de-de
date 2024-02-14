@@ -9,15 +9,15 @@ lab:
 
 ## Labszenario
 
-Ihre Organisation muss den Benutzerzugriff auf seine internen Anwendungen einschränken können. Sie müssen eine Azure Active Directory-Richtlinie für bedingten Zugriff bereitstellen.
+Ihre Organisation muss den Benutzerzugriff auf seine internen Anwendungen einschränken können. Sie müssen eine Richtlinie für bedingten Zugriff von Microsoft Entra bereitstellen.
 
 **Hinweis**: Bei den Richtlinien für den bedingten Zugriff können Sie die Sicherheitsstandards deaktivieren; die wichtigsten Punkte, die Sie sich merken sollten, stammen aus der Schulung.  Weitere Informationen zu den Sicherheitsstandards finden Sie unter diesem Link: <https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/concept-fundamentals-security-defaults>
 
 #### Geschätzte Dauer: 30 Minuten
 
-### Übung 1: Festlegen einer Richtlinie für bedingten Zugriff, um den Zugriff von DebraB auf Yammer zu blockieren
+### Übung 1 – Festlegen einer Richtlinie für bedingten Zugriff, um den Zugriff von DebraB auf Sway zu blockieren
 
-#### Aufgabe 1: Bestätigen, dass DebraB Zugriff auf Yammer hat
+#### Aufgabe 1 – Bestätigen Sie, dass DebraB Zugriff auf Sway hat
 
 
 1. Öffnen Sie ein neues InPrivate-Browserfenster.
@@ -26,44 +26,44 @@ Ihre Organisation muss den Benutzerzugriff auf seine internen Anwendungen einsch
 
    | Einstellung | Wert |
    | :--- | :--- |
-   | Benutzername | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
+   | Username | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
    | Kennwort | Geben Sie das Administratorkennwort des Mandanten ein (Sie finden das Administratorkennwort des Mandanten auf der Registerkarte „Labressourcen“) |
     
-4. Wählen Sie das Symbol „Yammer“ aus, um zu überprüfen, ob Yammer ordnungsgemäß geladen wird.
+4. Klicken Sie auf das **Sway**-Symbol, um zu sehen, dass es ordnungsgemäß geladen wird.
 
 #### Aufgabe 2: Erstellen einer Richtlinie für bedingten Zugriff
 
-Der bedingte Azure Active Directory-Zugriff ist eine erweiterte Funktion von Azure AD, mit der Sie detaillierte Richtlinien angeben können, die steuern, wer auf Ihre Ressourcen zugreifen kann. Mithilfe des bedingten Zugriffs können Sie Ihre Anwendungen schützen, indem Sie den Zugriff der Benutzer auf Grundlage von Faktoren wie Gruppen, Gerätetyp, Standort und Rolle einschränken.
+Der bedingte Zugriff von Microsoft Entra ist ein erweitertes Feature von Microsoft Entra ID, mit dem Sie detaillierte Richtlinien angeben können, die steuern, wer auf Ihre Ressourcen zugreifen kann. Mithilfe des bedingten Zugriffs können Sie Ihre Anwendungen schützen, indem Sie den Zugriff der Benutzer auf Grundlage von Faktoren wie Gruppen, Gerätetyp, Standort und Rolle einschränken.
 
-1. Navigieren Sie zu [https://portal.azure.com](https://portal.azure.com), und melden Sie sich mit dem Konto eines globalen Administrators für das Verzeichnis an.
+1. Navigieren Sie zu [https://entra.microsoft.com](https://entra.microsoft.com), und melden Sie sich mit dem Konto eines globalen Administrators für das Verzeichnis an.
 
-2. Öffnen Sie das Portal-Menü, und wählen Sie  **Azure Active Directory** aus.
+2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
 
-3. Wählen Sie auf der Seite „Azure Active Directory“ unter **Verwalten** die Option **Sicherheit** aus.
+3. Wählen Sie im Menü unter **Identität** **Schutz** aus.
 
 4. Wählen Sie auf der Seite „Sicherheit“ im linken Navigationsbereich **Bedingter Zugriff** aus.
 
-5. Wählen Sie in der **Übersicht (Vorschau)** die Option **+ Neue Richtlinie erstellen** aus.
+5. Klicken Sie auf der **Übersicht (Vorschau)** auf **+ Neue Richtlinie** erstellen.
 
    ![Screenshot der Seite „Bedingter Zugriff“ mit hervorgehobener Option „Neue Richtlinie“](./media/lp2-mod1-conditional-access-new-policy.png)
 
-6. Geben Sie im Feld **Name** die Benennung **Yammer für DebraB blockieren** ein.
+6. Geben Sie im Feld **Name** **Block Sway für DebraB** ein.
 
    **Hinweis**: Anhand dieser Benennung erkennen Sie schnell die Richtlinie und deren Funktion.
 
-7. Wählen Sie unter **Zuweisungen** die Option **Benutzer- oder Workloadidentitäten** aus.
+7. Wählen Sie unter **Zuweisungen** **0 Benutzer und Gruppen ausgewählt** aus.
 
-8. Aktivieren Sie auf der Registerkarte „Einschließen“ das Kontrollkästchen **Benutzer und Gruppen**.
+8. Wählen Sie auf der Registerkarte „Einschließen“ die Option **Benutzer und Gruppen auswählen** aus und markieren Sie dann das Kontrollkästchen **Benutzer und Gruppen**.
 
 9. Wählen Sie im Bereich „Auswählen“ **DebraB** und dann **Auswählen** aus.
 
-10. Wählen Sie **Cloud-Apps oder -aktionen** aus.
+10. Wählen Sie in unter **Zielressourcen** **Keine Zielressource ausgewählt** aus.
 
-11. Vergewissern Sie sich, dass **Cloud-Apps** ausgewählt ist, und wählen Sie dann **Apps auswählen** aus.
+11. Vergewissern Sie sich, dass **Cloud-Apps** ausgewählt ist, und wählen Sie dann **Apps auswählen** aus, und wählen Sie dann im Abschnitt „Auswählen“ **Keine** aus.
 
-12. Suchen Sie im Bereich „Auswählen“ nach **Yammer**, wählen Sie **Office 365 Yammer** und dann **Auswählen** aus.
+12. Suchen Sie im Bereich „Auswählen“ nach **Sway**, wählen Sie **Sway** aus, und klicken Sie dann auf **Auswählen**.
 
-13. Wählen Sie unter **Zugriffssteuerungen** die Option **Gewähren** aus.
+13. Wählen Sie unter **Access-Steuerelemente** im Abschnitt **Erteilen** **0 Steuerelemente ausgewählt** aus.
 
 14. Wählen Sie im Bereich „Gewähren“ die Option **Zugriff blockieren** und dann **Auswählen** aus.
 
@@ -77,25 +77,25 @@ Der bedingte Azure Active Directory-Zugriff ist eine erweiterte Funktion von Azu
 
 Sie sollten Ihre Richtlinien für bedingten Zugriff testen, um sicherzustellen, dass sie erwartungsgemäß funktionieren.
 
-1. Öffnen Sie eine neue InPrivate-Browserregisterkarte, und navigieren Sie zu [https://www.yammer.com/office365](https://www.yammer.com/office365).
+1. Öffnen Sie eine neue InPrivate-Browserregisterkarte und navigieren Sie dann zu [https://sway.office.com](https://sway.office.com).
     - Melden Sie sich bei Aufforderung als DebraB an:
 
    | Einstellung | Wert |
    | :--- | :--- |
-   | Benutzername | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
+   | Username | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
    | Kennwort | Geben Sie das Administratorkennwort des Mandanten ein (Sie finden das Administratorkennwort des Mandanten auf der Registerkarte „Labressourcen“) |
      
-2. Bestätigen Sie, dass Sie nicht erfolgreich auf Microsoft Yammer zugreifen können.
+2. Stellen Sie sicher, dass Sie nicht auf Microsoft Sway zugreifen können.
 
    ![Screenshot des blockierten Zugriffs auf die Ressource aufgrund einer aktivierten Richtlinie für bedingten Zugriff](./media/lp2-mod3-test-conditional-access-policy.png)
 
 3. Wenn Sie angemeldet sind, schließen Sie die Registerkarte, warten Sie eine Minute, und wiederholen Sie dann den Vorgang.
     
-   **Hinweis**: Wenn Sie automatisch bei Yammer als DebraB angemeldet sind, müssen Sie sich manuell abmelden. Ihre Anmeldeinformationen/Ihr Zugriff wurde zwischengespeichert.  Sobald Sie sich abmelden und anmelden, sollte Ihre Yammer-Sitzung den Zugriff verweigern.
+   **Hinweis**: Wenn Sie automatisch als DebraB bei Sway angemeldet sind, müssen Sie sich manuell abmelden.  Ihre Anmeldeinformationen/Zugriff wurden zwischengespeichert.  Sobald Sie sich abmelden und sich anmelden, sollte Ihre Sway-Sitzung den Zugriff verweigern.
 
 4. Schließen Sie die Registerkarte, und kehren Sie zur Seite „Bedingter Zugriff“ zurück.
 
-5. Wählen Sie die Richtlinie **Yammer conditional access** aus.
+5. Wählen Sie die Richtlinie **Block Sway für die DebraB** aus.
 
 6. Wählen Sie unter **Richtlinie aktivieren** die Option **Aus** und dann **Speichern** aus.
 
@@ -103,9 +103,9 @@ Sie sollten Ihre Richtlinien für bedingten Zugriff testen, um sicherzustellen, 
 
 #### Aufgabe: Verwenden von „What If“-zum Testen von Richtlinien für bedingten Zugriff
 
-1. Öffnen Sie das Portal-Menü, und wählen Sie  **Azure Active Directory** aus.
+1. Öffnen Sie das Microsoft Entra Admin Center-Menü und wählen Sie dann  **Microsoft Entra ID** aus.
 
-1. Wählen Sie auf der Seite „Azure Active Directory“ unter **Verwalten** die Option **Sicherheit** aus.
+1. Wählen Sie im Menü unter **Identität** **Schutz** aus.
 
 1. Wählen Sie auf der Seite „Sicherheit“ im linken Navigationsbereich **Bedingter Zugriff** aus.
 
@@ -117,7 +117,7 @@ Sie sollten Ihre Richtlinien für bedingten Zugriff testen, um sicherzustellen, 
 
 1. Wählen Sie **DebraB** als Benutzer aus.
 
-1. Wählen Sie unter **Cloud-Apps, Aktionen oder Authentifizierungskontext** den Eintrag **Yammer** aus. 
+1. Wählen Sie unter**Cloud-Apps, Aktionen oder Authentifizierungskontext** **Sway** aus. 
 
 1. Wählen Sie **What if** aus. Am unteren Rand der Kachel wird ein Bericht für **Anzuwendende Richtlinien** und **Nicht anzuwendende Richtlinien**.
 
@@ -125,17 +125,17 @@ Auf diese Weise können Sie die Richtlinien und deren Affektivität testen, bevo
 
 ### Übung 3: Konfigurieren von Steuerelementen für Anmeldehäufigkeit mithilfe einer Richtlinie für bedingten Zugriff
 
-#### Aufgabe: Verwenden des Azure-Portals zum Konfigurieren des bedingten Zugriffs
+#### Aufgabe: Verwenden Sie das Microsoft Entra Admin Center zum Konfigurieren des bedingten Zugriffs
 
 Im Rahmen der größeren Sicherheitskonfiguration Ihres Unternehmens müssen Sie eine Richtlinie für bedingten Zugriff testen, mit der die Anmeldehäufigkeit gesteuert werden kann.
 
-1. Navigieren Sie zu [https://portal.azure.com](https://portal.azure.com), und melden Sie sich mit dem Konto eines globalen Administrators für das Verzeichnis an.
+1. Navigieren Sie zu [https://entra.microsoft.com](https://entra.microsoft.com), und melden Sie sich mit dem Konto eines globalen Administrators für das Verzeichnis an.
 
-2. Öffnen Sie das Portal-Menü, und wählen Sie  **Azure Active Directory** aus.
+2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
 
-3. Wählen Sie auf der Seite „Azure Active Directory“ unter **Verwalten** die Option **Sicherheit** aus.
+3. Wählen Sie im Menü unter **Identität** **Schutz** aus.
 
-4. Wählen Sie auf der Seite „Sicherheit“ im linken Navigationsbereich **Bedingter Zugriff** aus.
+4. Wählen Sie im Menü „Schutz“ im linken Navigationsbereich **Bedingten Zugriff** aus.
 
 5. Wählen Sie oben im Menü **+ Neue Richtlinie** und im Dropdownmenü **Neue Richtlinie erstellen** aus.
 
@@ -143,9 +143,9 @@ Im Rahmen der größeren Sicherheitskonfiguration Ihres Unternehmens müssen Sie
 
 6. Geben Sie im Feld **Name** die Bezeichnung **Anmeldehäufigkeit** ein.
 
-7. Wählen Sie unter **Zuweisungen** die Option **Benutzer- oder Workloadidentitäten** aus.
+7. Wählen Sie unter **Zuweisungen** **0 Benutzer und Gruppen ausgewählt** aus.
 
-8. Aktivieren Sie auf der Registerkarte „Einschließen“ das Kontrollkästchen **Benutzer und Gruppen**.
+8. Markieren Sie auf der Registerkarte „Einschließen“ **Benutzer und Gruppen auswählen** und aktivieren Sie dann das Kontrollkästchen **Benutzer und Gruppen**.
 
 9. Wählen Sie im Bereich „Auswählen“ das Konto **Grady Archie** und dann **Auswählen** aus.
 
