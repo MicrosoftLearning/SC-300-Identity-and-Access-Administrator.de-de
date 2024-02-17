@@ -5,7 +5,7 @@ lab:
   module: Module 02 - Implement an Authentication and Access Management Solution
 ---
 
-# Lab 10: Azure AD-Authentifizierung für virtuelle Windows- und Linux-Computer
+# Übung 10: Microsoft Entra-Authentifizierung für virtuelle Windows- und Linux-Computer
 
 **Hinweis**: Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen dazu finden Sie in Lab 00.
 
@@ -23,16 +23,18 @@ Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden so
 
 1. Wählen Sie **+ Ressource erstellen** aus.
 
-1. Geben Sie **Windows Server** in der Suchleiste „Marketplace durchsuchen“ ein.
+1. Geben Sie **Windows 11** in der Marketplace-Suchleiste ein.
 
-1. Wählen Sie **Windows Server** aus, und wählen Sie **Windows Server 2022 Datacenter** in der Dropdownliste zur Auswahl einer Software aus.
+1. Wählen Sie im Feld **Windows 11** **Windows 11 Enterprise 22H2** aus der Dropdownliste „Softwareplan auswählen“ aus.
 
 1. Sie müssen einen Administratorbenutzernamen und ein Kennwort für den virtuellen Computer auf der Registerkarte „Grundeinstellungen“ erstellen.
    - Verwenden Sie einen Benutzernamen, den Sie sich merken können, und ein sicheres Kennwort.
 
-1. Aktivieren Sie auf der Registerkarte **Verwaltung** das Kontrollkästchen „Mit Azure AD anmelden“ im Abschnitt „Azure AD“.
+1. Aktivieren Sie auf der Registerkarte **Verwaltung** das Kontrollkästchen zum **Anmelden mit Azure AD** unter dem Abschnitt „Azure AD“.
 
-1. Sie werden feststellen, dass die **Systemseitig zugewiesene verwaltete Identität** im Abschnitt „Identität“ automatisch aktiviert und grau angezeigt wird. Diese Aktion sollte automatisch erfolgen, nachdem Sie „Mit Azure AD anmelden“ aktiviert haben.
+    HINWEIS: Seit dem 01.11.2023 wurde diese Benutzeroberfläche nicht aktualisiert, damit Microsoft Entra ID angezeigt wird. Sie verweist weiterhin auf Azure AD.
+
+    HINWEIS 2: Sie werden feststellen, dass die vom **System zugewiesene verwaltete Identität** im Abschnitt „Identität“ automatisch überprüft und grau gestellt wird. Diese Aktion sollte automatisch erfolgen, nachdem Sie „Mit Azure AD anmelden“ aktiviert haben.
 
 1. Führen Sie die weiteren Schritte zum Erstellen eines virtuellen Computers aus. 
 
@@ -89,11 +91,11 @@ Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden so
 1. **Beenden** Sie die RDP-Sitzung mit der VM.
 
 
-#### Aufgabe 4: Ändern Ihrer RDP-Datei zur Unterstützung der Azure AD-Anmeldung
+#### Aufgabe 4 – Ändern der RDP-Datei zur Unterstützung der Microsoft Entra ID-Anmeldung
 
 1. Öffnen Sie den Ordner **Downloads** im Datei-Manager.
 
-1. **Erstellen Sie eine Kopie** der RDP-Datei, und fügen Sie **-AzureAD** am Ende des Dateinamens hinzu.
+1. **Erstellen Sie eine Kopie** der RDP-Datei und fügen Sie **-EntraID** am Ende des Dateinamens an.
 
 1. Bearbeiten Sie die neue Version der RDP-Datei im Editor, die Sie soeben kopiert haben. Fügen Sie die folgenden beiden Textzeilen am Ende der Datei hinzu:
      ```
@@ -103,11 +105,11 @@ Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden so
  
  1. **Speichern** Sie die RDP-Datei.  Sie sollten jetzt über zwei Versionen der Datei verfügen:
       - <<virtual machine name>>.RDP
-      - <<virtual machine name>>-AzureAD.RDP
+      - <<virtual machine name>>-EntraID.RDP
 
-#### Aufgabe 5: Verbinden zum Windows Server 2022-Rechenzentrum mit der Azure AD-Anmeldung
+#### Aufgabe 5 – Herstellen einer Verbindung mit dem virtuellen Windows-Computer mithilfe der Microsoft Entra ID-Anmeldung
 
-1. Öffnen Sie die **<<virtual machine name>>-AzureAD.RDP
+1. Öffnen Sie das **<<virtual machine name>>-EntraID.RDP
 
 1. Wählen Sie das Symbol **Verbinden** aus, wenn das Dialogfeld geöffnet wird.
 
@@ -117,7 +119,7 @@ Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden so
 
 1. Die Remotedesktopsitzung sollte geöffnet werden und den Windows Server-Anmeldebildschirm anzeigen.  **Anderer Benutzer** mit einer OK-Schaltfläche sollte angezeigt werden.
 
-1. Wählen Sie **OK** aus.
+1. Klickan Sie auf **OK**.
 
 1. Geben Sie im Dialogfeld „Anmeldung“ die folgenden Informationen ein:
    - Benutzername = **AzureAD\JoniS@<<your lab domainname>>
@@ -127,19 +129,17 @@ Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden so
 
 1. Windows Server sollte die Anmeldung bestätigen und das normale Server-Manager-Dashboard öffnen.
 
-#### Aufgabe 6: Optionale Tests zum Erkunden der Azure AD-Anmeldung
+#### Aufgabe 6 – Optionale Tests zum Erkunden der Microsoft Entra ID-Anmeldung
 
 1. Überprüfen Sie, ob JoniS der einzige Benutzer war, der der Gruppe „Administratoren“ hinzugefügt wurde.
 
-1. Wählen Sie im Server-Manager-Dashboard links oben das Menü **Tools** aus.
-
-1. Starten Sie das Tool **Computerverwaltung**.
+1. Klicken Sie mit der sekundären Maustaste auf die Startschaltfläche und wählen Sie dann im Popupmenü **Computerverwaltung** aus.
 
 1. Öffnen Sie **Lokale Benutzer und Gruppen**, und navigieren Sie dann zu **Gruppen, Administratoren**.
 
 1. **Azure\JoniSherman....** sollte in der Liste angezeigt werden.
 
-1. Überprüfen Sie, ob sich andere Azure AD-Mitglieder anmelden können.
+1. Überprüfen Sie, ob sich andere Microsoft Entra ID-Mitglieder anmelden können.
 
 1. Beenden Sie die Remotedesktopsitzung.
 
@@ -157,7 +157,9 @@ Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden so
 
 1. Wählen Sie **+ Ressource erstellen** aus.
 
-1. Wählen Sie **Erstellen** in der Ansicht „Beliebt“ unter **Ubuntu Server 18.04 LTS** aus.
+1. Suchen Sie nach **Ubuntu**.
+
+1. Wählen Sie unter **Ubuntu Server 22.04 LTS** **Erstellen** aus. Sie können andere Linux-Server für diese Testumgebung verwenden.
 
 1. Aktivieren Sie auf der Registerkarte **Verwaltung** das Kontrollkästchen zum Aktivieren von **Mit Azure Active Directory anmelden (Vorschau)**.
 
