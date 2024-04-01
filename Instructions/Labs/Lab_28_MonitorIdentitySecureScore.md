@@ -9,7 +9,7 @@ lab:
 
 ## Labszenario
 
-Azure AD Identity Protection bietet die automatisierte Erkennung und Behebung identitätsbasierter Risiken und stellt Daten im Portal bereit, um potenzielle Risiken zu untersuchen. Azure AD Identity Protection bietet auch eine Identitätssicherheitsbewertung, um Ihren Identitätssicherheitsstatus zu überwachen und zu verbessern.  Auf die gleiche Weise wie Microsoft 365 Defender und Microsoft Defender for Cloud bietet die Identitätssicherheitsbewertung Verbesserungsmaßnahmen und Empfehlungen, die Ihren allgemeinen Identitätssicherheitsstatus in Azure Active Directory verbessern können.  In dieser Übung wird diese Funktion untersucht. 
+Microsoft Entra-Identitätsschutz bietet automatisierte Erkennung und Behebung identitätsbasierter Risiken und stellt Daten im Portal bereit, um potenzielle Risiken zu untersuchen. Microsoft Entra-Identitätsschutz bietet auch eine Identitätssicherheitsbewertung, um Ihren Identitätssicherheitsstatus zu überwachen und zu verbessern.  Auf die gleiche Weise wie Microsoft Defender XDR und Microsoft Defender for Cloud bietet die Identitätssicherheitsbewertung Verbesserungsmaßnahmen und Empfehlungen, die Ihren allgemeinen Sicherheitsstatus für Identität in Microsoft Entra ID verbessern können.  In dieser Übung wird diese Funktion untersucht. 
 
 #### Geschätzte Dauer: 15 Minuten
 
@@ -17,9 +17,9 @@ Azure AD Identity Protection bietet die automatisierte Erkennung und Behebung i
 
 #### Aufgabe 1: Überprüfen von Identitätssicherheitsbewertung und Verbesserungsaktionen
 
-1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als globaler Administrator an.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) als globaler Administrator an.
 
-2. Suchen Sie nach **Azure AD Identity Protection**, und wählen Sie es aus.
+2. Öffnen sie das Menü **Schutz**, und wählen Sie **Identitätssicherheitsbewertung** aus
 
 3. Auf der Kachel **Übersicht** befindet sich **Identitätssicherheitsbewertung**.
 
@@ -27,7 +27,7 @@ Azure AD Identity Protection bietet die automatisierte Erkennung und Behebung i
 
 5. Scrollen Sie nach unten, um die **Verbesserungsaktionen** anzuzeigen.
 
-6. Im Gegensatz zu den Verbesserungsaktionen in Microsoft Defender for Cloud und Microsoft 365 Defender sind diese Verbesserungsaktionen spezifisch für Identität.  Damit erhalten Sie eine fokussiertere Liste potenzieller Aktionen für Ihre Sicherheitsstatusverwaltung.  Alle Verbesserungsaktionen, die aus dieser Liste initiiert werden, wirken sich auch auf Ihren gesamten Mandantensicherheitsstatus aus. 
+6. Im Gegensatz zu den Verbesserungsmaßnahmen in Microsoft Defender for Cloud und Microsoft Defender XDR sind diese Verbesserungsmaßnahmen spezifisch für die Identität.  Damit erhalten Sie eine fokussiertere Liste potenzieller Aktionen für Ihre Sicherheitsstatusverwaltung.  Alle Verbesserungsaktionen, die aus dieser Liste initiiert werden, wirken sich auch auf Ihren gesamten Mandantensicherheitsstatus aus. 
 
 #### Aufgabe 2: Ausführen einer Verbesserungsaktion
 

@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '10: Azure AD-Authentifizierung für virtuelle Windows- und Linux-Computer'
+  title: 10 – Microsoft Entra ID-Authentifizierung für virtuelle Windows- und Linux-Computer
   learning path: '02'
   module: Module 02 - Implement an Authentication and Access Management Solution
 ---
@@ -11,13 +11,13 @@ lab:
 
 ## Labszenario
 
-Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden sollte, um sich bei virtuellen Computern für den Remotezugriff anzumelden.  In dieser Übung wird gezeigt, wie dies für virtuelle Windows- und Linux-Computer eingerichtet werden kann.
+Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte, um sich bei VMs für den Remotezugriff anzumelden.  In dieser Übung wird gezeigt, wie dies für virtuelle Windows- und Linux-Computer eingerichtet werden kann.
 
 #### Geschätzte Dauer: 30 Minuten
 
-### Übung 1: Anmelden bei virtuellen Windows-Computern in Azure mit Azure AD
+### Übung 1 – Anmelden bei virtuellen Windows-Computern in Azure mit Microsoft Entra ID
 
-#### Aufgabe 1: Erstellen eines virtuellen Windows-Computers mit aktivierter Azure AD-Anmeldung
+#### Aufgabe 1 – Erstellen eines virtuellen Windows-Computers mit aktivierter Microsoft Entra ID-Anmeldung
 
 1. Navigieren Sie zu [https://portal.azure.com](https://portal.azure.com)
 
@@ -30,17 +30,15 @@ Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden so
 1. Sie müssen einen Administratorbenutzernamen und ein Kennwort für den virtuellen Computer auf der Registerkarte „Grundeinstellungen“ erstellen.
    - Verwenden Sie einen Benutzernamen, den Sie sich merken können, und ein sicheres Kennwort.
 
-1. Aktivieren Sie auf der Registerkarte **Verwaltung** das Kontrollkästchen zum **Anmelden mit Azure AD** unter dem Abschnitt „Azure AD“.
+1. Aktivieren Sie auf der Registerkarte **Verwaltung** das Kontrollkästchen **Mit Microsoft Entra ID anmelden** im Abschnitt „Microsoft Entra ID“.
 
-    HINWEIS: Seit dem 01.11.2023 wurde diese Benutzeroberfläche nicht aktualisiert, damit Microsoft Entra ID angezeigt wird. Sie verweist weiterhin auf Azure AD.
-
-    HINWEIS 2: Sie werden feststellen, dass die vom **System zugewiesene verwaltete Identität** im Abschnitt „Identität“ automatisch überprüft und grau gestellt wird. Diese Aktion sollte automatisch erfolgen, nachdem Sie „Mit Azure AD anmelden“ aktiviert haben.
+        NOTE: You will notice that the **System assigned managed identity** under the Identity section is automatically checked and turned grey. This action should happen automatically once you enable Login with Microsoft Entra ID.
 
 1. Führen Sie die weiteren Schritte zum Erstellen eines virtuellen Computers aus. 
 
-1. Wählen Sie „Erstellen“ aus.
+1. Klicken Sie auf Erstellen.
 
-#### Aufgabe 2: Azure AD-Anmeldung für vorhandene virtuelle Azure-Computer
+#### Aufgabe 2 – Microsoft Entra ID-Anmeldung für vorhandene Microsoft Azure Virtual Machines
 
 1. Navigieren Sie zu **Virtuelle Computer** in [https://portal.azure.com](https://portal.azure.com).
 
@@ -57,7 +55,7 @@ Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden so
 
 1. Wählen Sie **Überprüfen und Zuweisen** zwei Mal aus, um den Prozess abzuschließen.
 
-#### Aufgabe 3: Aktualisieren der Server-VM zur Unterstützung der Azure AD-Anmeldung
+#### Aufgabe 3 – Aktualisieren der Server-VM zur Unterstützung der Microsoft Entra ID-Anmeldung
 
 1. Wählen Sie den Menüeintrag **Verbinden** aus.
 
@@ -89,7 +87,6 @@ Das Unternehmen hat beschlossen, dass Azure Active Directory verwendet werden so
 1. Wählen Sie **Übernehmen** und anschließend **OK** aus.
 
 1. **Beenden** Sie die RDP-Sitzung mit der VM.
-
 
 #### Aufgabe 4 – Ändern der RDP-Datei zur Unterstützung der Microsoft Entra ID-Anmeldung
 
