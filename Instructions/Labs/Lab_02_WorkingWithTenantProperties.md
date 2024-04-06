@@ -17,17 +17,13 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
 
 #### Aufgabe 1: Erstellen eines benutzerdefinierten Subdomänennamens
 
-1. Navigieren Sie zu [https://portal.azure.com](https://portal.azure.com), und melden Sie sich mit dem Konto eines globalen Administrators für das Verzeichnis an.
+1. Wechseln Sie zu[https://entra.microsoft.com](https://entra.microsoft.com) und melden Sie sich mit einem globalen Administratorkonto für dieses Verzeichnis an.
 
-1. Wählen Sie das Hamburger-Menüsymbol **Portalmenü anzeigen** und dann **Azure Active Directory** aus.
+1. Wählen Sie im Menü **Identität** das Menü **Einstellungen** aus, und wählen Sie **Domänennamen** aus.
 
-    ![Menü im Azure-Portal mit ausgewählter Option „Azure Active Directory“](./media/azure-portal-menu-aad.png)
+1. Wählen Sie **+ Benutzerdefinierte Domäne hinzufügen** aus.
 
-1. Wählen Sie im Abschnitt **Verwalten** von **Azure AD** die Option **Benutzerdefinierte Domänennamen** aus.
-
-1. Wählen Sie **Benutzerdefinierte Domäne hinzufügen**.
-
-1. Erstellen Sie im Feld **Benutzerdefinierter Domänenname** eine benutzerdefinierte Unterdomäne für den Labmandanten, indem Sie **sales** dem Domänennamen **onmicrosoft.com** voranstellen.  Das Format sieht in etwa wie folgt aus:
+1. Erstellen Sie im Feld **Benutzerdefinierter Domänenname** eine benutzerdefinierte Unterdomäne für den Labmandanten, indem Sie **sales** vor den Domänennamen **onmicrosoft.com** setzen.  Das Format sieht in etwa wie folgt aus:
 
     ```
     sales.labtenant.onmicrosoft.com
@@ -38,9 +34,11 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
 
 ### Übung 2: Ändern des Anzeigenamens des Mandanten
 
-#### Aufgabe 1: Festlegen des Mandantennamens und des technischen Kontakts
+#### Aufgabe 1: Festlegen des Mandantennamens und des technischen Kontakts
 
-1. Wählen Sie in Azure Active Directory im linken Navigationsbereich im Abschnitt **Verwalten** die Option **Eigenschaften** aus.
+1. Öffnen Sie im Microsoft Entra Admin Center das Menü **Identität**.
+
+1. Wählen Sie im linken Navigationsbereich das Menüelement **Übersicht** und dann **Eigenschaften** aus.
 
 1. Ändern Sie die Mandanteneigenschaften für **Name** und **Technischer Kontakt** im Dialogfeld.
 
@@ -53,9 +51,9 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
 
    **Sie werden feststellen, dass sich der Name unmittelbar nach Abschluss des Speichervorgangs ändert.**
 
-#### Aufgabe 2: Überprüfen des Landes oder der Region und anderer Werte, die Ihrem Mandanten zugeordnet sind
+#### Aufgabe 2: Überprüfen des Landes oder der Region und anderer Werte, die Ihrem Mandanten zugeordnet sind
 
-1. Wählen Sie auf der Seite **Azure Active Directory** im Abschnitt „Verwalten“ die Option **Eigenschaften** aus.
+1. Wählen Sie im Menü **Identität** die Option **Übersicht** und dann **Eigenschaften** aus.
 
 2. Suchen Sie unter **Mandanteneigenschaften** nach **Land oder Region**, und überprüfen Sie die Informationen.
 
@@ -65,29 +63,31 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
 
     ![Screenshot der Seite mit den Azure Active Directory-Eigenschaften mit hervorgehobenen Einstellungen „Land oder Region“ und „Standort“](./media/azure-active-directory-properties-country-location.png)
 
-#### Aufgabe 3: Suchen der Mandanten-ID
+#### Aufgabe 3: Suchen der Mandanten-ID
 
-Azure-Abonnements weisen eine Vertrauensstellung mit Azure Active Directory (Azure AD) auf. Azure AD gilt als vertrauenswürdig für die Authentifizierung von Benutzern, Diensten und Geräten für das Abonnement. Jedem Abonnement ist eine Mandanten-ID zugeordnet. Es gibt verschiedene Möglichkeiten, die Mandanten-ID für Ihr Abonnement zu ermitteln.
+Azure-Abonnements haben eine Vertrauensbeziehung zu Microsoft Entra ID. Microsoft Entra ID gilt als vertrauenswürdig für die Authentifizierung von Benutzer*innen, Diensten und Geräten für das Abonnement. Jedem Abonnement ist eine Mandanten-ID zugeordnet. Es gibt verschiedene Möglichkeiten, die Mandanten-ID für Ihr Abonnement zu ermitteln.
 
-1. Wählen Sie auf der Seite **Azure Active Directory** im Abschnitt „Verwalten“ die Option **Eigenschaften** aus.
+1. Öffnen Sie das Microsoft Entra Admin Center [https://entra.microsoft.com](https://entra.microsoft.com)
 
-2. Suchen Sie unter **Mandanteneigenschaften** die **Mandanten-ID**. Dies ist Ihr eindeutiger Mandantenbezeichner.
+1. Wählen Sie im Menü **Identität** die Option **Übersicht** und dann **Eigenschaften** aus.
+
+1. Suchen Sie unter **Mandanteneigenschaften** die **Mandanten-ID**. Dies ist Ihr eindeutiger Mandantenbezeichner.
 
     ![Screenshot der Seite „Mandanteneigenschaften“ mit hervorgehobenem Feld „Mandanten-ID“](./media/portal-tenant-id.png)
 
 ### Übung 3: Festlegen Ihrer Datenschutzinformationen
 
-#### Aufgabe 1: Hinzufügen Ihrer Datenschutzinformationen zu Azure AD, einschließlich der URL für den globalen Datenschutzkontakt und der Datenschutzerklärung
+#### Aufgabe 1 – Hinzufügen Ihrer Datenschutzinformationen zu Microsoft Entra ID, einschließlich der URL für den globalen Datenschutzkontakt und die Datenschutzbestimmungen
 
 Microsoft empfiehlt Ihnen dringend, sowohl die Kontaktdaten Ihres globalen Ansprechpartners für den Datenschutz als auch die Datenschutzerklärung Ihrer Organisation hinzuzufügen, damit Ihre internen Mitarbeiter und externen Gäste Ihre Richtlinien lesen können. Da Datenschutzerklärungen individuell erstellt werden und auf das jeweilige Unternehmen zugeschnitten sind, wird dringend empfohlen, zu diesem Sachverhalt einen Anwalt hinzuziehen.
 
    **HINWEIS**: Informationen zum Anzeigen oder Löschen personenbezogener Daten finden Sie unter [https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure). Weitere Informationen zur DSGVO finden Sie unter [https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
-Sie fügen die Datenschutzinformationen Ihrer Organisation im Bereich  **Eigenschaften** von Azure AD hinzu. So greifen Sie auf den Bereich „Eigenschaften“ zu und fügen Ihre Datenschutzinformationen hinzu
+Sie fügen die Datenschutzinformationen Ihrer Organisation im Bereich  **Eigenschaften** von Microsoft Entra ID hinzu. So greifen Sie auf den Bereich „Eigenschaften“ zu und fügen Ihre Datenschutzinformationen hinzu
 
-1. Wählen Sie auf der Seite **Azure Active Directory** im Abschnitt „Verwalten“ die Option **Eigenschaften** aus.
+1. Wählen Sie im Menü **Identität** die Option **Übersicht** und dann **Eigenschaften** aus.
 
-    ![Screenshot der Mandanteneigenschaften mit hervorgehobenen Kästchen für den technischen Kontakt, den globalen Kontakt und die Datenschutzerklärung](./media/properties-area.png)
+    ![Screenshot der Mandanteneigenschaften mit hervorgehobenen Kästchen für den technischen Kontakt, den globalen Kontakt und die Datenschutzbestimmungen](./media/properties-area.png)
 
 2. Fügen Sie Ihre Datenschutzinformationen für Ihre Mitarbeiter hinzu:
 

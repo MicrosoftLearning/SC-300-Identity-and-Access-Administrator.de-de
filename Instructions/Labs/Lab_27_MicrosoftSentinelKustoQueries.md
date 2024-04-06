@@ -11,7 +11,7 @@ lab:
 
 ## Labszenario
 
-Microsoft Sentinel ist eine skalierbare, cloudnative SIEM- und SOAR-Lösung von Microsoft.  Durch das Verbinden von Datenquellen aus Microsoft- und Drittanbieter-Sicherheitslösungen haben Sie die Möglichkeit, Aufgaben für Security Operations auszuführen.  In dieser Übung erstellen Sie einen Microsoft Sentinel-Arbeitsbereich mit Datenconnectors zu Azure AD für die Ausführung von Hunting-Abfragen mithilfe der Kusto-Abfragesprache (KQL). 
+Microsoft Sentinel ist eine skalierbare, cloudnative SIEM- und SOAR-Lösung von Microsoft.  Durch das Verbinden von Datenquellen aus Microsoft- und Drittanbieter-Sicherheitslösungen haben Sie die Möglichkeit, Aufgaben für Security Operations auszuführen.  In dieser Labübung werden Sie einen Microsoft Sentinel-Arbeitsbereich mit Datenconnectors zu Microsoft Entra ID zum Ausführen von Suchabfragen mithilfe der Kusto Query Language (KQL) erstellen. 
 
 #### Geschätzte Dauer: 30 Minuten
 
@@ -39,7 +39,7 @@ Microsoft Sentinel ist eine skalierbare, cloudnative SIEM- und SOAR-Lösung von 
 
 1. Wenn Sie dazu aufgefordert werden, wählen Sie **OK** aus, um die kostenlose Testversion von Microsoft Sentinel zu aktivieren.
 
-#### Aufgabe 2: Hinzufügen von Azure AD als Datenquelle
+#### Aufgabe 2 – Hinzufügen von Microsoft Entra ID als Datenquelle
     **Note** - As of 2/8/2024, the data source is now Microsoft Entra ID.
 
 1. Navigieren Sie in **Microsoft Sentinel** zum Menü zur **Content-Verwaltung** und wählen Sie **Content-Hub**aus.
