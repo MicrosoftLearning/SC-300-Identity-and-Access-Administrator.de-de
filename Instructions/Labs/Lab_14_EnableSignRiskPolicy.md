@@ -9,7 +9,7 @@ lab:
 
 ## Labszenario
 
-Als zusätzliche Sicherheitsebene müssen Sie die Anmelde- und Benutzerrisikorichtlinien Ihrer Azure AD-Organisation aktivieren und konfigurieren.
+Als zusätzliche Sicherheitsebene müssen Sie die Anmelde- und Benutzerrisikorichtlinien Ihrer Microsoft Entra-Organisation aktivieren und konfigurieren.
 
 #### Geschätzte Dauer: 10 Minuten
 
@@ -18,11 +18,11 @@ Als zusätzliche Sicherheitsebene müssen Sie die Anmelde- und Benutzerrisikoric
 
 #### Aufgabe 1: Konfigurieren der Richtlinie
 
-1. Melden Sie sich mit einem globalen Administratorkonto bei [https://portal.azure.com]( https://portal.azure.com) an.
+1. Melden Sie sich mit einem globalen Administratorkonto bei [https://entra.microsoft.com]( https://entra.microsoft.com) an.
 
-2. Öffnen Sie das Portal-Menü, und wählen Sie  **Azure Active Directory** aus.
+2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
 
-3. Wählen Sie auf der Seite „Azure Active Directory“ unter **Verwalten** die Option **Sicherheit** aus.
+3. Wählen Sie im Menü unter **Identität** die Option **Schutz** aus.
 
 4. Wählen Sie auf der Seite „Sicherheit“ im linken Navigationsbereich **Identity Protection** aus.
 
