@@ -77,11 +77,3 @@ Microsoft Sentinel ist eine skalierbare, cloudnative SIEM- und SOAR-Lösung von 
 1. Klicken Sie auf **Run** (Ausführen). 
 
 1. Dadurch wird eine Liste der Benutzer-IDs auf der Microsoft Entra ID bereitgestellt.  Da wir den Arbeitsbereich gerade erst erstellt haben, werden möglicherweise keine Ergebnisse angezeigt.  Beachten Sie das Format der Abfrage.
-
-1. Wählen Sie unter **Bedrohungsmanagement** im Menü **Hunting** aus. 
-
-1. Scrollen Sie nach unten, und suchen Sie die Abfrage **Anomalous sign-in location by user account and authenticating application**.  Diese Abfrage über die Microsoft Entra-Anmeldung berücksichtigt alle Benutzeranmeldungen für jede Microsoft Entra-Anwendung und wählt die abweichende Änderung des Standortprofils für einen Benutzer innerhalb einer einzelnen Anwendung aus. Die Absicht besteht darin, nach einer Kompromittierung des Benutzerkontos zu suchen, möglicherweise über einen bestimmten Anwendungsvektor. 
-
-1. Wählen Sie **Ausführen** aus, um die Abfrage auszuführen.
-
-1. Dies liefert möglicherweise keine Ergebnisse mit dem neuen Arbeitsbereich, aber Sie haben jetzt gesehen, wie Abfragen ausgeführt werden können, um Informationen zu sammeln oder potenzielle Bedrohungen zu suchen.
