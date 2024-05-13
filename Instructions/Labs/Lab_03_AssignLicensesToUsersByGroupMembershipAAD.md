@@ -9,7 +9,7 @@ lab:
 
 ## Labszenario
 
-Ihre Organisation hat sich entschieden, Sicherheitsgruppen in Azure AD zum Verwalten von Lizenzen zu verwenden. Sie müssen eine neue Sicherheitsgruppe konfigurieren und dieser Gruppe eine Lizenz zuweisen und überprüfen, ob die Gruppenmitgliedslizenz aktualisiert wurde.
+Ihre Organisation hat sich entschieden, Sicherheitsgruppen in Microsoft Entra ID zum Verwalten von Lizenzen zu verwenden. Sie müssen eine neue Sicherheitsgruppe konfigurieren und dieser Gruppe eine Lizenz zuweisen und überprüfen, ob die Gruppenmitgliedslizenz aktualisiert wurde.
 
 #### Geschätzte Dauer: 25 Minuten
 
@@ -32,11 +32,11 @@ Ihre Organisation hat sich entschieden, Sicherheitsgruppen in Azure AD zum Verw
     
 5. Schließen Sie das Browserfenster.
 
-#### Aufgabe 2: Erstellen einer Sicherheitsgruppe in Azure Active Directory
+#### Aufgabe 2 – Erstellen einer Sicherheitsgruppe in Microsoft Entra ID
 
-1. Navigieren Sie zu [https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview]( https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
+1. Navigieren Sie zu [https://entra.microsoft.com](https://entra.microsoft.com).
 
-2. Wählen Sie im linken Navigationsbereich unter **Verwalten** die Option **Gruppen** aus.
+2. Erweitern Sie im linken Navigationsbereich unter **Identität** die Option **Gruppen**, und wählen Sie dann **Alle Gruppen** aus.
 3. Wählen Sie auf der Seite „Gruppen“ im Menü die Option **Neue Gruppe** aus.
 4. Erstellen Sie eine Gruppe mit den folgenden Informationen:
 
@@ -53,7 +53,7 @@ Ihre Organisation hat sich entschieden, Sicherheitsgruppen in Azure AD zum Verw
 
    ![Screenshot der Seite „Neue Gruppe“ mit hervorgehobenen Optionen „Gruppentyp“, „Gruppenname“ „Besitzer“ und „Mitglieder“](./media/lp1-mod2-create-group.png)
 
-8. Wählen Sie die Schaltfläche **Erstellen** aus.
+8. Wählen Sie die Schaltfläche **Erstellen**.
 9. Vergewissern Sie sich nach Abschluss des Vorgangs, dass die Gruppe namens **sg-SC300-O365** in der Liste **Alle Gruppen** angezeigt wird.
 
 #### Aufgabe 3: Zuweisen einer Lizenz zu einer Gruppe
@@ -86,15 +86,15 @@ Ihre Organisation hat sich entschieden, Sicherheitsgruppen in Azure AD zum Verw
     
 5. Schließen Sie das Browserfenster. 
 
-### Übung 2: Erstellen einer Microsoft 365-Gruppe in Azure Active Directory
+### Übung 2 – Erstellen einer Microsoft 365-Gruppe in Microsoft Entra ID
 
 #### Aufgabe 1: Erstellen der Gruppe
 
-Ein Teil Ihrer Aufgaben als Azure AD-Administrator besteht darin, verschiedene Gruppentypen zu erstellen. Sie müssen eine neue Microsoft 365-Gruppe für die Vertriebsabteilung Ihrer Organisation erstellen.
+Ein Teil Ihrer Aufgaben als Microsoft Entra-Administrator besteht darin, verschiedene Arten von Gruppen zu erstellen. Sie müssen eine neue Microsoft 365-Gruppe für die Vertriebsabteilung Ihrer Organisation erstellen.
 
-1. Navigieren Sie zu [https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview]( https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
+1. Navigieren Sie zu [https://entra.microsoft.com]( https://entra.microsoft.com).
 
-2. Wählen Sie im linken Navigationsbereich unter **Verwalten** die Option **Gruppen** aus.
+2. Erweitern Sie im linken Navigationsbereich unter **Identität** die Option **Gruppen**, und wählen Sie dann **Alle Gruppen** aus.
 
 3. Wählen Sie auf der Seite „Gruppen“ im Menü die Option **Neue Gruppe** aus.
 
@@ -118,11 +118,11 @@ Ein Teil Ihrer Aufgaben als Azure AD-Administrator besteht darin, verschiedene 
 
 Wenn Ihr Unternehmen wächst, ist die manuelle Gruppenverwaltung zu zeitaufwändig. Seit der Standardisierung des Verzeichnisses können Sie jetzt dynamische Gruppen nutzen. Sie müssen eine neue dynamische Gruppe erstellen, damit Sie dynamische Gruppen in der Produktion erstellen können.
 
-1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) mit einem Konto an, dem im Mandanten die Rolle „Globaler Administrator“ oder „Benutzeradministrator“ zugewiesen ist.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) mit einem Konto an, dem im Mandanten die Rolle „Globaler Administrator“ oder „Benutzeradministrator“ zugewiesen ist.
 
-2. Wählen Sie **Azure Active Directory** aus.
+2. Wählen Sie **Identität** aus.
 
-3. Wählen Sie unter **Verwalten** die Option **Gruppen** und anschließend **Neue Gruppe** aus.
+3. Wählen Sie unter **Gruppen** die Option **Alle Gruppen** und dann **Neue Gruppe** aus.
 
 4. Wählen Sie auf der Seite Neue Gruppe unter **Gruppentyp** die Option **Sicherheit** aus.
 
@@ -156,9 +156,9 @@ Wenn Ihr Unternehmen wächst, ist die manuelle Gruppenverwaltung zu zeitaufwänd
 
 **Hinweis:** Das Füllen der dynamischen Gruppenmitgliedschaft kann bis zu 15 Minuten dauern.
 
-1. Wählen Sie auf der **Startseite** `Azure Active Directory` aus.
-2. Starten Sie **Azure Active Directory**.
-3. Wählen Sie im Menü auf der linken Seite unter **Verwalten** die Option **Gruppen** aus.
+1. Wählen Sie auf der **Startseite** `Microsoft Entra admin center` aus.
+2. Starten Sie **Identität**.
+3. Wählen Sie im Menü **Gruppen** die Option **Alle Gruppen** aus.
 4. Geben Sie im Filterfeld **SC300** ein, und Ihre neu erstellte Gruppe wird aufgelistet.
 5. Wählen Sie **SC300-myDynamicGroup** aus, um die Gruppe zu öffnen.
 6. Beachten Sie die Anzeige, dass die Gruppe 30+ **Direkte Mitglieder* enthält.
@@ -171,6 +171,6 @@ Wenn Ihr Unternehmen wächst, ist die manuelle Gruppenverwaltung zu zeitaufwänd
 
    - (user.objectid -ne null) und (user.userType -eq "Guest")
 
-2. Versuchen Sie, eine Gruppe nur mit **Mitgliedern** der Azure AD-Benutzer zu erstellen.
+2. Versuchen Sie, eine Gruppe nur mit **Mitgliedern** der Microsoft Entra-Benutzer zu erstellen.
 
    - (user.objectid -ne null) und (user.userType -eq "Member")

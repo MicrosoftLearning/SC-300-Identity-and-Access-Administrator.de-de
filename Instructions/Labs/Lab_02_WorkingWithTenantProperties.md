@@ -19,7 +19,9 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
 
 1. Wechseln Sie zu[https://entra.microsoft.com](https://entra.microsoft.com) und melden Sie sich mit einem globalen Administratorkonto für dieses Verzeichnis an.
 
-1. Wählen Sie im Menü **Identität** das Menü **Einstellungen** aus, und wählen Sie **Domänennamen** aus.
+1. Verwenden Sie im Menü **Identität** die Option **Mehr anzeigen* unten.
+
+1.  Öffnen Sie das Menü **Einstellungen**, und wählen Sie **Domänennamen** aus.
 
 1. Wählen Sie **+ Benutzerdefinierte Domäne hinzufügen** aus.
 
@@ -28,6 +30,8 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
     ```
     sales.labtenant.onmicrosoft.com
     ```
+
+1. **Hinweis:** Sie werden aufgefordert, das Microsoft 365 Admin Center zu öffnen, um diese Aktion abzuschließen.
 
 1. Wählen Sie **Domäne hinzufügen** aus, um die Unterdomäne hinzuzufügen.
 
