@@ -146,7 +146,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 
 1. Beachten Sie, dass jedem dieser Benutzer der Zugriff verweigert wird.
 
-### Optionale Übung 2: Anmelden bei virtuellen Linux-Computern in Azure mit Azure AD
+### Optionale Übung 2: Anmelden bei virtuellen Linux-Computern in Azure mit Microsoft Entra ID
 
 #### Aufgabe 1: Erstellen einer Linux-VM mit systemseitig zugewiesener verwalteter Identität
 
@@ -158,13 +158,13 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 
 1. Wählen Sie unter **Ubuntu Server 22.04 LTS** **Erstellen** aus. Sie können andere Linux-Server für diese Testumgebung verwenden.
 
-1. Aktivieren Sie auf der Registerkarte **Verwaltung** das Kontrollkästchen zum Aktivieren von **Mit Azure Active Directory anmelden (Vorschau)**.
+1. Aktivieren Sie auf der Registerkarte **Verwaltung** das Kontrollkästchen, um **Anmeldung mit Microsoft Entra ID** zu aktivieren.
 
 1. Stellen Sie sicher, dass die Option **Systemseitig zugewiesene verwaltete Identität** aktiviert ist.
 
 1. Führen Sie die weiteren Schritte zum Erstellen eines virtuellen Computers aus. Während dieser Vorschauphase müssen Sie ein Administratorkonto mit Benutzernamen und Kennwort oder öffentlichem SSH-Schlüssel erstellen.
 
-#### Aufgabe 2: Azure AD-Anmeldung für vorhandene virtuelle Azure-Computer
+#### Aufgabe 2 – Microsoft Entra ID-Anmeldung für vorhandene Microsoft Azure Virtual Machines
 
 1. Navigieren Sie zu **Virtuelle Computer** in [https://portal.azure.com](https://portal.azure.com).
 
