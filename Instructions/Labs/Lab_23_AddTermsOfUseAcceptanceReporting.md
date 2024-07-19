@@ -9,7 +9,7 @@ lab:
 
 ## Labszenario
 
-Mit den Richtlinien der Azure AD-Nutzungsbedingungen können Organisationen komfortabel Informationen für Endbenutzer anzeigen. Dadurch wird sichergestellt, dass Benutzern relevante Haftungsausschlüsse angezeigt werden, um rechtliche oder compliancebezogene Anforderungen zu erfüllen. Dieser Artikel enthält eine Einführung in die Verwendung von Richtlinien für Nutzungsbedingungen.
+Mit den Richtlinien der Microsoft Entra-Nutzungsbedingungen können Organisationen komfortabel Informationen für Endbenutzer anzeigen. Dadurch wird sichergestellt, dass Benutzern relevante Haftungsausschlüsse angezeigt werden, um rechtliche oder compliancebezogene Anforderungen zu erfüllen. Dieser Artikel enthält eine Einführung in die Verwendung von Richtlinien für Nutzungsbedingungen.
 
 Sie müssen eine ToU-Richtlinie für Ihre Organisation erstellen und durchsetzen.
 
@@ -21,11 +21,11 @@ Sie müssen eine ToU-Richtlinie für Ihre Organisation erstellen und durchsetzen
 
 Gehen Sie nach Fertigstellung Ihres Dokuments mit Nutzungsbedingungen wie folgt vor, um sie hinzuzufügen.
 
-1. Melden Sie sich mit einem globalen Administratorkonto bei [https://portal.azure.com](https://portal.azure.com) an.
+1. Melden Sie sich mit einem globalen Administratorkonto bei [https://entra.microsoft.com](https://entra.microsoft.com) an.
 
-2. Öffnen Sie **Azure Active Directory**, und wählen Sie  **Identity Governance** aus.
+2. Wählen Sie im linken Navigationsmenü  **Identity Governance**.
 
-3. Wählen Sie im linken Navigationsmenü unter **Nutzungsbedingungen** die Option **Nutzungsbedingungen** aus.
+3. Wählen Sie im Menü unter **Berechtigungsverwaltung** die Option **Nutzungsbedingungen**.
 
 4. Wählen Sie auf der Seite „Nutzungsbedingungen“ im oberen Menü die Option **+ Neue Bedingungen** aus.
 
@@ -33,31 +33,31 @@ Gehen Sie nach Fertigstellung Ihres Dokuments mit Nutzungsbedingungen wie folgt 
 
 5. Geben Sie im Feld **Name** die Bezeichnung **Testen von Nutzungsbedingungen** ein.
 
-6. Diese Nutzungsbedingungen werden im Azure-Portal verwendet.
+    **Hinweis**: Dies sind die Nutzungsbedingungen, die im Azure-Portal verwendet werden.
 
-7. Geben Sie im Feld **Anzeigename** die Bezeichnung **Contoso-Nutzungsbedingungen** ein.
-
-8. Dies ist der Titel, der den Benutzern bei der Anmeldung angezeigt wird.
-
-9. Wählen Sie das Feld **Dokument mit Nutzungsbedingungen** aus, navigieren Sie zu Ihrer PDF-Datei mit den fertig gestellten Nutzungsbedingungen, und wählen Sie die Datei aus.
+6. Wählen Sie das Feld **Dokument mit Nutzungsbedingungen** aus, navigieren Sie zu Ihrer PDF-Datei mit den fertig gestellten Nutzungsbedingungen, und wählen Sie die Datei aus.
 
    **Bereitgestellte ToU-Datei**: Navigieren Sie zum GitHub-Repository „AllFiles/Labs/Lab26“, um ein Beispiel-PDF-Dokument mit Nutzungsbedingungen für die Verwendung in dieser Übung zu erhalten.
 
-10. Wählen Sie **Englisch** als Sprache für Ihr Dokument mit Nutzungsbedingungen aus.
+7. Geben Sie im Feld **Anzeigename** die Bezeichnung **Contoso-Nutzungsbedingungen** ein.
+
+    **Hinweis**: Dies ist der Titel, der den Benutzenden bei der Anmeldung angezeigt wird.
+
+8. Wählen Sie **Englisch** als Sprache für Ihr Dokument mit Nutzungsbedingungen aus.
 
    **Hinweis**: Die Sprachoption ermöglicht das Hochladen mehrerer Nutzungsbedingungen in verschiedenen Sprachen. Die Version der Nutzungsbedingungen, die einem Endbenutzer angezeigt wird, basiert auf den Browsereinstellungen.
 
-11. Legen Sie **Benutzer müssen die Nutzungsbedingungen erweitern** auf **Ein** fest, damit die Endbenutzer die Nutzungsbedingungen anzeigen müssen, bevor sie diesen zustimmen können.
+9. Legen Sie **Benutzer müssen die Nutzungsbedingungen erweitern** auf **Ein** fest, damit die Endbenutzer die Nutzungsbedingungen anzeigen müssen, bevor sie diesen zustimmen können.
 
-12. Wenn die Endbenutzer Ihren Nutzungsbedingungen auf jedem Gerät zustimmen sollen, über das der Zugriff erfolgt, legen Sie **Zustimmung der Benutzer auf jedem Gerät erforderlich** auf **Aus** fest. Wenn diese Option aktiviert ist, müssen Benutzer möglicherweise weitere Anwendungen installieren.
+10. Wenn die Endbenutzer Ihren Nutzungsbedingungen auf jedem Gerät zustimmen sollen, über das der Zugriff erfolgt, legen Sie **Zustimmung der Benutzer auf jedem Gerät erforderlich** auf **Aus** fest. Wenn diese Option aktiviert ist, müssen Benutzer möglicherweise weitere Anwendungen installieren.
 
-    **Warnung**: Für die Zustimmung auf jedem Gerät müssen Benutzer jedes Gerät bei Azure AD registrieren, bevor sie Zugriff erhalten. Es empfiehlt sich, diese Einstellung auf „Ein“ festzulegen. Für die Zwecke eines bereinigten Labs verwenden wir jedoch „Aus“.
+    **Warnung**: Für die Zustimmung auf jedem Gerät müssen die Benutzenden jedes Gerät bei Microsoft Entra ID registrieren, bevor sie Zugriff erhalten. Es empfiehlt sich, diese Einstellung auf „Ein“ festzulegen. Für die Zwecke eines bereinigten Labs verwenden wir jedoch „Aus“.
 
-13. Wenn die Zustimmungen zu Nutzungsbedingungen nach einem Zeitplan ablaufen sollen, legen Sie **Ablauf für Einwilligungen** auf **Ein** fest. Wenn diese Option aktiviert ist, werden zwei zusätzliche Zeitplaneinstellungen angezeigt.
+11. Wenn die Zustimmungen zu Nutzungsbedingungen nach einem Zeitplan ablaufen sollen, legen Sie **Ablauf für Einwilligungen** auf **Ein** fest. Wenn diese Option aktiviert ist, werden zwei zusätzliche Zeitplaneinstellungen angezeigt.
 
     ![Einstellungen von „Ablauf für Einwilligungen“ zum Festlegen des Startdatums, der Häufigkeit und Dauer](./media/lp4-mod1-new-terms-of-use-create.png)
 
-14. Verwenden Sie die Einstellungen **Ablauf startet am** und **Häufigkeit**, um den Zeitplan für den Ablauf der Nutzungsbedingungen anzugeben. In der folgenden Tabelle wird das Ergebnis für ein paar Beispieleinstellungen aufgezeigt:
+12. Verwenden Sie die Einstellungen **Ablauf startet am** und **Häufigkeit**, um den Zeitplan für den Ablauf der Nutzungsbedingungen anzugeben. In der folgenden Tabelle wird das Ergebnis für ein paar Beispieleinstellungen aufgezeigt:
 
     | Ablauf startet am | Häufigkeit | Ergebnis |
     |---|---|---|
@@ -71,7 +71,7 @@ Gehen Sie nach Fertigstellung Ihres Dokuments mit Nutzungsbedingungen wie folgt 
     | Alina | 1\. Januar | 1\. Februar | 1\. März | 1\. April|
     | Bernd | 15. Januar | 1\. Februar | 1\. März| 1\. April |
 
-15. Verwenden Sie die Einstellung **Zeitraum bis erneute Zustimmung erforderlich ist (Tage)**, um die Anzahl von Tagen anzugeben, nach denen der Benutzer den Nutzungsbedingungen spätestens erneut zustimmen muss. Dies ermöglicht es den Benutzern, ihrem eigenen Zeitplan zu folgen. Wenn Sie beispielsweise den Zeitraum auf **30** Tage festlegen, können sich für zwei Benutzer die folgenden Ablauftermine ergeben:
+13. Verwenden Sie die Einstellung **Zeitraum bis erneute Zustimmung erforderlich ist (Tage)**, um die Anzahl von Tagen anzugeben, nach denen der Benutzer den Nutzungsbedingungen spätestens erneut zustimmen muss. Dies ermöglicht es den Benutzern, ihrem eigenen Zeitplan zu folgen. Wenn Sie beispielsweise den Zeitraum auf **30** Tage festlegen, können sich für zwei Benutzer die folgenden Ablauftermine ergeben:
 
     | Benutzer | Erstes Zustimmungsdatum | Erstes Ablaufdatum | Zweites Ablaufdatum | Drittes Ablaufdatum |
     |---|---|---|---|---|
@@ -80,7 +80,7 @@ Gehen Sie nach Fertigstellung Ihres Dokuments mit Nutzungsbedingungen wie folgt 
 
     **Hinweis**: Es ist möglich, die beiden Einstellungen „Ablauf für Einwilligungen“ und „Zeitraum bis erneute Zustimmung erforderlich ist (Tage)“ zusammen zu verwenden. In der Regel wird jedoch jeweils nur eine dieser Einstellungen verwendet.
 
-16. Wählen Sie unter **Bedingter Zugriff** die Option **Benutzerdefinierte Richtlinie** aus.
+14. Wählen Sie unter **Bedingter Zugriff** die Option **Benutzerdefinierte Richtlinie** aus.
 
     | Template | Beschreibung |
     |---|---|
@@ -93,35 +93,35 @@ Gehen Sie nach Fertigstellung Ihres Dokuments mit Nutzungsbedingungen wie folgt 
 
     Benutzerdefinierte Richtlinien für bedingten Zugriff ermöglichen präzise Nutzungsbedingungen bis auf die Ebene einer spezifischen Cloudanwendung oder Benutzergruppe. Weitere Informationen finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/require-tou](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/require-tou).
 
-17. Wenn Sie fertig sind, wählen Sie **Erstellen** aus.
+15. Wenn Sie fertig sind, wählen Sie **Erstellen** aus.
 
     ![Screenshot der Seite „Neue Nutzungsbedingungen“ mit hervorgehobenen konfigurierten Optionen](./media/lp4-mod1-new-terms-of-use-create.png)
 
-18. Sobald die Nutzungsbedingungen erstellt sind, werden Sie automatisch zur Seite „Richtlinie für bedingten Zugriff“ umgeleitet. Geben Sie auf der Seite im Feld **Name** die Bezeichnung **Nutzungsbedingungen erzwingen** ein.
+16. Sobald die Nutzungsbedingungen erstellt sind, werden Sie automatisch zur Seite „Richtlinie für bedingten Zugriff“ umgeleitet. Geben Sie auf der Seite im Feld **Name** die Bezeichnung **Nutzungsbedingungen erzwingen** ein.
 
-19. Wählen Sie unter **Zuweisungen** die Option **Benutzer- oder Workloadidentitäten** aus.
+17. Wählen Sie unter **Zuweisungen** die Option **Benutzeridentitäten**.
 
-20. Aktivieren Sie auf der Registerkarte „Einschließen“ das Kontrollkästchen **Benutzer und Gruppen**.
+18. Aktivieren Sie auf der Registerkarte „Einschließen“ das Kontrollkästchen **Benutzer und Gruppen**.
 
-21. Wählen Sie im Bereich „Auswählen“ **Adele Vance** aus, das zum Testen der Nutzungsbedingungen verwenden werden soll.
+19. Wählen Sie im Bereich „Auswählen“ **Adele Vance** aus, das zum Testen der Nutzungsbedingungen verwenden werden soll.
 
    **Warnung**: Wenn Sie Ihr Administratorkonto auswählen, stellen Sie wie bei allen Richtlinien für bedingten Zugriff sicher, dass Sie über ein anderes Konto mit ausreichenden Berechtigungen zum Ändern der Richtlinie für bedingten Zugriff verfügen. Dadurch wird sichergestellt, dass Ihr Administratorkonto nicht gesperrt wird, wenn die Richtlinie für bedingten Zugriff zu einem unerwünschten Ergebnis führt.
 
-22. Wählen Sie **Cloud-Apps oder -aktionen** aus.
+20. Wählen Sie **Zielressourcen**.
 
-23. Wählen Sie **Alle Cloud-Apps** aus.
+21. Wählen Sie **Alle Cloud-Apps** aus.
 
-24. Wählen Sie unter **Zugriffssteuerungen** die Option **Gewähren** aus.
+22. Wählen Sie unter **Zugriffssteuerungen** die Option **Gewähren** aus.
 
-25. Wählen Sie im Bereich „Gewähren“ die Option **Testen von Nutzungsbedingungen** und dann **Auswählen** aus.
+23. Wählen Sie im Bereich „Gewähren“ die Option **Testen von Nutzungsbedingungen** und dann **Auswählen** aus.
 
-26. Wählen Sie unter **Richtlinie aktivieren** die Option **An** aus.
+24. Wählen Sie unter **Richtlinie aktivieren** die Option **An** aus.
 
-27. Wenn Sie fertig sind, wählen Sie **Erstellen** aus.
+25. Wenn Sie fertig sind, wählen Sie **Erstellen** aus.
 
     ![Screenshot der Richtlinie für bedingten Zugriff mit hervorgehobenen Konfigurationsoptionen](./media/lp4-mod1-terms-of-use-ca-policy.png)
 
-28. Wenn Sie Ihr eigenes Konto verwenden möchten, können Sie den Browser aktualisieren. Sie werden zur erneuten Anmeldung aufgefordert. Bei der Anmeldung müssen Sie die Nutzungsbedingungen akzeptieren.
+26. Wenn Sie Ihr eigenes Konto verwenden möchten, können Sie den Browser aktualisieren. Sie werden zur erneuten Anmeldung aufgefordert. Bei der Anmeldung müssen Sie die Nutzungsbedingungen akzeptieren.
 
 #### Aufgabe 2: Anmelden als Adele
 
@@ -139,9 +139,9 @@ Gehen Sie nach Fertigstellung Ihres Dokuments mit Nutzungsbedingungen wie folgt 
 6. Zeigen Sie die Nutzungsbedingungen an.
 7. Sie können **Annehmen** oder **Ablehnen** auswählen.
 
-    >**Hinweis**: Wenn Sie **Ablehnen** auswählen, müssen Sie bei einer zukünftigen Anmeldung als AdeleV erneut die Nutzungsbedingungen anzeigen und akzeptieren.
+    **Hinweis**: Wenn Sie **Ablehnen** auswählen, müssen Sie bei einer zukünftigen Anmeldung als AdeleV erneut die Nutzungsbedingungen anzeigen und akzeptieren.
 
-    >**Hinweis**: Es kann einige Minuten dauern, bis die Nutzungsbedingungen angezeigt werden, oder Sie können sich beim Portal abmelden und wieder anmelden.
+    **Hinweis**: Es kann einige Minuten dauern, bis die Nutzungsbedingungen angezeigt werden, oder Sie können sich beim Portal abmelden und wieder anmelden.
  
 #### Aufgabe 3: Anzeigen des Berichts über akzeptierte und abgelehnte Nutzungsbedingungen
 
@@ -195,13 +195,14 @@ Benutzer können die Nutzungsbedingungen, die sie akzeptiert haben, wie folgt le
 
 Sie können einige Details der Nutzungsbedingungen bearbeiten, aber kein vorhandenes Dokument ändern. Im Folgenden wird das Verfahren zum Bearbeiten von Details beschrieben.
 
-1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als globaler Administrator an.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) als globaler Administrator an.
 
-2. Öffnen Sie Azure Active Directory, und wählen Sie  **Identity Governance** aus.
+2. Öffnen Sie Microsoft Entra ID und wählen Sie  **Identity Governance** aus dem Menü.
 
-3. Wählen Sie im linken Navigationsmenü unter **Nutzungsbedingungen** die Option **Nutzungsbedingungen** aus.
+3. Wählen Sie im linken Navigationsmenü unter **Berechtigungsverwaltung** die Option **Nutzungsbedingungen** aus.
 
 4. Wählen Sie die Nutzungsbedingungen aus, die Sie bearbeiten möchten.
+ - Hinweis: Sie müssen auf das freie Feld klicken, nicht direkt auf den Namen der Nutzungsbedingungen.
 
 5. Wählen Sie im oberen Menü die Option **Bedingungen bearbeiten** aus.
 
@@ -242,4 +243,3 @@ Es kann manchmal erforderlich sein, das Dokument mit den Nutzungsbedingungen zu 
 6. Nachdem Sie die neue PDF-Datei hochgeladen und eine Entscheidung für die erneute Annahme getroffen haben, wählen Sie **Hinzufügen** aus.
 
 7. Die neueste Version wird nun in der Spalte „Dokument“ angezeigt.
-

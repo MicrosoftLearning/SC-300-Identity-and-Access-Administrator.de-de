@@ -35,16 +35,30 @@ Microsoft Entra-Identitätsschutz bietet automatisierte Erkennung und Behebung i
 
 2. Scrollen Sie in der daraufhin geöffneten Kachel nach unten, und wählen Sie **Erste Schritte** aus.
 
-3. Eine neue Registerkarte wird für **Identity Protection | Anmelderisiko-Richtlinie** geöffnet.
+3. Eine neue Registerkarte wird für den **bedingten Zugriff** geöffnet.
+ **Hinweis**: Standardmäßig wird die Schaltfläche „Erste Schritte“ im Azure-Portal geöffnet. Sie können das Portal verwenden oder zum Entra Admin Center zurückkehren. Beides wird funktionieren.
 
-4. Wählen Sie **Alle Benutzer** unter **Zuweisungen** aus.
+4. Wählen Sie **+ Neue Richtlinie** aus.
 
-5. Wählen Sie unter **Anmelderisiko** die Option **Mittel und höher** aus.
+5. Benennen Sie Ihre Richtlinie. Es wird empfohlen, dass Unternehmen einen aussagekräftigen Standard für die Namen ihrer Richtlinien erstellen.
 
-6. Wählen Sie **Zugriff zulassen** - **Multi-Faktor-Authentifizierung erfordern** unter **Steuerungen** aus.
+6. Wählen Sie unter Zuweisungen die Option Benutzer- oder Workloadidentitäten aus.
 
-7. Legen Sie **Richtlinienerzwingung** auf **Aktiviert** fest (falls nicht bereits geschehen), und wählen Sie **Speichern** aus.
+7. Wählen Sie unter Einschließen die Option Alle Benutzer aus.
 
-8. Sie haben eine Anmelderisiko-Richtlinie erstellt, die jetzt Ihre Identitätssicherheitsbewertung erhöhen sollte.  Es kann bis zu 24 Stunden dauern, bis sie sich auf Ihre Identitätssicherheitsbewertung auswirkt.
+8. Wählen Sie unter Ausschließen die Option Benutzer und Gruppen und dann alle Konten aus, die die Möglichkeit aufweisen müssen, die Legacyauthentifizierung zu verwenden. Microsoft empfiehlt, dass Sie mindestens ein Konto ausschließen, um zu verhindern, dass Sie ausgesperrt werden.
 
-9. Sehen Sie sich weitere Verbesserungsaktionen und die Schritte, um sie zu erstellen und zu aktivieren, an.
+9. Wählen Sie unter Zielressourcen > Cloud-Apps > Einschließen die Option Alle Cloud-Apps aus.
+
+10. Legen Sie unter Bedingungen > Client-Apps die Option Konfigurieren auf „Ja“ fest.
+ - Aktivieren Sie nur die Kontrollkästchen Exchange ActiveSync-Clients und Andere Clients.
+
+11. Wählen Sie Fertig aus.
+
+12. Wählen Sie unter Kontrollen > Zuweisung die Option „Zugriff blockieren“ aus.
+
+13. Wählen Sie Auswählen.
+
+14. Bestätigen Sie die Einstellungen, und legen Sie Richtlinie aktivieren auf Nur Bericht fest.
+
+15. Wählen Sie Erstellen aus, um die Richtlinie zu erstellen und zu aktivieren.

@@ -1,33 +1,35 @@
 ---
 lab:
-  title: "26: Konfigurieren von Privileged Identity Management für Azure\_AD-Rollen"
+  title: '26: Konfigurieren von Privileged Identity Management für Microsoft Entra-Rollen'
   learning path: '04'
   module: Module 04 - Plan and Implement and Identity Governance Strategy
 ---
 
-# Lab 26: Konfigurieren von Privileged Identity Management für Azure AD-Rollen
+# Lab 26: Konfigurieren des Privileged Identity Management für Microsoft Entra-Rollen
 
 ## Labszenario
 
-Ein Administrator für privilegierte Rollen kann Privileged Identity Management (PIM) in der Azure AD-Organisation (Azure Active Directory) anpassen und dabei auch die Art und Weise ändern, in der ein Benutzer eine berechtigte Rollenzuweisung aktiviert. Sie müssen sich mit der Konfiguration von PIM vertraut machen.
+Administrierende für privilegierte Rollen können die privilegierte Identitätsverwaltung (Privileged Identity Management, PIM) in ihrer Microsoft Entra-Organisation anpassen, einschließlich der Änderung des Benutzererlebnisses für Benutzende, die eine autorisierte Rollenzuweisung aktivieren. Sie müssen sich mit der Konfiguration von PIM vertraut machen.
 
 #### Geschätzte Dauer: 30 Minuten
 
-### Übung 1: Konfigurieren von Einstellungen für Azure AD-Rollen
+HINWEIS: Es wurden laufende Änderungen an der Notwendigkeit von MFA in Labumgebungen vorgenommen.  Wenn Sie zum Abschluss dieses Labs zwischen den Benutzenden wechseln, werden Sie möglicherweise aufgefordert, MFA einzurichten.
+
+### Übung 1: Konfigurieren der Microsoft Entra-Rolleneinstellungen
 
 #### Aufgabe 1: Öffnen der Rolleneinstellungen
 
-Führen Sie die folgenden Schritte aus, um die Einstellungen für eine Azure AD-Rolle zu öffnen.
+Befolgen Sie diese Schritte, um die Einstellungen für eine Microsoft Entra-Rolle zu öffnen.
 
-1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als globaler Administrator an.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) als globaler Administrator an.
 
-2. Suchen Sie nach **Azure AD Privileged Identity Management**, und wählen Sie es aus.
+2. Suchen und wählen Sie dann **Privileged Identity Management.**
 
-3. Wählen Sie auf der Seite „Privileged Identity Management“ im linken Navigationsbereich **Azure AD-Rollen** aus.
+3. Wählen Sie auf der Seite „Privileged Identity Management“ im linken Navigationsbereich **Microsoft Entra-Rollen**.
 
 4. Wählen Sie auf der Seite „Schnellstart“ im linken Navigationsbereich **Einstellungen** aus.
 
-    ![Screenshot der Seite „Azure AD-Rollen“ mit hervorgehobenem Menüpunkt „Einstellungen“](./media/lp3-mod3-pim-ad-roles-settings.png)
+    ![Screenshot der Microsoft Entra-Rollenseite mit hervorgehobenem Menüpunkt "Einstellungen"](./media/lp3-mod3-pim-ad-roles-settings.png)
 
 5. Überprüfen Sie die Liste der Rollen, und geben Sie anschließend im Feld **Nach Rollenname suchen** den Begriff **Compliance** ein.
 
@@ -53,27 +55,29 @@ Wenn Sie mehrere genehmigende Personen festlegen, ist der Genehmigungsvorgang ab
 
 5. Wählen Sie nach der Konfiguration der Rolleneinstellungen **Aktualisieren** aus, um die Änderungen zu speichern.
 
-### Übung 2: PIM mit Azure AD-Rollen
+### Übung 2: PIM mit Microsoft Entra-Rollen
 
 #### Aufgabe 1: Zuweisen einer Rolle
 
-Mit Azure Active Directory (Azure AD) kann ein globaler Administrator dauerhafte Rollenzuweisungen für Azure AD-Administratoren vornehmen. Diese Rollenzuweisungen können über das Azure-Portal oder über PowerShell-Befehle erstellt werden.
+Mit Microsoft Entra ID können globale Administrator*innen permanente Microsoft Entra Administratorrollenzuweisungen vornehmen. Diese Rollenzuweisungen können über das Microsoft Entra Admin Center, das Azure-Portal oder über PowerShell-Befehle erstellt werden.
 
-Der Dienst Azure AD Privileged Identity Management (PIM) ermöglicht es auch Administratoren für privilegierte Rollen, permanente Administratorrollen zuzuweisen. Außerdem können Administratoren für privilegierte Rollen Benutzer als für Azure AD-Administratorrollen berechtigt festlegen. Ein berechtigter Administrator kann die Rolle bei Bedarf aktivieren, und die entsprechenden Berechtigungen laufen nach einem bestimmten Zeitraum ab.
+PIM ermöglicht es Administrierenden von privilegierten Rollen auch, permanente Admin-Rollenzuweisungen vorzunehmen. Außerdem können Administrator*innen für privilegierte Rollen Benutzer*innen als für Microsoft Entra-Administratorrollen berechtigt festlegen. Ein berechtigter Administrator kann die Rolle bei Bedarf aktivieren, und die entsprechenden Berechtigungen laufen nach einem bestimmten Zeitraum ab.
 
-Führen Sie folgende Schritte aus, um einen Benutzer als für eine Azure AD-Administratorrolle „berechtigt“ festzulegen.
+Führen Sie die folgenden Schritte aus, um Benutzende für eine Microsoft Entra Admin-Rolle zu qualifizieren.
 
-1. Melden Sie sich mit einem globalen Administratorkonto bei [https://portal.azure.com](https://portal.azure.com) an.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) mit einem globalen Administratorkonto an.
 
-2. Suchen Sie nach **Azure AD Privileged Identity Management**, und wählen Sie es aus.
+2. Suchen und wählen Sie dann **Privileged Identity Management.**
 
-3. Wählen Sie auf der Seite „Privileged Identity Management“ im linken Navigationsbereich **Azure AD-Rollen** aus.
+    **Hinweis**: Sie finden es im Menü unter Identity – Identity Governance – Privileged Identity Management
+
+3. Wählen Sie auf der Seite „Privileged Identity Management“ im linken Navigationsbereich **Microsoft Entra-Rollen**.
 
 4. Wählen Sie auf der Seite „Schnellstart“ im linken Navigationsbereich **Rollen** aus.
 
 5. Wählen Sie im oberen Menü **+ Zuweisungen hinzufügen** aus.
 
-    ![Screenshot der Seite „Azure AD-Rollen“ mit hervorgehobenem Menüpunkt „Zuweisungen hinzufügen“](./media/lp4-mod3-pim-assign-role.png)
+    ![Bildschirmanzeige der Microsoft Entra-Rollen mit hervorgehobenem Menüpunkt „Zuweisungen hinzufügen“](./media/lp4-mod3-pim-assign-role.png)
 
 6. Überprüfen Sie die Einstellungen auf der Seite „Zuweisungen hinzufügen“ auf der Registerkarte **Mitgliedschaft**.
 
@@ -99,31 +103,30 @@ Führen Sie folgende Schritte aus, um einen Benutzer als für eine Azure AD-Adm
 #### Aufgabe 2: Anmelden als Miriam
 
 1. Öffnen Sie ein neues InPrivate-Browserfenster.
-2. Stellen Sie eine Verbindung mit dem Azure-Portal (https://portal.azure.com) her.
-3. Wenn das Portal mit einem angemeldeten Benutzer geöffnet wird, wählen Sie in der rechten oberen Ecke dessen Namen und dann **Mit einem anderen Konto anmelden** aus.
-4. Melden Sie sich als Miriam an.
+2. Verbinden Sie sich mit dem Microsoft Entra Admin Center (https://entra.microsoft.com)).
+    **Hinweis**: Wenn sich die Seite mit einem angemeldeten Benutzenden öffnet, klicken Sie auf dessen Namen in der oberen rechten Ecke und wählen Sie **Mit einem anderen Konto anmelden**.
+3. Melden Sie sich als Miriam an.
 
    | Feld | Wert |
    | :--- | :--- |
    | Benutzername | **MiriamG@** `<<your domain.onmicrosoft.com>>` |
    | Kennwort |  Geben Sie das Administratorkennwort des Mandanten ein (Sie finden das Kennwort des Mandantenadministrators auf der Registerkarte „Labressourcen“). |
 
-5. Schließen Sie das **Dialogfeld „Willkommen bei Azure“**.
-6. Suchen Sie in der Leiste **Ressourcen, Dienste und Dokumente durchsuchen** nach Azure Active Directory, und öffnen Sie die Seite.
-7. Suchen Sie auf der Seite **Übersicht** nach **Mein Feed**.
-8. Wählen Sie **Profil anzeigen** unter Miriam Grahams Namen aus. Dadurch wird die Profilseite von Miriam geöffnet.
-9. Wählen Sie **Zugewiesene Rollen** und dann **Berechtigte Zuweisungen** aus.
-10. Beachten Sie, dass die Rolle **Complianceadministrator** jetzt für Miriam verfügbar ist.
+4. Öffnen Sie im Menü **Identität** **Benutzer** und wählen Sie dann **Alle Benutzer**.
+5. Finden Sie **Miriam** in der Liste der Benutzenden.
+6. Suchen Sie auf der Seite **Übersicht** nach den **Zugewiesenen Rollen**.
+7. Wählen Sie **Zulässige Zuweisungen**.
+1. Beachten Sie, dass die Rolle **Complianceadministrator** jetzt für Miriam verfügbar ist.
 
-#### Aufgabe 3: Aktivieren der Azure AD-Rollen
+#### Aufgabe 3: Aktivieren Ihrer Microsoft Entra-Rollen
 
-Wenn Sie eine Azure AD-Rolle annehmen müssen, können Sie in Privileged Identity Management die Aktivierung anfordern, indem Sie die Option **Meine Rollen** öffnen.
+Wenn Sie eine Microsoft Entra-Rolle übernehmen müssen, können Sie die Aktivierung anfordern, indem Sie **Meine Rollen** in „Privileged Identity Management öffnen“.
 
 1. Suchen Sie in der Leiste **Ressourcen, Dienste und Dokumente durchsuchen** nach „Privileged“.
-2. Öffnen Sie die Seite **Azure AD Privileged Identity Management**.
+2. Öffnen Sie die Seite **Privileged Identity Management**.
 3. Wählen Sie auf der Seite „Privileged Identity Management“ im linken Navigationsmenü **Meine Rollen** aus.
 
-4. Überprüfen Sie auf der Seite „Meine Rollen“ die Liste der berechtigten Zuweisungen.
+4. Überprüfen Sie auf der Seite „Meine Rollen“ die Liste der **wählbaren Zuweisungen**.
 
     ![Screenshot des Blatts „Meine Rollen“ mit hervorgehobenen berechtigten Rollenzuweisungen](./media/lp4-mod3-my-roles.png)
 
@@ -145,8 +148,8 @@ Wenn Sie eine Azure AD-Rolle annehmen müssen, können Sie in Privileged Identit
 
 Bei bestimmten Rollen kann der Bereich der erteilten Berechtigungen auf eine einzelne Verwaltungseinheit, einen Dienstprinzipal oder eine Anwendung beschränkt werden. Dieses Verfahren ist ein Beispiel für die Zuweisung einer Rolle, die den Bereich einer Verwaltungseinheit aufweist.
 
-1. Denken Sie daran, die Browserfenster für MiriamG zu schließen, und öffnen Sie dann das Azure-Portal mit Ihrem Administratorkonto.
-2. Navigieren Sie zur Seite „Privileged Identity Management“, und wählen Sie im linken Navigationsmenü **Azure AD-Rollen** aus.
+1. Vergessen Sie nicht, die Browserfenster für MiriamG zu schließen, und öffnen Sie dann das Microsoft Entra Admin Center mit Ihrem Administratorkonto.
+2. Rufen Sie die Seite „Privileged Identity Management“ auf, und wählen Sie im linken Navigationsmenü Azure **Microsoft Entra-Rollen.**
 3. Wählen Sie **Rollen** aus.
 4. Wählen Sie auf der Seite „Rollen“ im oberen Menü **+ Zuweisungen hinzufügen** aus.
 
@@ -162,7 +165,7 @@ Bei bestimmten Rollen kann der Bereich der erteilten Berechtigungen auf eine ein
 
 Befolgen Sie diese Anweisungen zum Aktualisieren oder Entfernen einer vorhandenen Rollenzuweisung.
 
-1. Wählen Sie auf der Seite „Azure AD Privileged Identity Management > Azure AD-Rollen“ im linken Navigationsbereich **Zuweisungen** aus.
+1. Wählen Sie auf der Seite „Privileged Identity Management“ > „Microsoft Entra-Rollen öffnen“ in der linken Navigation **Zuweisungen**.
 
 2. Überprüfen Sie in der Liste **Zuweisungen** unter „Complianceadministrator“ die Optionen in der Spalte **Aktion**.
 
