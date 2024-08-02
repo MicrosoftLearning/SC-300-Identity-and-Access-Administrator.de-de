@@ -119,7 +119,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 1. Klickan Sie auf **OK**.
 
 1. Geben Sie im Dialogfeld „Anmeldung“ die folgenden Informationen ein:
-   - Benutzername = **AzureAD\JoniS@<<your lab domainname>>
+   - Benutzername = **AzureAD\JoniS@ Ihr Domänenname**
    - Kennwort = Geben Sie das Kennwort ein, das von Ihrem Labanbieter bereitgestellt wird.
 
    HINWEIS: JoniS ist der Benutzer, dem wir in der Aufgabe 1 Zugriff auf die Anmeldung als Administrator gewährt haben.
