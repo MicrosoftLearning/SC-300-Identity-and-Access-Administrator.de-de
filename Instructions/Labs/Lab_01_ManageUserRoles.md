@@ -185,7 +185,7 @@ Nachdem die Benutzer erstellt wurden, werden Sie darüber benachrichtigt, dass d
     ```
     Connect-MgGraph -Scopes "User.ReadWrite.All"
     ``` 
-    Der Edge-Browser wird geöffnet, und Sie werden aufgefordert, sich anzumelden.  Verwenden Sie das MOD-Administratorkonto, um eine Verbindung herzustellen.  Akzeptieren Sie die Berechtigungsanforderung; schließen Sie dann das Browserfenster.
+    Der Edge-Browser wird geöffnet, und Sie werden aufgefordert, sich anzumelden.  Verwenden Sie das MOD-Administratorkonto, um eine Verbindung herzustellen.  Akzeptieren Sie die Berechtigungsanforderung und schließen Sie dann das Browserfenster.
 
 5. Um zu überprüfen, ob Sie verbunden sind, und um vorhandene Benutzer anzuzeigen, führen Sie Folgendes aus:  
 
@@ -262,7 +262,7 @@ Es kann vorkommen, dass ein Konto gelöscht und dann wiederhergestellt werden mu
 
 #### Aufgabe 1: Suchen Ihres nicht lizenzierten Benutzers in Azure Active Directory
 
-Einigen Benutzerkonten in Ihrer Organisation werden nicht alle verfügbaren Produkte in ihrer zugewiesenen Lizenz bereitgestellt, oder sie benötigen Updates oder Ergänzungen zu ihrer Lizenzzuweisung. Sie müssen sicherstellen, dass Sie die Lizenzzuweisung eines Benutzerkontos in Azure AD aktualisieren können.
+Einigen Benutzerkonten in Ihrer Organisation werden nicht alle verfügbaren Produkte in ihrer zugewiesenen Lizenz bereitgestellt, oder sie benötigen Updates oder Ergänzungen zu ihrer Lizenzzuweisung. Sie müssen sicherstellen, dass Sie die Lizenzzuweisung eines Benutzerkontos in Microsoft Entra ID aktualisieren können.
 
 1. Navigieren Sie zu [https://entra.microsoft.com]( https://entra.microsoft.com).
 
