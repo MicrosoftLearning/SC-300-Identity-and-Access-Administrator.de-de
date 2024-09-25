@@ -1,15 +1,15 @@
 ---
 lab:
-  title: "15: Konfigurieren einer Registrierungsrichtlinie für die Multi-Faktor-Authentifizierung von Azure\_AD"
+  title: 15 - Konfigurieren einer Registrierungsrichtlinie für die Multifaktor-Authentifizierung
   learning path: '02'
   module: Module 02 - Implement an Authentication and Access Management Solution
 ---
 
-# Lab 15: Konfigurieren einer Registrierungsrichtlinie für die Multi-Faktor-Authentifizierung von Azure AD
+# Übung 15 - Konfigurieren einer Registrierungsrichtlinie für die Multifaktor-Authentifizierung
 
 ## Labszenario
 
-Mit der Multi-Faktor-Authentifizierung von Azure AD können Sie über die Verwendung eines Benutzernamens und Kennworts hinaus Ihre Identität verifizieren. Sie stellt eine zweite Sicherheitsebene für Benutzeranmeldungen dar. Damit Benutzer auf MFA-Aufforderungen reagieren können, müssen sie sich zuerst bei Azure AD Multi-Factor Authentication registrieren. Sie müssen die MFA-Registrierungsrichtlinie Ihrer Azure AD-Organisation so konfigurieren, dass sie allen Benutzern zugewiesen wird.
+Mit Multi-Faktor-Authentifizierung können Sie über die Verwendung eines Benutzernamens und Kennworts hinaus Ihre Identität verifizieren. Sie bietet eine zweite Sicherheitsebene für Benutzeranmeldungen. Damit Benutzer*innen auf MFA-Aufforderungen reagieren können, müssen sie sich zunächst für Microsoft Entra Multifactor Authentication registrieren. Sie müssen die MFA-Registrierungsrichtlinie Ihrer Microsoft Entra-Organisation so konfigurieren, dass sie allen Benutzer*innen zugewiesen wird.
 
 #### Geschätzte Dauer: 10 Minuten
 
@@ -17,11 +17,11 @@ Mit der Multi-Faktor-Authentifizierung von Azure AD können Sie über die Verwe
 
 #### Aufgabe 1: Richtlinienkonfiguration
 
-1. Melden Sie sich mit einem globalen Administratorkonto bei [https://portal.azure.com]( https://portal.azure.com) an.
+1. Melden Sie sich mit dem globalen Administratorkonto bei [https://entra.microsoft.com]( https://entra.microsoft.com) an.
 
-2. Öffnen Sie das Portal-Menü, und wählen Sie  **Azure Active Directory** aus.
+2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
 
-3. Wählen Sie auf der Seite „Azure Active Directory“ unter **Verwalten** die Option **Sicherheit** aus.
+3. Wählen Sie auf der linken Seite unter **Identität** **Schutz**.
 
 4. Wählen Sie auf der Seite „Sicherheit“ im linken Navigationsbereich **Identity Protection** aus.
 
@@ -37,22 +37,22 @@ Mit der Multi-Faktor-Authentifizierung von Azure AD können Sie über die Verwe
 
 9. Außerdem können Sie festlegen, dass Benutzer von der Richtlinie ausgeschlossen werden sollen.
 
-10. Beachten Sie, dass unter **Steuerungen** die Option **Azure AD MFA-Registrierung als erforderlich festlegen** ausgewählt ist und nicht geändert werden kann.
+10. Beachten Sie, dass unter **Steuerungen** die Option **Microsoft Entra ID-MFA-Registrierung als erforderlich festlegen** ausgewählt ist und nicht geändert werden kann.
 
 
-#### Aufgabe 2: Konfigurieren der Azure AD Identity Protection-Richtlinie für die MFA-Registrierung
+#### Aufgabe 2 - Konfigurieren der Microsoft Entra Identity Protection-Richtlinie für die MFA-Registrierung
 
-**Hinweis**: Für Azure AD Identity Protection ist eine Azure AD Premium P2-Lizenz erforderlich. 
+**Hinweis**: Für Microsoft Entra Identity Protection muss Microsoft Entra ID Premium P2 aktiviert sein. 
 
-1. Navigieren Sie im Azure-Portal in der Suchleiste zu **Azure AD Identity Protection**.
+1. Navigieren Sie im Microsoft Entra Admin Center in der Suchleiste zu **Microsoft Entra Identity Protection**.
 
-1. Wählen Sie unter **Schützen** im Menü **MFA-Registrierungsrichtlinie** aus.
+1. Wählen Sie im Menü unter **Schutz** die Option **Registrierungsrichtlinie für die Multifaktorauthentifizierung**.
 
-1. Wählen Sie in **Zuweisungen** unter „Benutzer“ den Eintrag **Alle Benutzer** aus, und wählen Sie dann einen Benutzer aus, für den die MFA gelten soll.
+1. Wählen Sie unter **Zuweisungen** die Option **Alle Benutzer** unter Benutzer und wählen Sie einen Benutzer*in, der MFA erzwingen soll.
 
-1. Ändern Sie **Richtlinienerzwingung** von **Deaktiviert** in **Aktiviert**.
+1. Ändern Sie **Richtliniendurchsetzung** von **Deaktiviert** in **Aktiviert**.
 
-1. Wählen Sie **Speichern** aus.
+1. Wählen Sie **Speichern**.
 
 Auf diese Weise muss der Benutzer die MFA-Registrierung beim nächsten Anmeldeversuch abschließen.
 

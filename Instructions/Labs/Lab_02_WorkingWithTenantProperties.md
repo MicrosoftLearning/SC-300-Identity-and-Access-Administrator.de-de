@@ -63,7 +63,7 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
 
     **WICHTIG**: Das Land oder die Region wird beim Erstellen des Mandanten angegeben. Diese Einstellung kann später nicht mehr geändert werden.
 
-3. Suchen Sie auf der Seite **Eigenschaften** unter **Mandanteneigenschaften** den **Standort**, und überprüfen Sie die Informationen.
+3. Suchen Sie auf der Seite **Eigenschaften** unter **Mandanteneigenschaften** den Datenspeicherort und überprüfen Sie die Informationen.
 
     ![Screenshot der Seite mit den Azure Active Directory-Eigenschaften mit hervorgehobenen Einstellungen „Land oder Region“ und „Standort“](./media/azure-active-directory-properties-country-location.png)
 

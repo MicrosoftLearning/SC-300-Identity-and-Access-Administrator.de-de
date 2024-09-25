@@ -31,7 +31,7 @@ Microsoft Entra-Identitätsschutz bietet automatisierte Erkennung und Behebung i
 
 #### Aufgabe 2: Ausführen einer Verbesserungsaktion
 
-1. Um einen Bereich des Identitätssicherheitsstatus zu verbessern, wählen Sie **Alle Benutzer mit einer Richtlinie zum Anmelderisiko schützen** aus.
+1. Um einen Bereich der Identitätssicherheit zu verbessern, wählen Sie **Anmelderisiko-Richtlinien von Microsoft Entra ID Protection aktivieren**.
 
 2. Scrollen Sie in der daraufhin geöffneten Kachel nach unten, und wählen Sie **Erste Schritte** aus.
 
