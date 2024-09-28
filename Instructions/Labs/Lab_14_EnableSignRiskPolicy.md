@@ -48,7 +48,7 @@ Als zusätzliche Sicherheitsebene müssen Sie die Anmelde- und Benutzerrisikoric
 
 13. Aktivieren Sie das Kontrollkästchen **Kennwortänderung anfordern**, und wählen Sie dann **Fertig** aus.
 
-14. Wählen Sie unter **Richtlinienerzwingung** die Option **Aktiviert** aus, und wählen Sie dann **Speichern** aus.
+14. Wählen Sie unter **Richtliniendurchsetzung** die Option **Aktivieren** und wählen Sie dann **Speichern**.
 
 #### Aufgabe 2: Aktivieren der Anmelderisiko-Richtlinie
 
@@ -64,4 +64,4 @@ Als zusätzliche Sicherheitsebene müssen Sie die Anmelde- und Benutzerrisikoric
 
 6. Aktivieren Sie das Kontrollkästchen **Multi-Faktor-Authentifizierung erforderlich**, und wählen Sie dann **Fertig** aus.
 
-7. Wählen Sie unter **Richtlinienerzwingung** die Option **Aktiviert** aus, und wählen Sie dann **Speichern** aus.
+7. Wählen Sie unter **Richtliniendurchsetzung** die Option **Aktivieren** und wählen Sie dann **Speichern**.
