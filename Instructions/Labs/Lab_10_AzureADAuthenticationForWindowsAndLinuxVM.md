@@ -23,20 +23,33 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 
 1. Wählen Sie **+ Ressource erstellen** aus.
 
-1. Geben Sie **Windows 11** in der Marketplace-Suchleiste ein.
+1. Geben Sie **Windows 11** in die Suchleiste des Marketplace ein und drücken Sie dann die **Eingabetaste**.
 
-1. Wählen Sie im Feld **Windows 11** **Windows 11 Enterprise 22H2** aus der Dropdownliste „Softwareplan auswählen“ aus.
+1. Wählen Sie im Feld **Windows 11** die Option **Erstellen v** und wählen Sie **Windows 11 Enterprise, Version 22H2** aus dem sich öffnenden Menü.
 
-1. Sie müssen einen Administratorbenutzernamen und ein Kennwort für den virtuellen Computer auf der Registerkarte „Grundeinstellungen“ erstellen.
-   - Verwenden Sie einen Benutzernamen, den Sie sich merken können, und ein sicheres Kennwort.
+1. Erstellen Sie die VM unter Verwendung der folgenden Werte auf der Registerkarte **Grundlagen**:
+  | Feld | Zu verwendender Wert |
+  | :-- | :-- |
+  | Abonnement | Azure Pass-Förderung |
+  | Ressourcengruppe | Neu erstellen – rgEntraLogin |
+  | Name des virtuellen Computers | vmEntraLogin |
+  | Region | *default* |
+  | Verfügbarkeitsoptionen | Keine Infrastrukturredundanz erforderlich |
+  | Sicherheitstyp | Standard |
+  | Size | Standard DC1s_v3 – 1 vCPU, 8 GiB Arbeitsspeicher |
+  | Benutzername des Administrators | vmEntraAdmin |
+  | Administratorkennwort | Verwenden Sie das von der Laborumgebung bereitgestellte Kennwort oder erstellen Sie ein sicheres Kennwort, das Sie sich merken können. |
+  | Lizenzierung | Bestätigen, dass Sie über eine Lizenz verfügen |
 
-1. Aktivieren Sie auf der Registerkarte **Verwaltung** das Kontrollkästchen **Mit Microsoft Entra ID anmelden** im Abschnitt „Microsoft Entra ID“.
+1. Auf den Registerkarten **Datenträger** oder **Netzwerke** brauchen Sie nichts zu ändern, aber Sie können die Werte überprüfen.
+
+1. Wechseln Sie zur Registerkarte **Verwaltung** und aktivieren Sie im Abschnitt „Microsoft Entra ID“ das Kontrollkästchen **Mit Microsoft Entra ID anmelden**.
 
         NOTE: You will notice that the **System assigned managed identity** under the Identity section is automatically checked and turned grey. This action should happen automatically once you enable Login with Microsoft Entra ID.
 
-1. Führen Sie die weiteren Schritte zum Erstellen eines virtuellen Computers aus. 
+1. Klicken Sie auf **Bewerten + erstellen**.
 
-1. Klicken Sie auf Erstellen.
+1. Wählen Sie **Erstellen**aus.
 
 #### Aufgabe 2 – Microsoft Entra ID-Anmeldung für vorhandene Microsoft Azure Virtual Machines
 
@@ -57,7 +70,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 
 #### Aufgabe 3 – Aktualisieren der Server-VM zur Unterstützung der Microsoft Entra ID-Anmeldung
 
-1. Wählen Sie den Menüeintrag **Verbinden** aus.
+1. Wählen Sie im Menü **Verbinden** die Option **Verbinden** aus.
 
 1. Wählen Sie auf der Registerkarte **RDP****RDP-Datei herunterladen** aus.  Wenn Sie dazu aufgefordert werden, wählen Sie die **Beibehalten** für die Datei aus.  Die Datei wird in Ihrem Ordner „Downloads“ gespeichert.
 
@@ -70,7 +83,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 1. Verwenden Sie den Benutzernamen und das Kennwort des Administrators, den Sie beim Einrichten des virtuellen Computers erstellt haben.
    - Wenn Sie dazu aufgefordert werden, wählen Sie „Ja“ aus, um den Zugriff auf den virtuellen Computer oder die RDP-Sitzung zuzulassen.
 
-1. Warten Sie, bis der Server geöffnet ist, und die gesamte Software, wie etwa das Server-Manager-Dashboard, geladen ist.
+1. Warten Sie, bis die VM geöffnet und die gesamte Software geladen ist.
 
 1. Wählen Sie die Schaltfläche **Start** im virtuellen Computer aus.
 
@@ -79,6 +92,8 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 1. Wählen Sie **System und Sicherheit** in der Liste der Einstellungen aus.
 
 1. Wählen Sie in der Einstellung **System** die Option **Remotezugriff zulassen** aus.
+
+  HINWEIS: Sie müssen das System-Untermenü nicht öffnen. Die Option ist unter dem Systemheader verfügbar.
 
 1. Im daraufhin geöffneten Dialogfeld wird unten der Abschnitt **Remotedesktop** angezeigt.
 
@@ -124,7 +139,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 
    HINWEIS: JoniS ist der Benutzer, dem wir in der Aufgabe 1 Zugriff auf die Anmeldung als Administrator gewährt haben.
 
-1. Windows Server sollte die Anmeldung bestätigen und das normale Server-Manager-Dashboard öffnen.
+1. Windows sollte die Anmeldung bestätigen und den normalen Bildschirm öffnen.
 
 #### Aufgabe 6 – Optionale Tests zum Erkunden der Microsoft Entra ID-Anmeldung
 
@@ -140,9 +155,9 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 
 1. Beenden Sie die Remotedesktopsitzung.
 
-1. Öffnen Sie die Datei **<<server name>>-AzureAD.RDP** erneut.
+1. Starten Sie die Datei **<<server name>>-EntraID.RDP** erneut.
 
-1. Versuchen Sie, sich als andere Azure AD-Mitglieder wie AdeleV oder AlexW oder DiegoS anzumelden.
+1. Versuchen Sie, sich mit den Benutzernamen anderer Microsoft Entra-Benutzerkonten wie AdeleV, AlexW oder DiegoS anzumelden.
 
 1. Beachten Sie, dass jedem dieser Benutzer der Zugriff verweigert wird.
 
