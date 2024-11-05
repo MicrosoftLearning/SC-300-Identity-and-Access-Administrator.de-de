@@ -17,9 +17,9 @@ Der privilegierte Benutzerzugriff sollte regelmäßig auf ähnliche Weise überp
 
 #### Aufgabe: Erstellen einer neue Zugriffsüberprüfung
 
-1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als globaler Administrator an.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) als globaler Administrator an.
 
-2. Zugriffsüberprüfungen können den Zugriffslebenszyklus verwalten.  Suchen Sie in **Azure Active Directory** den Eintrag **Identity Governance** unter dem Menü **Verwalten**.  Wählen Sie in **Identity Goverance** die Option **Zugriffsüberprüfungen** aus.
+2. Zugriffsüberprüfungen können den Zugriffslebenszyklus verwalten.  Suchen Sie unter **Microsoft Entra ID** nach **Identity Governance** und wählen Sie dann **Zugangsüberprüfungen**.
 
 3. Wählen Sie **+ Neue Zugriffsüberprüfung** aus.
 
@@ -29,7 +29,7 @@ Der privilegierte Benutzerzugriff sollte regelmäßig auf ähnliche Weise überp
 
 6. Legen Sie den **Bereich** auf **Alle Benutzer** fest.
 
-7. Wählen Sie die Option **Überprüfungen** aus, um im Assistenten vorwärts zu wechseln.
+7. Wählen Sie **Weiter: Überprüfungen** aus, um im Assistenten weiterzugehen.
 
 8. Der nächste Schritt besteht darin, die Prüfer zu bestimmen.  Diese Prüfer können das Mitglied selbst sein, um eine Selbstüberprüfung auszuführen, oder können Vorgesetzten zugewiesen werden, wenn der Zugriff für eine gesamte Abteilung überprüft wird. Sie können auch die Aktion für den Fall festlegen, dass ein Prüfer nicht antwortet, um dem Mitglied automatisch den privilegierten Zugriff zu entziehen.
 
@@ -37,11 +37,13 @@ Der privilegierte Benutzerzugriff sollte regelmäßig auf ähnliche Weise überp
 
 10. Mit den erweiterten Einstellungen können Sie eine Nachricht als Teil der Überprüfung angeben.
 
-11. Wählen Sie **Überprüfen und Erstellen** aus, um die Zugriffsüberprüfung abzuschließen.
+11. Wechseln Sie zur Registerkarte **Überprüfen + Erstellen**, um die Zugriffsüberprüfung abzuschließen.
 
 12. Nennen Sie die Zugriffsüberprüfung **SC300 Access Review Test**.
 
-13. Wählen Sie **Erstellen** aus. Wenn die Zugriffsüberprüfung erstellt ist, wird die Zugriffsüberprüfungsliste mit den Rollen und Besitzern der Überprüfungen ausgefüllt.
+13. Wählen Sie am unteren Rand der Seite die Option **Erstellen**.
+
+    **Hinweis** - Wenn die Zugriffsüberprüfung erstellt wird, wird die Liste der Zugriffsüberprüfungen mit den Rollen und Besitzenden der Überprüfungen aufgefüllt.
 
 14. Mitglieder, die überprüft werden, erhalten eine E-Mail, wenn die Überprüfung initiiert wird.
 

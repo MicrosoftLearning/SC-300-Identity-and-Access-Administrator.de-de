@@ -11,7 +11,7 @@ lab:
 
 ## Labszenario
 
-Azure Active Directory Privileged Identity Management (Azure AD PIM) kann sowohl die integrierten Azure-Ressourcenrollen als auch benutzerdefinierte Rollen verwalten. Beispiele:
+Microsoft Entra Privileged Identity Management (Azure AD PIM) kann sowohl die integrierten Azure-Ressourcenrollen als auch benutzerdefinierte Rollen verwalten. Beispiele:
 
 - Besitzer
 - Benutzerzugriffsadministrator
@@ -28,55 +28,51 @@ Sie müssen einen Benutzer für eine Azure-Ressourcenrolle als „berechtigt“ 
 
 #### Aufgabe 1: Zuweisen von Azure-Ressourcenrollen
 
-1. Melden Sie sich mit einem globalen Administratorkonto bei [https://portal.azure.com](https://portal.azure.com) an.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) mit einem globalen Administratorkonto an.
 
-2. Suchen Sie nach **Azure AD Privileged Identity Management**, und wählen Sie es aus.
+2. Suchen und wählen Sie dann **Privileged Identity Management.**
 
-3. Wählen Sie auf der Seite „Privileged Identity Management“ im linken Navigationsbereich **Azure-Ressourcen** aus.
+3. Wählen Sie auf der Seite "Privileged Identity Management" in der linken Navigation **Azure-Ressourcen.**
 
 4. Wählen Sie im oberen Menü **Ressourcen ermitteln** aus.
 
-5. Wählen Sie auf der Seite „Azure-Ressourcen – Ermittlung“ Ihr Abonnement aus, und wählen Sie anschließend im oberen Menü **Ressource verwalten** aus.
+5. Wählen Sie auf der Seite "Azure-Ressourcen - Ermittlung" Ihr Abonnement aus.
 
-   ![Screenshot der Seite „Azure-Ressourcen – Ermittlung“ mit hervorgehobenem Abonnement und Option „Ressource verwalten“](./media/lp4-mod3-pim-azure-resource-management.png)
+   ![Screenshot der Seite „Azure-Ressourcen - Ermittlung“ mit hervorgehobenem Abonnement und Option „Ressource verwalten“](./media/lp4-mod3-pim-azure-resource-management.png)
 
-6. Überprüfen Sie im Dialogfeld **Für die ausgewählte Ressource Onboarding zur Verwaltung durchführen** die Informationen, und wählen Sie dann **OK** aus.
-
-7. Schließen Sie nach Abschluss des Onboardingvorgangs die Seite „Azure-Ressourcen – Ermittlung“.
-
-8. Wählen Sie auf der Seite „Azure-Azure-Ressourcen“ das Abonnement aus.
+6. Überprüfen Sie die Informationen auf der Seite **Übersicht**.
 
    ![Screenshot der neu hinzugefügten Azure-Ressource](./media/lp4-mod3-pim-az-resource-overview.png)
 
-9. Wählen Sie im linken Navigationsmenü unter **Verwalten** die Option **Rollen** aus, um die Liste der Rollen für Azure-Ressourcen anzuzeigen.
+7. Wählen Sie im linken Navigationsmenü unter **Verwalten** die Option **Rollen** aus, um die Liste der Rollen für Azure-Ressourcen anzuzeigen.
 
-10. Wählen Sie im oberen Menü **+ Zuweisungen hinzufügen** aus.
+8. Wählen Sie im oberen Menü **+ Zuweisungen hinzufügen** aus.
 
-11. Wählen Sie auf der Seite „Zuweisungen hinzufügen“ das Menü **Rolle auswählen** aus, und wählen Sie dann **API-Verwaltungsdienstmitwirkender** aus.
+9. Wählen Sie auf der Seite „Zuweisungen hinzufügen“ das Menü **Rolle auswählen** aus, und wählen Sie dann **API-Verwaltungsdienstmitwirkender** aus.
 
-12. Wählen Sie unter **Mitglied(er) auswählen** die Option **Keine Mitglieder ausgewählt** aus.
+10. Wählen Sie unter **Mitglied(er) auswählen** die Option **Keine Mitglieder ausgewählt** aus.
 
-13. Wählen Sie **Miriam Graham** aus Ihrer Organisation aus, der die Rolle zugewiesen wird.  Wählen Sie anschließend **Auswählen** aus.
+11. Wählen Sie **Miriam Graham** aus Ihrer Organisation aus, der die Rolle zugewiesen wird.  Wählen Sie anschließend **Auswählen** aus.
 
-14. Wählen Sie **Weiter** aus.
+12. Wählen Sie **Weiter** aus.
 
-15. Wählen Sie auf der Registerkarte **Einstellungen** unter **Zuweisungstyp** die Option **Berechtigt** aus.
+13. Wählen Sie auf der Registerkarte **Einstellungen** unter **Zuweisungstyp** die Option **Berechtigt** aus.
 
    - Für **berechtigte** Zuweisungen muss das Mitglied der Rolle eine Aktion durchführen, um die Rolle verwenden zu können. Beispiele für Aktionen sind eine erfolgreiche Überprüfung der Multi-Faktor-Authentifizierung (MFA), die Angabe einer geschäftlichen Begründung oder das Anfordern einer Genehmigung von den angegebenen genehmigenden Personen.
 
    - Für **aktive** Zuweisungen ist es nicht erforderlich, dass das Mitglied eine Aktion durchführt, um die Rolle nutzen zu können. Bei als aktiv zugewiesenen Mitgliedern sind die Berechtigungen immer der Rolle zugewiesen.
 
-16. Geben Sie die Zuweisungsdauer an, indem Sie den Start- und Endzeitpunkt für Datum und Uhrzeit ändern.
+14. Geben Sie die Zuweisungsdauer an, indem Sie den Start- und Endzeitpunkt für Datum und Uhrzeit ändern.
 
-17. Wählen Sie abschließend **Zuweisen** aus.
+15. Wählen Sie abschließend **Zuweisen** aus.
 
-18. Nachdem die neue Rollenzuweisung erstellt wurde, wird eine Statusbenachrichtigung angezeigt.
+16. Nachdem die neue Rollenzuweisung erstellt wurde, wird eine Statusbenachrichtigung angezeigt.
 
 #### Aufgabe 2: Aktualisieren oder Entfernen der Zuweisung einer vorhandenen Ressourcenrolle
 
 Befolgen Sie diese Anweisungen zum Aktualisieren oder Entfernen einer vorhandenen Rollenzuweisung.
 
-1. Öffnen Sie **Azure AD Privileged Identity Management**.
+1. Öffnen Sie **Microsoft Entra Privileged Identity Management**.
 
 2. Wählen Sie **Azure-Ressourcen** aus.
 
@@ -84,7 +80,7 @@ Befolgen Sie diese Anweisungen zum Aktualisieren oder Entfernen einer vorhandene
 
 4. Wählen Sie unter **Verwalten** die Option **Zuweisungen** aus.
 
-5. Überprüfen Sie auf der Registerkarte **Berechtigte Rollen** in der Spalte „Aktion“ die verfügbaren Optionen.
+5. Überprüfen Sie auf der Registerkarte **Zuschussfähige Zuweisungen** in der Spalte "Aktion" die verfügbaren Optionen.
 
 6. Wählen Sie **Entfernen**.
 

@@ -1,15 +1,22 @@
 ---
 lab:
-  title: "07: Hinzufügen einer Hybrididentität mit Azure\_AD Connect"
+  title: 07 - Optional --- Hinzufügen von hybriden Identitäten mit Microsoft Entra Connect
   learning path: '01'
   module: Module 01 - Implement an identity management solution
 ---
 
-# Lab 07: OPTIONAL --- Hinzufügen einer Hybrididentität mit Azure AD Connect
+# Lab 07: OPTIONAL --- Hinzufügen von hybriden Identitäten mit Microsoft Entra Connect
+
+
+
+# Dieses Lab funktioniert derzeit nicht.  Aufgrund einer Lizenzierungsänderung in der Microsoft Entra ID ist das Lab fehlgeschlagen.  Wir sind derzeit mit der Problembehandlung und der Aktualisierung des Labs beschäftigt und sollten es innerhalb einer Woche wieder online haben.  Bitte gehen Sie zum nächsten Labor.
+
+
+
 
 **Hinweis**: Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen dazu finden Sie in Lab 00.
 
-**Hinweis 2**: Diese Übung ist optional.  Die Bearbeitung dauert mindestens 1 Stunde, und Sie sollten die Arbeitsschritte so detailliert wie möglich befolgen.  Bitte nutzen Sie den Computer, wenn es Ihre Zeit erlaubt.  Wenn Ihr Unternehmen seine Hybridkonfiguration bereits eingerichtet hat oder Sie nicht beabsichtigen, Azure AD Connect zu verwenden, überspringen Sie dieses Lab.
+**Hinweis 2**: Diese Übung ist optional.  Die Bearbeitung dauert mindestens 1 Stunde, und Sie sollten die Arbeitsschritte so detailliert wie möglich befolgen.  Bitte nutzen Sie den Computer, wenn es Ihre Zeit erlaubt.  Wenn Ihr Unternehmen bereits eine Hybrid-Konfiguration eingerichtet hat oder Sie nicht vorhaben, Microsoft Entra Connect zu verwenden, überspringen Sie bitte dieses Lab.
 
 ## Labszenario
 
@@ -68,7 +75,7 @@ Ihr Unternehmen verfügt über lokale Azure Active Directory Domain Services (AD
    -   Benutzername: **demouser**
    -   Kennwort: **Verwenden das sichere Kennwort, das Sie in Aufgabe 1 erstellt haben**
 
-2.  Starten Sie die Remotedesktopsitzung auf **DC1** die **Windows PowerShell ISE**, fügen Sie dem Skriptbereich das folgende Skript hinzu, und führen Sie es aus, um die erweiterte Sicherheitskonfiguration von Internet Explorer und die Benutzerzugriffssteuerung auf den beiden Azure-VMs **DC1** und **APP1** zu deaktivieren:
+2.  Starten Sie in der Remotedesktopsitzung zu **DC1** **Windows PowerShell ISE** und öffnen Sie dann den Skriptbereich.  Fügen Sie als Nächstes das folgende Skript zum Skriptbereich hinzu und führen Sie es aus, um die erweiterte Sicherheitskonfiguration von Internet Explorer und die Benutzerzugriffssteuerung auf den Azure-VMs **DC1** und **APP1** zu deaktivieren:
 
     ```pwsh
 
@@ -139,7 +146,7 @@ Ihr Unternehmen verfügt über lokale Azure Active Directory Domain Services (AD
 2.  Starten Sie Internet Explorer in der Remotedesktopsitzung auf **DC1**, und navigieren Sie zu dem nachstehenden Link.
 
     ```
-    https://github.com/microsoft/MCW-Hybrid-identity/tree/main/Hands-on%20lab/studentfiles
+    https://github.com/microsoft/MCW-Hybrid-identity/tree/main/Archive/Hands-on%20lab/studentfiles
     ```
 
 3. Wählen Sie auf der Seite **Create Users/Group for Active Directory Demo/Test Environment** den Link **CreateDemoUsers.ps1** aus, akzeptieren Sie die Lizenzbedingungen, und speichern Sie das entsprechende Skript im lokalen Dateisystem.
@@ -323,9 +330,9 @@ In dieser Aufgabe konfigurieren Sie das DNS-Suffix der Active Directory-Gesamtst
     }
     ```
 
-### Aufgabe 6: Installieren von Azure AD Connect
+### Aufgabe 6: Microsoft Entra Connect installieren
 
-In dieser Aufgabe installieren Sie Azure AD Connect
+In dieser Aufgabe werden Sie Microsoft Entra Connect installieren.
 
 1. Wählen Sie in der Remotedesktopsitzung auf **DC1** im Server-Manager **Lokaler Server** aus, und vergewissern Sie sich, dass das **Verstärkte Sicherheitskonfiguration für IE** aktiviert ist. Andernfalls wählen Sie den Link **Ein** neben **Verstärkte Sicherheitskonfiguration für IE** aus, legen die **Administratoreinstellungen** auf **Aus** fest, und wählen **OK** aus.
 
@@ -337,7 +344,7 @@ In dieser Aufgabe installieren Sie Azure AD Connect
 
 2. Starten Sie in der Remotedesktopsitzung auf **DC1** den Chrome-Browser, und navigieren Sie zum Azure-Portal unter <https://portal.azure.com>.
 
-3. Wenn Sie aufgefordert werden, sich anzumelden, geben Sie die Anmeldeinformationen des Azure AD-Benutzerkontos **john.doe** ein, das Sie weiter oben in dieser Übung in den Editor kopiert haben.
+3. Wenn Sie aufgefordert werden, sich anzumelden, geben Sie die Anmeldedaten des Microsoft Entra-Benutzerkontos **john.doe** ein, das Sie zuvor in Notepad kopiert haben.
 
 4. Geben Sie bei entsprechender Aufforderung das Kennwort für das Benutzerkonto **john.doe** ein. 
   
@@ -347,13 +354,13 @@ In dieser Aufgabe installieren Sie Azure AD Connect
 
 6. Wenn das Dialogfeld **Willkommen bei Microsoft Azure** angezeigt wird, wählen Sie **Vielleicht später** aus. 
 
-7. Wählen Sie Azure-Portal im linken Navigationsbereich des Portals **Azure Active Directory** aus, um zur Seite **Contoso – Übersicht** zu navigieren.
+7. Suchen Sie im Azure-Portal nach **Microsoft Entra Connect**.
 
-8. Wählen Sie auf der Seite **Contoso – Übersicht** die Option **Azure AD Connect** unter **Verwalten** auf der linken Seite aus.
+8. Wählen Sie auf der Seite mit den Suchergebnissen **Microsoft Entra Connect**.
 
-9.  Wählen Sie auf der Seite **Azure AD Connect** den Link **Azure AD Connect herunterladen** aus.  Wählen Sie dann im Menü **Connect-Synchronisierung** aus.
+9.  Wählen Sie auf der Seite **Microsoft Entra Connect** den Link **Microsoft Entra Connect herunterladen**.  Wählen Sie dann im Menü **Connect-Synchronisierung** aus.
 
-10. Wählen Sie auf der Webseite der Microsoft Downloads-Site **Microsoft Azure Active Directory Connect** die Option **Herunterladen** aus.
+10. Wählen Sie auf der Webseite **Microsoft Azure Active Directory Connect v2** der Website „Microsoft Downloads“ die Option **Herunterladen** aus.
 
 11. Wenn Sie gefragt werden, ob **AzureADConnect.msi** ausgeführt oder gespeichert werden soll, wählen Sie **Ausführen** aus. Dadurch wird die Datei heruntergeladen und der Assistent **Microsoft Azure Active Directory Connect** automatisch gestartet. 
 

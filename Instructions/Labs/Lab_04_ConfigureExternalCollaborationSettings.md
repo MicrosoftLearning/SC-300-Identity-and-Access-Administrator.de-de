@@ -17,19 +17,19 @@ Sie müssen die Einstellungen für die externe Zusammenarbeit für Ihre Organisa
 
 #### Aufgabe 1: Aktivieren der Self-Service-Registrierung von Gastbenutzern
 
-1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als Mandantenadministrator an.
-2. Wählen Sie  **Azure Active Directory** aus.
-3. Wählen Sie **Benutzereinstellungen** aus.
-4. Wählen Sie **Manage external user collaboration settings** aus.
+1. Melden Sie sich im [https://entra.microsoft.com](https://entra.microsoft.com) als Mandantenverwalter an.
+2. Wählen Sie  **Identität** und dann **Benutzer**.
+3. Öffnen Sie den Menüpunkt **Alle Benutzer** und wählen dann **Benutzereinstellungen**.
+4. Wählen Sie **Einstellungen für die Zusammenarbeit mit externen Benutzern verwalten**.
 5. Stellen Sie sicher, dass **JA** für die Einstellung **Self-Service-Registrierung von Gästen über Benutzerflows aktivieren** aktiviert ist.
 6. Wählen Sie **Speichern** am oberen Rand des Bildschirms aus.
 
 #### Aufgabe 2: Konfigurieren der Einstellungen für externe Zusammenarbeit
 
-1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als Mandantenadministrator an.
-2. Wählen Sie  **Azure Active Directory** aus.
-3. Wählen Sie  **Externe Identitäten > Alle Identitätsanbieter** aus.
-4. Wählen Sie den Benachrichtigungslink **Email one-time passcode** aus, der am oberen Rand des Bildschirms angezeigt wird.
+1. Melden Sie sich im [https://entra.microsoft.com](https://entra.microsoft.com) als Mandantenverwalter an.
+2. Wählen Sie **Identität**.
+3. Wählen Sie  **Externe Identitäten** und dann **Alle Identitätsanbieter**.
+4. Wählen Sie den Link **E-Mail Einmalpasscode**, den Sie oben auf dem Bildschirm sehen.
 
     **Hinweis**: Ein Einmal-Passcode ist eine sehr sichere Möglichkeit, einen Benutzer zur Teilnahme an Ihrer Organisation einzuladen.
     
@@ -41,7 +41,7 @@ Sie müssen die Einstellungen für die externe Zusammenarbeit für Ihre Organisa
 9. Überprüfen Sie unter  **Gastbenutzerzugriff** die verfügbaren Zugriffsebenen, und wählen Sie dann **Der Gastbenutzerzugriff ist auf Eigenschaften und Mitgliedschaften eigener Verzeichnisobjekte beschränkt (restriktivste Einstellung)**.
 
     **HINWEIS**
-    - Gastbenutzer haben denselben Zugriff wie Mitglieder (umfassendste Einstellung): Diese Option gibt Gästen den gleichen Zugriff auf die Ressourcen und Verzeichnisdaten von Azure AD wie Mitgliedsbenutzern.
+    - Gastbenutzer haben denselben Zugriff wie Mitglieder (umfassendste Einstellung): Diese Option gibt Gästen den gleichen Zugriff auf Microsoft Entra-Ressourcen und -Verzeichnisdaten wie Mitgliedsbenutzern.
     - Gastbenutzer haben eingeschränkten Zugriff auf Eigenschaften und Mitgliedschaften von Verzeichnisobjekten: (Standard) Diese Einstellung verhindert, dass Gäste bestimmte Verzeichnisaufgaben ausführen können, z. B. Benutzer, Gruppen oder andere Verzeichnisressourcen aufzulisten. Gäste können die Mitgliedschaft in allen nicht ausgeblendeten Gruppen anzeigen.
     - Der Gastbenutzerzugriff ist auf Eigenschaften und Mitgliedschaften eigener Verzeichnisobjekte beschränkt (restriktivste Einstellung): Mit dieser Einstellung können Gäste nur auf Ihre eigenen Profile zugreifen. Gäste dürfen keine Profile, Gruppen oder Gruppenmitgliedschaften anderer Benutzer anzeigen.
 

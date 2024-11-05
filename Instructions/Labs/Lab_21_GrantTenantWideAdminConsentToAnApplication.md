@@ -9,7 +9,7 @@ lab:
 
 ## Labszenario
 
-Bei Anwendungen, die Ihre Organisation entwickelt hat oder die direkt in Ihrem Azure AD-Mandanten registriert sind, können Sie auch im Azure-Portal in „App-Registrierungen“ eine mandantenweite Administratoreinwilligung erteilen.
+Bei Anwendungen, die Ihre Organisation entwickelt hat oder die direkt in Ihrem Microsoft Entra-Mandanten registriert sind, können Sie auch im Azure-Portal in „App-Registrierungen“ eine mandantenweite Administratoreinwilligung erteilen.
 
 #### Geschätzte Dauer: 15 Minuten
 
@@ -21,12 +21,11 @@ Bei Anwendungen, die Ihre Organisation entwickelt hat oder die direkt in Ihrem A
 
 Die Rolle „Globaler Administrator“ ist erforderlich, um die Administratoreinwilligung für die Anwendungsberechtigungen für die Microsoft Graph-API zu erteilen.
 
-1. In einer vorherigen Übung haben Sie eine App mit dem Namen „Demo-App“ erstellt. Navigieren Sie bei Bedarf in Microsoft Azure zu **Azure Active Directory**, wählen Sie **App-Registrierungen** und dann **Demo-App** aus.
-
+1. In einer vorherigen Übung haben Sie eine App mit dem Namen „Demo-App“ erstellt. Falls erforderlich, navigieren Sie im Microsoft Entra Admin Center zu **Identität**, **Anwendungen** und wählen Sie dann **App-Registrierungen** und dann **Demo-App** aus.
 
 2. Kopieren Sie auf der Seite **Demo-App** die Werte für **Anwendungs-ID (Client)** und **Verzeichnis-ID (Mandant)**, und speichern Sie sie zur späteren Verwendung.
 
-    >**Hinweis**: **Demo-App** wurde in den vorherigen Labs erstellt. Schließen Sie diese Labs vor diesem Lab ab.
+    **Hinweis** - **Demo-App** wird in den vorherigen Labs erstellt. Schließen Sie diese Labs vor diesem Lab ab.
 
     ![Bildschirmabbildung der Anzeige der Seite „Demo-App“ mit hervorgehobener Verzeichnis-ID](./media/lp3-mod3-demo-app-directory-id.png)
 
@@ -44,7 +43,7 @@ Die Rolle „Globaler Administrator“ ist erforderlich, um die Administratorein
 
 Sie können die mandantenweite Administratoreinwilligung über Unternehmensanwendungen erteilen, wenn die Anwendung bereits in Ihrem Mandanten bereitgestellt wurde.
 
-1. Navigieren Sie in Microsoft Azure zu **Azure Active Directory > Unternehmensanwendungen > Demo-App**.
+1. Navigieren Sie im Microsoft Entra Admin Center zu **Identität > Anwendungen > Unternehmensanwendungen > Demo-Anwendung.**
 
 2. Wählen Sie auf der Seite **Demo-App** im linken Navigationsbereich unter **Sicherheit** die Option **Berechtigungen** aus.
 

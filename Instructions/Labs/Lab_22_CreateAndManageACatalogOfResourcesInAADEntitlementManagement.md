@@ -1,11 +1,11 @@
 ---
 lab:
-  title: "22: Erstellen und Verwalten eines Ressourcenkatalogs in der Azure\_AD-Berechtigungsverwaltung"
+  title: 22 - Erstellen und Verwalten eines Ressourcenkatalogs in Microsoft Entra Berechtigungsverwaltung
   learning path: '04'
   module: Module 04 - Plan and Implement and Identity Governance Strategy
 ---
 
-# Lab 22: Erstellen und Verwalten eines Ressourcenkatalogs in der Azure AD-Berechtigungsverwaltung
+# Lab 22: Erstellen und Verwalten eines Ressourcenkatalogs in der Microsoft Entra-Berechtigungsverwaltung
 
 ## Labszenario
 
@@ -17,21 +17,21 @@ Ein Katalog ist ein Container für Ressourcen und Zugriffspakete. Sie erstellen 
 
 #### Aufgabe 1: Erstellen eines Katalogs
 
-1. Melden Sie sich mit einem globalen Administratorkonto bei [https://portal.azure.com](https://portal.azure.com) an.
+1. Melden Sie sich mit einem globalen Administratorkonto bei [https://entra.microsoft.com](https://entra.microsoft.com) an.
 
-    **Wichtig**: Um die Azure AD-Nutzungsbedingungen verwenden und konfigurieren zu können, benötigen Sie Folgendes:
-    - Eines der folgenden Abonnements: Azure AD Premium P1, P2, EMS E3 oder EMS E5.
-    - Sollten Sie über keines dieser Abonnements verfügen, können Sie Azure AD Premium beziehen oder die Azure AD Premium-Testversion aktivieren.
+    **Wichtig** - Um die Nutzungsbedingungen von Microsoft Entra ID nutzen und konfigurieren zu können, müssen Sie Folgendes haben:
+    - Microsoft Entra ID P1-, Premium P2-, EMS E3- oder EMS E5-Abonnement.
+    - Wenn Sie keines dieser Abonnements haben, können Sie eine Testversion von Microsoft Entra ID Premium erhalten.
     - Eines der folgenden Administratorkonten für das Verzeichnis, das Sie konfigurieren möchten:
         - Globaler Administrator
         - Sicherheitsadministrator
         - Administrator für den bedingten Zugriff
 
-2. Öffnen Sie **Azure Active Directory**, und wählen Sie  **Identity Governance** aus.
+2. Öffnen Sie das Menü **Identität** und wählen Sie dann  **Identity Governance**.
 
 3. Wählen Sie im Menü links unter **Berechtigungsverwaltung** die Option **Kataloge** aus.
 
-4. Wählen Sie im oberen Menü die Option **+ Neuer Katalog** aus.
+4. Wählen Sie im oberen Menü die Option **+ Neuer Katalog** aus.
 
     ![Screenshot der Seite „Kataloge“ in Identity Governance mit hervorgehobenem Menü „Neuer Katalog“ ](./media/lp4-mod1-identity-governance-new-catalog.png)
 
@@ -51,7 +51,7 @@ Ein Katalog ist ein Container für Ressourcen und Zugriffspakete. Sie erstellen 
 
 #### Aufgabe 2: Hinzufügen von Ressourcen zu einem Katalog
 
-Um Ressourcen in ein Zugriffspaket einschließen zu können, müssen die Ressourcen in einem Katalog vorhanden sein. Bei den Typen von Ressourcen, die Sie hinzufügen können, handelt es sich um Gruppen, Anwendungen und SharePoint Online-Websites. Die Gruppen können in der Cloud erstellte Microsoft 365-Gruppen oder in der Cloud erstellte Azure AD-Sicherheitsgruppen sein. Die Anwendungen können Azure AD-Unternehmensanwendungen sein, einschließlich SaaS-Anwendungen und Ihrer eigenen Anwendungen, die mit Azure AD verbunden sind. Die Websites können SharePoint Online-Websites oder SharePoint Online-Websitesammlungen sein.
+Um Ressourcen in ein Zugriffspaket einschließen zu können, müssen die Ressourcen in einem Katalog vorhanden sein. Bei den Typen von Ressourcen, die Sie hinzufügen können, handelt es sich um Gruppen, Anwendungen und SharePoint Online-Websites. Die Gruppen können in der Cloud erstellte Microsoft 365-Gruppen oder in der Cloud erstellte Microsoft Entra-Sicherheitsgruppen sein. Die Anwendungen können Microsoft Entra-Unternehmensanwendungen sein, einschließlich SaaS-Anwendungen und Ihrer eigenen Anwendungen, die mit Microsoft Entra ID verbunden sind. Die Websites können SharePoint Online-Websites oder SharePoint Online-Websitesammlungen sein.
 
 1. Wählen Sie auf der Seite „Identity Governance“ bei Bedarf die Option **Kataloge** aus.
 
@@ -82,7 +82,7 @@ Um Ressourcen in ein Zugriffspaket einschließen zu können, müssen die Ressour
 
 Der Benutzer, der einen Katalog erstellt hat, ist der erste Katalogbesitzer. Wenn Sie die Verwaltung eines Katalogs delegieren möchten, fügen Sie der Rolle „Katalogbesitzer“ Benutzer hinzu. Dadurch können die Aufgaben der Katalogverwaltung gemeinsam wahrgenommen werden.
 
-1. Navigieren Sie ggf. im Azure-Portal zu **Azure Active Directory**, wählen Sie **Identity Governance** und dann **Kataloge** aus, und wählen Sie anschließend **Marketing** aus.
+1. Falls erforderlich, gehen Sie im Microsoft Entra Admin Center zu **Identität** und wählen Sie dann **Identity Governance**, **Kataloge** und schließlich **Marketing** aus.
 
 2. Wählen Sie auf der Seite „Marketingkatalog“ im linken Navigationsmenü **Rollen und Administratoren** aus.
 
@@ -110,7 +110,7 @@ Sie können den Namen und die Beschreibung eines Katalogs bearbeiten. Benutzern 
 
 #### Aufgabe 5: Erstellen von Zugriffsüberprüfungen für Gastbenutzer
 
-1. Zugriffsüberprüfungen können den Zugriffslebenszyklus verwalten.Azure AD Identity Governance bietet ein Übersichtsdashboard mit dem Status von Zugriffsüberprüfungen. Wählen Sie **Zugriffsüberprüfungen** im Menü **Identity Governance** aus.
+1. Zugriffsüberprüfungen können den Zugriffslebenszyklus verwalten.  Microsoft Entra Identity Governance bietet ein Übersichts-Dashboard, das den Status der Zugangsprüfungen anzeigt. Wählen Sie **Zugriffsüberprüfungen** im Menü **Identity Governance** aus.
 
 1. Im Menü „Zugriffsüberprüfung“ können Sie **Zugriffsüberprüfungen** auswählen, um eine Zugriffsüberprüfung für Gastbenutzer zu konfigurieren.  Sie wählen **+ Neue Zugriffsüberprüfung** aus, um ihre Gastbenutzerzugriffsüberprüfung zu erstellen.  Die Kachel wird geöffnet, um die Zugriffsüberprüfung für Gastbenutzer zu konfigurieren.
 

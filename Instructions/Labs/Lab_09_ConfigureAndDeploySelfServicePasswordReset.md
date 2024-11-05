@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "09: Aktivieren der Self-Service-Kennwortzurücksetzung in Azure\_AD"
+  title: 09 - Microsoft Entra Self-Service-Kennwortzurücksetzung aktivieren
   learning path: '02'
   module: Module 02 - Implement an Authentication and Access Management Solution
 ---
@@ -18,7 +18,8 @@ Das Unternehmen hat beschlossen, Mitarbeiter zu unterstützen und die Self-Servi
 
 Sie möchten SSPR zunächst für eine begrenzte Gruppe von Benutzern einführen, um sicherzustellen, dass die SSPR-Konfiguration wie erwartet funktioniert. Sie erstellen nun eine Sicherheitsgruppe für die begrenzte Einführung und fügen der Gruppe einen Benutzer hinzu.
 
-1. Wählen Sie auf der Seite „Azure Active Directory“ unter **Verwalten** die Option **Gruppen** und dann **Neue Gruppe** im Fenster rechts aus.
+1. Öffnen Sie im Microsoft Entra Admin Center das Navigationsmenü **Identität** auf der linken Seite.
+1. Wählen Sie unter **Gruppen** **Alle Gruppen** und wählen Sie **Neue Gruppe** im rechten Fenster.
 
 2. Erstellen Sie eine neue Gruppe mit den folgenden Informationen:
 
@@ -41,9 +42,9 @@ Sie möchten SSPR zunächst für eine begrenzte Gruppe von Benutzern einführen,
 
 Aktivieren Sie SSPR für die Gruppe.
 
-1. Navigieren Sie zurück zur Seite „Azure Active Directory“.
+1. Browsen Sie zurück zum Navigationsmenü **Identität**.
 
-2. Wählen Sie unter  **Verwalten** die Option  **Kennwortzurücksetzung** aus.
+2. Wählen Sie unter **Schutz** die Option **Kennwortzurücksetzung**.
 
 3. Wählen Sie auf der Seite „Eigenschaften“ der Kennwortzurücksetzung unter **Self-Service-Kennwortzurücksetzung aktiviert** die Option  **Ausgewählt** aus.
 
@@ -55,7 +56,7 @@ Aktivieren Sie SSPR für die Gruppe.
 
     ![Screenshot der Seite „Eigenschaften“ für die Kennwortzurücksetzung mit hervorgehobenen Optionen „Ausgewählt“, „Gruppe auswählen“ und „Speichern“](./media/lp2-mod2-enable-password-reset-for-selected-group.png)
 
-7. Wählen Sie unter  **Verwalten** die Standardwerte für die Einstellungen  **Authentifizierungsmethoden**,  **Registrierung**, **Benachrichtigungen** und **Anpassung** aus, und überprüfen Sie diese.
+7. Wählen Sie auf dem Bildschirm **Kennwort zurücksetzen** unter  **Verwalten* die Standardwerte für jede Einstellung von  **Authentifizierungsmethoden **, **Registrierung**, **Benachrichtigungen** und **Anpassung** aus und überprüfen Sie sie.
 
     **Hinweis**: **Telefon** muss als eine der Authentifizierungsmethoden für den Rest dieser Übung ausgewählt werden, sie können aber auch andere Optionen haben.
 
