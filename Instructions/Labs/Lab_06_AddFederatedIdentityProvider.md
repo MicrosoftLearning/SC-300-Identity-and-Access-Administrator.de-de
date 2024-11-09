@@ -32,9 +32,9 @@ Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen
 
 6. Wählen Sie im linken Menü **APIs & Dienste** und dann **OAuth-Zustimmungsbildschirm** aus.
 
-7. Wählen Sie unter „Benutzertyp“ **Extern** und dann **Erstellen** aus.
+7. Wählen Sie unter Benutzertyp die Option **Extern** und dann **Erstellen** aus.
 
-8. Geben Sie auf dem **OAuth-Zustimmungsbildschirm** unter „App-Informationen“ einen App-Namen ein, wie etwa **Azure AD**.
+8. Geben Sie auf dem **OAuth-Zustimmungsbildschirm** unter App-Informationen einen App-Namen ein, z. B. **Microsoft Entra ID**.
 
 9. Wählen Sie unter „Benutzersupport-E-Mail“ eine E-Mail-Adresse aus. Diese sollte die E-Mail-Adresse enthalten, die Sie zum Anmelden bei Google verwendet haben.
 
@@ -52,7 +52,7 @@ Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen
 
 14. Wählen Sie **+ Anmeldeinformationen erstellen** und dann **OAuth-Client-ID** aus.
 
-15. Wählen Sie im Menü „Anwendungstyp“ die Option Webanwendung aus. Geben Sie der Anwendung einen geeigneten Namen, z. B. Azure AD B2B. Fügen Sie unter **Autorisierte Weiterleitungs-URIs** die folgenden URIs hinzu:
+15. Wählen Sie im Menü Anwendungstyp die Option Webanwendung aus. Geben Sie der Anwendung einen geeigneten Namen, z. B. Microsoft Entra B2B. Fügen Sie unter **Autorisierte Weiterleitungs-URIs** die folgenden URIs hinzu:
 
    ```
       https://login.microsoftonline.com
@@ -63,7 +63,7 @@ Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen
        (where <tenant name> is your tenant name)
    ```
 
-16. Wählen Sie **Erstellen** aus. Kopieren Sie Ihre **Client-ID** und den **geheimen Clientschlüssel**. Sie verwenden diese Informationen, wenn Sie den Identitätsanbieter im Azure-Portal hinzufügen.
+16. Klicken Sie auf **Erstellen**. Kopieren Sie Ihre **Client-ID** und den **geheimen Clientschlüssel**. Sie verwenden diese Informationen, wenn Sie den Identitätsanbieter im Azure-Portal hinzufügen.
 
 17. Sie können Ihr Projekt im Veröffentlichungsstatus „Testen“ belassen.
 
@@ -77,16 +77,16 @@ Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen
 21. Wählen Sie **Speichern** aus.
 
 
-### Übung 2: Konfigurieren von Azure für die Arbeit mit einem externen Identitätsanbieter
+### Übung 2 – Konfigurieren von Azure für die Arbeit mit einem externen Identitätsanbieter
 
-#### Aufgabe 1: Konfigurieren des Google-Verbunds in Azure AD
-1. Melden Sie sich bei [https://portal.azure.com](https://portal.azure.com) als Administrator an.
+#### Aufgabe 1: Konfigurieren des Google-Verbunds in Microsoft Entra ID
+1. Melden Sie sich bei  [https://entra.microsoft.com](https://entra.microsoft.com)  als Admin an.
 
-2. Wählen Sie  **Azure Active Directory** aus.
+2. Wählen Sie  **Microsoft Entra ID** aus.
 
-3. Wählen Sie unter  **Verwalten** die Option  **External Identities** aus.
+3. Wählen Sie unter **Identität** die Option  **Externe Identitäten** aus.
 
-4. Wählen Sie im Menü links die Option **Alle Identitätsanbieter** aus.
+4. Wählen Sie im Menü auf der linken Seite **Alle Identitätsanbieter** aus.
 
 5. Microsoft stellt einen direkten Partnerverbund für **Google** als Identitätsanbieter bereit.  Dies kann durch Auswahl von **+ Google** auf der Seite **External Identities | Alle Identitätsanbieter** initiiert werden.
  
@@ -101,11 +101,11 @@ Damit ist die Konfiguration von Google als Identitätsanbieter abgeschlossen.
 #### Aufgabe 2: Einladen eines Testbenutzerkontos
 9. Wenn Sie ein vorhandenes Gmail-Konto verwendet haben, denken Sie daran, das Konto mit **External Identities | Alle Identitätsanbieter** zu löschen. Sie können auch zur Google-Entwicklerkonsole zurückkehren und das von Ihnen erstellte Projekt löschen.
 
-10. Öffnen Sie Azure Active Directory (Azure AD).
+10. Öffnen Sie Microsoft Entra ID.
 
-11. Wechseln Sie zu „Benutzer“.
+11. Wechseln Sie zu "Benutzer", und wählen Sie dann **Alle Benutzer** aus.
 
-12. Wählen Sie **+ Neuer Benutzer** aus.
+12. Klicken Sie auf **+ Neuer Benutzer**.
 
 13. Wählen Sie im Dropdownmenü **Invite external user** aus.
 

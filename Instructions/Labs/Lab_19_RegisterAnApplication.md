@@ -15,31 +15,30 @@ lab:
 
 Bei der Registrierung Ihrer Anwendung wird eine Vertrauensstellung zwischen Ihrer App und Microsoft Identity Platform erstellt. Die Vertrauensstellung ist unidirektional: Ihre App vertraut Microsoft Identity Platform und nicht umgekehrt.
 
-1. Melden Sie sich mit einem globalen Administratorkonto bei [https://portal.azure.com](https://portal.azure.com)  an.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com)  mit einem globalen Administratorkonto an.
 
-2. Öffnen Sie das Portal-Menü, und wählen Sie  **Azure Active Directory** aus.
+2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
 
-3. Wählen Sie auf dem Blatt **Azure Active Directory** unter **Verwalten** die Option **App-Registrierungen** aus.
+3. Wählen Sie im Menü **Identität** unter **Anwendungen** **App-Registrierungen** aus.
 
 4. Wählen Sie auf der Seite **App-Registrierungen** im Menü die Option **+ Neue Registrierung** aus.
 
 5. Registrieren Sie auf dem Blatt **Anwendung registrieren** unter Verwendung der Standardwerte eine App mit dem Namen **Demo-App**. Der Umleitungs-URI muss nicht eingegeben werden.
 
-    ![Screenshot der Seite „Anwendung registrieren“, wobei der Name und die Standardeinstellungen hervorgehoben sind](./media/lp3-mod3-register-an-application.png)
+    ![Screenshot mit der Seite „Anwendung registrieren“, wobei der Name und die Standardeinstellungen hervorgehoben sind](./media/lp3-mod3-register-an-application.png)
 
-6. Wenn Sie fertig sind, werden Sie zum Blatt **Demo-App** weitergeleitet.
+6. Wenn Sie fertig sind, werden Sie zur Seite **Demo-App** weitergeleitet.
 
 
-#### Aufgabe 2: Konfigurieren von Plattformeinstellungen
+#### Aufgabe 2: Konfigurieren von Plattformeinstellungen
 
 Die Einstellungen für jeden Anwendungstyp (einschließlich Umleitungs-URIs) werden unter  **Plattformkonfigurationen** im Azure-Portal konfiguriert. Bei einigen Plattformen (wie  **Web** - und  **Single-Page-Webanwendungen**) müssen Sie manuell einen Umleitungs-URI angeben. Bei anderen Plattformen (z. B. mobile Anwendungen und Desktopanwendungen) stehen Umleitungs-URIs zur Auswahl, die beim Konfigurieren anderer Einstellungen für Sie generiert wurden.
 
 So konfigurieren Sie Anwendungseinstellungen auf Basis der Zielplattform oder des Zielgeräts
 
+Sie können Umleitungs-URIs für Ihre registrierten Anwendungen hinzufügen und ändern, indem Sie deren Plattformeinstellungen konfigurieren.
 
-1. Sie können Umleitungs-URIs für Ihre registrierten Anwendungen hinzufügen und ändern, indem Sie deren Plattformeinstellungen konfigurieren.
-
-1. Wählen Sie im Azure-Portal unter  **App-Registrierungen** Ihre Anwendung aus.
+1. Wählen Sie im Microsoft Entra Admin Center unter  **App-Registrierungen** Ihre Anwendung aus.
 
 2. Wählen Sie unter  **Verwalten** die Option  **Authentifizierung** aus.
 
@@ -65,15 +64,14 @@ Anmeldeinformationen werden von vertraulichen Clientanwendungen verwendet, die a
 
 Sie können Ihrer vertraulichen Client-App-Registrierung sowohl Zertifikate als auch geheime Clientschlüssel (Zeichenfolge) als Anmeldeinformationen hinzufügen.
 
-![Screenshot: Azure-Portal mit dem Bereich „Zertifikate und Geheimnisse“ in der App-Registrierung](./media/portal-05-app-reg-04-credentials.png)
+![Screenshot des Azure-Portals mit dem Bereich „Zertifikate und Geheimnisse“ in der App-Registrierung](./media/portal-05-app-reg-04-credentials.png)
+
+    **Note**: Sometimes called a *public key*, certificates are the recommended credential type, because as they provide a higher level of assurance than a client secret. When using a trusted public certificate, you can add the certificate using the Certificates & secrets feature. Your certificate must be one of the following file types: .cer, .pem, .crt.
 
 
->**Hinweis**: Zertifikate (mitunter auch als  *öffentlicher Schlüssel* bezeichnet) werden als Anmeldeinformationstyp empfohlen, da sie eine höhere Sicherheitsstufe als ein geheimer Clientschlüssel bieten. Wenn Sie ein vertrauenswürdiges öffentliches Zertifikat verwenden, können Sie es mit dem Feature „Zertifikate und geheimen Schlüssel“ hinzufügen. Ihr Zertifikat muss einen der folgenden Dateitypen haben: .CER, .PEM, .CRT.
+    **Note**: The client secret, also known as an *application password*, is a string value your app can use in place of a certificate to identity itself. It's the easier of the two credential types to use. It's often used during development, but is considered less secure than a certificate. You should use certificates in your applications running in production.
 
-
->**Hinweis**: Der geheime Clientschlüssel (auch als  *Anwendungskennwort* bezeichnet) ist ein Zeichenfolgenwert, der anstelle eines Zertifikats von Ihrer App für die Identifizierung verwendet werden kann. Er ist der einfachere der beiden Typen von Anmeldeinformationen. Er kommt häufig während der Entwicklung zum Einsatz, gilt aber als unsicherer als ein Zertifikat. Für Ihre Anwendungen, die in der Produktion eingesetzt werden, sollten Sie Zertifikate verwenden.
-
-1. Wählen Sie im Azure-Portal unter  **App-Registrierungen** Ihre Anwendung aus.
+1. Wählen Sie im Azure-Portal unter  **App-Registrierungen**  Ihre Anwendung aus.
 
 2. Wählen Sie unter  **Zertifikate und Geheimnisse** die Option  **+ Neuer geheimer Clientschlüssel** aus.
 
@@ -85,9 +83,9 @@ Sie können Ihrer vertraulichen Client-App-Registrierung sowohl Zertifikate als 
 
 6. **Speichern Sie den Wert des geheimen Schlüssels im Editor** für die Verwendung in Ihrem Clientanwendungscode. Auf der Seite „Zertifikat und Geheimnisse“ wird der neue Geheimniswert angezeigt. Es ist wichtig, dass Sie diesen Wert kopieren, da er nur dieses eine Mal angezeigt wird. Wenn Sie die Seite verlassen und zurückkehren, wird er nur noch als maskierter Wert angezeigt.
 
-1. Überspringen Sie die Abschnitte  **Umleitungs-URI hinzufügen** und **Plattformeinstellungen konfigurieren** . Sie müssen keinen Umleitungs-URI für eine Web-API konfigurieren, da keine Benutzer interaktiv angemeldet werden.
+7. Überspringen Sie die Abschnitte  **Umleitungs-URI hinzufügen** und **Plattformeinstellungen konfigurieren** . Sie müssen keinen Umleitungs-URI für eine Web-API konfigurieren, da keine Benutzer interaktiv angemeldet werden.
 
-1. Überspringen Sie vorerst den Abschnitt  **Anmeldeinformationen hinzufügen** . Ihre API würde nur eigene Anmeldeinformationen benötigen, wenn sie auf eine nachgelagerte API zugreifen müsste. Ein solches Szenario wird in diesem Artikel nicht behandelt.
+8. Überspringen Sie vorerst den Abschnitt  **Anmeldeinformationen hinzufügen** . Ihre API würde nur eigene Anmeldeinformationen benötigen, wenn sie auf eine nachgelagerte API zugreifen müsste. Ein solches Szenario wird in diesem Artikel nicht behandelt.
 
 Nachdem Sie Ihre Web-API registriert haben, können Sie die Bereiche hinzufügen, mit denen der Code Ihrer API eine differenzierte Berechtigung für Nutzer Ihrer API bereitstellen kann.
 
@@ -98,13 +96,13 @@ Der Code in einer Clientanwendung fordert die Berechtigung zum Ausführen von Vo
 
 Führen Sie zuerst die folgenden Schritte aus, um einen Beispielbereich namens „Employees.Read.All“ zu erstellen:
 
-1. Melden Sie sich beim Azure-Portal an.
+1. Melden Sie sich beim Microsoft Entra Admin Center an.
 
-2. Wenn Sie Zugriff auf mehrere Mandanten haben, verwenden Sie im Menü am oberen Rand den Filter  **Verzeichnis + Abonnement** , um den Mandanten auszuwählen, der die Registrierung der Client-App enthält.
+2. Wenn Sie Zugriff auf mehrere Mandanten haben, verwenden Sie im Menü am oberen Rand den Filter  **Verzeichnis und Abonnement** , um den Mandanten auszuwählen, der die Registrierung der Client-App enthält.
 
-3. Wählen Sie zuerst  **Azure Active Directory** > **App-Registrierungen** und dann die App-Registrierung Ihrer API aus.
+3. Wählen Sie  **Identität**, dann **Anwendung**  und schließlich  **App-Registrierungen** und danach die App-Registrierung Ihrer API aus.
 
-4. Wählen Sie  **Eine API verfügbar machen** und dann  **+ Bereich hinzufügen** aus.
+4. Wählen Sie  **Eine API verfügbar machen** und dann  **+ Bereich hinzufügen** aus.
 
     ![Bereich „Eine API verfügbar machen“ der App-Registrierung im Azure-Portal](./media/portal-02-expose-api.png)
 
@@ -154,16 +152,13 @@ Fügen Sie als Nächstes einen weiteren Beispielbereich namens „Employees.Writ
 
     ![Screenshot des Bereiches „Eine API verfügbar machen“ mit zwei verfügbar gemachten Bereichen.](./media/portal-03-scopes-list.png)
 
-    Wie aus der Abbildung hervorgeht, wird die vollständige Zeichenfolge eines Bereichs durch die Verkettung von  **Anwendungs-ID-URI** der Web-API und  **Bereichsname** des Bereichs gebildet.
+    Wie aus der Abbildung hervorgeht, wird die vollständige Zeichenfolge eines Bereichs durch die Verkettung von  **Anwendungs-ID-URI**  der Web-API und  **Bereichsname** des Bereichs gebildet.
 
-1. Testen Sie die API mithilfe des **Anwendungs-ID-URI**, wobei „/Employees.Read.All“ am Ende des URI hinzugefügt wurde.
-
-    >**Hinweis**: Wenn der Anwendungs-ID-URI Ihrer Web-API beispielsweise `https://contoso.com/api` und der Bereichsname „Employees.Read.All“ lautet, ergibt sich daraus die folgende Zeichenfolge für den vollständigen Bereich: `https://contoso.com/api/Employees.Read.All`
+        **Note**: For example, if your web API's application ID URI is `https://contoso.com/api` and the scope name is Employees.Read.All, the full scope is: `https://contoso.com/api/Employees.Read.All`
 
 
-    >**Hinweis**: Als Nächstes konfigurieren Sie die Registrierung einer Client-App mit Zugriff auf Ihre Web-API und die Bereiche, die Sie mit den obigen Schritten definiert haben.
-    Nachdem der Registrierung einer Client-App die Berechtigung für den Zugriff auf Ihre Web-API erteilt wurde, kann Microsoft Identity Platform für den Client ein OAuth 2.0-Zugriffstoken ausstellen. Wenn der Client die Web-API aufruft, präsentiert er ein Zugriffstoken, dessen Bereichsanspruch (scp) auf die Berechtigungen festgelegt ist, die Sie in der Client-App-Registrierung angegeben haben.
-    Sie können später bei Bedarf zusätzliche Bereiche verfügbar machen. Beachten Sie, dass Ihre Web-API mehrere Bereiche verfügbar machen kann, die verschiedenen Vorgängen zugeordnet sind. Ihre Ressource kann zur Laufzeit durch Auswerten der Bereichsansprüche (scp) im erhaltenen OAuth 2.0-Zugriffstoken den Zugriff auf die Web-API steuern.
+        **Note**: Next, you will configure a client app's registration with access to your web API and the scopes you defined by following the steps above.
+    Nachdem der Registrierung einer Client-App die Berechtigung für den Zugriff auf Ihre Web-API erteilt wurde, kann Microsoft Identity Platform für den Client ein OAuth 2.0-Zugriffstoken ausstellen. Wenn der Client die Web-API aufruft, präsentiert er ein Zugriffstoken, dessen Bereichsanspruch (scp) auf die Berechtigungen festgelegt ist, die Sie in der Client-App-Registrierung angegeben haben. Sie können später bei Bedarf zusätzliche Bereiche verfügbar machen. Beachten Sie, dass Ihre Web-API mehrere Bereiche verfügbar machen kann, die verschiedenen Vorgängen zugeordnet sind. Ihre Ressource kann zur Laufzeit durch Auswerten der Bereichsansprüche (scp) im erhaltenen OAuth 2.0-Zugriffstoken den Zugriff auf die Web-API steuern.
 
 
 ### Übung 2: Verwalten von App-Registrierungen mit einer benutzerdefinierten Rolle
@@ -172,17 +167,17 @@ Fügen Sie als Nächstes einen weiteren Beispielbereich namens „Employees.Writ
 
 Sie müssen eine neue benutzerdefinierte Rolle für die App-Verwaltung erstellen. Diese neue Rolle sollte nur auf die spezifischen Berechtigungen beschränkt sein, die zum Durchführen der Verwaltung von Anmeldeinformationen erforderlich sind.
 
-1. Melden Sie sich mit einem globalen Administratorkonto bei [https://portal.azure.com](https://portal.azure.com) an.
+1. Melden Sie sich bei  [https://entra.microsoft.com](https://entra.microsoft.com)  mit einem globalen Administratorkonto an.
 
-2. Öffnen Sie das Portal-Menü, und wählen Sie  **Azure Active Directory** aus.
+2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
 
-3. Wählen Sie auf der Seite „Azure Active Directory“ unter **Verwalten** die Option **Rollen und Administratoren** aus.
+3. Wählen Sie im linken Menü unter **Identität** die Option **Rollen und Administratoren** aus.
 
-4. Wählen Sie auf dem Blatt „Rollen und Administratoren“ im Menü die Option **+ Neue benutzerdefinierte Rolle** aus.
+4. Wählen Sie dann das Element **Rollen und Administratoren** und anschließend **+ Neue benutzerdefinierte Rolle** aus.
 
     ![Screenshot des Blatts „Rollen und Administratoren“ mit hervorgehobener Menüoption „Neue benutzerdefinierte Rolle“](./media/lp3-mod1-new-custom-role.png)
 
-5. Geben Sie auf dem Blatt „Neue benutzerdefinierte Rolle“ auf der Registerkarte „Grundeinstellungen“ im Feld „Name“ **Meine benutzerdefinierte App-Rolle** ein.
+5. Geben Sie im Dialogfeld „Neue benutzerdefinierte Rolle“ auf der Registerkarte „Grundlagen“ im Namensfeld den Namen **My custom app role** ein.
 
 6. Überprüfen Sie die übrigen Einstellungen, und wählen Sie dann **Weiter** aus.
 

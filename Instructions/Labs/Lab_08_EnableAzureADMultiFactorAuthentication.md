@@ -1,29 +1,31 @@
 ---
 lab:
-  title: "08: Aktivieren der Multi-Faktor-Authentifizierung in Azure\_AD"
+  title: 08 - Aktivieren der Multi-Faktor-Authentifizierung
   learning path: '02'
   module: Module 02 - Implement an Authentication and Access Management Solution
 ---
 
-# Lab 08: Aktivieren der Multi-Faktor-Authentifizierung in Azure AD
+# Lab 08 - Aktivieren der Multi-Faktor-Authentifizierung
 
 ## Labszenario
 
-Um die Sicherheit in Ihrer Organisation zu verbessern, wurden Sie angewiesen, die Multi-Faktor-Authentifizierung für Azure Active Directory zu aktivieren.
+Um die Sicherheit in Ihrem Unternehmen zu verbessern, wurden Sie angewiesen, die Multi-Faktor-Authentifizierung für Microsoft Entra ID zu aktivieren.
 
 #### Geschätzte Dauer: 15 Minuten
 
-**WICHTIG**: Für diese Übung ist eine Azure AD Premium-Lizenz erforderlich.
+**WICHTIG** - Für diese Übung ist eine Microsoft Entra ID Premium Lizenz erforderlich.
 
 ### Übung 1: Überprüfen und Aktivieren der Multi-Faktor-Authentifizierung in Azure
 
 #### Aufgabe 1: Überprüfen der Optionen der Multi-Faktor-Authentifizierung von Azure
 
-1. Navigieren Sie zu [https://portal.azure.com](https://portal.azure.com), und melden Sie sich mit dem Konto eines globalen Administrators für das Verzeichnis an.
+1. Navigieren Sie zu [https://entra.microsoft.com](https://entra.microsoft.com), und melden Sie sich mit dem Konto eines globalen Administrators für das Verzeichnis an.
 
-2. Verwenden Sie die Suchfunktion, und suchen Sie nach **multi-fakt**.
+2. Verwenden Sie die Suchfunktion und suchen Sie nach **Multifaktor**.
 
-3. Wählen Sie in den Ergebnissen **Multi-Faktor-Authentifizierung** aus.
+3. Wählen Sie in den Suchergebnissen **Multi-Faktor-Authentifizierung** aus.
+
+    Alternativ können Sie **Identität** öffnen, dann **Schutz** wählen und **Multi-Faktor-Authentifizierung** auswählen.
 
 4. Wählen Sie auf der Seite „Erste Schritte“ unter **Konfigurieren** den Link **Zusätzliche cloudbasierte MFA-Einstellungen** aus.
 
@@ -35,17 +37,17 @@ Um die Sicherheit in Ihrer Organisation zu verbessern, wurden Sie angewiesen, di
 
     Hier wählen Sie normalerweise die unterstützten Authentifizierungsmethoden aus. Im obigen Screenshot sind alle ausgewählt.
 
-    Hier können Sie auch App-Kennwörter aktivieren oder deaktivieren, damit Benutzer eindeutige Kennwörter für Konten erstellen können, falls eine App die mehrstufige Authentifizierung nicht unterstützt. Dieses Feature ermöglicht es dem Benutzer, sich mit seiner Azure AD-Identität mit einem anderen Kennwort zu authentifizieren, das für diese App spezifisch ist.
+    Hier können Sie auch App-Kennwörter aktivieren oder deaktivieren, damit Benutzer eindeutige Kennwörter für Konten erstellen können, falls eine App die mehrstufige Authentifizierung nicht unterstützt. Dieses Feature ermöglicht es dem Benutzenden, sich mit seiner Microsoft Entra-Identität mit einem anderen Kennwort zu authentifizieren, das für diese App spezifisch ist.
 
 #### Aufgabe 2: Einrichten von Regeln für bedingten Zugriff für MFA für Delia Dennis
 
 Als Nächstes wird erläutert, wie Sie Regeln für den bedingten Zugriff einrichten, die die MFA für Gastbenutzer erzwingen, die auf bestimmte Apps in Ihrem Netzwerk zugreifen.
 
-1. Sie zurück zum Azure-Portal, und wählen Sie **Azure Active Directory**, dann **Sicherheit** und dann **Bedingter Zugriff** aus.
+1. Wechseln Sie zurück zum Microsoft Entra Admin Center und wählen Sie **Identität**, dann **Schutz** und dann **Bedingter Zugriff**.
 
-2. Wählen Sie im Menü **+ Neue Richtlinie** aus. Wählen Sie im Dropdown die Option **Neue Richtlinie erstellen** aus.
+2. Wählen Sie im Menü **+ Neue Richtlinie** aus. Wählen Sie aus der Dropdown-Liste **+ Neue Richtlinie erstellen**.
 
-    ![Screenshot mit hervorgehobener Schaltfläche „Neue Richtlinie“ im Azure-Portal](./media/lp2-mod1-azure-ad-conditional-access-policy.png)
+    ![Screenshot zur Hervorhebung der Schaltfläche Neue Richtlinie im Microsoft Entra Admin Center.](./media/lp2-mod1-azure-ad-conditional-access-policy.png)
 
 3. Benennen Sie Ihre Richtlinie, beispielsweise **MFA_for_Delia**.
 
@@ -56,7 +58,7 @@ Als Nächstes wird erläutert, wie Sie Regeln für den bedingten Zugriff einrich
     - Aktivieren Sie **Benutzer und Gruppen** (verfügbare Benutzer werden rechts aufgefüllt).
     - Wählen Sie **Delia Dennis** in der Liste der Benutzer und dann die Schaltfläche **Auswählen** aus.
 
-5. Wählen Sie **Cloud-Apps oder -aktionen** aus.
+5. Wählen Sie **Keine Zielressourcen ausgewählt** in Zielressourcen.
 
    - Wählen Sie im Dropdown **Cloud-Apps** aus.
    - Aktivieren Sie unter „Einschließen“ **Alle Cloud-Apps**, und beachten Sie die Warnung, dass Sie sich möglicherweise selbst aussperren 
@@ -69,13 +71,13 @@ Als Nächstes wird erläutert, wie Sie Regeln für den bedingten Zugriff einrich
 
    - Wählen Sie **Speicherorte** aus, und konfigurieren Sie diese Option für **Alle Speicherorte**.
 
-7. Aktivieren Sie unter **Zugriffssteuerungen** die Option **Gewähren** aus, und vergewissern Sie sich, dass **Zugriff gewähren** aktiviert ist.
+7. Suchen Sie unter **Zugriffssteuerungen** den Abschnitt **Zuweisung** und wählen Sie **0 ausgewählte Steuerungen** aus.
 
-8. Aktivieren Sie das Kontrollkästchen **Multi-Faktor-Authentifizierung erfordern**.
+8. Aktivieren Sie das Kontrollkästchen **Multi-Faktor-Authentifizierung anfordern**, um MFA zu erzwingen.
 
 9. Stellen Sie sicher, dass **Require all the slected controls** aktiviert ist.
 
-10. Wählen Sie **Auswählen** aus.
+10. Wählen Sie **Auswählen**.
 
 11. Legen Sie **Richtlinie aktivieren** auf **Ein** fest.
 
@@ -99,13 +101,13 @@ Sie können sehen, dass aufgrund der Regel für bedingten Zugriff, die wir für 
 
 ### Übung 2: Konfigurieren der MFA so, dass sie für die Anmeldung erforderlich ist
 
-#### Aufgabe 1: Konfigurieren von Azure AD pro Benutzer-MFA
+#### Aufgabe 1 - Microsoft Entra pro Benutzender MFA konfigurieren
 
 Abschließend wird erläutert, wie Sie die MFA für Benutzerkonten konfigurieren können. Nun folgt eine weitere Möglichkeit, zu den Einstellungen für die mehrstufige Authentifizierung zu gelangen.
 
-1. Navigieren Sie zum Dashboard „Azure Active Directory“ im Azure-Portal zurück.
+1. Wechseln Sie zurück zum Microsoft Entra Admin Center und suchen Sie das linke Navigationsmenü von Indentität.
 
-2. Wählen Sie **Benutzer**.
+2. Wählen Sie **Benutzende**, dann wählen Sie **Alle Benutzenden**.
 
 3. Wählen Sie im oberen Menü des Bereichs „Benutzer“ **MFA pro Benutzer** aus.
 

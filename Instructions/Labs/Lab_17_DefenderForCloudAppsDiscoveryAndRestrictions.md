@@ -23,11 +23,11 @@ Microsoft Defender for Cloud Apps verwendet Protokolle vom Netzwerkdatenverkehr,
 
 1. Wählen Sie im Bereich **Nach Kategorien durchsuchen** die Option **Cloudspeicher** aus.
 
-1. Notieren Sie sich in der Liste der Apps die **Risikobewertung** neben dem App-Namen.  
+1. Achten Sie in der Liste der Apps auf die **Risikobewertung** neben dem Namen der App.  
 
-1. Öffnen Sie eine weitere Browserregisterkarte, und navigieren Sie zu **Dropbox.com**.
+1. Öffnen Sie eine weitere Browser-Registerkarte und navigieren Sie zu **www.dropbox.com**.
 
-1. Sie können auf diese Website zugreifen.
+1. Sie können dann auf diese Website zugreifen.
 
 
 #### Aufgabe 2: Einschränken von Apps in Defender for Cloud Apps

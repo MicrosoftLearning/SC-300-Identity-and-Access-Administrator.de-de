@@ -36,7 +36,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
   | Region | *default* |
   | Verfügbarkeitsoptionen | Keine Infrastrukturredundanz erforderlich |
   | Sicherheitstyp | Standard |
-  | Size | Standard DC1s_v3 – 1 vCPU, 8 GiB Arbeitsspeicher |
+  | Größe | Standard DC1s_v3 – 1 vCPU, 8 GiB Arbeitsspeicher |
   | Benutzername des Administrators | vmEntraAdmin |
   | Administratorkennwort | Verwenden Sie das von der Laborumgebung bereitgestellte Kennwort oder erstellen Sie ein sicheres Kennwort, das Sie sich merken können. |
   | Lizenzierung | Bestätigen, dass Sie über eine Lizenz verfügen |

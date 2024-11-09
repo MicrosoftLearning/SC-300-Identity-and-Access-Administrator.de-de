@@ -11,7 +11,7 @@ lab:
 
 ## Labszenario
 
-Mithilfe von verwalteten Identitäten für Azure-Ressourcen kann der Code Zugriffstoken zur Authentifizierung von Ressourcen abrufen, die die Azure AD-Authentifizierung unterstützen.Allerdings unterstützen nicht alle Azure-Dienste die Azure AD-Authentifizierung. Um verwaltete Identitäten für Azure-Ressourcen mit diesen Diensten zu verwenden, speichern Sie die Dienstanmeldeinformationen in Azure Key Vault, und greifen Sie mit der verwalteten Identität auf Key Vault zu, um die Anmeldeinformationen abzurufen.
+Mithilfe von verwalteten Identitäten für Azure-Ressourcen kann der Code Zugriffstoken zur Authentifizierung von Ressourcen abrufen, die die Microsoft Entra-Authentifizierung unterstützen.  Allerdings unterstützen nicht alle Azure-Dienste die Microsoft Entra-Authentifizierung. Um verwaltete Identitäten für Azure-Ressourcen mit diesen Diensten zu verwenden, speichern Sie die Dienstanmeldeinformationen in Azure Key Vault, und greifen Sie mit der verwalteten Identität auf Key Vault zu, um die Anmeldeinformationen abzurufen.
 
 #### Geschätzte Dauer: 20 Minuten
 
@@ -23,9 +23,9 @@ Mithilfe von verwalteten Identitäten für Azure-Ressourcen kann der Code Zugrif
 
 1. Wählen Sie **+ Ressource erstellen** aus.
 
-1. Geben Sie **Windows-Client** in der Suchleiste „Marketplace durchsuchen“ ein.
+1. Geben Sie **Windows 11** in der Marketplace-Suchleiste ein.
 
-1. Wählen Sie **Windows Client** und in der Dropdownliste „Plan“ die Option **Windows 10 Enterprise, Version 22H2 - x64 Gen 1** aus. Wählen Sie dann **Erstellen** aus.
+1. Wählen Sie **Windows 11** aus und wählen Sie aus der Dropdownliste **Windows 11 Enterprise, Version 21H2** aus. Wählen Sie dann **Erstellen** aus.
 
 1. Sie müssen einen Administratorbenutzernamen und ein Kennwort für den virtuellen Computer auf der Registerkarte „Grundeinstellungen“ erstellen.
 
@@ -45,7 +45,7 @@ Mithilfe von verwalteten Identitäten für Azure-Ressourcen kann der Code Zugrif
 
 1. Wählen Sie in den Ergebnissen **Key Vault** aus.
 
-1. Wählen Sie **Erstellen** aus.
+1. Klicken Sie auf **Erstellen**.
 
 1. Füllen Sie alle erforderlichen Informationen wie unten gezeigt aus. Wählen Sie unbedingt das Abonnement und die Ressourcengruppe aus, die Sie für dieses Tutorial verwenden.
     **Hinweis**: Der Name der Key Vault-Ressource muss eindeutig sein. Suchen Sie rechts neben dem Feld nach einem grünen Häkchen.
