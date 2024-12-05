@@ -5,7 +5,9 @@ lab:
   module: Module 04 - Plan and Implement and Identity Governance Strategy
 ---
 
-# Lab 23: Hinzufügen der Nutzungsbedingungen und Annahmeberichte 
+# Lab 23: Hinzufügen der Nutzungsbedingungen und Annahmeberichte
+
+### Anmeldetyp = Microsoft 365 Admin
 
 ## Labszenario
 
@@ -82,26 +84,30 @@ Gehen Sie nach Fertigstellung Ihres Dokuments mit Nutzungsbedingungen wie folgt 
 
 14. Wählen Sie unter **Bedingter Zugriff** die Option **Benutzerdefinierte Richtlinie** aus.
 
-    | Template | Beschreibung |
-    |---|---|
-    | **Zugriff auf Cloud-Apps für alle Gäste** | Es wird eine Richtlinie für bedingten Zugriff für alle Gäste und alle Cloud-Apps erstellt. Diese Richtlinie hat Auswirkungen auf das Azure-Portal. Nach der Erstellung dieser Richtlinie müssen Sie sich möglicherweise ab- und anmelden. | 
-    |**Zugriff auf Cloud-Apps für alle Benutzer** | Es wird eine Richtlinie für bedingten Zugriff für alle Benutzer und alle Cloud-Apps erstellt. Diese Richtlinie hat Auswirkungen auf das Azure-Portal. Nach der Erstellung dieser Richtlinie müssen Sie sich ab- und anmelden. |
-    | **Benutzerdefinierte Richtlinie** | Wählen Sie die Benutzer, Gruppen und Apps aus, für die diese Nutzungsbedingungen gelten sollen. |
-    | **Richtlinie für bedingten Zugriff später erstellen** | Diese Nutzungsbedingungen werden in der Zuweisungssteuerungsliste angezeigt, wenn Sie eine Richtlinie für bedingten Zugriff erstellen. |
+ - Mögliche Auswahlmöglichkeiten und deren Verwendung:
 
-    **WICHTIG**: Die Richtliniensteuerelemente für den bedingten Zugriff (einschließlich Nutzungsbedingungen) unterstützen die Erzwingung für Dienstkonten nicht. Es wird empfohlen, alle Dienstkonten von der Richtlinie für bedingten Zugriff auszuschließen.
+  | Template | Beschreibung |
+  |---|---|
+  | **Zugriff auf Cloud-Apps für alle Gäste** | Es wird eine Richtlinie für bedingten Zugriff für alle Gäste und alle Cloud-Apps erstellt. Diese Richtlinie hat Auswirkungen auf das Azure-Portal. Nach der Erstellung dieser Richtlinie müssen Sie sich möglicherweise ab- und anmelden. | 
+  |**Zugriff auf Cloud-Apps für alle Benutzer** | Es wird eine Richtlinie für bedingten Zugriff für alle Benutzer und alle Cloud-Apps erstellt. Diese Richtlinie hat Auswirkungen auf das Azure-Portal. Nach der Erstellung dieser Richtlinie müssen Sie sich ab- und anmelden. |
+  | **Benutzerdefinierte Richtlinie** | Wählen Sie die Benutzer, Gruppen und Apps aus, für die diese Nutzungsbedingungen gelten sollen. |
+  | **Richtlinie für bedingten Zugriff später erstellen** | Diese Nutzungsbedingungen werden in der Zuweisungssteuerungsliste angezeigt, wenn Sie eine Richtlinie für bedingten Zugriff erstellen. |
 
-    Benutzerdefinierte Richtlinien für bedingten Zugriff ermöglichen präzise Nutzungsbedingungen bis auf die Ebene einer spezifischen Cloudanwendung oder Benutzergruppe. Weitere Informationen finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/require-tou](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/require-tou).
+  **WICHTIG**: Die Richtliniensteuerelemente für den bedingten Zugriff (einschließlich Nutzungsbedingungen) unterstützen die Erzwingung für Dienstkonten nicht. Es wird empfohlen, alle Dienstkonten von der Richtlinie für bedingten Zugriff auszuschließen.
+
+  Benutzerdefinierte Richtlinien für bedingten Zugriff ermöglichen präzise Nutzungsbedingungen bis auf die Ebene einer spezifischen Cloudanwendung oder Benutzergruppe. Weitere Informationen finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/require-tou](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/require-tou).
 
 15. Wenn Sie fertig sind, wählen Sie **Erstellen** aus.
 
     ![Screenshot der Seite „Neue Nutzungsbedingungen“ mit hervorgehobenen konfigurierten Optionen](./media/lp4-mod1-new-terms-of-use-create.png)
 
+#### Fortsetzungsaufgabe 1: Erstellen der Richtlinie für bedingten Zugriff
+
 16. Sobald die Nutzungsbedingungen erstellt sind, werden Sie automatisch zur Seite „Richtlinie für bedingten Zugriff“ umgeleitet. Geben Sie auf der Seite im Feld **Name** die Bezeichnung **Nutzungsbedingungen erzwingen** ein.
 
 17. Wählen Sie unter **Zuweisungen** die Option **Benutzeridentitäten**.
 
-18. Aktivieren Sie auf der Registerkarte „Einschließen“ das Kontrollkästchen **Benutzer und Gruppen**.
+18. Markieren Sie auf der Registerkarte „Einschließen“ **Benutzer und Gruppen auswählen** und aktivieren Sie dann das Kontrollkästchen **Benutzer und Gruppen**.
 
 19. Wählen Sie im Bereich „Auswählen“ **Adele Vance** aus, das zum Testen der Nutzungsbedingungen verwenden werden soll.
 
@@ -113,7 +119,7 @@ Gehen Sie nach Fertigstellung Ihres Dokuments mit Nutzungsbedingungen wie folgt 
 
 22. Wählen Sie unter **Zugriffssteuerungen** die Option **Gewähren** aus.
 
-23. Wählen Sie im Bereich „Gewähren“ die Option **Testen von Nutzungsbedingungen** und dann **Auswählen** aus.
+23. Wählen Sie im Bereich „Zuweisung“ die Option **Contoso-Nutzungsbedingungen** und dann **Auswählen** aus.
 
 24. Wählen Sie unter **Richtlinie aktivieren** die Option **An** aus.
 

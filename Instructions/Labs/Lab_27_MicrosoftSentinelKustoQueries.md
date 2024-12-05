@@ -7,7 +7,7 @@ lab:
 
 # Lab 27 – Microsoft Sentinel Kusto Abfragen für Microsoft Entra-Datenquellen
 
-**Hinweis**: Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen dazu finden Sie in Lab 00.
+### Anmeldetyp = Azure Resource-Anmeldung
 
 ## Labszenario
 
@@ -40,7 +40,6 @@ Microsoft Sentinel ist eine skalierbare, cloudnative SIEM- und SOAR-Lösung von 
 1. Wenn Sie dazu aufgefordert werden, wählen Sie **OK** aus, um die kostenlose Testversion von Microsoft Sentinel zu aktivieren.
 
 #### Aufgabe 2 – Hinzufügen von Microsoft Entra ID als Datenquelle
-    **Note** - As of 2/8/2024, the data source is now Microsoft Entra ID.
 
 1. Navigieren Sie in **Microsoft Sentinel** zum Menü zur **Content-Verwaltung** und wählen Sie **Content-Hub**aus.
 

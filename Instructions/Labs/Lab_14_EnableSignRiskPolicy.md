@@ -7,6 +7,8 @@ lab:
 
 # Lab 14: Aktivieren von Anmelde- und Benutzerrisikorichtlinien
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Als zusätzliche Sicherheitsebene müssen Sie die Anmelde- und Benutzerrisikorichtlinien Ihrer Microsoft Entra-Organisation aktivieren und konfigurieren.
@@ -48,7 +50,7 @@ Als zusätzliche Sicherheitsebene müssen Sie die Anmelde- und Benutzerrisikoric
 
 13. Aktivieren Sie das Kontrollkästchen **Kennwortänderung anfordern**, und wählen Sie dann **Fertig** aus.
 
-14. Wählen Sie unter **Richtliniendurchsetzung** die Option **Aktivieren** und wählen Sie dann **Speichern**.
+14. Wählen Sie unter **Richtliniendurchsetzung** die Option **Aktiviert** aus und wählen Sie dann **Speichern** aus.
 
 #### Aufgabe 2: Aktivieren der Anmelderisiko-Richtlinie
 
@@ -64,4 +66,4 @@ Als zusätzliche Sicherheitsebene müssen Sie die Anmelde- und Benutzerrisikoric
 
 6. Aktivieren Sie das Kontrollkästchen **Multi-Faktor-Authentifizierung erforderlich**, und wählen Sie dann **Fertig** aus.
 
-7. Wählen Sie unter **Richtliniendurchsetzung** die Option **Aktivieren** und wählen Sie dann **Speichern**.
+7. Wählen Sie unter **Richtliniendurchsetzung** die Option **Aktiviert** aus und wählen Sie dann **Speichern** aus.

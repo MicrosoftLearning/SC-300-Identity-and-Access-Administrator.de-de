@@ -7,9 +7,11 @@ lab:
 
 # Lab 08 - Aktivieren der Multi-Faktor-Authentifizierung
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
-Um die Sicherheit in Ihrem Unternehmen zu verbessern, wurden Sie angewiesen, die Multi-Faktor-Authentifizierung für Microsoft Entra ID zu aktivieren.
+Um die Sicherheit in Ihrer Organisation zu verbessern, wurden Sie angewiesen, die Multi-Faktor-Authentifizierung für Microsoft Entra ID zu aktivieren.
 
 #### Geschätzte Dauer: 15 Minuten
 
@@ -62,14 +64,15 @@ Als Nächstes wird erläutert, wie Sie Regeln für den bedingten Zugriff einrich
 
    - Wählen Sie im Dropdown **Cloud-Apps** aus.
    - Aktivieren Sie unter „Einschließen“ **Alle Cloud-Apps**, und beachten Sie die Warnung, dass Sie sich möglicherweise selbst aussperren 
-   - Ändern Sie nun unter „Einschließen“ Ihre Auswahl in **Apps auswählen**.
+   - Wählen Sie nun im Abschnitt „Auswählen“ den Eintrag **Keine**.
    - Wählen Sie im neu geöffneten Dialogfeld **Office 365** aus.
       - **Erinnerung**: In einem vorherigen Lab haben wir Delia Dennis eine Office 365-Lizenz gegeben und sie angemeldet, um sicherzustellen, dass es funktioniert hat.
    - Wählen Sie **Auswählen** aus.
 
 6. Überprüfen Sie den Abschnitt „Bedingungen“.
 
-   - Wählen Sie **Speicherorte** aus, und konfigurieren Sie diese Option für **Alle Speicherorte**.
+   - Wählen Sie **Ja** für den Konfigurationsregler.
+   - Wählen Sie **ein beliebiges Netzwerk oder einen beliebigen Standort** aus.
 
 7. Suchen Sie unter **Zugriffssteuerungen** den Abschnitt **Zuweisung** und wählen Sie **0 ausgewählte Steuerungen** aus.
 
@@ -110,6 +113,7 @@ Abschließend wird erläutert, wie Sie die MFA für Benutzerkonten konfigurieren
 2. Wählen Sie **Benutzende**, dann wählen Sie **Alle Benutzenden**.
 
 3. Wählen Sie im oberen Menü des Bereichs „Benutzer“ **MFA pro Benutzer** aus.
+  - HINWEIS: Möglicherweise müssen Sie die Elipse (…) verwenden, um zum Menüelement „Benutzerbasierte MFA“ zu gelangen.
 
    ![Screenshot der MFA-Option](./media/lp2-mod1-users-mfa.png)
 
@@ -120,7 +124,7 @@ Abschließend wird erläutert, wie Sie die MFA für Benutzerkonten konfigurieren
    ![Screenshot: MFA-Optionen](./media/lp2-mod1-mfa-service-settings-and-users.png)
 
 5. Aktivieren Sie den Eintrag **Adele Vance**.
-6. Wählen Sie **Aktivieren** unter den QuickSteps aus.
+6. Wählen Sie die Option **MFA aktivieren** unter „QuickSteps“.
 7. Lesen Sie das Popup „Benachrichtigung“, falls es angezeigt wird, und wählen Sie dann die Schaltfläche **Multi-Factor Auth aktivieren** aus.
 8. Wählen Sie **Schließen** aus.
 9. Beachten Sie, dass für Adele jetzt der MFA-Status **Aktiviert** lautet.

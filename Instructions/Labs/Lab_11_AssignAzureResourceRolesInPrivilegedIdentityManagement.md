@@ -7,6 +7,8 @@ lab:
 
 # Lab 11: Zuweisen von Azure-Ressourcenrollen in Privileged Identity Management
 
+### Anmeldetyp = Azure Resource-Anmeldung
+
 **Hinweis**: Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen dazu finden Sie in Lab 00.
 
 ## Labszenario
@@ -21,7 +23,6 @@ Microsoft Entra Privileged Identity Management (Azure AD PIM) kann sowohl die in
 
 Sie müssen einen Benutzer für eine Azure-Ressourcenrolle als „berechtigt“ festzulegen.
 
-
 #### Geschätzte Dauer: 10 Minuten
 
 ### Übung 1: PIM mit Azure-Ressourcen
@@ -34,11 +35,9 @@ Sie müssen einen Benutzer für eine Azure-Ressourcenrolle als „berechtigt“ 
 
 3. Wählen Sie auf der Seite "Privileged Identity Management" in der linken Navigation **Azure-Ressourcen.**
 
-4. Wählen Sie im oberen Menü **Ressourcen ermitteln** aus.
+4. Wählen Sie im Abonnement-Dropdown den Eintrag „MOC Subscription#####“. Wählen Sie dann am unteren Rand des Bildschirms **Ressourcen verwalten**.
 
 5. Wählen Sie auf der Seite "Azure-Ressourcen - Ermittlung" Ihr Abonnement aus.
-
-   ![Screenshot der Seite „Azure-Ressourcen - Ermittlung“ mit hervorgehobenem Abonnement und Option „Ressource verwalten“](./media/lp4-mod3-pim-azure-resource-management.png)
 
 6. Überprüfen Sie die Informationen auf der Seite **Übersicht**.
 
@@ -52,7 +51,7 @@ Sie müssen einen Benutzer für eine Azure-Ressourcenrolle als „berechtigt“ 
 
 10. Wählen Sie unter **Mitglied(er) auswählen** die Option **Keine Mitglieder ausgewählt** aus.
 
-11. Wählen Sie **Miriam Graham** aus Ihrer Organisation aus, der die Rolle zugewiesen wird.  Wählen Sie anschließend **Auswählen** aus.
+11. Suchen Sie im Feld „Mitglied oder Gruppe auswählen“ nach den Admin-Rollen **User1-######@LODSPRODMCA.onmicrosoft.com** aus Ihrer Organisation, denen die Rolle zugewiesen werden soll.  Wählen Sie anschließend **Auswählen** aus.
 
 12. Wählen Sie **Weiter** aus.
 

@@ -7,6 +7,8 @@ lab:
 
 # Lab 02: Arbeiten mit Mandanteneigenschaften
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, die Ihrem Mandanten zugeordnet sind.
@@ -17,9 +19,11 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
 
 #### Aufgabe 1: Erstellen eines benutzerdefinierten Subdomänennamens
 
+Sie würden die Microsoft Entra-ID verwenden, um eine Domäne zu erstellen, die Sie erworben haben.  Wenn Sie eine Unterdomäne erstellen möchten, um Ihre vorhandene .onmicrosoft.com-Domäne zu unterteilen, müssen Sie das Microsoft 365 Admin Center verwenden.
+
 1. Wechseln Sie zu[https://entra.microsoft.com](https://entra.microsoft.com) und melden Sie sich mit einem globalen Administratorkonto für dieses Verzeichnis an.
 
-1. Verwenden Sie im Menü **Identität** die Option **Mehr anzeigen* unten.
+1. Verwenden Sie im Menü **Identität** die Option **Mehr anzeigen** am unteren Rand.
 
 1.  Öffnen Sie das Menü **Einstellungen**, und wählen Sie **Domänennamen** aus.
 
@@ -28,13 +32,18 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
 1. Erstellen Sie im Feld **Benutzerdefinierter Domänenname** eine benutzerdefinierte Unterdomäne für den Labmandanten, indem Sie **sales** vor den Domänennamen **onmicrosoft.com** setzen.  Das Format sieht in etwa wie folgt aus:
 
     ```
-    sales.labtenant.onmicrosoft.com
+    mydomain.com
     ```
 
 1. **Hinweis:** Sie werden aufgefordert, das Microsoft 365 Admin Center zu öffnen, um diese Aktion abzuschließen.
 
 1. Wählen Sie **Domäne hinzufügen** aus, um die Unterdomäne hinzuzufügen.
 
+1. Geben Sie den Unterdomänennamen `sales.tenantname.onmicrosoft.com` in das Dialogfeld ein.
+
+1. Wählen Sie die Schaltfläche **Diese Domäne verwenden** am unteren Rand des Bildschirms aus.
+
+1. Wählen Sie die Schaltfläche **Schließen**, wenn sich der nächste Bildschirm öffnet.  Im Rahmen dieses Labs richten wir das DNS nicht ein.
 
 ### Übung 2: Ändern des Anzeigenamens des Mandanten
 
@@ -63,7 +72,7 @@ Sie müssen die verschiedenen Eigenschaften identifizieren und aktualisieren, di
 
     **WICHTIG**: Das Land oder die Region wird beim Erstellen des Mandanten angegeben. Diese Einstellung kann später nicht mehr geändert werden.
 
-3. Suchen Sie auf der Seite **Eigenschaften** unter **Mandanteneigenschaften** den Datenspeicherort und überprüfen Sie die Informationen.
+3. Suchen Sie auf der Seite **Eigenschaften** unter **Mandanteneigenschaften** den **Standort**, und überprüfen Sie die Informationen.
 
     ![Screenshot der Seite mit den Azure Active Directory-Eigenschaften mit hervorgehobenen Einstellungen „Land oder Region“ und „Standort“](./media/azure-active-directory-properties-country-location.png)
 
@@ -113,12 +122,12 @@ Sie fügen die Datenschutzinformationen Ihrer Organisation im Bereich  **Eigens
 #### Aufgabe 2: Überprüfen Ihrer Datenschutzerklärung
 
 1. Kehren Sie zur Azure-Startseite – Dashboard zurück.
-2. Wählen Sie oben rechts in der Benutzeroberfläche Ihren Benutzernamen aus.
+2. Wählen Sie in der oberen rechten Ecke der Benutzeroberfläche Ihren Benutzernamen.
 3. Wählen Sie im Dropdownmenü **Konto anzeigen** aus.
 
      **Im Browser wird automatisch eine neue Browserregisterkarte geöffnet.**
 
-4. Wählen Sie links im Menü die Option **Einstellungen und Datenschutz** aus.
+4. Wählen Sie **Einstellungen & Datenschutz** im linken Menü.
 5. Wählen Sie **Datenschutz** aus.
 6. Wählen Sie unter **Organization's notice** den Eintrag **Anzeigen** neben der Datenschutzerklärung der Contoso Marketing-Organisation aus.
 

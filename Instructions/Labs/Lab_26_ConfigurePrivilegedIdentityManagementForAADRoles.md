@@ -7,6 +7,8 @@ lab:
 
 # Lab 26: Konfigurieren des Privileged Identity Management für Microsoft Entra-Rollen
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Administrierende für privilegierte Rollen können die privilegierte Identitätsverwaltung (Privileged Identity Management, PIM) in ihrer Microsoft Entra-Organisation anpassen, einschließlich der Änderung des Benutzererlebnisses für Benutzende, die eine autorisierte Rollenzuweisung aktivieren. Sie müssen sich mit der Konfiguration von PIM vertraut machen.
@@ -55,7 +57,7 @@ Wenn Sie mehrere genehmigende Personen festlegen, ist der Genehmigungsvorgang ab
 
 5. Wählen Sie nach der Konfiguration der Rolleneinstellungen **Aktualisieren** aus, um die Änderungen zu speichern.
 
-### Übung 2: PIM mit Microsoft Entra-Rollen
+### Übung 2: Verwenden von PIM zur Zuweisung von Microsoft Entra-Rollen
 
 #### Aufgabe 1: Zuweisen einer Rolle
 

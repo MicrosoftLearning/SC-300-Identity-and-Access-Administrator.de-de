@@ -7,6 +7,8 @@ lab:
 
 # Übung 15 - Konfigurieren einer Registrierungsrichtlinie für die Multifaktor-Authentifizierung
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Mit Multi-Faktor-Authentifizierung können Sie über die Verwendung eines Benutzernamens und Kennworts hinaus Ihre Identität verifizieren. Sie bietet eine zweite Sicherheitsebene für Benutzeranmeldungen. Damit Benutzer*innen auf MFA-Aufforderungen reagieren können, müssen sie sich zunächst für Microsoft Entra Multifactor Authentication registrieren. Sie müssen die MFA-Registrierungsrichtlinie Ihrer Microsoft Entra-Organisation so konfigurieren, dass sie allen Benutzer*innen zugewiesen wird.
@@ -44,13 +46,13 @@ Mit Multi-Faktor-Authentifizierung können Sie über die Verwendung eines Benutz
 
 **Hinweis**: Für Microsoft Entra Identity Protection muss Microsoft Entra ID Premium P2 aktiviert sein. 
 
-1. Navigieren Sie im Microsoft Entra Admin Center in der Suchleiste zu **Microsoft Entra Identity Protection**.
+1. Navigieren Sie im Microsoft Entra Admin Center in der Suchleiste zu **Microsoft Entra ID Protection**.
 
 1. Wählen Sie im Menü unter **Schutz** die Option **Registrierungsrichtlinie für die Multifaktorauthentifizierung**.
 
 1. Wählen Sie unter **Zuweisungen** die Option **Alle Benutzer** unter Benutzer und wählen Sie einen Benutzer*in, der MFA erzwingen soll.
 
-1. Ändern Sie **Richtliniendurchsetzung** von **Deaktiviert** in **Aktiviert**.
+1. Ändern Sie Folgendes: **Richtliniendurchsetzung****Aktiviert**.
 
 1. Wählen Sie **Speichern**.
 

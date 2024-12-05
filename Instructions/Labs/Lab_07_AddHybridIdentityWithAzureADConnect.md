@@ -9,7 +9,7 @@ lab:
 
 
 
-# Dieses Lab funktioniert derzeit nicht.  Aufgrund einer Lizenzierungsänderung in der Microsoft Entra ID ist das Lab fehlgeschlagen.  Wir sind derzeit mit der Problembehandlung und der Aktualisierung des Labs beschäftigt und sollten es innerhalb einer Woche wieder online haben.  Bitte gehen Sie zum nächsten Labor.
+# Dieses Lab funktioniert nur in einer Umgebung ohne Lab-Hoster. Wenn Sie es mit einem persönlichen Konto ausprobieren möchten, sollte es funktionieren. Sie können dies nicht innerhalb des Kurses ausführen.
 
 
 
