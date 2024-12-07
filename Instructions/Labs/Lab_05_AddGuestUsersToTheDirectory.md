@@ -7,6 +7,8 @@ lab:
 
 # Lab 05: Hinzufügen von Gastbenutzern zum Verzeichnis
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen Sie Ihrem Verzeichnis einige Lieferantenkonten als Gast hinzufügen.
@@ -90,7 +92,7 @@ Vor kurzem wurde eine Partnerschaft mit einem anderen Unternehmen geschlossen. V
 
 1. Öffnen Sie PowerShell als Administrator. Dazu können Sie in Windows nach PowerShell suchen und „Als Administrator ausführen“ auswählen. 
 
-**Hinweis**: Sie müssen PowerShell Version 7.2 oder höher verwenden, damit dieses Lab funktioniert.  Wenn PowerShell geöffnet wird, wird oben auf dem Bildschirm die Version angezeigt. Wenn Sie eine ältere Version verwenden, befolgen Sie die angezeigten Anweisungen, um zu https://aka.ms/PowerShell-Release?tag=7.3.9 zu wechseln. Scrollen Sie nach unten zum Abschnitt „Assets“, und wählen Sie „powershell-7.3.1-win-x64.msi“ aus. Wenn der Download abgeschlossen ist, wählen Sie „Datei öffnen“ aus. Installieren Sie unter Verwendung aller Standardwerte.
+**Hinweis**: Sie müssen PowerShell Version 7.2 oder höher verwenden, damit dieses Lab funktioniert.  Wenn Sie PowerShell öffnen, wird oben auf dem Bildschirm eine Version angezeigt. Wenn Sie eine ältere Version verwenden, aktualisieren Sie diese bitte, da dieser Teil des Labs sonst fehlschlagen wird.
 
 2. Sie müssen das Microsoft.Graph PowerShell-Modul installieren, wenn Sie es noch nicht verwendet haben.  Führen Sie die folgenden beiden Befehle aus, und drücken Sie „Y“, wenn Sie aufgefordert werden zu bestätigen:
 
@@ -109,7 +111,7 @@ Vor kurzem wurde eine Partnerschaft mit einem anderen Unternehmen geschlossen. V
     ```
     Connect-MgGraph -Scopes "User.ReadWrite.All"
     ``` 
-    Der Edge-Browser wird geöffnet, und Sie werden aufgefordert, sich anzumelden.  Verwenden Sie das MOD-Administratorkonto, um eine Verbindung herzustellen.  Akzeptieren Sie die Berechtigungsanforderung; schließen Sie dann das Browserfenster.
+    Der Edge-Browser wird geöffnet, und Sie werden aufgefordert, sich anzumelden.  Verwenden Sie das MOD-Administratorkonto, um eine Verbindung herzustellen.  Markieren Sie das Einwilligungskästchen und stimmen Sie der Anfrage zu; schließen Sie dann das Browserfenster.
 
 5. Legen Sie die Werte für die E-Mail fest und leiten Sie sie für den externen Benutzer um:
 
@@ -122,7 +124,7 @@ Vor kurzem wurde eine Partnerschaft mit einem anderen Unternehmen geschlossen. V
     }
     ```
 
-6. Senden Sie den Befehl „MgInvitation“, um den externen Benutzer einzuladen:
+6. Der Befehl „MgInvitation“ wurde gesendet, um die externen Benutzenden einzuladen:
 
     ```
     New-MgInvitation -BodyParameter $params

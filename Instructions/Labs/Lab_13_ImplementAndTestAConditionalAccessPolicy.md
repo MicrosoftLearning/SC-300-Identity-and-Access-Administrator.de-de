@@ -7,13 +7,15 @@ lab:
 
 # Lab 13: Implementieren und Testen einer Richtlinie für bedingten Zugriff
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Ihre Organisation muss den Benutzerzugriff auf seine internen Anwendungen einschränken können. Sie müssen eine Richtlinie für bedingten Zugriff von Microsoft Entra bereitstellen.
 
 **Hinweis**: Bei den Richtlinien für den bedingten Zugriff können Sie die Sicherheitsstandards deaktivieren; die wichtigsten Punkte, die Sie sich merken sollten, stammen aus der Schulung.  Weitere Informationen zu den Sicherheitsstandards finden Sie unter diesem Link: <https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/concept-fundamentals-security-defaults>
 
-#### Geschätzte Dauer: 30 Minuten
+#### Geschätzte Dauer: 20 Minuten
 
 ### Übung 1 – Festlegen einer Richtlinie für bedingten Zugriff, um den Zugriff von DebraB auf Sway zu blockieren
 
@@ -24,12 +26,16 @@ Ihre Organisation muss den Benutzerzugriff auf seine internen Anwendungen einsch
 2. Stellen Sie eine Verbindung mit [https://www.office.com](https://www.office.com) her. 
 3. Melden Sie sich bei Aufforderung als DebraB an:
 
-   | Einstellung | Wert |
-   | :--- | :--- |
-   | Username | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
-   | Kennwort | Geben Sie das Administratorkennwort des Mandanten ein (Sie finden das Administratorkennwort des Mandanten auf der Registerkarte „Labressourcen“) |
+  | Einstellung | Wert |
+  | :--- | :--- |
+  | Username | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
+  | Kennwort | Geben Sie das Administratorkennwort des Mandanten ein (Sie finden das Administratorkennwort des Mandanten auf der Registerkarte „Labressourcen“) |
     
-4. Klicken Sie auf das **Sway**-Symbol, um zu sehen, dass es ordnungsgemäß geladen wird.
+4. Umgehen Sie die Willkommens- und Einführungsbildschirme.
+
+5. Öffnen Sie die **Apps**-Seite und wählen Sie dann das **Sway**-Symbol aus, um zu sehen, ob es korrekt geladen wird.
+
+6. Melden Sie sich bei Office ab, und schließen Sie Ihre Browsersitzung.
 
 #### Aufgabe 2: Erstellen einer Richtlinie für bedingten Zugriff
 
@@ -122,6 +128,7 @@ Sie sollten Ihre Richtlinien für bedingten Zugriff testen, um sicherzustellen, 
 1. Wählen Sie **What if** aus. Am unteren Rand der Kachel wird ein Bericht für **Anzuwendende Richtlinien** und **Nicht anzuwendende Richtlinien**.
 
 Auf diese Weise können Sie die Richtlinien und deren Affektivität testen, bevor Sie die Richtlinien aktivieren.
+
 
 ### Übung 3: Konfigurieren von Steuerelementen für Anmeldehäufigkeit mithilfe einer Richtlinie für bedingten Zugriff
 

@@ -7,6 +7,8 @@ lab:
 
 # 18: Zugriffs- und Sitzungsrichtlinien für Defender for Cloud Apps
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Mit Microsoft Defender for Cloud-Apps können wir zusätzliche Richtlinien für den bedingten Zugriff erstellen, die speziell für die von uns überwachten Cloud-Apps gelten.  Das Erstellen dieser Richtlinien kann über das Menü „Steuerung“ im Microsoft Defender for Cloud Apps-Portal erfolgen.
@@ -61,7 +63,7 @@ Mit Microsoft Defender for Cloud-Apps können wir zusätzliche Richtlinien für 
    - Benutzername = PradeepG@<<<your lab hoster provided domain>>>
    - Kennwort = das Kennwort von der Registerkarte „Ressourcen“
 5. Vergewissern Sie sich, dass Pradeep Zugriff hat und dass Sie eine neue Nachricht erhalten:
-   - Der Zugriff auf Microsoft Forms wird überwacht.
+   - Ihr Unternehmen überwacht die Nutzung dieser Anwendung.
 6. Schließen Sie das InPrivate-Browserfenster.
 
 ### Übung 2: Einrichten von Warnungen in Microsoft Defender for Cloud Apps
@@ -103,7 +105,7 @@ Bei der Registrierung Ihrer Anwendung wird eine Vertrauensstellung zwischen Ihre
    - Benutzername = PradeepG@<<<your lab hoster provided domain>>>
    - Kennwort = das Kennwort von der Registerkarte „Ressourcen“
 5. Vergewissern Sie sich, dass Pradeep Zugriff hat und dass Sie eine neue Nachricht erhalten:
-   - Der Zugriff auf Microsoft Forms wird überwacht.
+   - Ihr Unternehmen überwacht die Nutzung dieser Anwendung.
 6. Schließen Sie das InPrivate-Browserfenster.
 
 #### Aufgabe 3: Überprüfen der Aktivität in Defender for Cloud Apps

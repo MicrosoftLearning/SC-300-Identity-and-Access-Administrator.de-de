@@ -7,6 +7,8 @@ lab:
 
 # Lab 04: Konfigurieren der Einstellungen für externe Zusammenarbeit
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Sie müssen die Einstellungen für die externe Zusammenarbeit für Ihre Organisation für den genehmigten Gastzugriff aktivieren.
@@ -35,7 +37,7 @@ Sie müssen die Einstellungen für die externe Zusammenarbeit für Ihre Organisa
     
 5. Vergewissern Sie sich, dass **Ja** ausgewählt ist.
 6. Wählen Sie bei Bedarf **Speichern** aus.
-7. Wählen Sie andernfalls `Home > Contoso Marketing >` **External Identities** aus, um zum vorherigen Bildschirm zurückzukehren.
+7. Kehren Sie zum Menü **Externe Identitäten** zurück.
 8. Wählen Sie im linken Menü **Einstellungen für externe Zusammenarbeit** aus.
 
 9. Überprüfen Sie unter  **Gastbenutzerzugriff** die verfügbaren Zugriffsebenen, und wählen Sie dann **Der Gastbenutzerzugriff ist auf Eigenschaften und Mitgliedschaften eigener Verzeichnisobjekte beschränkt (restriktivste Einstellung)**.

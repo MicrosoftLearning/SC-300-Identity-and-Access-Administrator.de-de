@@ -7,6 +7,8 @@ lab:
 
 # Lab 06: Hinzufügen eines Verbundidentitätsanbieters
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen Sie Ihrem Verzeichnis einige Lieferantenkonten als Gast hinzufügen und es ihnen ermöglichen, sich mit ihrem Google-Konto anzumelden.
@@ -74,7 +76,7 @@ Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen
 
 20. Geben Sie das Gmail-Konto ein, das Sie für dieses Lab erstellt haben (oder verwenden).
 
-21. Wählen Sie **Speichern** aus.
+21. Wählen Sie**Speichern**
 
 
 ### Übung 2 – Konfigurieren von Azure für die Arbeit mit einem externen Identitätsanbieter

@@ -5,7 +5,9 @@ lab:
   module: Module 04 - Plan and Implement and Identity Governance Strategy
 ---
 
-# Lab 25: Erstellen von Zugriffsüberprüfungen für interne und externe Benutzer  
+# Lab 25: Erstellen von Zugriffsüberprüfungen für interne und externe Benutzer
+
+### Anmeldetyp = Microsoft 365 Admin
 
 ## Labszenario
 
@@ -33,11 +35,11 @@ Der privilegierte Benutzerzugriff sollte regelmäßig auf ähnliche Weise überp
 
 8. Der nächste Schritt besteht darin, die Prüfer zu bestimmen.  Diese Prüfer können das Mitglied selbst sein, um eine Selbstüberprüfung auszuführen, oder können Vorgesetzten zugewiesen werden, wenn der Zugriff für eine gesamte Abteilung überprüft wird. Sie können auch die Aktion für den Fall festlegen, dass ein Prüfer nicht antwortet, um dem Mitglied automatisch den privilegierten Zugriff zu entziehen.
 
-9. Wählen Sie eine Prüfer- und Überprüfungsserienoption aus.  Wählen Sie dann **Einstellungen** aus.
+9. Wählen Sie die Prüfperson **Alex Wilber** und überprüfen Sie die Wiederholungsoption **Jährlich**.  Wählen Sie anschließend **Weiter: Einstellungen**.
 
 10. Mit den erweiterten Einstellungen können Sie eine Nachricht als Teil der Überprüfung angeben.
 
-11. Wechseln Sie zur Registerkarte **Überprüfen + Erstellen**, um die Zugriffsüberprüfung abzuschließen.
+11. Wechseln Sie zur Registerkarte **Überprüfen + erstellen**, um die Zugriffsüberprüfung abzuschließen.
 
 12. Nennen Sie die Zugriffsüberprüfung **SC300 Access Review Test**.
 

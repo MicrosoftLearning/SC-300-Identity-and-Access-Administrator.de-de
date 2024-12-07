@@ -7,6 +7,8 @@ lab:
 
 # Lab 19: Registrieren einer Anwendung
 
+### Anmeldetyp = Microsoft 365 Admin
+
 #### Geschätzte Dauer: 30 Minuten
 
 ### Übung 1: Registrieren einer Anwendung
@@ -27,8 +29,9 @@ Bei der Registrierung Ihrer Anwendung wird eine Vertrauensstellung zwischen Ihre
 
     ![Screenshot mit der Seite „Anwendung registrieren“, wobei der Name und die Standardeinstellungen hervorgehoben sind](./media/lp3-mod3-register-an-application.png)
 
-6. Wenn Sie fertig sind, werden Sie zur Seite **Demo-App** weitergeleitet.
+6. Sie wählen die Schaltfläche **Registrieren** aus.
 
+7. Wenn Sie fertig sind, werden Sie zur Seite **Demo-App** weitergeleitet.
 
 #### Aufgabe 2: Konfigurieren von Plattformeinstellungen
 
@@ -56,7 +59,11 @@ Sie können Umleitungs-URIs für Ihre registrierten Anwendungen hinzufügen und 
     | Android| Geben Sie den  **Paketnamen** der App ein, den Sie in der Datei „AndroidManifest.xml“ finden. Generieren Sie den  **Signaturhash**, und geben Sie ihn ein. Bei der Angabe dieser Einstellungen wird ein Umleitungs-URI für Sie generiert.|
     | Mobile Anwendungen und Desktopanwendungen| Wählen Sie unter  **Vorgeschlagene Umleitungs-URIs** einen der Umleitungs-URIs aus, oder geben Sie in das Feld  **Benutzerdefinierter Umleitungs-URI** einen URI ein. Empfehlung für Desktopanwendungen: [https://login.microsoftonline.com/common/oauth2/nativeclient](https://login.microsoftonline.com/common/oauth2/nativeclient). Wählen Sie diese Plattform für mobile Anwendungen aus, die nicht die neueste Microsoft-Authentifizierungsbibliothek (Microsoft Authentication Library, MSAL) verwenden oder keinen Broker einsetzen. Wählen Sie diese Plattform auch für Desktopanwendungen aus.|
 
-5. Wählen Sie  **Konfigurieren** aus, um die Plattformkonfiguration abzuschließen.
+5. Wählen Sie **Web** als Ihre Plattform.
+
+6. Geben Sie `https://localhost` als die Umleitungs-URI ein.
+
+7. Wählen Sie  **Konfigurieren** aus, um die Plattformkonfiguration abzuschließen.
 
 #### Aufgabe 3: Hinzufügen der Anmeldeinformationen, des Zertifikats und des geheimem Clientschlüssels
 
@@ -75,20 +82,16 @@ Sie können Ihrer vertraulichen Client-App-Registrierung sowohl Zertifikate als 
 
 2. Wählen Sie unter  **Zertifikate und Geheimnisse** die Option  **+ Neuer geheimer Clientschlüssel** aus.
 
-3. Fügen Sie eine Beschreibung für Ihren geheimen Clientschlüssel hinzu.
+3. Fügen Sie eine Beschreibung für das Geheimnis Ihres Clients und die Dauer hinzu
 
-4. Wählen Sie eine Dauer aus.
+ - Beschreibung = SC300 Lab-Geheimnis
+ - Dauer = 90 Tage (3 Monate)
 
-5. Wählen Sie  **Hinzufügen** aus.
+4. Wählen Sie  **Hinzufügen** aus.
 
-6. **Speichern Sie den Wert des geheimen Schlüssels im Editor** für die Verwendung in Ihrem Clientanwendungscode. Auf der Seite „Zertifikat und Geheimnisse“ wird der neue Geheimniswert angezeigt. Es ist wichtig, dass Sie diesen Wert kopieren, da er nur dieses eine Mal angezeigt wird. Wenn Sie die Seite verlassen und zurückkehren, wird er nur noch als maskierter Wert angezeigt.
+5. **Speichern Sie den Wert des geheimen Schlüssels im Editor** für die Verwendung in Ihrem Clientanwendungscode. Auf der Seite „Zertifikat und Geheimnisse“ wird der neue Geheimniswert angezeigt. Es ist wichtig, dass Sie diesen Wert kopieren, da er nur dieses eine Mal angezeigt wird. Wenn Sie die Seite verlassen und zurückkehren, wird er nur noch als maskierter Wert angezeigt.
 
-7. Überspringen Sie die Abschnitte  **Umleitungs-URI hinzufügen** und **Plattformeinstellungen konfigurieren** . Sie müssen keinen Umleitungs-URI für eine Web-API konfigurieren, da keine Benutzer interaktiv angemeldet werden.
-
-8. Überspringen Sie vorerst den Abschnitt  **Anmeldeinformationen hinzufügen** . Ihre API würde nur eigene Anmeldeinformationen benötigen, wenn sie auf eine nachgelagerte API zugreifen müsste. Ein solches Szenario wird in diesem Artikel nicht behandelt.
-
-Nachdem Sie Ihre Web-API registriert haben, können Sie die Bereiche hinzufügen, mit denen der Code Ihrer API eine differenzierte Berechtigung für Nutzer Ihrer API bereitstellen kann.
-
+Nachdem Sie Ihre Web-API registriert haben, können Sie die Bereiche hinzufügen, mit denen der Code Ihrer API eine differenzierte Berechtigung für Nutzende Ihrer API bereitstellen kann.
 
 #### Aufgabe 5: Hinzufügen eines Bereichs
 
@@ -96,30 +99,28 @@ Der Code in einer Clientanwendung fordert die Berechtigung zum Ausführen von Vo
 
 Führen Sie zuerst die folgenden Schritte aus, um einen Beispielbereich namens „Employees.Read.All“ zu erstellen:
 
-1. Melden Sie sich beim Microsoft Entra Admin Center an.
+1. Wählen Sie  **Identität**, dann **Anwendung** und schließlich  **App-Registrierungen** und wählen Sie dann die App-Registrierung Ihrer API.
 
-2. Wenn Sie Zugriff auf mehrere Mandanten haben, verwenden Sie im Menü am oberen Rand den Filter  **Verzeichnis und Abonnement** , um den Mandanten auszuwählen, der die Registrierung der Client-App enthält.
-
-3. Wählen Sie  **Identität**, dann **Anwendung**  und schließlich  **App-Registrierungen** und danach die App-Registrierung Ihrer API aus.
-
-4. Wählen Sie  **Eine API verfügbar machen** und dann  **+ Bereich hinzufügen** aus.
+2. Wählen Sie  **Eine API verfügbar machen** und dann  **+ Bereich hinzufügen** aus.
 
     ![Bereich „Eine API verfügbar machen“ der App-Registrierung im Azure-Portal](./media/portal-02-expose-api.png)
 
-5. Sie werden aufgefordert, einen  **Anwendungs-ID-URI** festzulegen, falls Sie noch keinen konfiguriert haben. Der APP-ID-URI fungiert als Präfix für die Bereiche, auf die Sie in Ihrem API-Code verweisen, und muss global eindeutig sein. Sie können den bereitgestellten Standardwert im Format api://\<application-client-id\> verwenden oder einen besser lesbaren URI wie `https://contoso.com/api` angeben.
+3. Sie werden aufgefordert, eine **Anwendungs-ID URI** festzulegen. Festlegen des Werts auf **api://DemoAppAPI**
 
-6. Wählen Sie **Speichern und fortfahren** aus.
+  - Hinweis: Der APP-ID-URI fungiert als Präfix für die Bereiche, auf die Sie in Ihrem API-Code verweisen, und muss global eindeutig sein. Sie können den bereitgestellten Standardwert in der Form api://<application-client-id\> verwenden oder eine besser lesbare URI wie  `https://contoso.com/api` angeben.
 
-6. Geben Sie als Nächstes unter  **Bereich hinzufügen** die Attribute des Bereichs an. Für diese exemplarische Vorgehensweise können Sie die Beispielwerte verwenden oder eigene Werte angeben.
+4. Wählen Sie **Speichern und fortfahren** aus.
 
-    | Feld| Beschreibung| Beispiel|
+5. Geben Sie als Nächstes unter  **Bereich hinzufügen** die Attribute des Bereichs an. Für diesen Durchgang verwenden Sie die Werte in der 3. Spalte: **Wert**.
+
+    | Feld| Beschreibung| Wert |
     | :--- | :--- | :--- |
     | Bereichsname| Name des Bereichs. Eine allgemeine Benennungskonvention für den Bereich ist „Ressource.Vorgang.Einschränkung“.| Employees.Read.All|
     | Zum Einwilligen berechtigte Personen| Gibt an, ob für diesen Bereich die Einwilligung von Benutzern ausreicht oder die Einwilligung eines Administrators erforderlich ist. Wählen Sie für umfassendere Berechtigungen die Option „Nur Administratoren“ aus.| Administratoren und Benutzer|
     | Anzeigename der Administratoreinwilligung| Eine kurze Beschreibung des Zwecks für den Bereich, der nur Administratoren angezeigt wird.| Schreibgeschützter Zugriff auf Mitarbeiterdatensätze|
     | Beschreibung der Administratoreinwilligung| Eine ausführlichere Beschreibung der vom Bereich gewährten Berechtigung, die nur Administratoren angezeigt wird.| Ermöglicht der Anwendung einen schreibgeschützten Zugriff auf alle Mitarbeiterdaten.|
-    | Anzeigename der Benutzereinwilligung| Eine kurze Beschreibung des Zwecks für den Bereich. Wird Benutzern nur angezeigt, wenn Sie unter „Zum Einwilligen berechtigte Personen“ die Option „Administratoren und Benutzer“ festgelegt haben.| Schreibgeschützter Zugriff auf Mitarbeiterdatensätze|
-    | Beschreibung der Benutzereinwilligung| Eine ausführlichere Beschreibung der Berechtigung, die vom Bereich gewährt wird. Wird Benutzern nur angezeigt, wenn Sie unter „Zum Einwilligen berechtigte Personen“ die Option „Administratoren und Benutzer“ festgelegt haben.| Ermöglichen Sie der Anwendung einen schreibgeschützten Zugriff auf Ihre Mitarbeiterdaten.|
+    | Anzeigename der Benutzereinwilligung| Eine kurze Beschreibung des Zwecks für den Bereich. Wird Benutzern nur angezeigt, wenn Sie unter Zum Einwilligen berechtigte Personen die Option Administratoren und Benutzer festgelegt haben.| Schreibgeschützter Zugriff auf Mitarbeiterdatensätze|
+    | Beschreibung der Benutzereinwilligung| Eine ausführlichere Beschreibung der Berechtigung, die vom Bereich gewährt wird. Wird Benutzern nur angezeigt, wenn Sie unter Zum Einwilligen berechtigte Personen die Option Administratoren und Benutzer festgelegt haben.| Ermöglichen Sie der Anwendung einen schreibgeschützten Zugriff auf Ihre Mitarbeiterdaten.|
 
 7. Legen Sie den **Status** auf **Aktiviert** fest, und wählen Sie dann  **Bereich hinzufügen** aus.
 
@@ -148,17 +149,18 @@ Fügen Sie als Nächstes einen weiteren Beispielbereich namens „Employees.Writ
     | Anzeigename der Benutzereinwilligung| Keine (Feld leer lassen)|
     | Beschreibung der Benutzereinwilligung| Keine (Feld leer lassen)|
 
-    >**Hinweis**: Wenn Sie die beiden in den vorherigen Abschnitten beschriebenen Beispielbereiche erfolgreich hinzugefügt haben, werden sie, ähnlich wie in der folgenden Abbildung gezeigt, im Bereich  **Eine API verfügbar machen** der App-Registrierung Ihrer Web-API angezeigt:
+2. Stellen Sie sicher, dass der Status auf **Aktiviert** festgelegt ist und wählen Sie dann **Bereich hinzufügen**.
 
-    ![Screenshot des Bereiches „Eine API verfügbar machen“ mit zwei verfügbar gemachten Bereichen.](./media/portal-03-scopes-list.png)
+  - **Hinweis**: Wenn Sie die beiden in den vorherigen Abschnitten beschriebenen Beispielbereiche erfolgreich hinzugefügt haben, werden sie, ähnlich wie in der folgenden Abbildung gezeigt, im Bereich  **Eine API verfügbar machen** der App-Registrierung Ihrer Web-API angezeigt:
 
-    Wie aus der Abbildung hervorgeht, wird die vollständige Zeichenfolge eines Bereichs durch die Verkettung von  **Anwendungs-ID-URI**  der Web-API und  **Bereichsname** des Bereichs gebildet.
+  ![Screenshot des Bereiches „Eine API verfügbar machen“ mit zwei verfügbar gemachten Bereichen.](./media/portal-03-scopes-list.png)
 
-        **Note**: For example, if your web API's application ID URI is `https://contoso.com/api` and the scope name is Employees.Read.All, the full scope is: `https://contoso.com/api/Employees.Read.All`
+  Wie aus der Abbildung hervorgeht, wird die vollständige Zeichenfolge eines Bereichs durch die Verkettung von  **Anwendungs-ID-URI** der Web-API und  **Bereichsname** des Bereichs gebildet.
 
+  **Hinweis**: Wenn der Anwendungs-ID-URI Ihrer Web-API beispielsweise `https://contoso.com/api` und der Bereichsname „Employees.Read.All“ lautet, ergibt sich daraus die folgende Zeichenfolge für den vollständigen Bereich: `https://contoso.com/api/Employees.Read.All`
 
-        **Note**: Next, you will configure a client app's registration with access to your web API and the scopes you defined by following the steps above.
-    Nachdem der Registrierung einer Client-App die Berechtigung für den Zugriff auf Ihre Web-API erteilt wurde, kann Microsoft Identity Platform für den Client ein OAuth 2.0-Zugriffstoken ausstellen. Wenn der Client die Web-API aufruft, präsentiert er ein Zugriffstoken, dessen Bereichsanspruch (scp) auf die Berechtigungen festgelegt ist, die Sie in der Client-App-Registrierung angegeben haben. Sie können später bei Bedarf zusätzliche Bereiche verfügbar machen. Beachten Sie, dass Ihre Web-API mehrere Bereiche verfügbar machen kann, die verschiedenen Vorgängen zugeordnet sind. Ihre Ressource kann zur Laufzeit durch Auswerten der Bereichsansprüche (scp) im erhaltenen OAuth 2.0-Zugriffstoken den Zugriff auf die Web-API steuern.
+  **Hinweis**: Als Nächstes konfigurieren Sie die Registrierung einer Client-App mit Zugriff auf Ihre Web-API und die Bereiche, die Sie mit den obigen Schritten definiert haben.
+  Nachdem der Registrierung einer Client-App die Berechtigung für den Zugriff auf Ihre Web-API erteilt wurde, kann Microsoft Identity Platform für den Client ein OAuth 2.0-Zugriffstoken ausstellen. Wenn der Client die Web-API aufruft, präsentiert er ein Zugriffstoken, dessen Bereichsanspruch (scp) auf die Berechtigungen festgelegt ist, die Sie in der Client-App-Registrierung angegeben haben. Sie können später bei Bedarf zusätzliche Bereiche verfügbar machen. Beachten Sie, dass Ihre Web-API mehrere Bereiche verfügbar machen kann, die verschiedenen Vorgängen zugeordnet sind. Ihre Ressource kann zur Laufzeit durch Auswerten der Bereichsansprüche (scp) im erhaltenen OAuth 2.0-Zugriffstoken den Zugriff auf die Web-API steuern.
 
 
 ### Übung 2: Verwalten von App-Registrierungen mit einer benutzerdefinierten Rolle
@@ -171,7 +173,7 @@ Sie müssen eine neue benutzerdefinierte Rolle für die App-Verwaltung erstellen
 
 2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
 
-3. Wählen Sie im linken Menü unter **Identität** die Option **Rollen und Administratoren** aus.
+3. Wählen Sie im Menü auf der linken Seite unter **Identität** die Option **Rollen und Admins**.
 
 4. Wählen Sie dann das Element **Rollen und Administratoren** und anschließend **+ Neue benutzerdefinierte Rolle** aus.
 
@@ -196,5 +198,7 @@ Sie müssen eine neue benutzerdefinierte Rolle für die App-Verwaltung erstellen
 
     **Warum diese beiden Elemente ausgewählt werden**: Für die Bereitstellung sind diese beiden Elemente die einzigen erforderlichen Mindestberechtigungen, um das einmalige Anmelden für die zu erstellende Anwendung oder den Dienstprinzipal zu aktivieren und zu erzwingen sowie um die eingegebene Anwendung einer Gruppe von Benutzern oder Gruppen zuzuweisen.  Andere Berechtigungen können ebenfalls erteilt werden.  Sie können eine vollständige Liste der verfügbaren Berechtigungen unter `https://docs.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions` abrufen.
 
-10. Überprüfen Sie die Änderungen, und wählen Sie dann **Erstellen** aus.
+10. Wählen Sie **Weiter** aus.
+
+11. Überprüfen Sie die Änderungen, und wählen Sie dann **Erstellen** aus.
 

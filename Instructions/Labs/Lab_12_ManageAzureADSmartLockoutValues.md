@@ -7,6 +7,8 @@ lab:
 
 # Lab 12 – Verwalten von Smart Lockout-Werten für Microsoft Entra
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Sie müssen die zusätzlichen Kennwortschutzeinstellungen für Ihre Organisation konfigurieren.

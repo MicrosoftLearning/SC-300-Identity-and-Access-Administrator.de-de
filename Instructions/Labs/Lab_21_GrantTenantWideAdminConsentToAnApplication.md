@@ -7,6 +7,8 @@ lab:
 
 # Lab 21: Erteilen einer mandantenweiten Administratoreinwilligung für eine Anwendung
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Bei Anwendungen, die Ihre Organisation entwickelt hat oder die direkt in Ihrem Microsoft Entra-Mandanten registriert sind, können Sie auch im Azure-Portal in „App-Registrierungen“ eine mandantenweite Administratoreinwilligung erteilen.
@@ -43,16 +45,20 @@ Die Rolle „Globaler Administrator“ ist erforderlich, um die Administratorein
 
 Sie können die mandantenweite Administratoreinwilligung über Unternehmensanwendungen erteilen, wenn die Anwendung bereits in Ihrem Mandanten bereitgestellt wurde.
 
-1. Navigieren Sie im Microsoft Entra Admin Center zu **Identität > Anwendungen > Unternehmensanwendungen > Demo-Anwendung.**
+1. Gehen Sie im Microsoft Entra Admin Center zu **Identität** und **Anwendungen**.
 
-2. Wählen Sie auf der Seite **Demo-App** im linken Navigationsbereich unter **Sicherheit** die Option **Berechtigungen** aus.
+2. Öffnen Sie im Menü **Unternehmensanwendungen**.
 
-3. Wählen Sie unter **Berechtigungen** die Option **Administratoreinwilligung erteilen** aus.
+3. Wählen Sie aus der Liste der Unternehmensanwendungen die **Demo-App** aus, die wir zuvor registriert haben.
+
+4. Wählen Sie auf der Seite **Demo-App** im linken Navigationsbereich unter **Sicherheit** die Option **Berechtigungen** aus.
+
+5. Wählen Sie unter **Berechtigungen** die Option **Administratoreinwilligung erteilen** aus.
 
     ![Bildschirmabbildung mit der Seite „Berechtigungen“ für die Demo-App mit hervorgehobener Option „Administratoreinwilligung erteilen“ für Contoso](./media/lp3-mod3-grant-admin-consent-in-enterprise-app.png)
 
    **Warnung**: Durch das Erteilen der mandantenweiten Administratoreinwilligung über App-Registrierungen werden alle Berechtigungen widerrufen, die zuvor mandantenweit erteilt wurden. Berechtigungen, die zuvor von Benutzern im eigenen Auftrag erteilt wurden, sind nicht betroffen.
 
-4. Melden Sie sich bei Aufforderung mit Ihrem Konto des Typs „Globaler Administrator“ an.
+6. Melden Sie sich bei Aufforderung mit Ihrem Konto des Typs „Globaler Administrator“ an.
 
-5. Überprüfen Sie im Dialogfeld **Angeforderte Berechtigungen** die Informationen, und wählen Sie dann **Akzeptieren** aus.
+7. Überprüfen Sie im Dialogfeld **Angeforderte Berechtigungen** die Informationen, und wählen Sie dann **Akzeptieren** aus.

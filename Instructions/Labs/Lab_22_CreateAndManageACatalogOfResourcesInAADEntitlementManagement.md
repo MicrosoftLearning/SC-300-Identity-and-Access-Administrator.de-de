@@ -7,6 +7,8 @@ lab:
 
 # Lab 22: Erstellen und Verwalten eines Ressourcenkatalogs in der Microsoft Entra-Berechtigungsverwaltung
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Ein Katalog ist ein Container für Ressourcen und Zugriffspakete. Sie erstellen einen Katalog, wenn Sie zugehörige Ressourcen und Zugriffspakete gruppieren möchten. Der Benutzer, der den Katalog erstellt, ist der erste Katalogbesitzer. Ein Katalogbesitzer kann weitere Katalogbesitzer hinzufügen. Sie müssen einen Katalog in Ihrer Organisation erstellen und konfigurieren.
@@ -39,15 +41,15 @@ Ein Katalog ist ein Container für Ressourcen und Zugriffspakete. Sie erstellen 
 
 6. Geben Sie im Feld **Beschreibung** die Angabe **Für Benutzer der Marketingabteilung** ein. Benutzern werden diese Informationen in den Details eines Zugriffspakets angezeigt.
 
-7. Wählen Sie unter **Aktiviert** die Option „Nein“ aus.
+7. Wählen Sie unter **Aktiviert** die Option **Ja**.
 
-- - Die Option **Für externe Benutzer aktiviert** ermöglicht Benutzern in ausgewählten externen Verzeichnissen das Anfordern von Zugriffspaketen in diesem Katalog. An dieser Einstellung werden keine Änderungen vorgenommen.
+  - **Aktiviert für externe Benutzende** Wählen Sie **Nein**.  Mit dieser Einstellung können die Benutzenden in ausgewählten externen Verzeichnissen Zugriffspakete in diesem Katalog anfordern. An dieser Einstellung werden keine Änderungen vorgenommen.
 
 9. Sie können den Katalog für die sofortige Verwendung aktivieren oder deaktivieren, wenn Sie ihn bis zur beabsichtigten Verwendung stagen oder als nicht verfügbar belassen möchten. Für diese Übung muss der Katalog nicht aktiviert werden.
 
-    ![Screenshot des Bereichs „Neuer Katalog“ mit hervorgehobenen Optionen für „Name“, „Beschreibung“, „Aktiviert“ und „Erstellen“](./media/lp4-mod1-new-catalog-marketing.png)
+  ![Screenshot des Bereichs „Neuer Katalog“ mit hervorgehobenen Optionen für „Name“, „Beschreibung“, „Aktiviert“ und „Erstellen“](./media/lp4-mod1-new-catalog-marketing.png)
 
-10. Wählen Sie „Erstellen“ aus.
+10. Klicken Sie auf **Erstellen**.
 
 #### Aufgabe 2: Hinzufügen von Ressourcen zu einem Katalog
 
@@ -65,10 +67,10 @@ Um Ressourcen in ein Zugriffspaket einschließen zu können, müssen die Ressour
 
    | Ressourcentyp | Wert |
    | :------------- | :---------- |
-   |  **Gruppen und Teams** | Einzelhandel |
+   |  **Gruppen und Teams** | Retail |
    |  **Anwendungen** | Feld |
    |  **Anwendungen** | Salesforce |
-   |  **SharePoint-Websites** | Marke SharePoint <<<Auswahl aus Ihrer Liste der verfügbaren SharePoint-Websites |
+   |  **SharePoint-Websites** | Marke: Wählen Sie diesen SharePoint aus der Liste der verfügbaren Sites aus |
 
 6. Sie verfügen möglicherweise nicht über Ressourcen in Gruppen und Teams, Anwendungen oder SharePoint-Websites. Wählen Sie eine beliebige Ressourcenkategorie und dann eine Ressource aus dieser Kategorie aus.
 
@@ -124,13 +126,15 @@ Sie können den Namen und die Beschreibung eines Katalogs bearbeiten. Benutzern 
 
 1. Auf der nächsten Kachel konfigurieren Sie, wer den Zugriff überprüft und genehmigt, wie oft der Zugriff überprüft wird und wann der Zugriff abläuft.
 
-1. Wählen Sie unter **Prüfer auswählen** die Option **Gruppenbesitzer** als Prüfer aus. **Hinweis**: Gastbenutzern sollte es nicht erlaubt sein, ihren eigenen Zugriff zu überprüfen; dies ist eine bewährte Praxis für Identity Governance.
+1. Wählen Sie unter **Prüfer auswählen** die Option **Gruppenbesitzer** als Prüfer aus.
+
+  - **Hinweis**: Gastbenutzern sollte es nicht erlaubt sein, ihren eigenen Zugriff zu überprüfen; dies ist eine bewährte Praxis für Identity Governance.
 
 1. Geben Sie eine **Dauer (in Tagen)** ein, der Standardwert ist 3, wählen Sie eine **Häufigkeit der Überprüfung** und ein **Startdatum** für die Überprüfung aus.
 
 1. Wählen Sie **Weiter: Einstellungen** aus, und konfigurieren Sie die Einstellungen dafür, wie die Überprüfung stattfindet und was geschieht, wenn der Gastbenutzer antwortet oder nicht antwortet.  Es empfiehlt sich, **Ergebnisse automatisch auf Ressource anwenden** zu aktivieren und **Zugriff entfernen** für **Wenn Prüfer nicht reagieren** auszuwählen. 
 
-1. Wählen Sie **Weiter: Überprüfen + erstellen** und dann **Erstellen** aus, um die neue **Zugriffsüberprüfung** zu erstellen.
+1. Wählen Sie **Weiter: Überprüfen + erstellen** und dann **Erstellen** aus, um die neue Zugriffsüberprüfung zu erstellen.
 
 
 #### Aufgabe 6: Löschen eines Katalogs

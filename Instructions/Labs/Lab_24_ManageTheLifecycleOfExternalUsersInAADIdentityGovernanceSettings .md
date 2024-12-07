@@ -5,7 +5,9 @@ lab:
   module: Module 04 - Plan and Implement and Identity Governance Strategy
 ---
 
-# Lab 24: Verwalten des Lebenszyklus externer Benutzender in Microsoft Entra Identity Governance-Einstellungen  
+# Lab 24: Verwalten des Lebenszyklus externer Benutzender in Microsoft Entra Identity Governance-Einstellungen
+
+### Anmeldetyp = Microsoft 365 Admin
 
 ## Labszenario
 

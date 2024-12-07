@@ -6,6 +6,9 @@ lab:
 ---
 
 # Lab 09: Konfigurieren und Bereitstellen der Self-Service-Kennwortzurücksetzung
+
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Das Unternehmen hat beschlossen, Mitarbeiter zu unterstützen und die Self-Service-Kennwortzurücksetzung zu ermöglichen. Sie müssen diese Einstellung in Ihrer Organisation konfigurieren.
@@ -48,19 +51,17 @@ Aktivieren Sie SSPR für die Gruppe.
 
 3. Wählen Sie auf der Seite „Eigenschaften“ der Kennwortzurücksetzung unter **Self-Service-Kennwortzurücksetzung aktiviert** die Option  **Ausgewählt** aus.
 
-4. Wählen Sie **Gruppe auswählen** und dann **SSPRSecurityGroupUser** aus.
+4. Ersetzen Sie unter **Gruppe auswählen** die vorhandene SSPRSecurityGroupUsers durch **SSPRTesters**, die Sie gerade erstellt haben.
 
-5. Wählen Sie im Bereich „Richtlinie für die Zurücksetzung des Standardkennworts“ die Gruppe **SSPRTesters**  aus.
-
-6. Wählen Sie auf der Seite „Eigenschaften“ der Kennwortzurücksetzung  **Speichern** aus.
+5. Wählen Sie auf der Seite „Eigenschaften“ der Kennwortzurücksetzung  **Speichern** aus.
 
     ![Screenshot der Seite „Eigenschaften“ für die Kennwortzurücksetzung mit hervorgehobenen Optionen „Ausgewählt“, „Gruppe auswählen“ und „Speichern“](./media/lp2-mod2-enable-password-reset-for-selected-group.png)
 
-7. Wählen Sie auf dem Bildschirm **Kennwort zurücksetzen** unter  **Verwalten* die Standardwerte für jede Einstellung von  **Authentifizierungsmethoden **, **Registrierung**, **Benachrichtigungen** und **Anpassung** aus und überprüfen Sie sie.
+6. Wählen Sie auf dem Bildschirm **Kennwort zurücksetzen** unter  **Verwalten* die Standardwerte für jede Einstellung von  **Authentifizierungsmethoden **, **Registrierung**, **Benachrichtigungen** und **Anpassung** aus und überprüfen Sie sie.
 
     **Hinweis**: **Telefon** muss als eine der Authentifizierungsmethoden für den Rest dieser Übung ausgewählt werden, sie können aber auch andere Optionen haben.
 
-#### Aufgabe 3: Registrieren für SSPR mit Alex
+#### Aufgabe 3: Registrieren für SSPR mit Allan
 
 Nachdem die SSPR-Konfiguration erstellt wurde, registrieren Sie eine Handynummer für den erstellten Benutzer.
 
@@ -68,27 +69,23 @@ Nachdem die SSPR-Konfiguration erstellt wurde, registrieren Sie eine Handynummer
 
     Dadurch wird sichergestellt, dass Sie zur Benutzerauthentifizierung aufgefordert werden.
 
-2. Melden Sie sich als **AlexW@** `<<organization-domain-name>>.onmicrosoft.com` mit dem Kennwort an = Geben Sie das Administratorkennwort des Mandanten ein (Das Administratorkennwort finden Sie auf die Registerkarte „Lab-Ressourcen“).
+2. Melden Sie sich mit dem angegebenen Kennwort als **AllanD@**`<<organization-domain-name>>.onmicrosoft.com` an.
 
     **Hinweis**: Ersetzen Sie „organization-domain-name“ durch Ihren Domänennamen.
 
 3. Wenn Sie zum Aktualisieren des Kennworts aufgefordert werden, geben Sie ein beliebiges neues Kennwort ein. Denken Sie daran, sich das neue Kennwort zu notieren.
 
-4. Wählen Sie im Dialogfeld **Weitere Informationen erforderlich** die Option **Weiter** aus.
+4. Wenn Sie aufgefordert werden, eingeloggt zu bleiben, wählen Sie „Ja“.
 
-5. Wählen Sie auf der Seite „Schützen Sie Ihr Konto“ die Option **Telefon** aus.
+5. Wählen Sie im Dialogfeld **Weitere Informationen erforderlich** die Option **Weiter** aus.
 
-    ![Screenshot der Seite „Schützen Sie Ihr Konto“ mit hervorgehobenem Dialogfeld „Andere Methode auswählen“](./media/lp2-mod2-keep-your-account-secure-page.png)
+6. Wählen Sie auf der Seite „Sicherheit“ für Ihr Konto **Weiter** aus, um die Authenticator-App zu verwenden.
 
-    **Hinweis**: In diesem Lab verwenden Sie die Option **Telefon**. Geben Sie die Handydetails ein.
+7. Folgen Sie den Anweisungen auf dem Bildschirm, um Ihr Konto in Authenticator einzurichten, indem Sie den QR-Code scannen.
 
-6. Geben Sie Ihre persönliche Handynummer in das Feld „Telefonnummer“ ein.
-7. Aktivieren Sie  **Code per SMS an mich senden**.
-8. Wählen Sie **Weiter** aus.
+8. Schließen Sie den Vorgang ab, indem Sie **Erledigt** wählen, wenn Sie sich erfolgreich registriert haben.
 
-9. Sobald Sie den Code auf Ihrem Handy erhalten haben, geben Sie ihn in das Textfeld ein, und wählen Sie **Weiter** aus.
-
-10. Nachdem Ihr Telefon registriert wurde, wählen Sie **Weiter** und dann **Fertig** aus.
+  - **Hinweis**: An dieser Stelle haben Sie sich in einem einzigen Schritt sowohl für SSPR als auch für MFA registriert.
 
 11. Schließen Sie den Browser. Sie müssen den Anmeldeprozess nicht abschließen.
 
@@ -108,19 +105,15 @@ Testen Sie nun, ob der Benutzer sein Kennwort zurücksetzen kann.
 
 4. Vervollständigen Sie auf der Seite „Konto wieder aktivieren“ die angeforderten Informationen, und wählen Sie dann **Weiter** aus.
 
-    ![Screenshot der Seite „Konto wieder aktivieren“ mit hervorgehobenem Feld „E-Mail oder Benutzername“, Captcha-Feld und Schaltfläche „Weiter“](./media/lp2-mod2-get-back-into-your-account-page.png)
-
-5. Wählen Sie in der Aufgabe **Überprüfungsschritt 1** die Option **Textnachricht an mein Mobiltelefon senden** aus, geben Sie Ihre Telefonnummer ein, und wählen Sie dann **Text** aus.
-
-    ![Screenshot von Überprüfungsschritt 1 mit hervorgehobenen Kontaktmethoden, Feld für die Telefonnummer und Schaltfläche „Text“](./media/lp2-mod2-sspr-verification-step-1.png)
+5. Folgen Sie den Anweisungen auf dem Bildschirm, um den Überprüfungscode aus der Microsoft Authenticator-App abzurufen.
 
 6. Geben Sie Ihren Überprüfungscode ein, und wählen Sie dann **Weiter** aus.
 
-7. Geben Sie im Schritt „Neues Kennwort auswählen“ das neue Kennwort ein, und bestätigen Sie es.  Empfohlenes Kennwort = **Pass@w.rd1234**.
+7. Geben Sie im Schritt „Neues Kennwort auswählen“ das neue Kennwort ein, und bestätigen Sie es.
 
 8. Wählen Sie abschließend **Fertig stellen** aus.
 
-9. Melden Sie sich als **AlexW** mit dem neu erstellten Kennwort an.
+9. Melden Sie sich als **AllanD** mit dem neu erstellten Kennwort an.
 
 10. Geben Sie Ihren Überprüfungscode ein, und überprüfen Sie dann, ob Sie den Anmeldeprozess abschließen können.
 

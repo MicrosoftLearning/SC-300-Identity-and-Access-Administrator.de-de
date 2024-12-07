@@ -7,6 +7,8 @@ lab:
 
 # Lab 20: Implementieren der Zugriffsverwaltung für Apps
 
+### Anmeldetyp = Microsoft 365 Admin
+
 ## Labszenario
 
 Ihre Organisation möchte, dass nur bestimmte Benutzer oder Gruppen Zugriff auf Unternehmensanwendungen haben. Sie müssen einer bestimmten Anwendung einen Benutzer zuweisen.
@@ -47,9 +49,11 @@ Ihre Organisation möchte, dass nur bestimmte Benutzer oder Gruppen Zugriff auf 
 
 4. Wählen Sie auf der Seite „Zuweisung hinzufügen“ im Abschnitt **Benutzer und Gruppen** die Option **Keine ausgewählt** aus.
 
-5. Wählen Sie im Bereich „Benutzer und Gruppen“ Ihr Administratorkonto und dann **Auswählen** aus.
+5. Wählen Sie im Bereich „Benutzende und Gruppen“ Adele Vance und Ihr MOD-Administratorkonto aus.
+
+6. Wählen Sie **Auswählen**.
 
     ![Screenshot einer Benutzerkontozuweisung zu einer App mit hervorgehobener Schaltfläche „Auswählen“ ](./media/lp3-mod1-add-app-assignment.png)
 
-6. Wählen Sie **Zuweisen** aus.
+7. Wählen Sie **Zuweisen** aus.
 

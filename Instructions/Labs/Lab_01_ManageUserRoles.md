@@ -6,11 +6,22 @@ lab:
 ---
 
 # WWL-Mandanten – Nutzungsbedingungen
-Wenn Ihnen im Rahmen einer Präsenzschulung ein Mandant zugewiesen worden ist, steht dieser für Praxislabs innerhalb der Präsenzschulung zur Verfügung. Mandanten sollten nicht für Zwecke außerhalb von Praxislabs freigegeben oder verwendet werden. Der in diesem Kurs verwendete Mandant ist ein Testmandant; er kann nach Abschluss des Kurses nicht verwendet oder erreicht werden und ist nicht für Erweiterungen geeignet. Mandanten dürfen nicht in ein kostenpflichtiges Abonnement konvertiert werden. Die im Rahmen dieses Kurses erworbenen Mandanten verbleiben im Eigentum der Microsoft Corporation, und wir behalten uns das Recht vor, jederzeit auf Mandanten zuzugreifen und diese zurückzuziehen. 
 
+Wenn Ihnen im Rahmen einer Präsenzschulung ein Mandant zugewiesen worden ist, steht dieser für interaktive Labs innerhalb der Präsenzschulung zur Verfügung. Mandanten sollten nicht geteilt oder für Zwecke außerhalb interaktiver Labs verwendet werden. Der in diesem Kurs verwendete Mandant ist ein Testmandant; er kann nach Abschluss des Kurses nicht verwendet oder erreicht werden und ist nicht für Erweiterungen geeignet. Mandanten dürfen nicht in ein kostenpflichtiges Abonnement konvertiert werden. Die im Rahmen dieses Kurses erworbenen Mandanten verbleiben im Eigentum der Microsoft Corporation, und wir behalten uns das Recht vor, jederzeit auf Mandanten zuzugreifen und diese zurückzuziehen.
+
+# Zwei verschiedene Anmeldeoptionen
+
+Dieses Lab verfügt über zwei verschiedene Anmeldeoptionen, die für verschiedene Teile des Labs verwendet werden. Ein Anmeldestil ist für Labs, die Azure-Ressourcen benötigen, der andere ist für Labs, die nur Microsoft Entra- und Microsoft 365-Ressourcen benötigen. Anmeldetypen:
+
+  - Azure-Ressourcenbasierte Anmeldung
+  - Microsoft 365- + E5-Mandantenanmeldung
+
+In jedem Lab wird Ihnen mitgeteilt, welche Anmeldung Sie verwenden sollen.
 
 
 # Lab 01: Verwalten von Benutzerrollen
+
+### Anmeldetyp = Microsoft 365 Admin
 
 ## Labszenario
 
@@ -22,9 +33,10 @@ Ihr Unternehmen hat kürzlich einen neuen Mitarbeiter eingestellt, der Aufgaben 
 
 #### Aufgabe 1 – Hinzufügen eines neuen Benutzers
 
-1. Melden Sie sich bei  [https://entra.microsoft.com](https://entra.microsoft.com) als globaler Administrator an.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) als globaler Administrator an.
+ - Verwenden Sie das **Microsoft 365-Administratorkonto**.
 
-2. Wählen Sie im linken Menü **Identität** aus.
+2. Wählen Sie im Menü links **Identität** aus.
 
 3. Wählen Sie im linken Navigationsmenü unter **Benutzer** die Option **Alle Benutzer** und dann **+ Neuer Benutzer** und **Neuen Benutzer erstellen** aus.
 
@@ -61,13 +73,13 @@ Ihr Unternehmen hat kürzlich einen neuen Mitarbeiter eingestellt, der Aufgaben 
     | Neues Kennwort| Geben Sie ein eindeutiges und sicheres Kennwort ein. |
     | Kennwort bestätigen| Geben Sie das eindeutige und sichere Kennwort erneut ein |
 
-4. Wenn ein **Tour-Dialogfeld** angezeigt wird, wählen Sie die Schaltfläche **Vielleicht später** aus.
+4. Suchen Sie im Suchdialogfeld oben auf dem Bildschirm nach ** Unternehmensanwendungen**, und wählen Sie diese Option aus.
 
-5. Suchen Sie im Suchdialogfeld oben auf dem Bildschirm nach ** Unternehmensanwendungen**, und wählen Sie diese Option aus.
-7. Wählen Sie **+ Neue Anwendung** aus. Beachten Sie, dass **+ Eigene Anwendung erstellen** nicht verfügbar ist.
+5. Wählen Sie **+ Neue Anwendung** aus. Beachten Sie, dass **+ Eigene Anwendung erstellen** nicht verfügbar ist.
 
-9. Versuchen Sie, einige der anderen Einstellungen wie **Anwendungsproxy**, **Benutzereinstellungen** und andere auszuwählen, um zu sehen, dass **Chris Green** keine Rechte hat.
-10. Wählen Sie in der rechten oberen Ecke den Namen **ChrisG** aus, und melden Sie sich ab.
+6. Versuchen Sie, einige der anderen Einstellungen wie **Anwendungsproxy**, **Benutzereinstellungen** und andere auszuwählen, um zu überprüfen, dass **Chris Green** keine Rechte hat.
+
+7. Wählen Sie in der rechten oberen Ecke den Namen **ChrisG** aus, und melden Sie sich ab.
 
 
 ### Übung 2 – Zuweisen der Anwendungsadministratorrolle und Erstellen einer App
@@ -276,24 +288,38 @@ Einigen Benutzerkonten in Ihrer Organisation werden nicht alle verfügbaren Prod
 
     **Warnung**: Damit einem Benutzer eine Lizenz zugewiesen werden kann, muss dem Benutzer ein Nutzungsspeicherort zugewiesen werden.
 
-6. Wählen Sie den Menüeintrag **Lizenzen** im linken Menü aus.
+6. Wählen Sie das Menüelement **Lizenzen** im linken Menü aus.
 
 7. Stellen Sie sicher, dass für Raul „Keine Lizenzzuweisungen gefunden“ angezeigt wird.
 
-8. Navigieren Sie zurück zu **Alle Benutzer** im linken Navigationsbereich, und wählen Sie unter **Identität** die Option **Benutzer** aus.
+#### Aufgabe 2: Hinzufügen einer Windows-Lizenz zu Raul
 
-9. Wählen Sie auf der Seite „Benutzer“ **Raul Razo** aus.
+Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfernen. Dies ist eine relativ neue Änderung.
 
-10. Wählen Sie im linken Navigationsbereich **Lizenzen** aus.
+1. Öffnen Sie eine neue Registerkarte in Ihrem Browser.
 
-11. Wählen Sie die Schaltfläche **+ Zuweisungen** aus. 
+2. Verbinden Sie sich mit dem Microsoft 365 Admin Center unter http://admin.microsoft.com.
 
-12. Aktivieren Sie auf der Seite „Lizenzzuweisungen aktualisieren“ das Kontrollkästchen für eine **Windows 10/11 Enterprise E3**-Lizenz.
+3. Melden Sie sich bei Aufforderung als Administratorkonto an.
 
-    ![Screenshot der Seite „Lizenzzuweisungen aktualisieren“ mit hervorgehobenen Lizenzoptionen](./media/lp1-mod2-assign-user-license-options.png)
+4. Wählen Sie im Menü auf der linken Seite **Abrechnung** und dann **Lizenzen**.
 
-13. Wählen Sie zum Abschluss **Speichern** aus.
+5. Wählen Sie **Windows 10/11 Enterprise E3** Lizenz aus der Liste.
 
-14. Wählen Sie oben auf dem Bildschirm **Startseite**, dann **Contoso**, dann **Benutzer** und schließlich **Raul Razo** aus.
+6. Wählen Sie das Element **+ Lizenz hinzufügen** aus.
 
-15. Beachten Sie, dass dem Benutzer wurde keine Lizenz zugewiesen wurde.
+7. Suchen Sie in der Liste nach **Raul Razo**.
+
+8. Sobald Sie Raul hinzugefügt haben, wählen Sie **Zuweisen**.
+
+9. Kehren Sie zu der Browser-Registerkarte zurück, auf der **Microsoft Entra Admin Center** geöffnet ist.
+
+10. Navigieren Sie zurück zu **Alle Benutzer** im linken Navigationsbereich, und wählen Sie unter **Identität** die Option **Benutzer** aus.
+
+11. Wählen Sie auf der Seite „Benutzer“ **Raul Razo** aus.
+
+12. Wählen Sie im linken Navigationsbereich **Lizenzen** aus.
+
+13. Beachten Sie, dass dem Benutzer wurde keine Lizenz zugewiesen wurde.
+
+14. Sie können den Lizenzbildschirm nun verlassen.
