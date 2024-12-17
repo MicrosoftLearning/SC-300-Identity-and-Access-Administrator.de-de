@@ -90,7 +90,7 @@ Vor kurzem wurde eine Partnerschaft mit einem anderen Unternehmen geschlossen. V
 
 #### Aufgabe 2: Einladen von Gastbenutzern mit PowerShell
 
-1. Öffnen Sie PowerShell als Administrator. Dazu können Sie in Windows nach PowerShell suchen und „Als Administrator ausführen“ auswählen. 
+1. Öffnen Sie PowerShell als Administrator.  Dazu können Sie in Windows nach PowerShell suchen und „Als Administrator ausführen“ auswählen. 
 
 **Hinweis**: Sie müssen PowerShell Version 7.2 oder höher verwenden, damit dieses Lab funktioniert.  Wenn Sie PowerShell öffnen, wird oben auf dem Bildschirm eine Version angezeigt. Wenn Sie eine ältere Version verwenden, aktualisieren Sie diese bitte, da dieser Teil des Labs sonst fehlschlagen wird.
 

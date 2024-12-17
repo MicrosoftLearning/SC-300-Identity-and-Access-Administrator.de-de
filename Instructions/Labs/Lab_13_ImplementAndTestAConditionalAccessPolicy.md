@@ -156,9 +156,9 @@ Im Rahmen der größeren Sicherheitskonfiguration Ihres Unternehmens müssen Sie
 
 9. Wählen Sie im Bereich „Auswählen“ das Konto **Grady Archie** und dann **Auswählen** aus.
 
-10. Wählen Sie **Cloud-Apps oder -aktionen** aus.
+10. Wählen Sie **Zielressourcen – Keine Zielressourcen ausgewählt** aus.
 
-11. Vergewissern Sie sich, dass **Cloud-Apps** ausgewählt ist, und wählen Sie dann **Apps auswählen** aus.
+11. Innerhalb von **Einschließen** vergewissern Sie sich, dass **Ressourcen auswählen** markiert ist und wählen Sie dann **Keine** im Auswahl-Abschnitt.
 
 12. Wählen Sie im Bereich „Auswählen“ die Option **Office 365** und dann **Auswählen** aus.
 

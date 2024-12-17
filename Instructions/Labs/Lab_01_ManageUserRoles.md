@@ -134,8 +134,8 @@ Diese Aufgabe wird eine alternative Methode verwenden, um die zugewiesene Rolle 
 2. Geben Sie im Suchfeld **Rollen und** ein, und starten Sie dann Microsoft Entra ID-Rollen und -Verwaltung.
 3. Wählen Sie in  **Alle Rollen** von  **Rollen und Administratoren** die Rolle **Anwendungsadministrator** aus der Liste aus.
 4. Auf der Seite **Anwendungsadministrator | Zuweisungen** sollte der Name von Chris Green aufgelistet sein.
-5. Setzen Sie ein Häkchen in das Kästchen neben Chris Green.
-6. Wählen Sie **X Zuweisungen entfernen** in den Optionen am oberen Rand des Dialogfelds aus.
+5. Scrollen Sie ganz nach rechts zu Chris Green.
+6. Wählen Sie **Entfernen** aus den Optionen am oberen Rand des Dialogfelds aus.
 7. Antworten Sie mit **Ja**, wenn das Bestätigungsfeld geöffnet wird.
 8. Schließen Sie den Bildschirm.
 

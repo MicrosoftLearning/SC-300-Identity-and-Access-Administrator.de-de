@@ -109,7 +109,7 @@ Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfer
 
    ![Bildschirmbild der Office.com Website mit der angemeldeten Delia Dennis und den verfügbaren Office-Anwendungen, da eine Lizenz zugewiesen ist.](./media/delia-office-license.png)
     
-5. Schließen Sie das Browserfenster. 
+5. Schließen Sie das Browserfenster.
 
 ### Übung 2 – Erstellen einer Microsoft 365-Gruppe in Microsoft Entra ID
 
