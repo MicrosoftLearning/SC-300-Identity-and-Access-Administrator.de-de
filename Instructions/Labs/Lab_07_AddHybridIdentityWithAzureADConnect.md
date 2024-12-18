@@ -7,16 +7,13 @@ lab:
 
 # Lab 07: OPTIONAL --- Hinzufügen von hybriden Identitäten mit Microsoft Entra Connect
 
-
-
 # Dieses Lab funktioniert nur in einer Umgebung ohne Lab-Hoster. Wenn Sie es mit einem persönlichen Konto ausprobieren möchten, sollte es funktionieren. Sie können dies nicht innerhalb des Kurses ausführen.
 
 
 
 
-**Hinweis**: Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen dazu finden Sie in Lab 00.
 
-**Hinweis 2**: Diese Übung ist optional.  Die Bearbeitung dauert mindestens 1 Stunde, und Sie sollten die Arbeitsschritte so detailliert wie möglich befolgen.  Bitte nutzen Sie den Computer, wenn es Ihre Zeit erlaubt.  Wenn Ihr Unternehmen bereits eine Hybrid-Konfiguration eingerichtet hat oder Sie nicht vorhaben, Microsoft Entra Connect zu verwenden, überspringen Sie bitte dieses Lab.
+**Hinweis**: Dieses Lab ist optional.  Die Bearbeitung dauert mindestens 1 Stunde, und Sie sollten die Arbeitsschritte so detailliert wie möglich befolgen.  Bitte nutzen Sie den Computer, wenn es Ihre Zeit erlaubt.  Wenn Ihr Unternehmen bereits eine Hybrid-Konfiguration eingerichtet hat oder Sie nicht vorhaben, Microsoft Entra Connect zu verwenden, überspringen Sie bitte dieses Lab.
 
 ## Labszenario
 
@@ -38,7 +35,7 @@ Ihr Unternehmen verfügt über lokale Azure Active Directory Domain Services (AD
 
    **Hinweis**: Die 3 VM Base Configuration stellt einen Domänencontroller für Windows Server 2016 Active Directory mit dem Namen DC1 bereit, der den Domänennamen, den Sie angeben, und einen Domänenmitgliedsserver mit dem Namen APP1 verwendet, auf dem Windows Server 2016 ausgeführt wird. Sie bietet auch eine Option zum Bereitstellen einer Client-VM unter Windows 10. Diese verwenden wird jedoch nicht in unserem Lab (in erster Linie aufgrund von Lizenzierungsanforderungen, die bei der Ausführung von Windows 10-VMs in Azure gelten). Auf dem Domänenmitgliedsserver (APP1) ist .NET 4.5 und IIS automatisch installiert.  
    
-   **Hinweis**: Die VM, die für dieses Lab erforderlich ist, ist **DC1**.  Wenn Sie einen Azure Pass verwenden, besteht eine Einschränkung von 2 VMs, sodass der virtuelle Clientcomputer fehlschlagen könnte.  Dies ist für dieses Lab nicht erforderlich.
+   **Hinweis**: Die VM, die für dieses Lab erforderlich ist, ist **DC1**.
 
 3. Legen Sie auf der Seite **Benutzerdefinierte Bereitstellung** die folgenden Einstellungen fest, und wählen Sie dann **Überprüfen + erstellen** und danach **Erstellen** aus.
 

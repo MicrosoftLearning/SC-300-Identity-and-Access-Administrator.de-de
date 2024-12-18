@@ -38,29 +38,3 @@ Für die Aufgaben in dieser Übung und die Übungen in diesem Lernpfad allgemein
 1. Aktualisieren Sie den Browser, bis Azure AD Premium P2 unter dem Namen der Organisation angezeigt wird. Dies dauert einige Minuten.
 
 1. Möglicherweise müssen Sie sich abmelden und erneut bei Microsoft Azure anmelden, wenn die erwarteten Features nicht verfügbar sind.
-
-#### Einlösen des Azure Pass
-
-1. Öffnen Sie einen Browser, und navigieren Sie zu: [www.microsoftazurepass.com](https://www.microsoftazurepass.com).
-
-1. Wir empfehlen Ihnen, alle Browser zu schließen und eine neue InPrivate-Browsersitzung zu öffnen. Sonst kann es vorkommen, dass andere gespeicherte Anmeldungen vorhanden sind, die während des Aktivierungsschritts zu Fehlern führen.
-
-1. Wählen Sie die Schaltfläche **Start** aus, um zu beginnen.
-
-1. Bestätigen Sie, dass der Benutzername mit dem Mandantenkonto des Lab-Anbieters identisch ist.
-
-1. Geben Sie den Azure Pass-Gutscheincode in das Feld **Enter Promo code** ein. Und bestätigen Sie, dass Sie ein Mensch sind, falls angefordert. 
-
-1. Geben Sie Adressinformationen in die **Profile**-Felder ein.
-    - **Address line 1**: 1 Microsoft Way
-    - **City**: Redmond
-    - **State**: Washington
-    - **ZIP code**: 98052
-
-1. Aktivieren Sie das Kontrollkästchen, um der Abonnementvereinbarung zuzustimmen, und wählen Sie **Registrieren** aus.
-
-    ![Zustimmen zur Abonnementvereinbarung und Registrieren](media/azurepassactivation.png)
-
-1. Navigieren Sie zu [https://portal.azure.com](https://portal.azure.com), und melden Sie sich mit dem Konto eines globalen Administrators für das Verzeichnis an.
-
-1. Navigieren Sie zu **Abonnements**, und bestätigen Sie, dass für **Azure Pass – Sponsorship** der Status **Aktiv** angezeigt wird. 
