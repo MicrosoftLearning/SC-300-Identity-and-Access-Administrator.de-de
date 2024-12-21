@@ -32,10 +32,10 @@ Sie würden die Microsoft Entra-ID verwenden, um eine Domäne zu erstellen, die 
 1. Erstellen Sie im Feld **Benutzerdefinierter Domänenname** eine benutzerdefinierte Unterdomäne für den Labmandanten, indem Sie **sales** vor den Domänennamen **onmicrosoft.com** setzen.  Das Format sieht in etwa wie folgt aus:
 
     ```
-    mydomain.com
+    Sales.###onmicrosoft.com
     ```
 
-1. **Hinweis:** Sie werden aufgefordert, das Microsoft 365 Admin Center zu öffnen, um diese Aktion abzuschließen.
+**Hinweis:** Sie werden aufgefordert, das Microsoft 365 Admin Center zu öffnen, um diese Aktion abzuschließen.
 
 1. Wählen Sie **Domäne hinzufügen** aus, um die Unterdomäne hinzuzufügen.
 
