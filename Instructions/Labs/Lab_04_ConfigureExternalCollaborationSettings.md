@@ -31,7 +31,7 @@ Sie müssen die Einstellungen für die externe Zusammenarbeit für Ihre Organisa
 1. Melden Sie sich im [https://entra.microsoft.com](https://entra.microsoft.com) als Mandantenverwalter an.
 2. Wählen Sie **Identität**.
 3. Wählen Sie  **Externe Identitäten** und dann **Alle Identitätsanbieter**.
-4. Wählen Sie den Link **E-Mail Einmalpasscode**, den Sie oben auf dem Bildschirm sehen.
+4. Wählen Sie in der Liste der Anbieter den Punkt **E-Mail-Einmal-Passcode** und dann **Konfiguriert** aus.
 
     **Hinweis**: Ein Einmal-Passcode ist eine sehr sichere Möglichkeit, einen Benutzer zur Teilnahme an Ihrer Organisation einzuladen.
     

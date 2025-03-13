@@ -29,7 +29,7 @@ Ihre Organisation muss den Benutzerzugriff auf seine internen Anwendungen einsch
   | Einstellung | Wert |
   | :--- | :--- |
   | Username | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
-  | Kennwort | Geben Sie das Administratorkennwort des Mandanten ein (Sie finden das Administratorkennwort des Mandanten auf der Registerkarte „Labressourcen“) |
+  | Kennwort | Geben Sie das angegebene Kennwort ein |
     
 4. Umgehen Sie die Willkommens- und Einführungsbildschirme.
 
@@ -83,13 +83,13 @@ Der bedingte Zugriff von Microsoft Entra ist ein erweitertes Feature von Microso
 
 Sie sollten Ihre Richtlinien für bedingten Zugriff testen, um sicherzustellen, dass sie erwartungsgemäß funktionieren.
 
-1. Öffnen Sie eine neue InPrivate-Browserregisterkarte und navigieren Sie dann zu [https://sway.office.com](https://sway.office.com).
+1. Öffnen Sie eine neue InPrivate-Browserregisterkarte und navigieren Sie dann zu [https://sway.cloud.microsoft](https://sway.cloud.microsoft).
     - Melden Sie sich bei Aufforderung als DebraB an:
 
    | Einstellung | Wert |
    | :--- | :--- |
    | Username | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
-   | Kennwort | Geben Sie das Administratorkennwort des Mandanten ein (Sie finden das Administratorkennwort des Mandanten auf der Registerkarte „Labressourcen“) |
+   | Kennwort | Geben Sie das angegebene Kennwort ein |
      
 2. Stellen Sie sicher, dass Sie nicht auf Microsoft Sway zugreifen können.
 

@@ -65,7 +65,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 1. Weisen Sie die folgenden Einstellungen zu:
   - **Stellenfunktionsrollen**
   - **Rolle**: VM-Administratoranmeldung
-  - **Mitglieder**: Wählen Sie „Benutzer, Gruppe oder Dienstprinzipal“ aus.  Verwenden Sie dann **+ Mitglieder auswählen**, um **Joni Sherman** als bestimmten Benutzer für die VM hinzuzufügen.
+  - **Mitglieder**: Wählen Sie „Benutzer, Gruppe oder Dienstprinzipal“ aus.  Verwenden Sie dann **+ Mitglieder auswählen**, um **User2** als bestimmten Benutzer für die VM hinzuzufügen.
 
 1. Wählen Sie **Überprüfen und zuweisen** aus, um den Prozess abzuschließen.
 
@@ -81,7 +81,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 
 1. Melden Sie sich als alternativer Benutzer an.
 
-1. Verwenden Sie den Benutzernamen (vmEntraAdmin) und das Kennwort des Admins, den Sie beim Einrichten des virtuellen Computers erstellt haben.
+1. Verwenden Sie den Admin-Benutzernamen (vmEntraAdmin) und das Kennwort, das Sie beim Einrichten des virtuellen Computers festgelegt haben.
    - Wenn Sie dazu aufgefordert werden, wählen Sie „Ja“ aus, um den Zugriff auf den virtuellen Computer oder die RDP-Sitzung zuzulassen.
 
 1. Warten Sie, bis der virtuelle Computer geöffnet ist und die gesamte Software geladen wurde.
@@ -133,30 +133,30 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 1. Klickan Sie auf **OK**.
 
 1. Geben Sie im Dialogfeld „Anmeldung“ die folgenden Informationen ein:
-   - Benutzername = **AzureAD\JoniS@ Ihr Domänenname**
+   - Benutzername = **AzureAD\User2@ Ihr Domänenname**
    - Kennwort = Geben Sie das Kennwort ein, das von Ihrem Labanbieter bereitgestellt wird.
 
-   HINWEIS: JoniS ist der Benutzer, dem wir in der Aufgabe 1 Zugriff auf die Anmeldung als Administrator gewährt haben.
+   HINWEIS: User2 ist der Benutzer, dem wir in der Aufgabe 1 Zugriff auf die Anmeldung als Admin gewährt haben.
 
-1. Windows Server sollte die Anmeldung bestätigen und das normale Server-Manager-Dashboard öffnen.
+1. Windows sollte die Anmeldung bestätigen und den normalen Desktop öffnen.
 
 #### Aufgabe 6 – Optionale Tests zum Erkunden der Microsoft Entra ID-Anmeldung
 
-1. Überprüfen Sie, ob JoniS der einzige Benutzer war, der der Gruppe „Administratoren“ hinzugefügt wurde.
+1. Überprüfen Sie, ob „User2“ der einzige Benutzer war, der der Administratorengruppe hinzugefügt wurde.
 
 1. Klicken Sie mit der sekundären Maustaste auf die Startschaltfläche und wählen Sie dann im Popupmenü **Computerverwaltung** aus.
 
 1. Öffnen Sie **Lokale Benutzer und Gruppen**, und navigieren Sie dann zu **Gruppen, Administratoren**.
 
-1. **Azure\JoniSherman....** sollte in der Liste angezeigt werden.
+1. Sie sollten **Azure\User2...** in der Liste sehen.
 
 1. Überprüfen Sie, ob sich andere Microsoft Entra ID-Mitglieder anmelden können.
 
 1. Beenden Sie die Remotedesktopsitzung.
 
-1. Öffnen Sie die Datei **<<server name>>-AzureAD.RDP** erneut.
+1. Starten Sie die Datei **<<server name>>-EntraID.RDP** erneut.
 
-1. Versuchen Sie, sich als andere Azure AD-Mitglieder wie AdeleV oder AlexW oder DiegoS anzumelden.
+1. Versuchen Sie, sich als andere Microsoft Entra ID-Mitglieder anzumelden.
 
 1. Beachten Sie, dass jedem dieser Benutzer der Zugriff verweigert wird.
 

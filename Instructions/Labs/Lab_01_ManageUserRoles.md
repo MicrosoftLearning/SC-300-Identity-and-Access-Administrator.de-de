@@ -15,13 +15,14 @@ Dieses Lab verfügt über zwei verschiedene Anmeldeoptionen, die für verschiede
 
   - Azure-Ressourcenbasierte Anmeldung
   - Microsoft 365- + E5-Mandantenanmeldung
+      - MOD-Administratorkonto
 
 In jedem Lab wird Ihnen mitgeteilt, welche Anmeldung Sie verwenden sollen.
 
 
 # Lab 01: Verwalten von Benutzerrollen
 
-### Anmeldetyp = Microsoft 365 Admin
+### Anmeldetyp = Microsoft 365- + E5-Mandantenanmeldung
 
 ## Labszenario
 
@@ -93,14 +94,17 @@ Mit Microsoft Entra ID können Sie eingeschränkte Administrator*innen festleg
 3. Wählen Sie im Abschnitt „Verwalten“ des Menüs die Option **Alle Benutzer** aus.
 4. Wählen Sie das Konto **Chris Green** aus.
 5. Wählen Sie im Menü „Verwalten“ die Option **Zugewiesene Rolle** aus.
-6. Wählen Sie Select **+ Zuweisungen hinzufügen** aus und markieren Sie die Rolle `Application administrator`.
-7. Wählen Sie **Hinzufügen** aus.
+6. Wählen Sie **+ Zuweisungen hinzufügen** aus.
+7. Wählen Sie die `Application administrator`-Rolle in der Dropdownliste aus.
+8. Wählen Sie die Schaltfläche **Weiter** aus.
+9. Markieren Sie den Wert **Aktiv** für **Zuweisungstyp**.
+10. Wählen Sie **Zuweisen** aus.
 
     ![Seite „Zugewiesene Rollen“ mit der ausgewählten Rolle](./media/directory-role-select-role.png)
 
 **Hinweis**: Wenn die Lab-Umgebung Microsoft Entra ID Premium P2 bereits aktiviert hat, wird Privileged Identity Management (PIM) aktiviert, und Sie müssen **Weiter** auswählen und diesem Benutzer eine permanente Rolle zuweisen.
 
-9. Wählen Sie die Schaltfläche **Aktualisieren** aus.
+11. Wählen Sie die Schaltfläche **Aktualisieren** aus.
 
 **Hinweis: Die neu zugewiesene Rolle „Anwendungsadministrator“ wird auf der Seite „Zugewiesene Rollen“ des Benutzers angezeigt.**
 
@@ -118,11 +122,11 @@ Mit Microsoft Entra ID können Sie eingeschränkte Administrator*innen festleg
 4. Suchen Sie über Suchdialogfeld oben auf dem Bildschirm nach **Unternehmensanwendungen**, und wählen Sie sie aus.
 5. Beachten Sie, dass **+ Neue Anwendung** jetzt verfügbar ist.
 6. Wählen Sie **+ Neue Anwendung** aus.
-7. Die Ansicht **„**+ Eigene Anwendung erstellen**“ ist nicht ausgegraut. Wenn Sie eine Katalog-App auswählen, ist die Schaltfläche **Erstellen** verfügbar.
+7. Achten Sie darauf, dass die Schaltfläche **+ Eigene Anwendung erstellen** nicht ausgegraut ist. Wenn Sie eine Galerie-App auswählen, sehen Sie, dass die Schaltfläche **Erstellen** verfügbar ist.
 
    **Hinweis: Diese Rolle kann jetzt dem Mandanten Anwendungen hinzuzufügen. Wir werden in späteren Labs mehr mit diesem Feature experimentieren.**
 
-7. Melden Sie sich bei der Chris Green-Instanz des Portals ab, und schließen Sie den Browser.
+8. Melden Sie sich bei der Chris Green-Instanz des Portals ab, und schließen Sie den Browser.
 
 ### Übung 3: Entfernen einer Rollenzuweisung
 
@@ -157,7 +161,7 @@ Diese Aufgabe wird eine alternative Methode verwenden, um die zugewiesene Rolle 
 
     Sie können diese Datei ändern, um Benutzer massenweise hinzuzufügen.  Beachten Sie, dass Sie nicht alle Felder ausfüllen müssen.  Gemäß den bereitgestellten Beispieldaten müssen Sie hauptsächlich den Namen und Benutzernameninformationen hinzufügen.
 
-6. Eine CSV-Beispieldatei ist im Ordner „Allfiles/Lab1“ bereitgestellt: **SC300BulkUser.csv**.
+6. Eine Beispiel-CSV wurde im Ordner Allfiles/Labs/Lab1 -- **SC300BulkUser.csv** bereitgestellt.
    1. Öffnen Sie den Editor.
      - Wählen Sie in der Labumgebung die Schaltfläche START aus, und geben Sie „Editor“ ein.  
    1. Öffnen Sie die Datei SC300BulkUser.csv.
@@ -166,7 +170,7 @@ Diese Aufgabe wird eine alternative Methode verwenden, um die zugewiesene Rolle 
 
 7. Wählen Sie im Dialogfeld **Benutzer für Massenerstellung** das Symbol „Dateiordner“ in Schritt 3 aus.
 
-8. Pfad zum Ordner „Allfiles/Lab1“, und wählen Sie **SC300BulkUser.csv** aus.
+8. Gehen Sie zum Ordner „Allfiles/Labs/Lab1“ und wählen Sie die Datei **SC300BulkUser.csv**.
 
 9. Wählen Sie **Öffnen** aus.
 
@@ -180,6 +184,8 @@ Nachdem die Benutzer erstellt wurden, werden Sie darüber benachrichtigt, dass d
 
 **Hinweis**: Sie müssen PowerShell Version 7.2 oder höher verwenden, damit dieses Lab funktioniert.  Wenn PowerShell geöffnet wird, wird oben auf dem Bildschirm die Version angezeigt. Wenn Sie eine ältere Version verwenden, befolgen Sie die angezeigten Anweisungen, um zu https://aka.ms/PowerShell-Release?tag=7.3.9 zu wechseln. Scrollen Sie nach unten zum Abschnitt „Assets“, und wählen Sie „powershell-7.3.1-win-x64.msi“ aus. Wenn der Download abgeschlossen ist, wählen Sie „Datei öffnen“ aus. Installieren Sie unter Verwendung aller Standardwerte.
 
+**Lab-Tipp**: TouchType funktioniert in der Lab-Umgebung nicht gut mit PowerShell.  Um dieses Problem zu umgehen, öffnen Sie Editor in Ihrer Lab-Umgebung. Verwenden Sie als Nächstes das TouchType-Feature, um das Skript in Editor zu platzieren, und verwenden Sie schließlich Kopieren und Einfügen, um den Befehl in PowerShell zu platzieren.  Entschuldigen Sie diesen zusätzlichen Schritt.
+
 2. Sie müssen das Microsoft.Graph PowerShell-Modul installieren, wenn Sie es noch nicht verwendet haben.  Führen Sie die folgenden beiden Befehle aus, und drücken Sie „Y“, wenn Sie aufgefordert werden zu bestätigen:
 
     ```
@@ -192,7 +198,7 @@ Nachdem die Benutzer erstellt wurden, werden Sie darüber benachrichtigt, dass d
     ```
     
 
-4. Als Nächstes müssen Sie sich bei Azure anmelden, indem Sie Folgendes ausführen:  
+4. Als Nächstes müssen Sie sich bei der Microsoft Graph-API anmelden, indem Sie Folgendes ausführen:  
 
     ```
     Connect-MgGraph -Scopes "User.ReadWrite.All"
@@ -298,7 +304,7 @@ Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfer
 
 1. Öffnen Sie eine neue Registerkarte in Ihrem Browser.
 
-2. Verbinden Sie sich mit dem Microsoft 365 Admin Center unter http://admin.microsoft.com.
+2. Verbinden Sie sich mit dem Microsoft 365 Admin Center unter [https://admin.microsoft.com](https://admin.microsoft.com).
 
 3. Melden Sie sich bei Aufforderung als Administratorkonto an.
 
@@ -306,7 +312,7 @@ Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfer
 
 5. Wählen Sie **Windows 10/11 Enterprise E3** Lizenz aus der Liste.
 
-6. Wählen Sie das Element **+ Lizenz hinzufügen** aus.
+6. Wählen Sie die Option **+ Lizenzen zuweisen** aus.
 
 7. Suchen Sie in der Liste nach **Raul Razo**.
 

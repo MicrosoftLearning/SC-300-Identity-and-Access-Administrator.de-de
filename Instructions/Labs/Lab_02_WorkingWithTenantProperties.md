@@ -7,7 +7,7 @@ lab:
 
 # Lab 02: Arbeiten mit Mandanteneigenschaften
 
-### Anmeldetyp = Microsoft 365 Admin
+### Anmeldetyp = Microsoft 365- + E5-Mandantenanmeldung
 
 ## Labszenario
 
@@ -32,14 +32,14 @@ Sie würden die Microsoft Entra-ID verwenden, um eine Domäne zu erstellen, die 
 1. Erstellen Sie im Feld **Benutzerdefinierter Domänenname** eine benutzerdefinierte Unterdomäne für den Labmandanten, indem Sie **sales** vor den Domänennamen **onmicrosoft.com** setzen.  Das Format sieht in etwa wie folgt aus:
 
     ```
-    Sales.###onmicrosoft.com
+    Sales.labTenantName.onmicrosoft.com
     ```
 
 **Hinweis:** Sie werden aufgefordert, das Microsoft 365 Admin Center zu öffnen, um diese Aktion abzuschließen.
 
 1. Wählen Sie **Domäne hinzufügen** aus, um die Unterdomäne hinzuzufügen.
 
-1. Geben Sie den Unterdomänennamen `sales.tenantname.onmicrosoft.com` in das Dialogfeld ein.
+1. Geben Sie den Unterdomänennamen `sales.tenantname.onmicrosoft.com` in das Dialogfeld ein. Denken Sie daran, *tenantname* durch den Namen Ihres Mandanten zu ersetzen.
 
 1. Wählen Sie die Schaltfläche **Diese Domäne verwenden** am unteren Rand des Bildschirms aus.
 
@@ -87,6 +87,8 @@ Azure-Abonnements haben eine Vertrauensbeziehung zu Microsoft Entra ID. Microso
 1. Suchen Sie unter **Mandanteneigenschaften** die **Mandanten-ID**. Dies ist Ihr eindeutiger Mandantenbezeichner.
 
     ![Screenshot der Seite „Mandanteneigenschaften“ mit hervorgehobenem Feld „Mandanten-ID“](./media/portal-tenant-id.png)
+
+**Hinweis:** Es ist hilfreich, wenn Sie Ihre Notiz zur Mandanten-ID im Editor oder an einem anderen Ort für die Verwendung in zukünftigen Labs aufzeichnen.
 
 ### Übung 3: Festlegen Ihrer Datenschutzinformationen
 

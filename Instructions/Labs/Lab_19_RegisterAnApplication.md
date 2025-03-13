@@ -17,7 +17,7 @@ lab:
 
 Bei der Registrierung Ihrer Anwendung wird eine Vertrauensstellung zwischen Ihrer App und Microsoft Identity Platform erstellt. Die Vertrauensstellung ist unidirektional: Ihre App vertraut Microsoft Identity Platform und nicht umgekehrt.
 
-1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com)  mit einem globalen Administratorkonto an.
+1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com)  mit dem vorgegebenen Administratorkonto an.
 
 2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
 
@@ -109,7 +109,7 @@ Führen Sie zuerst die folgenden Schritte aus, um einen Beispielbereich namens �
 
   - Hinweis: Der APP-ID-URI fungiert als Präfix für die Bereiche, auf die Sie in Ihrem API-Code verweisen, und muss global eindeutig sein. Sie können den bereitgestellten Standardwert in der Form api://<application-client-id\> verwenden oder eine besser lesbare URI wie  `https://contoso.com/api` angeben.
 
-4. Wählen Sie **Speichern und fortfahren** aus.
+4. Wählen Sie die Option **Speichern** aus, und fahren Sie fort.
 
 5. Geben Sie als Nächstes unter  **Bereich hinzufügen** die Attribute des Bereichs an. Für diesen Durchgang verwenden Sie die Werte in der 3. Spalte: **Wert**.
 

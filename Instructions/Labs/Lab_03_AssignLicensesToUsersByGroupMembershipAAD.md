@@ -7,7 +7,7 @@ lab:
 
 # Lab 03: Zuweisen von Lizenzen mithilfe der Gruppenmitgliedschaft
 
-### Anmeldetyp = Microsoft 365 Admin
+### Anmeldetyp = Microsoft 365- + E5-Mandantenanmeldung
 
 ## Labszenario
 
@@ -23,10 +23,10 @@ Ihre Organisation hat sich entschieden, Sicherheitsgruppen in Microsoft Entra I
 2. Stellen Sie eine Verbindung mit [https://www.office.com](https://www.office.com) her.
 3. Wählen Sie „Anmelden“ und „Verbinden“ als Delia Dennis aus.
 
-   | **Einstellung**| **Wert**|
+   | **Einstellung** | **Wert** |
    | :--- | :--- |
-   | Benutzername | DeliaD@`your domain name.com`|
-   | Kennwort| Geben Sie das Kennwort des globalen Administrators aus den Ressourcen ein.|
+   | Benutzername | DeliaD@`your domain name.com` |
+   | Kennwort| Geben Sie das für DeliaD angegebene Benutzerkennwort ein. |
 
 4. Sie sollten eine Verbindung mit der Office.com-Website herstellen, aber es wird eine Meldung angezeigt, die angibt, dass Sie keine Lizenz besitzen.
 
@@ -60,7 +60,7 @@ Ihre Organisation hat sich entschieden, Sicherheitsgruppen in Microsoft Entra I
 
 #### Aufgabe 3: Hinzufügen einer Office-Lizenz zu sg-SC300-O365
 
-Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfernen. Dies ist eine relativ neue Änderung.
+**Lab-Tipp**: Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfernen. Dies ist eine relativ neue Änderung.
 
 1. Öffnen Sie eine neue Registerkarte in Ihrem Browser.
 
@@ -74,11 +74,11 @@ Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfer
 
 6. Wählen Sie auf dem Lizenzierungsbildschirm die Registerkarte **Gruppen** aus.
 
-7. Wählen Sie das Element **+ Lizenz hinzufügen** aus.
+7. Wählen Sie die Option **+ Lizenzen zuweisen** aus.
 
 8. Suchen Sie nach der Gruppe **sg-SC300-O365** und wählen Sie sie in der Liste aus.
 
-8. Sobald Sie Raul hinzugefügt haben, wählen Sie **Zuweisen**.
+8. Sobald Sie die Gruppe hinzugefügt haben, wählen Sie **Zuweisen**.
  
 9. Schließen Sie die Bestätigungsmeldung.
 
@@ -86,7 +86,7 @@ Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfer
 
 11. Navigieren Sie zurück zu **Alle Gruppen** in der linken Navigation, unter **Identität** wählen Sie **Gruppen**.
 
-12. Auf der Benutzerseite wählen Sie **sg-SC300-O365**.
+12. Auf der Gruppenseite wählen Sie **sg-SC300-O365**.
 
 13. Wählen Sie im linken Navigationsbereich **Lizenzen** aus.
 
@@ -103,7 +103,7 @@ Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfer
    | **Einstellung**| **Wert**|
    | :--- | :--- |
    | Benutzername | DeliaD@`your domain name.com`|
-   | Kennwort| Geben Sie das Kennwort des globalen Administrators aus den Ressourcen ein.|
+   | Kennwort| Geben Sie das angegebene Kennwort ein  |
 
 4. Es sollte eine Verbindung mit der Office.com-Website hergestellt und keine Meldungen zur Lizenz angezeigt werden. Alle Office-Anwendungen sind links verfügbar.
 
@@ -143,7 +143,7 @@ Ein Teil Ihrer Aufgaben als Microsoft Entra-Administrator besteht darin, verschi
 
 Wenn Ihr Unternehmen wächst, ist die manuelle Gruppenverwaltung zu zeitaufwändig. Seit der Standardisierung des Verzeichnisses können Sie jetzt dynamische Gruppen nutzen. Sie müssen eine neue dynamische Gruppe erstellen, damit Sie dynamische Gruppen in der Produktion erstellen können.
 
-1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) mit einem Konto an, dem im Mandanten die Rolle „Globaler Administrator“ oder „Benutzeradministrator“ zugewiesen ist.
+1. Melden Sie sich im [https://entra.microsoft.com](https://entra.microsoft.com) mit einem bereitgestellten Administratorkonto an. Sie benötigen mindestens die Benutzeradministratorrolle im Mandanten.
 
 2. Wählen Sie **Identität** aus.
 
@@ -164,10 +164,10 @@ Wenn Ihr Unternehmen wächst, ist die manuelle Gruppenverwaltung zu zeitaufwänd
 9. Geben Sie im Bereich „Regelsyntax bearbeiten“ den folgenden Ausdruck in das Feld **Regelsyntax** ein:
 
    ```powershell
-   user.objectid -ne null
+   user.objectId -ne null
    ```
 
-   **Warnung**: die `user.objectid` berücksichtigt die Groß-/Kleinschreibung.
+   **Warnung**: die `user.objectId` berücksichtigt die Groß-/Kleinschreibung.
 
 10. Wählen Sie **OK** aus. Die Regel wird im Feld „Regelsyntax“ angezeigt.
 
@@ -194,8 +194,10 @@ Wenn Ihr Unternehmen wächst, ist die manuelle Gruppenverwaltung zu zeitaufwänd
 
 1. Versuchen Sie, eine Gruppe nur mit **Gastbenutzern** zu erstellen:
 
-   - (user.objectid -ne null) und (user.userType -eq "Guest")
+   - (user.objectId -ne null) and (user.userType -eq "Guest")
 
 2. Versuchen Sie, eine Gruppe nur mit **Mitgliedern** der Microsoft Entra-Benutzer zu erstellen.
 
-   - (user.objectid -ne null) und (user.userType -eq "Member")
+   - (user.objectId -ne null) and (user.userType -eq "Member")
+
+**Lab-Tipp**: Wenn Sie die Meldung „Gruppe konnte nicht erstellt werden“ mit dem Hinweis auf einen ungültigen Operator erhalten, überprüfen Sie die Schreibweise des Operators.  Beachten Sie, dass das „I“ in objectId und das „T“ in userType Großbuchstaben sind.

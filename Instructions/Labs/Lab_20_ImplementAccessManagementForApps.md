@@ -19,9 +19,9 @@ Ihre Organisation möchte, dass nur bestimmte Benutzer oder Gruppen Zugriff auf 
 
 #### Aufgabe 1: Hinzufügen einer App zu Ihrem Microsoft Entra-Mandanten
 
-1. Melden Sie sich bei  [https://entra.microsoft.com](https://entra.microsoft.com)  mit einem globalen Administratorkonto an.
+1. Melden Sie sich mit dem vorgegebenen Administratorkonto bei  [https://entra.microsoft.com](https://entra.microsoft.com)  an.
 
-2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
+2. Sehen Sie sich das Menü auf der linken Seite des Bildschirms an.
 
 3. Wählen Sie im Menü „Identität“ unter **Anwendungen** die Option **Unternehmensanwendungen** aus.
 
