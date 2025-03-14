@@ -112,7 +112,7 @@ Führen Sie die folgenden Schritte aus, um Benutzende für eine Microsoft Entra 
    | Feld | Wert |
    | :--- | :--- |
    | Benutzername | **MiriamG@** `<<your domain.onmicrosoft.com>>` |
-   | Kennwort |  Geben Sie das Administratorkennwort des Mandanten ein (Sie finden das Kennwort des Mandantenadministrators auf der Registerkarte „Labressourcen“). |
+   | Kennwort |  Geben Sie Ihr Mandantenadministrierenden-Kennwort ein |
 
 4. Öffnen Sie im Menü **Identität** **Benutzer** und wählen Sie dann **Alle Benutzer**.
 5. Finden Sie **Miriam** in der Liste der Benutzenden.

@@ -55,6 +55,8 @@ Mithilfe von verwalteten Identitäten für Azure-Ressourcen kann der Code Zugrif
   | Kennwort | Legen Sie ein sicheres Kennwort fest, das Sie sich merken können |
   | Lizenzierung | Bestätigen Sie, dass Sie über eine berechtigte Lizenz verfügen |
 
+1. Vergessen Sie nicht, das Kontrollkästchen **Lizenzierung bestätigen** zu aktivieren.
+
 1. Verwenden Sie die Schaltfläche **Weiter**, um zur Registerkarte **Verwaltung** zu gelangen.
 
 1. Markieren Sie auf der Registerkarte **Verwaltung** das Kästchen neben **System zugewiesene verwaltete Identität aktivieren**.

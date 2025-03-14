@@ -7,7 +7,7 @@ lab:
 
 # Lab 08 - Aktivieren der Multi-Faktor-Authentifizierung
 
-### Anmeldetyp = Microsoft 365 Admin
+### Anmeldetyp = Microsoft 365- + E5-Mandantenanmeldung
 
 ## Labszenario
 
@@ -63,28 +63,29 @@ Als Nächstes wird erläutert, wie Sie Regeln für den bedingten Zugriff einrich
 5. Wählen Sie **Keine Zielressourcen ausgewählt** in Zielressourcen.
 
    - Wählen Sie im Dropdown **Cloud-Apps** aus.
-   - Aktivieren Sie unter „Einschließen“ **Alle Cloud-Apps**, und beachten Sie die Warnung, dass Sie sich möglicherweise selbst aussperren 
-   - Wählen Sie nun im Abschnitt „Auswählen“ den Eintrag **Keine**.
+   - Markieren Sie unter „Einschließen“ die Option **Ressourcen (ehemals Cloud-Anwendungen)** und beachten Sie die Warnung, die angezeigt wird, dass Sie sich möglicherweise selbst aussperren. 
+   - Wählen Sie nun im Abschnitt „Einschließen“ den Punkt **Ressourcen auswählen** aus.
+   - Wählen Sie im Abschnitt **Auswahl** den Link **Keine**.
    - Wählen Sie im neu geöffneten Dialogfeld **Office 365** aus.
       - **Erinnerung**: In einem vorherigen Lab haben wir Delia Dennis eine Office 365-Lizenz gegeben und sie angemeldet, um sicherzustellen, dass es funktioniert hat.
    - Wählen Sie **Auswählen** aus.
 
-6. Überprüfen Sie den Abschnitt „Bedingungen“.
+6. Wählen Sie im Abschnitt „Bedingungen“ einen Netzwerkstandort und wählen Sie dann **Nicht konfiguriert**.
 
-   - Wählen Sie **Ja** für den Konfigurationsregler.
+   - Im Abschnitt **Bedingungen** wählen Sie den Link **0 Bedingungen ausgewählt**.
+   - Unten im neu geöffneten Menü finden Sie den Abschnitt **Standorte**, und wählen Sie **Nicht konfiguriert**.
+   - Wählen Sie **Ja** für den Punkt **Konfigurieren**.
    - Wählen Sie **ein beliebiges Netzwerk oder einen beliebigen Standort** aus.
 
-7. Suchen Sie unter **Zugriffssteuerungen** den Abschnitt **Zuweisung** und wählen Sie **0 ausgewählte Steuerungen** aus.
+7. Suchen Sie unter **Zugriffssteuerungen** den Abschnitt **Zuweisung** und wählen Sie den Link **0 ausgewählte Steuerungen**.
 
-8. Aktivieren Sie das Kontrollkästchen **Multi-Faktor-Authentifizierung anfordern**, um MFA zu erzwingen.
+   - Aktivieren Sie das Kontrollkästchen **Multi-Faktor-Authentifizierung anfordern**, um MFA zu erzwingen.
+   - Stellen Sie sicher, dass **Require all the slected controls** aktiviert ist.
+   - Wählen Sie **Auswählen**.
 
-9. Stellen Sie sicher, dass **Require all the slected controls** aktiviert ist.
+8. Legen Sie **Richtlinie aktivieren** auf **Ein** fest.
 
-10. Wählen Sie **Auswählen**.
-
-11. Legen Sie **Richtlinie aktivieren** auf **Ein** fest.
-
-12. Wählen Sie **Erstellen** aus, um die Richtlinie zu erstellen.
+9. Wählen Sie die Schaltfläche **Erstellen** aus, um die Richtlinie zu erstellen.
 
     ![Screenshot: vollständiges Dialogfeld „Richtlinie hinzufügen“](./media/lp2-mod1-conditional-access-new-policy-complete.png)
 

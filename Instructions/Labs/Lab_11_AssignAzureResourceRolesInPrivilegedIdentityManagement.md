@@ -29,11 +29,13 @@ Sie müssen einen Benutzer für eine Azure-Ressourcenrolle als „berechtigt“ 
 
 #### Aufgabe 1: Zuweisen von Azure-Ressourcenrollen
 
-1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) mit einem globalen Administratorkonto an.
+1. Melden Sie sich mit dem vorgegebenen Administratorkonto bei [https://entra.microsoft.com](https://entra.microsoft.com) an.
 
 2. Suchen und wählen Sie dann **Privileged Identity Management.**
 
 3. Wählen Sie auf der Seite "Privileged Identity Management" in der linken Navigation **Azure-Ressourcen.**
+
+**Lab-Tipp**: Die nächsten Schritte werden für die Legacy-Azure-Ressourcen-Erfahrung geschrieben.  Sie können oben auf dem Bildschirm zur alten Erfahrung wechseln. Oder Sie können die Übung in der neuen Erfahrung ohne die Schritt-für-Schritt-Anleitung absolvieren.
 
 4. Wählen Sie im Abonnement-Dropdown den Eintrag „MOC Subscription#####“. Wählen Sie dann am unteren Rand des Bildschirms **Ressourcen verwalten**.
 
@@ -42,6 +44,8 @@ Sie müssen einen Benutzer für eine Azure-Ressourcenrolle als „berechtigt“ 
 6. Überprüfen Sie die Informationen auf der Seite **Übersicht**.
 
    ![Screenshot der neu hinzugefügten Azure-Ressource](./media/lp4-mod3-pim-az-resource-overview.png)
+
+   **Lab-Tipp**: Aufgrund der Art der Lab-Umgebung werden keine Ressourcen angezeigt. Ein Beispiel finden Sie im Bild.
 
 7. Wählen Sie im linken Navigationsmenü unter **Verwalten** die Option **Rollen** aus, um die Liste der Rollen für Azure-Ressourcen anzuzeigen.
 
@@ -68,6 +72,8 @@ Sie müssen einen Benutzer für eine Azure-Ressourcenrolle als „berechtigt“ 
 16. Nachdem die neue Rollenzuweisung erstellt wurde, wird eine Statusbenachrichtigung angezeigt.
 
 #### Aufgabe 2: Aktualisieren oder Entfernen der Zuweisung einer vorhandenen Ressourcenrolle
+
+**Hinweis**: Aufgrund der Sicherheitseinstellungen in diesem Lab können Sie diese Schritte nicht ausführen.  Bitte überprüfen Sie die Schritte in der Benutzeroberfläche, Sie können jedoch keine Änderungen vornehmen.  Wir arbeiten aktiv daran, hierfür eine Lösung zu finden.
 
 Befolgen Sie diese Anweisungen zum Aktualisieren oder Entfernen einer vorhandenen Rollenzuweisung.
 
