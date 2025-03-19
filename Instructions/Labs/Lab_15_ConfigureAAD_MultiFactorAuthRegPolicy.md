@@ -52,7 +52,7 @@ Mit Multi-Faktor-Authentifizierung können Sie über die Verwendung eines Benutz
 
 1. Wählen Sie unter **Zuweisungen** die Option **Alle Benutzer** unter Benutzer und wählen Sie einen Benutzer*in, der MFA erzwingen soll.
 
-1. Ändern Sie Folgendes: **Richtliniendurchsetzung****Aktiviert**.
+1. Suchen Sie im Dialogfeld die **Feldrichtlinienerzwingung**.  Legen Sie den Wert fest auf: **Aktiviert**.
 
 1. Wählen Sie **Speichern**.
 

@@ -65,6 +65,13 @@ Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen
        (where <tenant name> is your tenant name)
    ```
 
+**Übungstipp**: Die Ergebnisse sollten mit Ihrer Mandanten-ID und dem Mandantennamen übereinstimmen.
+| URI-Nummer  | Link |
+| :--- | :--- |
+| URIs 1 | https://login.microsoftonline.com |
+| URIs 2 | https://login.microsoftonline.com/te/aaaa1111bbbb2222cccc |
+| URIs 3 | https://login.microsoftonline.com/te/MyTenantName.onmicrosoft.com/oauth |
+
 16. Klicken Sie auf **Erstellen**. Kopieren Sie Ihre **Client-ID** und den **geheimen Clientschlüssel**. Sie verwenden diese Informationen, wenn Sie den Identitätsanbieter im Azure-Portal hinzufügen.
 
 17. Sie können Ihr Projekt im Veröffentlichungsstatus „Testen“ belassen.
