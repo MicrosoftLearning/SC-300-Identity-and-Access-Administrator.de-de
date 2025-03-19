@@ -57,7 +57,7 @@ Vor kurzem wurde eine Partnerschaft mit einem anderen Unternehmen geschlossen. V
 
 4. Wählen Sie auf der Seite „Benutzer“ im Menü **Massenvorgänge > Masseneinladung** aus.
 
-     ![Screenshot: Die Seite „Alle Benutzer“ mit den hervorgehobenen Optionen „Massenvorgänge“ und „Masseneinladung“](./media/lp1-mod3-bulk-invite-option.png)
+   ![Screenshot: Die Seite „Alle Benutzer“ mit den hervorgehobenen Optionen „Massenvorgänge“ und „Masseneinladung“](./media/lp1-mod3-bulk-invite-option.png)
 
 5. Wählen Sie im Bereich „Massenbenutzereinladung“ die Option **Herunterladen**, um den Download mit Einladungseigenschaften in eine CSV-Beispieldatei durchzuführen.
 
@@ -69,6 +69,8 @@ Vor kurzem wurde eine Partnerschaft mit einem anderen Unternehmen geschlossen. V
     - **Umleitungs-URL**: Die URL, an die der eingeladene Benutzer nach dem Akzeptieren der Einladung weitergeleitet wird.
 
     ![Screenshot: Beispiel einer Vorlagen-CSV-Datei zum Masseneinladen von Gastbenutzern](./media/lp1-mod3-template-csv.png)
+
+**Lab-Tipp**: Die im Screenshot und in den Vorlagendateien aufgeführten Benutzenden sind Beispiele, sie existieren nicht wirklich.  Sie müssen echte Benutzende hinzufügen, um diese Funktion vollständig zu testen.
 
 8. Speichern Sie die Datei.
 
@@ -93,6 +95,8 @@ Vor kurzem wurde eine Partnerschaft mit einem anderen Unternehmen geschlossen. V
 1. Öffnen Sie PowerShell als Administrator.  Dazu können Sie in Windows nach PowerShell suchen und „Als Administrator ausführen“ auswählen. 
 
 **Hinweis**: Sie müssen PowerShell Version 7.2 oder höher verwenden, damit dieses Lab funktioniert.  Wenn Sie PowerShell öffnen, wird oben auf dem Bildschirm eine Version angezeigt. Wenn Sie eine ältere Version verwenden, aktualisieren Sie diese bitte, da dieser Teil des Labs sonst fehlschlagen wird.
+
+**Lab-Tip**: Die TouchType-Funktion in der Lab-Umgebung hat Probleme beim Tippen in PowerShell. Wenn Sie Notepad in Ihrem Lab starten und dann TouchType verwenden, um die PowerShell-Anweisungen in Notepad zu laden, können Sie sie mit **Ausschneiden und Einfügen** in PowerShell eingeben, ohne sie einzutippen.
 
 2. Sie müssen das Microsoft.Graph PowerShell-Modul installieren, wenn Sie es noch nicht verwendet haben.  Führen Sie die folgenden beiden Befehle aus, und drücken Sie „Y“, wenn Sie aufgefordert werden zu bestätigen:
 

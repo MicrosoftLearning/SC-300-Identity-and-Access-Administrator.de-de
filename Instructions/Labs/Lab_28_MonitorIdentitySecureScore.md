@@ -13,7 +13,7 @@ lab:
 
 Microsoft Entra-Identitätsschutz bietet automatisierte Erkennung und Behebung identitätsbasierter Risiken und stellt Daten im Portal bereit, um potenzielle Risiken zu untersuchen. Microsoft Entra-Identitätsschutz bietet auch eine Identitätssicherheitsbewertung, um Ihren Identitätssicherheitsstatus zu überwachen und zu verbessern.  Auf die gleiche Weise wie Microsoft Defender XDR und Microsoft Defender for Cloud bietet die Identitätssicherheitsbewertung Verbesserungsmaßnahmen und Empfehlungen, die Ihren allgemeinen Sicherheitsstatus für Identität in Microsoft Entra ID verbessern können.  In dieser Übung wird diese Funktion untersucht. 
 
-**Hinweis** : Da dieses Lab in einer neuen erstellten Mandantenumgebung ausgeführt wird, erhalten Sie wahrscheinlich eine Identitätssicherheitsbewertung von 0,00 %.  Es dauert etwa 24 Stunden, bis wertvolle Daten in die Berechnung eingegeben werden, um Ihnen eine gültige Bewertung zu geben.
+**Hinweis:** Da dieses Lab in einer neu erstellten Umgebung mit Mandanten ausgeführt wird, erhalten Sie wahrscheinlich eine Identitätssicherheitsbewertung von 30 % oder weniger.  Es dauert etwa 24 Stunden, bis verwertbare Daten in die Berechnung einfließen und ein gültiges Ergebnis angezeigt wird.
 
 #### Geschätzte Dauer: 15 Minuten
 
@@ -31,7 +31,7 @@ Microsoft Entra-Identitätsschutz bietet automatisierte Erkennung und Behebung i
 
 5. Scrollen Sie nach unten, um die **Verbesserungsaktionen** anzuzeigen.
 
-6. Im Gegensatz zu den Verbesserungsmaßnahmen in Microsoft Defender for Cloud und Microsoft Defender XDR sind diese Verbesserungsmaßnahmen spezifisch für die Identität.  Damit erhalten Sie eine fokussiertere Liste potenzieller Aktionen für Ihre Sicherheitsstatusverwaltung.  Alle Verbesserungsaktionen, die aus dieser Liste initiiert werden, wirken sich auch auf Ihren gesamten Mandantensicherheitsstatus aus. 
+**Lab-Tipp**: Im Gegensatz zu den Verbesserungsaktionen in Microsoft Defender for Cloud und Microsoft Defender XDR sind diese Verbesserungsaktionen identitätsspezifisch.  Damit erhalten Sie eine fokussiertere Liste potenzieller Aktionen für Ihre Sicherheitsstatusverwaltung.  Alle Verbesserungsaktionen, die aus dieser Liste initiiert werden, wirken sich auch auf Ihren gesamten Mandantensicherheitsstatus aus. 
 
 #### Aufgabe 2: Ausführen einer Verbesserungsaktion
 
