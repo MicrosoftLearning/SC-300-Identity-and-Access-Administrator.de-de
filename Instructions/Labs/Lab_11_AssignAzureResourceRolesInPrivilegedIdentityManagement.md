@@ -9,8 +9,6 @@ lab:
 
 ### Anmeldetyp = Azure Resource-Anmeldung
 
-**Hinweis**: Für dieses Lab ist ein Azure Pass erforderlich. Anweisungen dazu finden Sie in Lab 00.
-
 ## Labszenario
 
 Microsoft Entra Privileged Identity Management (Azure AD PIM) kann sowohl die integrierten Azure-Ressourcenrollen als auch benutzerdefinierte Rollen verwalten. Beispiele:
