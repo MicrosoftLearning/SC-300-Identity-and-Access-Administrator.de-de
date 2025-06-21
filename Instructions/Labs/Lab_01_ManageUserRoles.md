@@ -180,7 +180,7 @@ Nachdem die Benutzer erstellt wurden, werden Sie darüber benachrichtigt, dass d
 
 #### Aufgabe 2: Massenhinzufügen von Benutzern mit PowerShell
 
-1. Öffnen Sie PowerShell als Administrator. Dazu können Sie in Windows nach PowerShell suchen und „Als Administrator ausführen“ auswählen. 
+1. Öffnen Sie PowerShell.  Dies können Sie tun, indem Sie in Windows nach „PowerShell“ suchen. 
 
 **Hinweis**: Sie müssen PowerShell Version 7.2 oder höher verwenden, damit dieses Lab funktioniert.  Wenn PowerShell geöffnet wird, wird oben auf dem Bildschirm die Version angezeigt. Wenn Sie eine ältere Version verwenden, befolgen Sie die angezeigten Anweisungen, um zu https://aka.ms/PowerShell-Release?tag=7.3.9 zu wechseln. Scrollen Sie nach unten zum Abschnitt „Assets“, und wählen Sie „powershell-7.3.1-win-x64.msi“ aus. Wenn der Download abgeschlossen ist, wählen Sie „Datei öffnen“ aus. Installieren Sie unter Verwendung aller Standardwerte.
 
@@ -189,7 +189,7 @@ Nachdem die Benutzer erstellt wurden, werden Sie darüber benachrichtigt, dass d
 2. Sie müssen das Microsoft.Graph PowerShell-Modul installieren, wenn Sie es noch nicht verwendet haben.  Führen Sie die folgenden beiden Befehle aus, und drücken Sie „Y“, wenn Sie aufgefordert werden zu bestätigen:
 
     ```
-    Install-Module Microsoft.Graph
+    Install-Module Microsoft.Graph -Scope CurrentUser -Verbose
     ```
 3. Vergewissern Sie sich, dass das Microsoft.Graph-Modul installiert ist:
 
@@ -211,7 +211,7 @@ Nachdem die Benutzer erstellt wurden, werden Sie darüber benachrichtigt, dass d
     Get-MgUser 
     ```
     
-7. Um allen neuen Benutzern ein gemeinsames temporäres Kennwort zuzuweisen, führen Sie den folgenden Befehl aus, und ersetzen Sie das <Enter a complex Password> Kennwort durch das Kennwort, das Sie Ihren Benutzern zur Verfügung stellen möchten.  
+6. Um allen neuen Benutzern ein gemeinsames temporäres Kennwort zuzuweisen, führen Sie den folgenden Befehl aus, und ersetzen Sie das <Enter a complex Password> Kennwort durch das Kennwort, das Sie Ihren Benutzern zur Verfügung stellen möchten.  
 
     ``` 
     $PWProfile = @{
@@ -220,7 +220,7 @@ Nachdem die Benutzer erstellt wurden, werden Sie darüber benachrichtigt, dass d
     }
     ```
 
-8. Sie sind nun bereit, neue Benutzer zu erstellen.  Der folgende Befehl wird mit den Benutzerinformationen ausgefüllt und ausgeführt.  Wenn Sie mehrere Benutzer hinzufügen möchten, können Sie eine Editor-TXT-Datei verwenden, um die Benutzerinformationen hinzuzufügen und sie in PowerShell zu kopieren/einzufügen. 
+7. Sie sind nun bereit, neue Benutzer zu erstellen.  Der folgende Befehl wird mit den Benutzerinformationen ausgefüllt und ausgeführt.  Wenn Sie mehrere Benutzer hinzufügen möchten, können Sie eine Editor-TXT-Datei verwenden, um die Benutzerinformationen hinzuzufügen und sie in PowerShell zu kopieren/einzufügen. 
 
     ```
     New-MgUser `
@@ -245,7 +245,7 @@ Sie können Benutzer mit der Microsoft Entra ID-Seite hinzufügen und entfernen.
 
 Es kann vorkommen, dass ein Konto gelöscht und dann wiederhergestellt werden muss. Sie müssen überprüfen, ob Sie ein Konto wiederherstellen können, das kürzlich gelöscht wurde.
 
-1. Navigieren Sie zu [https://entra.micrososft.com](Microsoft Entra admin center).
+1. Navigieren Sie zu [https://entra.microsoft.com](Microsoft Entra admin center).
 
 2. Wählen Sie im linken Navigationsbereich unter **Identität** die Option **Benutzer** aus.
 
