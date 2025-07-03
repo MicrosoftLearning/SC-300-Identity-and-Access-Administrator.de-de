@@ -190,4 +190,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
     - **Rolle**: VM-Administratoranmeldung oder VM-Benutzeranmeldung
     - **Zugriff zuweisen zu**: Benutzer, Gruppe oder Dienstprinzipal oder verwaltete Identität
 
-1. Ausführliche Informationen finden Sie unter Zuweisen von Azure-Rollen über das Azure-Portal.
+##### Herausfordernder Teil des Labs
+
+Bitte versuchen Sie, den Rest dieses Labs selbstständig zu absolvieren. Es ist der Windows-Version sehr ähnlich. Detaillierte Schritte finden Sie unter „Zuweisen von Azure-Rollen über das Azure-Portal“ in den Learn-Dokumenten.
+
