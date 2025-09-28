@@ -29,9 +29,9 @@ Sie müssen einen Benutzer für eine Azure-Ressourcenrolle als „berechtigt“ 
 
 1. Melden Sie sich mit dem vorgegebenen Administratorkonto bei [https://entra.microsoft.com](https://entra.microsoft.com) an.
 
-2. Suchen und wählen Sie dann **Privileged Identity Management.**
+2. Suchen und wählen Sie dann **Microsoft Entra Privileged Identity Management** aus.
 
-3. Wählen Sie auf der Seite "Privileged Identity Management" in der linken Navigation **Azure-Ressourcen.**
+3. Wählen Sie auf der Seite „Privileged Identity Management“ im linken Navigationsbereich **Azure-Ressourcen** aus.
 
 **Lab-Tipp**: Die nächsten Schritte werden für die Legacy-Azure-Ressourcen-Erfahrung geschrieben.  Sie können oben auf dem Bildschirm zur alten Erfahrung wechseln. Oder Sie können die Übung in der neuen Erfahrung ohne die Schritt-für-Schritt-Anleitung absolvieren.
 
@@ -77,7 +77,7 @@ Befolgen Sie diese Anweisungen zum Aktualisieren oder Entfernen einer vorhandene
 
 1. Öffnen Sie **Microsoft Entra Privileged Identity Management**.
 
-2. Wählen Sie **Azure-Ressourcen** aus.
+2. Klicken Sie auf **Azure-Ressourcen**.
 
 3. Wählen Sie das zu verwaltende Abonnement aus, um die Übersichtsseite zu öffnen.
 
