@@ -13,7 +13,7 @@ lab:
 
 Mithilfe von verwalteten Identitäten für Azure-Ressourcen kann der Code Zugriffstoken zur Authentifizierung von Ressourcen abrufen, die die Microsoft Entra-Authentifizierung unterstützen.  Allerdings unterstützen nicht alle Azure-Dienste die Microsoft Entra-Authentifizierung. Um verwaltete Identitäten für Azure-Ressourcen mit diesen Diensten zu verwenden, speichern Sie die Dienstanmeldeinformationen in Azure Key Vault, und greifen Sie mit der verwalteten Identität auf Key Vault zu, um die Anmeldeinformationen abzurufen.
 
-#### Geschätzte Dauer: 20 Minuten
+#### Geschätzte Dauer: 35 Minuten
 
 ### Übung 1: Verwenden von Azure Key Vault zum Verwalten von Identitäten virtueller Computer
 
@@ -103,7 +103,7 @@ Mithilfe von verwalteten Identitäten für Azure-Ressourcen kann der Code Zugrif
 
 1. Wechseln Sie zu **vmKeyVault** und verwenden Sie RDP, um eine Verbindung mit Ihrem virtuellen Computer als **adminKeyVault** herzustellen.
 
-1. Öffnen Sie auf dem virtuellen Computer des Labs PowerShell.  
+1. Öffnen Sie den **virtuellen Windows 11-Computer**, der weiter oben in diesem Lab bereitgestellt wurde. Öffnen Sie auf dem virtuellen Computer des Labs PowerShell.  
 
 1. Rufen Sie in PowerShell die Webanforderung für den Mandanten auf, um das Token für den lokalen Host am spezifischen Port des virtuellen Computers abzurufen.  
 
