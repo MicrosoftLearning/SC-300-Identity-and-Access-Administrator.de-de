@@ -21,7 +21,7 @@ Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen
 
 **Wichtiger Hinweis**: Für diese Übung benötigen Sie ein Gmail-Konto auf Google. Erstellen Sie ein **neues Google-Konto**, und führen Sie dann die Schritte für die Übung aus.  Notieren Sie die E-Mail-Adresse und das Kennwort; sie sind erforderlich, um das Lab durchzuführen.
 
-1. Wechseln Sie zur Google-APIs unter https://console.developers.google.com, und melden Sie sich mit Ihrem Google-Konto an. Es wird empfohlen, ein freigegebenes Google-Teamkonto zu verwenden.
+1. Wechseln Sie zu den Google-APIs unter https://console.developers.google.com, und melden Sie sich mit Ihrem Google-Konto an. Es wird empfohlen, ein freigegebenes Google-Teamkonto zu verwenden.
 
 2. Stimmen Sie den Vertragsbedingungen zu, wenn Sie dazu aufgefordert werden.
 
@@ -75,8 +75,8 @@ Ihr Unternehmen arbeitet mit vielen Anbietern zusammen, und gelegentlich müssen
 | URI # | Link |
 | :--- | :--- |
 | URIs 1 | https://login.microsoftonline.com |
-| URIs 2 | https://login.microsoftonline.com/te/aaaa1111bbbb2222cccc |
-| URIs 3 | https://login.microsoftonline.com/te/MyTenantName.onmicrosoft.com/oauth |
+| URIs 2 | https://login.microsoftonline.com/te/aaaa1111bbbb2222cccc/oauth2/authresp |
+| URIs 3 | https://login.microsoftonline.com/te/MyTenantName.onmicrosoft.com/oauth2/authresp |
 
 16. Wählen Sie die Schaltfläche **Erstellen**.
 

@@ -22,13 +22,11 @@ Als zusätzliche Sicherheitsebene müssen Sie die Anmelde- und Benutzerrisikoric
 
 1. Melden Sie sich mit einem globalen Administratorkonto bei [https://entra.microsoft.com]( https://entra.microsoft.com) an.
 
-2. Öffnen Sie das Portalmenü, und wählen Sie dann  **Microsoft Entra ID** aus.
+2. Öffnen Sie das Portalmenü, und wählen Sie **Entra ID** aus.
 
-3. Wählen Sie im Menü unter **Identität** die Option **Schutz** aus.
+3. Wählen Sie im Menü unter **ID-Schutz** die Option **Dashboard** aus.
 
-4. Wählen Sie auf der Seite „Sicherheit“ im linken Navigationsbereich **Identity Protection** aus.
-
-5. Wählen Sie auf dem Seite „Identity Protection“ im linken Navigationsbereich **Benutzerrisiko-Richtlinie** aus.
+4. 5. Wählen Sie auf dem Dashboard „Identitätsschutz“ im linken Navigationsbereich **Benutzerrisiko-Richtlinie** aus.
 
     ![Screenshot der Seite „Benutzerrisiko-Richtlinie“ mit hervorgehobenem Auswahlpfad](./media/lp2-mod4-browse-to-identity-protection.png)
 

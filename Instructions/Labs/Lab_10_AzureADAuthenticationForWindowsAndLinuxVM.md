@@ -21,11 +21,13 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 
 1. Navigieren Sie zu [https://portal.azure.com](https://portal.azure.com)
 
-1. Wählen Sie **+ Ressource erstellen** aus.
+**Lab-Tipp:** Wenn Sie aufgefordert werden, Ihre Anmeldeinformationen zu speichern, wählen Sie „Nie“ aus.  Und brechen Sie die Tour ab, es sei denn, Sie nutzen das Azure-Portal zum ersten Mal.
+
+1. Wählen Sie **+ Ressource erstellen**.
 
 1. Geben Sie **Windows 11** in die Suchleiste des Marketplace ein und drücken Sie dann die **Eingabetaste**.
 
-1. Wählen Sie im Feld **Windows 11** die Option **Erstellen v** und wählen Sie **Windows 11 Enterprise, Version 22H2** aus dem sich öffnenden Menü.
+1. Suchen Sie das Feld **Microsoft Windows 11**, und wählen Sie **Erstellen v** und dann im daraufhin geöffneten Menü **Windows 11 Enterprise, Version 22H2** aus.
 
 1. Erstellen Sie die VM unter Verwendung der folgenden Werte auf der Registerkarte **Grundlagen**:
 

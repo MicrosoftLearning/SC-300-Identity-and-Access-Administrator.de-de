@@ -43,7 +43,7 @@ Sie müssen die Einstellungen für die externe Zusammenarbeit für Ihre Organisa
 9. Überprüfen Sie unter  **Gastbenutzerzugriff** die verfügbaren Zugriffsebenen, und wählen Sie dann **Der Gastbenutzerzugriff ist auf Eigenschaften und Mitgliedschaften eigener Verzeichnisobjekte beschränkt (restriktivste Einstellung)**.
 
     **HINWEIS**
-    - Gastbenutzer haben denselben Zugriff wie Mitglieder (umfassendste Einstellung): Diese Option gibt Gästen den gleichen Zugriff auf Microsoft Entra-Ressourcen und -Verzeichnisdaten wie Mitgliedsbenutzern.
+    - Gastbenutzende haben denselben Zugriff wie Mitglieder (umfassendste Einstellung): Diese Option gibt Gästen den gleichen Zugriff auf Microsoft Entra-Ressourcen und -Verzeichnisdaten wie Mitgliedern.
     - Gastbenutzer haben eingeschränkten Zugriff auf Eigenschaften und Mitgliedschaften von Verzeichnisobjekten: (Standard) Diese Einstellung verhindert, dass Gäste bestimmte Verzeichnisaufgaben ausführen können, z. B. Benutzer, Gruppen oder andere Verzeichnisressourcen aufzulisten. Gäste können die Mitgliedschaft in allen nicht ausgeblendeten Gruppen anzeigen.
     - Der Gastbenutzerzugriff ist auf Eigenschaften und Mitgliedschaften eigener Verzeichnisobjekte beschränkt (restriktivste Einstellung): Mit dieser Einstellung können Gäste nur auf Ihre eigenen Profile zugreifen. Gäste dürfen keine Profile, Gruppen oder Gruppenmitgliedschaften anderer Benutzer anzeigen.
 

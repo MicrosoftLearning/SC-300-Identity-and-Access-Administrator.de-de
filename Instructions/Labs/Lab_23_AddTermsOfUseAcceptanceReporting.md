@@ -71,7 +71,7 @@ Gehen Sie nach Fertigstellung Ihres Dokuments mit Nutzungsbedingungen wie folgt 
     | Benutzer | Erstes Zustimmungsdatum | Erstes Ablaufdatum | Zweites Ablaufdatum | Drittes Ablaufdatum |
     |---|---|---|---|---|
     | Alina | 1\. Januar | 1\. Februar | 1\. März | 1\. April|
-    | Bernd | 15. Januar | 1\. Februar | 1\. März| 1\. April |
+    | Bernd | 15. Januar | 1\. Februar | 1\. März| 1. April |
 
 13. Verwenden Sie die Einstellung **Zeitraum bis erneute Zustimmung erforderlich ist (Tage)**, um die Anzahl von Tagen anzugeben, nach denen der Benutzer den Nutzungsbedingungen spätestens erneut zustimmen muss. Dies ermöglicht es den Benutzern, ihrem eigenen Zeitplan zu folgen. Wenn Sie beispielsweise den Zeitraum auf **30** Tage festlegen, können sich für zwei Benutzer die folgenden Ablauftermine ergeben:
 

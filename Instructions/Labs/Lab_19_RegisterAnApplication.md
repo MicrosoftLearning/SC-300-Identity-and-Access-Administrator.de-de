@@ -116,8 +116,8 @@ Führen Sie zuerst die folgenden Schritte aus, um einen Beispielbereich namens �
     | Feld| Beschreibung| Wert |
     | :--- | :--- | :--- |
     | Bereichsname| Name des Bereichs. Eine allgemeine Benennungskonvention für den Bereich ist „Ressource.Vorgang.Einschränkung“.| Employees.Read.All|
-    | Zum Einwilligen berechtigte Personen| Gibt an, ob für diesen Bereich die Einwilligung von Benutzern ausreicht oder die Einwilligung eines Administrators erforderlich ist. Wählen Sie für umfassendere Berechtigungen die Option „Nur Administratoren“ aus.| Administratoren und Benutzer|
-    | Anzeigename der Administratoreinwilligung| Eine kurze Beschreibung des Zwecks für den Bereich, der nur Administratoren angezeigt wird.| Schreibgeschützter Zugriff auf Mitarbeiterdatensätze|
+    | Zum Einwilligen berechtigte Personen| Gibt an, ob für diesen Bereich die Einwilligung von Benutzenden ausreicht oder die Einwilligung der Administration erforderlich ist. Wählen Sie für umfassendere Berechtigungen die Option „Nur Administration“ aus.| Administration und Benutzende|
+    | Anzeigename der Administrationseinwilligung| Eine kurze Beschreibung des Zwecks für den Bereich, der nur Administratoren angezeigt wird.| Schreibgeschützter Zugriff auf Mitarbeiterdatensätze|
     | Beschreibung der Administratoreinwilligung| Eine ausführlichere Beschreibung der vom Bereich gewährten Berechtigung, die nur Administratoren angezeigt wird.| Ermöglicht der Anwendung einen schreibgeschützten Zugriff auf alle Mitarbeiterdaten.|
     | Anzeigename der Benutzereinwilligung| Eine kurze Beschreibung des Zwecks für den Bereich. Wird Benutzern nur angezeigt, wenn Sie unter Zum Einwilligen berechtigte Personen die Option Administratoren und Benutzer festgelegt haben.| Schreibgeschützter Zugriff auf Mitarbeiterdatensätze|
     | Beschreibung der Benutzereinwilligung| Eine ausführlichere Beschreibung der Berechtigung, die vom Bereich gewährt wird. Wird Benutzern nur angezeigt, wenn Sie unter Zum Einwilligen berechtigte Personen die Option Administratoren und Benutzer festgelegt haben.| Ermöglichen Sie der Anwendung einen schreibgeschützten Zugriff auf Ihre Mitarbeiterdaten.|
@@ -128,7 +128,7 @@ Führen Sie zuerst die folgenden Schritte aus, um einen Beispielbereich namens �
 
    1. Wählen Sie unter  **Autorisierte Clientanwendungen** die Option  **Eine Clientanwendung hinzufügen** aus.
 
-   2. Geben Sie den Wert für  **Anwendungs-ID (Client)** der Clientanwendung ein, die Sie vorab autorisieren möchten, beispielsweise den einer zuvor registrierten Webanwendung.
+   2. Geben Sie den Wert für  **Anwendungs-ID (Client)** der Clientanwendung ein, die Sie vorab autorisieren möchten, Beispielsweise den einer zuvor registrierten Webanwendung.
 
    3. Wählen Sie unter  **Autorisierte Bereiche** die Bereiche aus, für die Sie die Einwilligungsaufforderung unterdrücken möchten, und wählen Sie dann  **Anwendung hinzufügen** aus.
 
@@ -143,7 +143,7 @@ Fügen Sie als Nächstes einen weiteren Beispielbereich namens „Employees.Writ
     | Feld| Beispielwert|
     | :--- | :--- |
     | Bereichsname| Employees.Write.All|
-    | Zum Einwilligen berechtigte Personen| Nur Administratoren|
+    | Zum Einwilligen berechtigte Personen| Nur Administration|
     | Anzeigename der Administratoreinwilligung| Schreibzugriff auf Mitarbeiterdatensätze|
     | Beschreibung der Administratoreinwilligung| Ermöglicht der Anwendung Schreibzugriff auf alle Mitarbeiterdaten.|
     | Anzeigename der Benutzereinwilligung| Keine (Feld leer lassen)|

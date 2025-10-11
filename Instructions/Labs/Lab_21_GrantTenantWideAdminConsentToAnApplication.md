@@ -11,7 +11,7 @@ lab:
 
 ## Labszenario
 
-Bei Anwendungen, die Ihre Organisation entwickelt hat oder die direkt in Ihrem Microsoft Entra-Mandanten registriert sind, können Sie auch im Azure-Portal in „App-Registrierungen“ eine mandantenweite Administratoreinwilligung erteilen.
+Bei Anwendungen, die Ihre Organisation entwickelt hat oder die direkt in Ihrem Microsoft Entra-Mandanten registriert sind, können Sie auch im Azure-Portal in „App-Registrierungen“ eine mandantenweite Administratoreinwilligung erteilen.
 
 #### Geschätzte Dauer: 15 Minuten
 

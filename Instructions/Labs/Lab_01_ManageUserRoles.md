@@ -37,18 +37,18 @@ Ihr Unternehmen hat kürzlich einen neuen Mitarbeiter eingestellt, der Aufgaben 
 1. Melden Sie sich bei [https://entra.microsoft.com](https://entra.microsoft.com) als globaler Administrator an.
  - Verwenden Sie das **Microsoft 365-Administratorkonto**.
 
-2. Wählen Sie im Menü links **Identität** aus.
+2. Erweitern Sie im Menü auf der linken Seite das Dropdownmenü **Entra ID**, falls es noch nicht geöffnet ist.
 
 3. Wählen Sie im linken Navigationsmenü unter **Benutzer** die Option **Alle Benutzer** und dann **+ Neuer Benutzer** und **Neuen Benutzer erstellen** aus.
 
-4. Wählen Sie die Schaltfläche **Benutzer erstellen** aus. Erstellen Sie einen Benutzer mit den folgenden Informationen:
+4. Erstellen Sie einen Benutzer mit den folgenden Informationen:
 
     | **Einstellung**| **Wert**|
     | :--- | :--- |
     | Benutzerprinzipalname| ChrisG|
     | Anzeigenname| Chris Green|
 
-5. Wählen Sie die Option **Kennwort automatisch generieren** aus.
+5. Stellen Sie sicher, dass die Option **Kennwort automatisch generieren** aktiviert ist.
 
 6. Kopieren Sie das generierte Kennwort an einen Speicherort, damit Sie es für die nächste Aufgabe verwenden können.
 
@@ -74,11 +74,13 @@ Ihr Unternehmen hat kürzlich einen neuen Mitarbeiter eingestellt, der Aufgaben 
     | Neues Kennwort| Geben Sie ein eindeutiges und sicheres Kennwort ein. |
     | Kennwort bestätigen| Geben Sie das eindeutige und sichere Kennwort erneut ein |
 
-4. Suchen Sie im Suchdialogfeld oben auf dem Bildschirm nach ** Unternehmensanwendungen**, und wählen Sie diese Option aus.
+  **Lab-Tipp:** Es wird empfohlen, das in der Labumgebung bereitgestellte Benutzerkennwort zu verwenden.
+
+4. Suchen Sie über das Suchdialogfeld oben auf dem Bildschirm nach +++Unternehmensanwendungen+++, und wählen Sie diese Option aus.
 
 5. Wählen Sie **+ Neue Anwendung** aus. Beachten Sie, dass **+ Eigene Anwendung erstellen** nicht verfügbar ist.
 
-6. Versuchen Sie, einige der anderen Einstellungen wie **Anwendungsproxy**, **Benutzereinstellungen** und andere auszuwählen, um zu überprüfen, dass **Chris Green** keine Rechte hat.
+6. Versuchen Sie, eine der anderen Einstellungen wie **Einwilligung und Berechtigungen** und **Benutzereinstellungen** auszuwählen, um sicherzustellen, dass **Chris Green** keine Rechte hat.
 
 7. Wählen Sie in der rechten oberen Ecke den Namen **ChrisG** aus, und melden Sie sich ab.
 
@@ -89,7 +91,7 @@ Ihr Unternehmen hat kürzlich einen neuen Mitarbeiter eingestellt, der Aufgaben 
 
 Mit Microsoft Entra ID können Sie eingeschränkte Administrator*innen festlegen, um Identitätsaufgaben in weniger privilegierten Rollen zu verwalten. Administratoren können für Zwecke wie das Hinzufügen oder Ändern von Benutzern, das Zuweisen von Administratorrollen, das Zurücksetzen von Benutzerkennwörtern, das Verwalten von Benutzerlizenzen oder das Verwalten von Domänennamen festgelegt werden.
 
-1. Wenn Sie noch nicht mit der globalen Administratorrolle angemeldet sind, öffnen Sie das Microsoft Entra Admin Center, und melden Sie sich an.
+1. Wenn Sie noch nicht mit der Administratorrolle angemeldet sind, öffnen Sie das Microsoft Entra Admin Center, und melden Sie sich an.
 2. Navigieren Sie zu „Identität“, und wählen Sie dann die Seite „Benutzer“ aus.
 3. Wählen Sie im Abschnitt „Verwalten“ des Menüs die Option **Alle Benutzer** aus.
 4. Wählen Sie das Konto **Chris Green** aus.
@@ -98,7 +100,7 @@ Mit Microsoft Entra ID können Sie eingeschränkte Administrator*innen festleg
 7. Wählen Sie die `Application administrator`-Rolle in der Dropdownliste aus.
 8. Wählen Sie die Schaltfläche **Weiter** aus.
 9. Markieren Sie den Wert **Aktiv** für **Zuweisungstyp**.
-10. Wählen Sie **Zuweisen** aus.
+10. Geben Sie eine Begründung wie +++Für Lab erforderlich+++ ein. Wählen Sie anschließend **Zuweisen** aus.
 
     ![Seite „Zugewiesene Rollen“ mit der ausgewählten Rolle](./media/directory-role-select-role.png)
 
@@ -111,22 +113,21 @@ Mit Microsoft Entra ID können Sie eingeschränkte Administrator*innen festleg
 #### Aufgabe 2 – Überprüfen von Anwendungsberechtigungen
 
 1. Starten Sie ein neues InPrivate-Browserfenster.
-2. Öffnen Sie das Microsoft Entra Admin Center [https://entra.microsoftcom](https://entra.microsoft.com) als Chris Green.
+2. Öffnen Sie als Chris Green das Microsoft Entra Admin Center unter +++https://entra.microsoftcom+++.
 
     | **Einstellung**| **Wert**|
     | :--- | :--- |
     | Benutzername| ChrisG@`your domain name.com`|
     | Kennwort| Geben Sie den Benutzernamen und das Kennwort ein, den bzw. das Sie zuvor erstellt haben. |
 
-3. Wenn das Tour-Dialogfeld **Willkommen bei Microsoft Azure** angezeigt wird, wählen Sie die Schaltfläche **Vielleicht später** aus.
-4. Suchen Sie über Suchdialogfeld oben auf dem Bildschirm nach **Unternehmensanwendungen**, und wählen Sie sie aus.
-5. Beachten Sie, dass **+ Neue Anwendung** jetzt verfügbar ist.
-6. Wählen Sie **+ Neue Anwendung** aus.
-7. Achten Sie darauf, dass die Schaltfläche **+ Eigene Anwendung erstellen** nicht ausgegraut ist. Wenn Sie eine Galerie-App auswählen, sehen Sie, dass die Schaltfläche **Erstellen** verfügbar ist.
+3. Suchen Sie über das Suchdialogfeld oben auf dem Bildschirm nach +++Unternehmensanwendungen+++, und wählen Sie diese Option aus.
+4. Beachten Sie, dass **+ Neue Anwendung** jetzt verfügbar ist.
+5. Wählen Sie **+ Neue Anwendung** aus.
+6. Sie sehen, dass **+ Eigene Anwendung erstellen** nicht mehr abgeblendet ist.  Wenn Sie eine Katalog-App auswählen, ist die Schaltfläche **Erstellen** verfügbar.
 
    **Hinweis: Diese Rolle kann jetzt dem Mandanten Anwendungen hinzuzufügen. Wir werden in späteren Labs mehr mit diesem Feature experimentieren.**
 
-8. Melden Sie sich bei der Chris Green-Instanz des Portals ab, und schließen Sie den Browser.
+7. Melden Sie sich bei der Chris Green-Instanz des Portals ab, und schließen Sie den Browser.
 
 ### Übung 3: Entfernen einer Rollenzuweisung
 
@@ -134,8 +135,8 @@ Mit Microsoft Entra ID können Sie eingeschränkte Administrator*innen festleg
 
 Diese Aufgabe wird eine alternative Methode verwenden, um die zugewiesene Rolle zu entfernen. Sie wird die Option **Rollen und Administratoren** in Microsoft Entra ID verwenden.
 
-1. Wenn Sie noch nicht als globaler Administrator angemeldet sind, starten Sie das Microsoft Entra Admin Center, und melden Sie sich jetzt an.
-2. Geben Sie im Suchfeld **Rollen und** ein, und starten Sie dann Microsoft Entra ID-Rollen und -Verwaltung.
+1. Wenn Sie noch nicht als Admin angemeldet sind, öffnen Sie das Microsoft Entra Admin Center, und melden Sie sich jetzt an.
+2. Geben Sie im Suchfeld **Rollen** und ein, und starten Sie dann **Microsoft Entra ID-Rollen und -Verwaltung**.
 3. Wählen Sie in  **Alle Rollen** von  **Rollen und Administratoren** die Rolle **Anwendungsadministrator** aus der Liste aus.
 4. Auf der Seite **Anwendungsadministrator | Zuweisungen** sollte der Name von Chris Green aufgelistet sein.
 5. Scrollen Sie ganz nach rechts zu Chris Green.
@@ -304,7 +305,7 @@ Sie müssen Lizenzen über das Microsoft 365 Admin Center hinzufügen und entfer
 
 1. Öffnen Sie eine neue Registerkarte in Ihrem Browser.
 
-2. Verbinden Sie sich mit dem Microsoft 365 Admin Center unter [https://admin.microsoft.com](https://admin.microsoft.com).
+2. Verbinden Sie sich mit dem Microsoft 365 Admin Center unter +++https://admin.microsoft.com+++.
 
 3. Melden Sie sich bei Aufforderung als Administratorkonto an.
 
