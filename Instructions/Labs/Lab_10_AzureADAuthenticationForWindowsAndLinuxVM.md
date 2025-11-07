@@ -27,7 +27,7 @@ Das Unternehmen hat entschieden, dass Microsoft Entra ID verwendet werden sollte
 
 1. Geben Sie**Windows 11** in die Suchleiste des Marketplace ein und drücken Sie dann die**Eingabetaste**.
 
-1. Suchen Sie das Feld**Microsoft Windows 11**, und wählen Sie**Erstellen v** und dann im daraufhin geöffneten Menü**Windows 11 Enterprise, Version 22H2** aus.
+1. Suchen Sie das Feld**Microsoft Windows 11**. Wählen Sie dann**V erstellen** und anschließend aus dem daraufhin geöffneten Menü die Option**Windows 11 Enterprise, Version 25H2** aus.
 
 1. Erstellen Sie die VM unter Verwendung der folgenden Werte auf der Registerkarte**Grundlagen**:
 
